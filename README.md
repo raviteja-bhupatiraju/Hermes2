@@ -499,6 +499,8 @@ practical because OSGi loads bundles dynamically.
 
 ## License notes
 
+Hermes 2 itself is released under the [MIT License](LICENSE). Third-party material keeps its own terms:
+
 The schemas, specification and spec-derived samples are Copyright MedBiquitous Consortium and used under the
 MedBiquitous XML Public License; the IEEE LOM schema files are licensed CC BY-SA 2.0 (see the schema headers).
 MeSH data is provided by the U.S. National Library of Medicine. The application icon shows a plaster cast of Hermes with petasos (Statens Museum for Kunst,
