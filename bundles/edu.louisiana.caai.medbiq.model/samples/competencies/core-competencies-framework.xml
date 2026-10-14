@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Competency Framework 1.0): the core competencies of a fictional graduate
+     medical education consortium, modeled on the six ACGME core competency domains. Each domain and the patient care
+     sub-competencies are competency objects (three of them are in this folder); the relations give the hierarchy and
+     one non-hierarchical link. Organizations, URIs and versions are fictional. -->
+<CompetencyFramework xmlns="http://ns.medbiq.org/competencyframework/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:hx="http://ns.medbiq.org/lom/extend/v1/" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/competencyframework/v1/ http://ns.medbiq.org/competencyframework/v1/competencyframework.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>https://gme.lakeside.example.org/competencies/core/2024</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="en">Lakeside GME Core Competencies for Residents</lom:string>
+			</lom:title>
+			<lom:language>en</lom:language>
+			<lom:description>
+				<lom:string language="en">The six core competency domains expected of every resident in the residency programs of the Lakeside Graduate Medical Education Consortium, with the sub-competencies of patient care. Programs use the framework to map rotations, assessments and learning resources.</lom:string>
+			</lom:description>
+			<lom:keyword>
+				<lom:string language="en">core competencies</lom:string>
+			</lom:keyword>
+			<lom:keyword>
+				<lom:string language="en">graduate medical education</lom:string>
+			</lom:keyword>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:version>
+				<lom:string language="en">2024</lom:string>
+			</lom:version>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>final</lom:value>
+			</lom:status>
+			<lom:contribute>
+				<lom:role>
+					<lom:source>LOMv1.0</lom:source>
+					<lom:value>publisher</lom:value>
+				</lom:role>
+				<lom:entity>BEGIN:VCARD&#13;&#10;VERSION:3.0&#13;&#10;FN:Lakeside Graduate Medical Education Consortium&#13;&#10;ORG:Lakeside Graduate Medical Education Consortium&#13;&#10;END:VCARD</lom:entity>
+			</lom:contribute>
+		</lom:lifeCycle>
+		<lom:educational>
+			<lom:context>
+				<lom:source>HEALTHCARE_LOMv1</lom:source>
+				<lom:value>graduate professional education</lom:value>
+			</lom:context>
+		</lom:educational>
+		<lom:rights>
+			<lom:copyrightAndOtherRestrictions>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>yes</lom:value>
+			</lom:copyrightAndOtherRestrictions>
+			<lom:description>
+				<lom:string language="en">Creative Commons Attribution 4.0 International license, https://creativecommons.org/licenses/by/4.0/</lom:string>
+			</lom:description>
+		</lom:rights>
+		<hx:healthcareMetadata>
+			<hx:healthcareEducation>
+				<hx:targetAudience>
+					<hx:profession>
+						<lom:string language="en">physician</lom:string>
+					</hx:profession>
+				</hx:targetAudience>
+			</hx:healthcareEducation>
+		</hx:healthcareMetadata>
+	</lom:lom>
+	<EffectiveDate>2024-07-01</EffectiveDate>
+	<Replaces>https://gme.lakeside.example.org/competencies/core/2018</Replaces>
+	<SupportingInformation>
+		<Link>https://gme.lakeside.example.org/competencies/core/2024/handbook.pdf</Link>
+	</SupportingInformation>
+	<SupportingInformation>
+		<xhtml:div>
+			<xhtml:h2>About this framework</xhtml:h2>
+			<xhtml:p>The consortium adopted the six core competency domains in 2018. The <xhtml:em>2024</xhtml:em> version adds the patient care sub-competencies used by the milestone-based performance framework and links practice-based learning with systems-based practice.</xhtml:p>
+		</xhtml:div>
+	</SupportingInformation>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/patient-care</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/medical-knowledge</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/practice-based-learning</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/interpersonal-communication</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/professionalism</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/systems-based-practice</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/patient-care/pc1-history</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://gme.lakeside.example.org/competencies/patient-care/pc2-management-plan</Entry>
+	</Includes>
+	<Relation>
+		<Reference1>
+			<Catalog>URI</Catalog>
+			<Entry>https://gme.lakeside.example.org/competencies/patient-care</Entry>
+		</Reference1>
+		<Relationship>http://www.w3.org/2004/02/skos/core#narrower</Relationship>
+		<Reference2>
+			<Catalog>URI</Catalog>
+			<Entry>https://gme.lakeside.example.org/competencies/patient-care/pc1-history</Entry>
+		</Reference2>
+	</Relation>
+	<Relation>
+		<Reference1>
+			<Catalog>URI</Catalog>
+			<Entry>https://gme.lakeside.example.org/competencies/patient-care/pc2-management-plan</Entry>
+		</Reference1>
+		<Relationship>http://www.w3.org/2004/02/skos/core#broader</Relationship>
+		<Reference2>
+			<Catalog>URI</Catalog>
+			<Entry>https://gme.lakeside.example.org/competencies/patient-care</Entry>
+		</Reference2>
+	</Relation>
+	<Relation>
+		<Reference1>
+			<Catalog>URI</Catalog>
+			<Entry>https://gme.lakeside.example.org/competencies/practice-based-learning</Entry>
+		</Reference1>
+		<Relationship>http://www.w3.org/2004/02/skos/core#related</Relationship>
+		<Reference2>
+			<Catalog>URI</Catalog>
+			<Entry>https://gme.lakeside.example.org/competencies/systems-based-practice</Entry>
+		</Reference2>
+	</Relation>
+</CompetencyFramework>

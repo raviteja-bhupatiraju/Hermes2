@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Activity Report 1.0): a live CME course completed by three physicians,
+     with the AMA PRA Category 1 credit (and MOC points) each of them claimed. People and organizations are fictional. -->
+<ActivityReports xmlns="http://ns.medbiq.org/activityreport/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+	xmlns:m="http://ns.medbiq.org/member/v1/" xmlns:n="http://ns.medbiq.org/name/v1/"
+	xmlns:a="http://ns.medbiq.org/address/v1/"
+	xsi:schemaLocation="http://ns.medbiq.org/activityreport/v1/ http://ns.medbiq.org/activityreport/v1/activityreport.xsd">
+	<DateTimeCreated>2026-03-20T09:15:00-05:00</DateTimeCreated>
+	<ActivityReport>
+		<ReportingOrganization>Acadiana Heart Institute, Office of Continuing Medical Education</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="acadianaheart.org">AHI-104233</m:UniqueID>
+			<m:UniqueID domain="Bayou State Medical Board">MD.031877</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Celeste M. Arceneaux</n:FormattedName>
+				<n:Title>Dr.</n:Title>
+				<n:GivenName>Celeste</n:GivenName>
+				<n:GivenName>Marie</n:GivenName>
+				<n:FamilyName>Arceneaux</n:FamilyName>
+				<n:Degree>MD</n:Degree>
+			</m:Name>
+			<m:LicenseInfo>
+				<m:License>
+					<m:LicensureEntity code="BSMB">Bayou State Medical Board</m:LicensureEntity>
+					<m:LicenseNumber>MD.031877</m:LicenseNumber>
+					<m:LicenseStatus>Active</m:LicenseStatus>
+					<m:LicenseExpirationDate>2027-12-31</m:LicenseExpirationDate>
+				</m:License>
+			</m:LicenseInfo>
+		</Member>
+		<Activity activityID="AHI-2026-HF01">
+			<ProviderOrganization>Acadiana Heart Institute</ProviderOrganization>
+			<ActivityName>Heart Failure Update 2026</ActivityName>
+			<Module>
+				<ModuleName moduleID="AHI-2026-HF01">Heart Failure Update 2026</ModuleName>
+				<Metadata>
+					<lom:lom>
+						<lom:general>
+							<lom:identifier>
+								<lom:catalog>URI</lom:catalog>
+								<lom:entry>https://cme.acadianaheart.org/activities/AHI-2026-HF01</lom:entry>
+							</lom:identifier>
+							<lom:title>
+								<lom:string language="en">Heart Failure Update 2026</lom:string>
+							</lom:title>
+							<lom:language>en</lom:language>
+							<lom:description>
+								<lom:string language="en">A one-day live course for internists, cardiologists and hospitalists on guideline-directed medical therapy, device therapy and transitions of care in heart failure with reduced and preserved ejection fraction.</lom:string>
+							</lom:description>
+							<lom:keyword>
+								<lom:string language="en">heart failure</lom:string>
+							</lom:keyword>
+							<lom:keyword>
+								<lom:string language="en">guideline-directed medical therapy</lom:string>
+							</lom:keyword>
+						</lom:general>
+						<hx:healthcareMetadata>
+							<hx:healthcareEducation>
+								<hx:creditsAvailable>yes</hx:creditsAvailable>
+								<hx:credits>
+									<hx:accreditingBody>ACCME</hx:accreditingBody>
+									<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+									<hx:creditType>CME</hx:creditType>
+									<hx:creditUnit>Credit</hx:creditUnit>
+									<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+									<hx:releaseDate>2026-03-14</hx:releaseDate>
+									<hx:numberOfCredits>6.5</hx:numberOfCredits>
+								</hx:credits>
+								<hx:credits>
+									<hx:accreditingBody>ACCME</hx:accreditingBody>
+									<hx:activityCertification>MOC Medical Knowledge Points</hx:activityCertification>
+									<hx:creditType>CME</hx:creditType>
+									<hx:creditUnit>Point</hx:creditUnit>
+									<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+									<hx:numberOfCredits>6.5</hx:numberOfCredits>
+								</hx:credits>
+								<hx:activityLocation>
+									<a:City>Lafayette</a:City>
+									<a:StateOrProvince>LA</a:StateOrProvince>
+									<a:Country>
+										<a:CountryCode>US</a:CountryCode>
+									</a:Country>
+								</hx:activityLocation>
+								<hx:startDateTime>2026-03-14T08:00:00-05:00</hx:startDateTime>
+								<hx:endDateTime>2026-03-14T16:30:00-05:00</hx:endDateTime>
+								<hx:activityDelivery>live</hx:activityDelivery>
+							</hx:healthcareEducation>
+						</hx:healthcareMetadata>
+					</lom:lom>
+				</Metadata>
+				<Status>Completed</Status>
+				<StartDateTime>2026-03-14T08:00:00-05:00</StartDateTime>
+				<EndDateTime>2026-03-14T16:30:00-05:00</EndDateTime>
+				<RegisteredDateTime>2026-02-02T10:41:00-06:00</RegisteredDateTime>
+				<CompletedDateTime>2026-03-16T19:05:00-05:00</CompletedDateTime>
+				<TimeEngaged>PT6H30M</TimeEngaged>
+				<Results>Post-test passed (score 92%)</Results>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:releaseDate>2026-03-14</hx:releaseDate>
+						<hx:numberOfCredits>6.5</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:104233.hf01.amapra1</CreditID>
+				</CreditCertificate>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>MOC Medical Knowledge Points</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Point</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:numberOfCredits>6.5</hx:numberOfCredits>
+						<CreditFocus>
+							<Description>Cardiovascular disease</Description>
+							<Code>CVD</Code>
+							<NumberOfCredits>4.5</NumberOfCredits>
+						</CreditFocus>
+						<CreditFocus>
+							<Description>Hospital medicine</Description>
+							<Code>HM</Code>
+							<NumberOfCredits>2</NumberOfCredits>
+						</CreditFocus>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:104233.hf01.moc</CreditID>
+				</CreditCertificate>
+			</Module>
+		</Activity>
+	</ActivityReport>
+	<ActivityReport>
+		<ReportingOrganization>Acadiana Heart Institute, Office of Continuing Medical Education</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="acadianaheart.org">AHI-118502</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Thomas J. Broussard</n:FormattedName>
+				<n:GivenName>Thomas</n:GivenName>
+				<n:FamilyName>Broussard</n:FamilyName>
+				<n:Degree>DO</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="AHI-2026-HF01">
+			<ProviderOrganization>Acadiana Heart Institute</ProviderOrganization>
+			<ActivityName>Heart Failure Update 2026</ActivityName>
+			<Module>
+				<ModuleName moduleID="AHI-2026-HF01">Heart Failure Update 2026</ModuleName>
+				<Metadata>
+					<location>https://cme.acadianaheart.org/metadata/AHI-2026-HF01.xml</location>
+				</Metadata>
+				<Status>Completed</Status>
+				<RegisteredDateTime>2026-02-20T14:12:00-06:00</RegisteredDateTime>
+				<CompletedDateTime>2026-03-15T08:47:00-05:00</CompletedDateTime>
+				<TimeEngaged>PT6H30M</TimeEngaged>
+				<Results>Post-test passed (score 85%)</Results>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:numberOfCredits>6.5</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:118502.hf01.amapra1</CreditID>
+				</CreditCertificate>
+			</Module>
+		</Activity>
+	</ActivityReport>
+	<ActivityReport>
+		<ReportingOrganization>Acadiana Heart Institute, Office of Continuing Medical Education</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="acadianaheart.org">AHI-120977</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Priya N. Venkataraman</n:FormattedName>
+				<n:GivenName>Priya</n:GivenName>
+				<n:FamilyName>Venkataraman</n:FamilyName>
+				<n:Degree>MD</n:Degree>
+				<n:Degree>MPH</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="AHI-2026-HF01">
+			<ProviderOrganization>Acadiana Heart Institute</ProviderOrganization>
+			<ActivityName>Heart Failure Update 2026</ActivityName>
+			<Module>
+				<ModuleName moduleID="AHI-2026-HF01">Heart Failure Update 2026</ModuleName>
+				<Metadata>
+					<location>https://cme.acadianaheart.org/metadata/AHI-2026-HF01.xml</location>
+				</Metadata>
+				<Status>Completed</Status>
+				<RegisteredDateTime>2026-03-01T09:30:00-06:00</RegisteredDateTime>
+				<CompletedDateTime>2026-03-18T21:22:00-05:00</CompletedDateTime>
+				<TimeEngaged>PT4H</TimeEngaged>
+				<Results>Attended the morning sessions; post-test passed (score 88%)</Results>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:numberOfCredits>4</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:120977.hf01.amapra1</CreditID>
+				</CreditCertificate>
+			</Module>
+		</Activity>
+	</ActivityReport>
+</ActivityReports>

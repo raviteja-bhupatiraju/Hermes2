@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample for Hermes 2: the survey items of the sample document of the MedBiquitous Survey Items Specifications and
+     Description Document (version 0.2, 10 June 2008), with source "medbiq.org" added to the comparison items and their
+     scale points, and an item for the responses of the YesNo example (ids 220 and 230), whose question is taken from
+     the sample document of the Medical Education Metrics specification (ANSI/MEDBIQ ME.10.1-2009).
+     Copyright (c) 2008 MedBiquitous Consortium. All Rights Reserved. http://www.medbiq.org
+     Modified for Hermes 2 as described above. Users are bound by the terms of the MedBiquitous Consortium XML Public
+     License and Terms of Use (http://www.medbiq.org). -->
+<SurveyItems xmlns="http://ns.medbiq.org/surveyitem/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/surveyitem/v1/ http://ns.medbiq.org/surveyitems/v1/surveyitems.xsd">
+	<SurveyItem source="medbiq.org" id="10">
+		<SurveyQuestion>The course achieved its educational objectives.</SurveyQuestion>
+		<Responses>
+			<Scale type="likert" points="5">
+				<One label="Strongly agree" source="medbiq.org" id="20"/>
+				<Two label="Agree" source="medbiq.org" id="30"/>
+				<Three label="Neutral" source="medbiq.org" id="40"/>
+				<Four label="Disagree" source="medbiq.org" id="50"/>
+				<Five label="Strongly disagree" source="medbiq.org" id="60"/>
+			</Scale>
+		</Responses>
+	</SurveyItem>
+	<SurveyItem>
+		<SurveyQuestion>Did the course present a balanced view of clinical options?</SurveyQuestion>
+		<Responses>
+			<YesNo>
+				<Yes source="medbiq.org" id="220"/>
+				<No source="medbiq.org" id="230"/>
+			</YesNo>
+		</Responses>
+	</SurveyItem>
+	<SurveyItem>
+		<SurveyQuestion>How would you characterize your practice?</SurveyQuestion>
+		<Responses>
+			<MultipleChoiceSelectOne>
+				<ResponseItem source="medbiq.org" id="240">Hospital based</ResponseItem>
+				<ResponseItem source="medbiq.org" id="250">Community based - more than 10 physicians</ResponseItem>
+				<ResponseItem source="medbiq.org" id="260">Community-based - less than 10 physicians</ResponseItem>
+				<ResponseItem source="medbiq.org" id="270">Other</ResponseItem>
+			</MultipleChoiceSelectOne>
+		</Responses>
+	</SurveyItem>
+	<SurveyItem>
+		<SurveyQuestion>What factors do you see as barriers to patient's receiving proper treatment? Select all that apply.</SurveyQuestion>
+		<Responses>
+			<MultipleChoiceSelectMany>
+				<ResponseItem source="medbiq.org" id="280">Cultural</ResponseItem>
+				<ResponseItem source="medbiq.org" id="290">Economic</ResponseItem>
+				<ResponseItem source="medbiq.org" id="300">Lack of clinician training</ResponseItem>
+				<ResponseItem source="medbiq.org" id="310">Access to care</ResponseItem>
+			</MultipleChoiceSelectMany>
+		</Responses>
+	</SurveyItem>
+	<Comparison>
+		<SurveyItemForComparison source="medbiq.org" id="70">
+			<SurveyQuestion>Thinking about my expectations for this CME activity, it was important that it provide fair and balanced content.</SurveyQuestion>
+			<Responses>
+				<Scale type="Low/High" points="7">
+					<One label="Low" source="medbiq.org" id="80"/>
+					<Two source="medbiq.org" id="90"/>
+					<Three source="medbiq.org" id="100"/>
+					<Four source="medbiq.org" id="110"/>
+					<Five source="medbiq.org" id="120"/>
+					<Six source="medbiq.org" id="130"/>
+					<Seven label="High" source="medbiq.org" id="140"/>
+				</Scale>
+			</Responses>
+			<IntendedTiming>Before</IntendedTiming>
+		</SurveyItemForComparison>
+		<SurveyItemForComparison source="medbiq.org" id="150">
+			<SurveyQuestion>Thinking about my participation in this CME activity, I thought it was able to provide fair and balanced content.</SurveyQuestion>
+			<Responses>
+				<Scale type="Low/High" points="7">
+					<One label="Low" source="medbiq.org" id="150"/>
+					<Two source="medbiq.org" id="160"/>
+					<Three source="medbiq.org" id="170"/>
+					<Four source="medbiq.org" id="180"/>
+					<Five source="medbiq.org" id="190"/>
+					<Six source="medbiq.org" id="200"/>
+					<Seven label="High" source="medbiq.org" id="210"/>
+				</Scale>
+			</Responses>
+			<IntendedTiming>After</IntendedTiming>
+		</SurveyItemForComparison>
+	</Comparison>
+</SurveyItems>

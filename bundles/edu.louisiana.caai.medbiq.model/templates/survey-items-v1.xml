@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of a new MEMS Survey Items 1.0 document (survey items have no title; placeholders: none). -->
+<SurveyItems xmlns="http://ns.medbiq.org/surveyitem/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/surveyitem/v1/ http://ns.medbiq.org/surveyitems/v1/surveyitems.xsd">
+	<SurveyItem>
+		<SurveyQuestion>The activity achieved its educational objectives.</SurveyQuestion>
+		<Responses>
+			<Scale type="likert" points="5">
+				<One label="Strongly agree"/>
+				<Two label="Agree"/>
+				<Three label="Neutral"/>
+				<Four label="Disagree"/>
+				<Five label="Strongly disagree"/>
+			</Scale>
+		</Responses>
+	</SurveyItem>
+</SurveyItems>

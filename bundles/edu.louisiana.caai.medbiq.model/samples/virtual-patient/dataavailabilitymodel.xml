@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: the Data Availability Model (DAM) of the virtual patient case "Chest
+     pain in a 58-year-old man". Each DAMNode groups data of virtualpatientdata.xml (ItemPath
+     /VirtualPatientData/...) and media resources of the package manifest (/manifest/resources/resource[...]) for
+     the nodes of activitymodel.xml. -->
+<DataAvailabilityModel xmlns="http://ns.medbiq.org/dataavailabilitymodel/v1/"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/dataavailabilitymodel/v1/ http://ns.medbiq.org/dataavailabilitymodel/v1/dataavailabilitymodel.xsd">
+	<DAMNode id="dam-intro">
+		<DAMNodeLabel>Presentation</DAMNodeLabel>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/PatientDemographics/CoreDemographics/Name/text()</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-cc']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-intro']</ItemPath>
+			<ItemOrder>3</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/manifest/resources/resource[@identifier='r-photo']</ItemPath>
+			<ItemOrder>4</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-history">
+		<DAMNodeLabel>History</DAMNodeLabel>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/PatientDemographics</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/InterviewItem[@id='i1']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/InterviewItem[@id='i2']</ItemPath>
+			<ItemOrder>3</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/InterviewItem[@id='i3']</ItemPath>
+			<ItemOrder>4</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/InterviewItem[@id='i4']</ItemPath>
+			<ItemOrder>5</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/InterviewItem[@id='i5']</ItemPath>
+			<ItemOrder>6</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/InterviewItem[@id='i6']</ItemPath>
+			<DAMNodePath>/DataAvailabilityModel/DAMNode[@id='dam-medications']</DAMNodePath>
+			<ItemOrder>7</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-history']</ItemPath>
+			<ItemOrder>8</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-medications">
+		<DAMNodeLabel>Current medications and allergies</DAMNodeLabel>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/Medication[@id='m1']</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/Medication[@id='m2']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-allergy']</ItemPath>
+			<ItemOrder>3</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-exam">
+		<DAMNodeLabel>Physical examination</DAMNodeLabel>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/PhysicalExam[@id='pe1']</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/PhysicalExam[@id='pe2']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/PhysicalExam[@id='pe3']</ItemPath>
+			<ItemOrder>3</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/PhysicalExam[@id='pe4']</ItemPath>
+			<ItemOrder>4</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-tests">
+		<DAMNodeLabel>Investigations</DAMNodeLabel>
+		<DAMNodeItem display="ifrequested">
+			<ItemPath>/VirtualPatientData/DiagnosticTest[@id='t1']</ItemPath>
+			<ItemComment>/DataAvailabilityModel/DAMNode[@id='dam-ecg-feedback']</ItemComment>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ifrequested">
+			<ItemPath>/VirtualPatientData/DiagnosticTest[@id='t2']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ifrequested">
+			<ItemPath>/VirtualPatientData/DiagnosticTest[@id='t3']</ItemPath>
+			<ItemOrder>3</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-ecg-feedback">
+		<DAMNodeLabel>Feedback on ordering the ECG</DAMNodeLabel>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-ecg-feedback']</ItemPath>
+		</DAMNodeItem>
+		<DAMNodeItem display="delayed">
+			<ItemPath>/manifest/resources/resource[@identifier='r-ecg']</ItemPath>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-ddx">
+		<DAMNodeLabel>Differential diagnosis</DAMNodeLabel>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-ddx']</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/Diagnosis[@id='dx1']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/Diagnosis[@id='dx2']</ItemPath>
+			<ItemOrder>3</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/Diagnosis[@id='dx3']</ItemPath>
+			<ItemOrder>4</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem display="ontrigger">
+			<ItemPath>/VirtualPatientData/Diagnosis[@id='dx4']</ItemPath>
+			<ItemOrder>5</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-management">
+		<DAMNodeLabel>Management decision</DAMNodeLabel>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/Intervention[@id='int1']</ItemPath>
+			<DAMNodePath>/DataAvailabilityModel/DAMNode[@id='dam-tests']</DAMNodePath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-pci">
+		<DAMNodeLabel>Outcome: primary PCI</DAMNodeLabel>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/Intervention[@id='int2']</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-pci-outcome']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="dam-discharge">
+		<DAMNodeLabel>Outcome: discharged home</DAMNodeLabel>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/Intervention[@id='int3']</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+		<DAMNodeItem>
+			<ItemPath>/VirtualPatientData/VPDText[@id='v-discharge-outcome']</ItemPath>
+			<ItemOrder>2</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+</DataAvailabilityModel>

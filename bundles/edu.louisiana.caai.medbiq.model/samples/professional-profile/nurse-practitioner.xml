@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A fictional sample created for Hermes 2: the Healthcare Professional Profile of a family nurse practitioner in a rural community health center. The person, the clinics, the hospital and the university are fictional; telephone numbers use the fictional 555-01xx range and addresses the example.org domain. -->
+<Members xmlns="http://ns.medbiq.org/member/v1/" xmlns:n="http://ns.medbiq.org/name/v1/" xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.medbiq.org/member/v1/ http://ns.medbiq.org/member/v1/member.xsd">
+	<Member restrictions="Restricted">
+		<UniqueID domain="Minnesota Board of Nursing">R 2209184</UniqueID>
+		<UniqueID domain="American Association of Nurse Practitioners">AANP-5520871</UniqueID>
+		<Name>
+			<n:FormattedName>Rafael Okafor-Lindqvist, DNP, APRN, FNP-BC</n:FormattedName>
+			<n:GivenName>Rafael</n:GivenName>
+			<n:FamilyName>Okafor-Lindqvist</n:FamilyName>
+			<n:Degree>DNP</n:Degree>
+			<n:Degree>APRN</n:Degree>
+			<n:Degree>FNP-BC</n:Degree>
+			<n:Alias>
+				<n:GivenName>Rafe</n:GivenName>
+				<n:FamilyName>Okafor-Lindqvist</n:FamilyName>
+			</n:Alias>
+		</Name>
+		<Address addressCategory="Business" restrictions="Unrestricted">
+			<a:Organization>Lakehead Family Care Clinic</a:Organization>
+			<a:Organization>Lakehead Community Health Center</a:Organization>
+			<a:StreetAddressLine>2240 Harbor View Road</a:StreetAddressLine>
+			<a:City>Duluth</a:City>
+			<a:StateOrProvince>MN</a:StateOrProvince>
+			<a:PostalCode>55802-1340</a:PostalCode>
+			<a:Country>
+				<a:CountryName>United States</a:CountryName>
+				<a:CountryCode>US</a:CountryCode>
+			</a:Country>
+		</Address>
+		<EducationInfo>
+			<Degree discipline="Nursing">Bachelor of Science in Nursing</Degree>
+			<InstitutionInfo>
+				<InstitutionName>Northern Lakes University School of Nursing</InstitutionName>
+				<Address>
+					<a:City>Duluth</a:City>
+					<a:StateOrProvince>Minnesota</a:StateOrProvince>
+					<a:Country>
+						<a:CountryCode>US</a:CountryCode>
+					</a:Country>
+				</Address>
+			</InstitutionInfo>
+			<Distinction>Honors</Distinction>
+			<EducationStatus>Graduated</EducationStatus>
+			<StartDate>2008-08-25</StartDate>
+			<EndDate>2012-05-12</EndDate>
+			<GraduationDate>2012-05-12</GraduationDate>
+		</EducationInfo>
+		<EducationInfo>
+			<Degree discipline="Family Nurse Practitioner">Doctor of Nursing Practice</Degree>
+			<InstitutionInfo>
+				<InstitutionName>Northern Lakes University School of Nursing</InstitutionName>
+			</InstitutionInfo>
+			<EducationStatus>Graduated</EducationStatus>
+			<StartDate>2014-08-25</StartDate>
+			<EndDate>2017-05-13</EndDate>
+			<GraduationDate>2017-05-13</GraduationDate>
+		</EducationInfo>
+		<EducationInfo>
+			<EducationalCertificate type="Professional">Psychiatric-Mental Health Nurse Practitioner Post-Graduate Certificate</EducationalCertificate>
+			<InstitutionInfo>
+				<InstitutionName>Northern Lakes University School of Nursing</InstitutionName>
+			</InstitutionInfo>
+			<EducationStatus>Active</EducationStatus>
+			<StartDate>2025-08-25</StartDate>
+			<GraduationDate accuracy="MonthYear">2027-05-01</GraduationDate>
+		</EducationInfo>
+		<TrainingInfo>
+			<ProgramInfo>
+				<ProgramName type="Fellowship">Rural Family Nurse Practitioner Fellowship</ProgramName>
+				<Accreditation>ANCC Practice Transition Accreditation Program</Accreditation>
+				<Specialty>Family Practice</Specialty>
+				<InstitutionInfo>
+					<InstitutionName>Lakehead Community Health Center</InstitutionName>
+				</InstitutionInfo>
+			</ProgramInfo>
+			<StartDate>2017-08-01</StartDate>
+			<EndDate>2018-07-31</EndDate>
+			<CompletionDate>2018-07-31</CompletionDate>
+		</TrainingInfo>
+		<CertificationInfo>
+			<CertificationBoard>American Academy of Nurse Practitioners Certification Board</CertificationBoard>
+			<CertificateStatus>Active</CertificateStatus>
+			<CertificateInfo>
+				<CertificateName>Family Nurse Practitioner</CertificateName>
+				<CertificateType>General Certificate</CertificateType>
+				<CertificateIssuance>
+					<CertificationID>F0617348</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Initial</CertificationOccurrence>
+					<CertificationIssueDate>2017-06-12</CertificationIssueDate>
+					<CertificationExpireDate>2022-06-11</CertificationExpireDate>
+					<CertificationStatus>Inactive</CertificationStatus>
+				</CertificateIssuance>
+				<CertificateIssuance>
+					<CertificationID>F0622911</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Recertification</CertificationOccurrence>
+					<CertificationIssueDate>2022-06-12</CertificationIssueDate>
+					<CertificationExpireDate>2027-06-11</CertificationExpireDate>
+					<CertificationStatus>Active</CertificationStatus>
+				</CertificateIssuance>
+			</CertificateInfo>
+		</CertificationInfo>
+		<LicenseInfo>
+			<License>
+				<LicensureEntity code="MN-BON">Minnesota Board of Nursing</LicensureEntity>
+				<LicenseNumber>R 2209184</LicenseNumber>
+				<InitialLicensureDate>2012-07-10</InitialLicensureDate>
+				<LicenseStatus>Active</LicenseStatus>
+				<LicenseExpirationDate>2027-03-31</LicenseExpirationDate>
+			</License>
+			<License>
+				<LicensureEntity code="MN-BON">Minnesota Board of Nursing</LicensureEntity>
+				<LicenseNumber>APRN 0118342</LicenseNumber>
+				<InitialLicensureDate>2017-08-01</InitialLicensureDate>
+				<LicenseStatus>Active</LicenseStatus>
+				<LicenseExpirationDate>2027-03-31</LicenseExpirationDate>
+			</License>
+		</LicenseInfo>
+		<AcademicAppointmentInfo>
+			<FacultyAppointment>
+				<AdministrativeUnit>Department of Family and Community Nursing</AdministrativeUnit>
+				<EffectiveDate>2021-08-16</EffectiveDate>
+				<InstitutionInfo>
+					<InstitutionName>Northern Lakes University School of Nursing</InstitutionName>
+				</InstitutionInfo>
+				<Title>Adjunct Clinical Instructor</Title>
+				<Rank effectiveDate="2021-08-16">Instructor</Rank>
+				<PrimaryOrJoint>Joint</PrimaryOrJoint>
+				<FacultyTrack>Clinical Adjunct</FacultyTrack>
+				<TenureStatus>Tenure Not Available</TenureStatus>
+				<AppointmentType>Part-time</AppointmentType>
+				<PercentEffort>10</PercentEffort>
+				<LocationType>School-based</LocationType>
+				<Endowed>No</Endowed>
+			</FacultyAppointment>
+		</AcademicAppointmentInfo>
+		<OccupationInfo>
+			<Occupation>Nurse Practitioner</Occupation>
+			<InstitutionInfo>
+				<InstitutionName>Lakehead Community Health Center</InstitutionName>
+				<Address>
+					<a:StreetAddressLine>2240 Harbor View Road</a:StreetAddressLine>
+					<a:City>Duluth</a:City>
+					<a:StateOrProvince>MN</a:StateOrProvince>
+					<a:PostalCode>55802</a:PostalCode>
+					<a:Country>
+						<a:CountryCode>US</a:CountryCode>
+					</a:Country>
+				</Address>
+			</InstitutionInfo>
+			<OccupationTitle>Lead Family Nurse Practitioner</OccupationTitle>
+			<Privileges>Prescriptive authority, including controlled substances</Privileges>
+			<Privileges>Telehealth consultations</Privileges>
+			<Practice>Lakehead Family Care Clinic</Practice>
+			<StartDate>2018-08-01</StartDate>
+			<Specialty>Family Practice</Specialty>
+			<Specialty>Rural Health</Specialty>
+			<OccupationStatus>Active</OccupationStatus>
+		</OccupationInfo>
+		<OccupationInfo>
+			<Occupation>Registered Nurse</Occupation>
+			<InstitutionInfo>
+				<InstitutionName>St. Brendan Regional Hospital</InstitutionName>
+			</InstitutionInfo>
+			<OccupationTitle>Staff Nurse, Emergency Department</OccupationTitle>
+			<StartDate>2012-07-16</StartDate>
+			<EndDate>2017-07-28</EndDate>
+			<Specialty>Emergency Nursing</Specialty>
+		</OccupationInfo>
+		<PersonalInfo restrictions="Restricted">
+			<PhysicalStatus>Living</PhysicalStatus>
+			<Language>English</Language>
+			<Language>Swedish</Language>
+			<Citizenship pointInTime="current">
+				<a:CountryCode>US</a:CountryCode>
+			</Citizenship>
+			<Gender>Male</Gender>
+			<ContactNumber restrictions="Unrestricted">
+				<CountryCode>1</CountryCode>
+				<TelephoneNumber>2185550167</TelephoneNumber>
+				<Description>Office</Description>
+			</ContactNumber>
+			<ContactNumber restrictions="Restricted">
+				<CountryCode>1</CountryCode>
+				<TelephoneNumber>2185550188</TelephoneNumber>
+				<Description>Mobile</Description>
+			</ContactNumber>
+			<EmailAddress restrictions="Unrestricted">Rafael Okafor-Lindqvist &lt;r.okafor-lindqvist@example.org&gt;</EmailAddress>
+			<PreferredMethodOfContact>cellphone</PreferredMethodOfContact>
+		</PersonalInfo>
+		<MembershipInfo>
+			<MembershipOrganization>American Association of Nurse Practitioners</MembershipOrganization>
+			<MemberNumber>AANP-5520871</MemberNumber>
+			<MembershipLevel>Member</MembershipLevel>
+			<MembershipStatus>Active</MembershipStatus>
+			<MemberSinceDate>2014-09-01</MemberSinceDate>
+			<ComponentGroup>
+				<ComponentGroupGenre>Special Interest Group</ComponentGroupGenre>
+				<ComponentGroupName>Rural Health Practice Group</ComponentGroupName>
+				<ComponentGroupRole>Member</ComponentGroupRole>
+				<MemberSinceDate>2019-01-01</MemberSinceDate>
+			</ComponentGroup>
+		</MembershipInfo>
+		<ModifiedDate>2026-08-15</ModifiedDate>
+	</Member>
+</Members>

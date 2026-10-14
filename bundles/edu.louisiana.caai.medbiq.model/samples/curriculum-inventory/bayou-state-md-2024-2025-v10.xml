@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: the Curriculum Inventory report (AAMC point release "v10") of the M.D.
+     program of a fictional medical school for the academic year 2024-2025. Institution, identifiers, people and
+     curriculum are invented. Instructional methods, assessment methods and resource types use the Curriculum
+     Inventory Standardized Instructional and Assessment Methods and Resource Types (AAMC/MedBiquitous, 2016);
+     keywords are MeSH descriptors. -->
+<CurriculumInventory xmlns="http://ns.medbiq.org/curriculuminventory/v10/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+		xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:cf="http://ns.medbiq.org/competencyframework/v1/"
+		xmlns:co="http://ns.medbiq.org/competencyobject/v1/" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+		xmlns:m="http://ns.medbiq.org/member/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/curriculuminventory/v10/ http://ns.medbiq.org/curriculuminventory/v10/curriculuminventory.xsd">
+	<ReportID domain="idd:bayoustate.example:curriculuminventory">BSU-MD-CI-2024-2025</ReportID>
+	<Institution>
+		<m:InstitutionName>Bayou State University College of Medicine</m:InstitutionName>
+		<m:InstitutionID domain="idd:faimer.edu:imed">F0009999</m:InstitutionID>
+		<m:Address>
+			<a:StreetAddressLine>1200 Magnolia Avenue</a:StreetAddressLine>
+			<a:City>Lafayette</a:City>
+			<a:StateOrProvince>LA</a:StateOrProvince>
+			<a:PostalCode>70503</a:PostalCode>
+			<a:Country>
+				<a:CountryCode>US</a:CountryCode>
+			</a:Country>
+		</m:Address>
+	</Institution>
+	<Program>
+		<ProgramName>M.D.</ProgramName>
+		<ProgramID domain="idd:bayoustate.example:program">MD-4YR</ProgramID>
+		<EducationalContext>undergraduate professional education</EducationalContext>
+		<Profession source="HEALTHCARE_LOMv1">Physician</Profession>
+	</Program>
+	<Title>Bayou State University College of Medicine M.D. Curriculum 2024-2025</Title>
+	<ReportDate>2025-08-15</ReportDate>
+	<ReportingStartDate>2024-07-01</ReportingStartDate>
+	<ReportingEndDate>2025-06-30</ReportingEndDate>
+	<Language>en-US</Language>
+	<Description>A four-year systems-based curriculum: two preclinical years of integrated organ-system courses with a longitudinal doctoring course, a third year of core clerkships taken as rotations, and a fourth year of acting internships, electives and a capstone course. Health systems science and anatomy are integrated across all four years.</Description>
+	<SupportingLink>https://medicine.bayoustate.example/curriculum/map.pdf</SupportingLink>
+	<Events>
+		<!-- Year 1: Foundations of Medicine -->
+		<Event id="E101">
+			<Title>Cell Biology and Metabolism Lectures</Title>
+			<EventDuration>PT24H</EventDuration>
+			<Description>Lecture series on cell structure, membrane transport, energy metabolism and their disorders, with audience response questions and assigned pre-reading.</Description>
+			<Keyword hx:source="MeSH" hx:id="D003585">
+				<lom:string language="en">Cell Biology</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D008660">
+				<lom:string language="en">Metabolism</lom:string>
+			</Keyword>
+			<Interprofessional>false</Interprofessional>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-2']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE002">Audience Response System</ResourceType>
+			<ResourceType source="AAMC" sourceID="RE018">Written or Visual Media (or Digital Equivalent)</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM013" instructionalMethodDuration="PT20H">Lecture</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM010" instructionalMethodDuration="PT4H">Independent Learning</InstructionalMethod>
+		</Event>
+		<Event id="E102">
+			<Title>Gross Anatomy Laboratory: Thorax</Title>
+			<EventDuration>PT18H</EventDuration>
+			<Description>Dissection of the thoracic wall, lungs, heart and mediastinum in small teams.</Description>
+			<Keyword hx:source="MeSH" hx:id="D000715">
+				<lom:string language="en">Anatomy</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D013909">
+				<lom:string language="en">Thorax</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-1']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE004">Cadaver</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM012" instructionalMethodDuration="PT18H">Laboratory</InstructionalMethod>
+		</Event>
+		<Event id="E103">
+			<Title>Foundations Problem-Based Learning Cases</Title>
+			<EventDuration>PT12H</EventDuration>
+			<Description>Four tutor-guided cases connecting metabolism and anatomy to patient presentations.</Description>
+			<Keyword hx:source="MeSH" hx:id="D018794">
+				<lom:string language="en">Problem-Based Learning</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-MK']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE005">Clinical Case</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM019" instructionalMethodDuration="PT12H">Problem-Based Learning (PBL)</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM010">Narrative Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E104">
+			<Title>Foundations of Medicine Final Examination</Title>
+			<EventDuration>PT4H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-2']</CompetencyObjectReference>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM004">Exam - Institutionally Developed, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<Event id="E105">
+			<Title>Thorax Anatomy Practical Examination</Title>
+			<EventDuration>PT2H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-1']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE004">Cadaver</ResourceType>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM019">Exam - Institutionally Developed, Laboratory, Practical</AssessmentMethod>
+		</Event>
+		<!-- Year 1: Musculoskeletal and Skin -->
+		<Event id="E106">
+			<Title>Musculoskeletal Imaging Small Groups</Title>
+			<EventDuration>PT6H</EventDuration>
+			<Description>Small-group review of radiographs, CT and MRI of the limbs and spine.</Description>
+			<Keyword hx:source="MeSH" hx:id="D009141">
+				<lom:string language="en">Musculoskeletal System</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D003952">
+				<lom:string language="en">Diagnostic Imaging</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-MK']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE013">Medical Images</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM008" instructionalMethodDuration="PT6H">Discussion, Small Group [≤12]</InstructionalMethod>
+		</Event>
+		<Event id="E107">
+			<Title>Musculoskeletal and Skin Final Examination</Title>
+			<EventDuration>PT3H</EventDuration>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM004">Exam - Institutionally Developed, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<!-- Years 1-2: Doctoring and Clinical Skills (longitudinal) -->
+		<Event id="E110">
+			<Title>Medical Interviewing with Standardized Patients</Title>
+			<EventDuration>PT8H</EventDuration>
+			<Description>Video-recorded interviews with standardized patients followed by faculty and peer feedback.</Description>
+			<Keyword hx:source="MeSH" hx:id="D008487">
+				<lom:string language="en">Medical History Taking</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D010817">
+				<lom:string language="en">Physician-Patient Relations</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-ICS']</CompetencyObjectReference>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-PC']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE021">Standardized/Simulated Patient (SP)</ResourceType>
+			<ResourceType source="AAMC" sourceID="RE010">Film/Video</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM025" instructionalMethodDuration="PT6H">Simulation</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM020" instructionalMethodDuration="PT2H">Reflection</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM002">Clinical Performance Rating/Checklist</AssessmentMethod>
+		</Event>
+		<Event id="E111">
+			<Title>Interprofessional Team Skills Workshop</Title>
+			<EventDuration>PT3H</EventDuration>
+			<Description>Medical, nursing and pharmacy students plan the discharge of a simulated patient together.</Description>
+			<Keyword hx:source="MeSH" hx:id="D007400">
+				<lom:string language="en">Interprofessional Relations</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D010348">
+				<lom:string language="en">Patient Care Team</lom:string>
+			</Keyword>
+			<Interprofessional>true</Interprofessional>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-IPC']</CompetencyObjectReference>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM030" instructionalMethodDuration="PT2H">Workshop</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM027" instructionalMethodDuration="PT1H">Team-Building</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM013">Peer Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E112">
+			<Title>Clinical Skills Objective Structured Clinical Examination</Title>
+			<EventDuration>PT3H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D010808">
+				<lom:string language="en">Physical Examination</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-PC']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE021">Standardized/Simulated Patient (SP)</ResourceType>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM003">Exam - Institutionally Developed, Clinical Performance</AssessmentMethod>
+		</Event>
+		<!-- Year 2: Cardiovascular and Pulmonary Systems -->
+		<Event id="E201">
+			<Title>Cardiovascular Physiology Team-Based Learning</Title>
+			<EventDuration>PT10H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D002320">
+				<lom:string language="en">Cardiovascular Physiological Phenomena</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-MK']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE002">Audience Response System</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM026" instructionalMethodDuration="PT10H">Team-Based Learning (TBL)</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM004">Exam - Institutionally Developed, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<Event id="E202">
+			<Title>Electrocardiogram Interpretation Workshop</Title>
+			<EventDuration>PT4H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D004562">
+				<lom:string language="en">Electrocardiography</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/CVP-1']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE008">Educational Technology</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM030" instructionalMethodDuration="PT3H">Workshop</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM017" instructionalMethodDuration="PT1H">Peer Teaching</InstructionalMethod>
+		</Event>
+		<Event id="E203">
+			<Title>Cardiovascular and Pulmonary Systems Final Examination</Title>
+			<EventDuration>PT4H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/CVP-1']</CompetencyObjectReference>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM004">Exam - Institutionally Developed, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<!-- Year 2: USMLE Step 1 preparation -->
+		<Event id="E204">
+			<Title>Step 1 Dedicated Study Period</Title>
+			<EventDuration>PT160H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-MK']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE020">Searchable Electronic Database</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM023" instructionalMethodDuration="PT160H">Self-Directed Learning</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM017">Self-Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E205">
+			<Title>USMLE Step 1</Title>
+			<EventDuration>PT8H</EventDuration>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM007">Exam - Licensure, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<!-- Year 3: core clerkships -->
+		<Event id="E301">
+			<Title>Internal Medicine Inpatient Clerkship Experience</Title>
+			<EventDuration>PT320H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D007388">
+				<lom:string language="en">Internal Medicine</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D002982">
+				<lom:string language="en">Clinical Clerkship</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-PC']</CompetencyObjectReference>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-SBP']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE015">Patient - Receiving Clinical Care</ResourceType>
+			<ResourceType source="AAMC" sourceID="RE009">Electronic Health/Medical Record (EHR/EMR)</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM003" instructionalMethodDuration="PT280H">Clinical Experience - Inpatient</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM029" instructionalMethodDuration="PT40H">Ward Rounds</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM002">Clinical Performance Rating/Checklist</AssessmentMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM010">Narrative Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E302">
+			<Title>Internal Medicine Subject Examination</Title>
+			<EventDuration>PT3H</EventDuration>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM008">Exam - Nationally Normed/Standardized, Subject</AssessmentMethod>
+		</Event>
+		<Event id="E303">
+			<Title>Pediatrics Ambulatory Clerkship Experience</Title>
+			<EventDuration>PT240H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D010372">
+				<lom:string language="en">Pediatrics</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-PC']</CompetencyObjectReference>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-ICS']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE015">Patient - Receiving Clinical Care</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM002" instructionalMethodDuration="PT220H">Clinical Experience - Ambulatory</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM016" instructionalMethodDuration="PT20H">Patient Presentation - Learner</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM002">Clinical Performance Rating/Checklist</AssessmentMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM011">Oral Patient Presentation</AssessmentMethod>
+		</Event>
+		<!-- Year 4 -->
+		<Event id="E401">
+			<Title>Emergency Medicine Acting Internship</Title>
+			<EventDuration>PT160H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D004635">
+				<lom:string language="en">Emergency Medicine</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-PC']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE015">Patient - Receiving Clinical Care</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM018" instructionalMethodDuration="PT160H">Preceptorship</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM009">Multisource Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E402">
+			<Title>Global Health Service Elective</Title>
+			<EventDuration>PT160H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D014943">
+				<lom:string language="en">Global Health</lom:string>
+			</Keyword>
+			<Interprofessional>true</Interprofessional>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-SBP']</CompetencyObjectReference>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM024" instructionalMethodDuration="PT150H">Service Learning Activity</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM020" instructionalMethodDuration="PT10H">Reflection</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM014">Portfolio-Based Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E403">
+			<Title>Clinical Research Elective</Title>
+			<EventDuration>PT160H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D035843">
+				<lom:string language="en">Biomedical Research</lom:string>
+			</Keyword>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM021" instructionalMethodDuration="PT150H">Research</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM011" instructionalMethodDuration="PT10H">Journal Club</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM016">Research or Project Assessment</AssessmentMethod>
+		</Event>
+		<Event id="E404">
+			<Title>Capstone Simulation: Acute Care Scenarios</Title>
+			<EventDuration>PT20H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D016544">
+				<lom:string language="en">Patient Simulation</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D012151">
+				<lom:string language="en">Resuscitation</lom:string>
+			</Keyword>
+			<Interprofessional>true</Interprofessional>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-IPC']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE012">Mannequin</ResourceType>
+			<ResourceType source="AAMC" sourceID="RE019">Scenario</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM025" instructionalMethodDuration="PT16H">Simulation</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM008" instructionalMethodDuration="PT4H">Discussion, Small Group [≤12]</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM003">Exam - Institutionally Developed, Clinical Performance</AssessmentMethod>
+		</Event>
+	</Events>
+	<Expectations>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/PO-PC</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Patient Care</lom:string>
+					</lom:title>
+					<lom:description>
+						<lom:string language="en">Gather essential and accurate information about patients and provide patient-centered care that is compassionate, appropriate and effective.</lom:string>
+					</lom:description>
+				</lom:general>
+			</lom:lom>
+			<co:Status>Active</co:Status>
+			<co:Category term="program objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/PO-MK</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Medical Knowledge</lom:string>
+					</lom:title>
+					<lom:description>
+						<lom:string language="en">Apply established and evolving biomedical, clinical and social sciences to patient care.</lom:string>
+					</lom:description>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="program objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/PO-ICS</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Interpersonal and Communication Skills</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="program objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/PO-IPC</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Interprofessional Collaboration</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="program objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/PO-SBP</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Systems-Based Practice</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="program objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/FOM-1</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Describe the gross anatomy of the thorax and its clinical correlations</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="course objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/FOM-2</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Explain the major pathways of energy metabolism and their disorders</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="course objective"/>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/CVP-1</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Interpret a 12-lead electrocardiogram</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<co:Category term="course objective"/>
+		</CompetencyObject>
+		<CompetencyFramework>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>https://medicine.bayoustate.example/objectives/framework</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Bayou State M.D. Program Objectives</lom:string>
+					</lom:title>
+				</lom:general>
+				<lom:lifeCycle>
+					<lom:version>
+						<lom:string language="en">2024</lom:string>
+					</lom:version>
+				</lom:lifeCycle>
+			</lom:lom>
+			<cf:EffectiveDate>2024-07-01</cf:EffectiveDate>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/PO-PC</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/PO-MK</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/PO-ICS</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/PO-IPC</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/PO-SBP</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/FOM-1</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/FOM-2</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>https://medicine.bayoustate.example/objectives/CVP-1</cf:Entry>
+			</cf:Includes>
+			<cf:Relation>
+				<cf:Reference1>
+					<cf:Catalog>URI</cf:Catalog>
+					<cf:Entry>https://medicine.bayoustate.example/objectives/PO-MK</cf:Entry>
+				</cf:Reference1>
+				<cf:Relationship>http://www.w3.org/2004/02/skos/core#narrower</cf:Relationship>
+				<cf:Reference2>
+					<cf:Catalog>URI</cf:Catalog>
+					<cf:Entry>https://medicine.bayoustate.example/objectives/FOM-1</cf:Entry>
+				</cf:Reference2>
+			</cf:Relation>
+			<cf:Relation>
+				<cf:Reference1>
+					<cf:Catalog>URI</cf:Catalog>
+					<cf:Entry>https://medicine.bayoustate.example/objectives/PO-MK</cf:Entry>
+				</cf:Reference1>
+				<cf:Relationship>http://www.w3.org/2004/02/skos/core#narrower</cf:Relationship>
+				<cf:Reference2>
+					<cf:Catalog>URI</cf:Catalog>
+					<cf:Entry>https://medicine.bayoustate.example/objectives/FOM-2</cf:Entry>
+				</cf:Reference2>
+			</cf:Relation>
+			<cf:Relation>
+				<cf:Reference1>
+					<cf:Catalog>URI</cf:Catalog>
+					<cf:Entry>https://medicine.bayoustate.example/objectives/PO-PC</cf:Entry>
+				</cf:Reference1>
+				<cf:Relationship>http://www.w3.org/2004/02/skos/core#narrower</cf:Relationship>
+				<cf:Reference2>
+					<cf:Catalog>URI</cf:Catalog>
+					<cf:Entry>https://medicine.bayoustate.example/objectives/CVP-1</cf:Entry>
+				</cf:Reference2>
+			</cf:Relation>
+		</CompetencyFramework>
+	</Expectations>
+	<AcademicLevels>
+		<LevelsInProgram>4</LevelsInProgram>
+		<Level number="1">
+			<Label>Year 1</Label>
+			<Description>Preclinical: foundations and organ systems</Description>
+		</Level>
+		<Level number="2">
+			<Label>Year 2</Label>
+			<Description>Preclinical: organ systems and USMLE Step 1</Description>
+		</Level>
+		<Level number="3">
+			<Label>Year 3</Label>
+			<Description>Clinical: core clerkships</Description>
+		</Level>
+		<Level number="4">
+			<Label>Year 4</Label>
+			<Description>Clinical: acting internships, electives and capstone</Description>
+		</Level>
+	</AcademicLevels>
+	<Sequence>
+		<Description>Years 1 and 2 are sequences of organ-system courses taught in a fixed order, with the longitudinal Doctoring and Clinical Skills course running alongside. Year 3 clerkships are taken as rotations in any order. Year 4 combines a required acting internship, electives and a capstone.</Description>
+		<SequenceBlock id="Y1" required="Required" order="Ordered">
+			<Title>Year 1</Title>
+			<Timing>
+				<Duration>P10M</Duration>
+				<Dates>
+					<StartDate>2024-07-29</StartDate>
+					<EndDate>2025-05-23</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockReference order="1">/CurriculumInventory/Sequence/SequenceBlock[@id='FOM']</SequenceBlockReference>
+			<SequenceBlockReference order="2">/CurriculumInventory/Sequence/SequenceBlock[@id='MSK']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="FOM" required="Required">
+			<Title>Foundations of Medicine</Title>
+			<Description>Cell biology, metabolism, genetics and the anatomy of the thorax.</Description>
+			<Timing>
+				<Dates>
+					<StartDate>2024-07-29</StartDate>
+					<EndDate>2024-10-25</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-1']</CompetencyObjectReference>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-2']</CompetencyObjectReference>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E101']</EventReference>
+				<StartDate>2024-07-29</StartDate>
+				<EndDate>2024-09-20</EndDate>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E102']</EventReference>
+				<StartDate>2024-08-05</StartDate>
+				<EndDate>2024-10-18</EndDate>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E103']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E104']</EventReference>
+				<StartDate>2024-10-25</StartDate>
+				<EndDate>2024-10-25</EndDate>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E105']</EventReference>
+				<StartDate>2024-10-23</StartDate>
+				<EndDate>2024-10-23</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="MSK" required="Required">
+			<Title>Musculoskeletal and Skin</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2024-11-04</StartDate>
+					<EndDate>2024-12-13</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E106']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E107']</EventReference>
+				<StartDate>2024-12-13</StartDate>
+				<EndDate>2024-12-13</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="DCS" required="Required">
+			<Title>Doctoring and Clinical Skills</Title>
+			<Description>A longitudinal course in communication, physical examination and professional identity that runs through the first two years.</Description>
+			<Timing>
+				<Dates>
+					<StartDate>2024-08-05</StartDate>
+					<EndDate>2025-05-16</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='1']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-ICS']</CompetencyObjectReference>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E110']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E111']</EventReference>
+				<StartDate>2025-02-12</StartDate>
+				<EndDate>2025-02-12</EndDate>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E112']</EventReference>
+				<StartDate>2025-05-12</StartDate>
+				<EndDate>2025-05-14</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="Y2" required="Required" order="Ordered">
+			<Title>Year 2</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2024-07-29</StartDate>
+					<EndDate>2025-06-13</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockReference order="1">/CurriculumInventory/Sequence/SequenceBlock[@id='CVP']</SequenceBlockReference>
+			<SequenceBlockReference order="2">/CurriculumInventory/Sequence/SequenceBlock[@id='STEP1']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="CVP" required="Required">
+			<Title>Cardiovascular and Pulmonary Systems</Title>
+			<Timing>
+				<Duration>P70D</Duration>
+				<Dates>
+					<StartDate>2024-07-29</StartDate>
+					<EndDate>2024-10-04</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/CVP-1']</CompetencyObjectReference>
+			<Precondition>Successful completion of Year 1.</Precondition>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E201']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E202']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E203']</EventReference>
+				<StartDate>2024-10-04</StartDate>
+				<EndDate>2024-10-04</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="STEP1" required="Required">
+			<Title>USMLE Step 1 Preparation</Title>
+			<Timing>
+				<Duration>P42D</Duration>
+				<Dates>
+					<StartDate>2025-05-05</StartDate>
+					<EndDate>2025-06-13</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='2']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<Postcondition>Students who do not pass Step 1 enter an individualized remediation plan before starting clerkships.</Postcondition>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E204']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E205']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="Y3" required="Required" order="Unordered">
+			<Title>Year 3 Core Clerkships</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2024-07-01</StartDate>
+					<EndDate>2025-06-20</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='3']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='3']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='IMC']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='PEDC']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="IMC" required="Required">
+			<Title>Internal Medicine Clerkship</Title>
+			<Timing>
+				<Duration>P56D</Duration>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='3']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='3']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<ClerkshipModel>rotation</ClerkshipModel>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-PC']</CompetencyObjectReference>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E301']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E302']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="PEDC" required="Required">
+			<Title>Pediatrics Clerkship</Title>
+			<Timing>
+				<Duration>P42D</Duration>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='3']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='3']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<ClerkshipModel>rotation</ClerkshipModel>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E303']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="Y4" required="Required" order="Unordered">
+			<Title>Year 4</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2024-07-01</StartDate>
+					<EndDate>2025-05-16</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='EMAI']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='ELEC']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='CAP']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="EMAI" required="Required">
+			<Title>Emergency Medicine Acting Internship</Title>
+			<Timing>
+				<Duration>P28D</Duration>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E401']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="ELEC" required="Optional" order="Unordered" maximum="2">
+			<Title>Year 4 Electives</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2024-07-01</StartDate>
+					<EndDate>2025-03-07</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='GHE']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='RES']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="GHE" required="Optional">
+			<Title>Global Health Service Elective</Title>
+			<Timing>
+				<Duration>P28D</Duration>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E402']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="RES" required="Optional">
+			<Title>Clinical Research Elective</Title>
+			<Timing>
+				<Duration>P28D</Duration>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E403']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="CAP" required="Required">
+			<Title>Capstone: Transition to Residency</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2025-03-10</StartDate>
+					<EndDate>2025-04-04</EndDate>
+				</Dates>
+			</Timing>
+			<SequenceBlockLevels>
+				<StartingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</StartingAcademicLevel>
+				<EndingAcademicLevel>/CurriculumInventory/AcademicLevels/Level[@number='4']</EndingAcademicLevel>
+			</SequenceBlockLevels>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E404']</EventReference>
+				<StartDate>2025-03-17</StartDate>
+				<EndDate>2025-03-21</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+	</Sequence>
+	<Integration>
+		<Description>Two themes run through all four years and are tracked across courses and clerkships.</Description>
+		<IntegrationBlock id="HSS">
+			<Title>Health Systems Science and Interprofessional Practice</Title>
+			<Description>Teamwork, care transitions, quality and safety, and the social determinants of health.</Description>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-IPC']</CompetencyObjectReference>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/PO-SBP']</CompetencyObjectReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='E111']</EventReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='E402']</EventReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='E404']</EventReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='DCS']</SequenceBlockReference>
+		</IntegrationBlock>
+		<IntegrationBlock id="ANAT">
+			<Title>Anatomy and Imaging Across the Curriculum</Title>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='https://medicine.bayoustate.example/objectives/FOM-1']</CompetencyObjectReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='E102']</EventReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='E105']</EventReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='E106']</EventReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='FOM']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='MSK']</SequenceBlockReference>
+		</IntegrationBlock>
+	</Integration>
+</CurriculumInventory>

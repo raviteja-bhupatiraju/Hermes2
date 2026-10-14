@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new Performance Framework 1.0 documents: a performance scale and one component with a performance level set of two levels; add components, levels and indicators. -->
+<PerformanceFramework xmlns="http://ns.medbiq.org/performanceframework/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/performanceframework/v1/ http://ns.medbiq.org/performanceframework/v1/performanceframework.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>urn:uuid:${id}</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="${language}">${title}</lom:string>
+			</lom:title>
+			<lom:language>${language}</lom:language>
+			<lom:description>
+				<lom:string language="${language}">The expected levels of performance this framework describes, and how they are used.</lom:string>
+			</lom:description>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>draft</lom:value>
+			</lom:status>
+		</lom:lifeCycle>
+	</lom:lom>
+	<EffectiveDate>${date}</EffectiveDate>
+	<PerformanceScale id="scale_1to5">
+		<LeastCompetent>1</LeastCompetent>
+		<MostCompetent>5</MostCompetent>
+	</PerformanceScale>
+	<Component id="component_1">
+		<Title xml:lang="${language}">Component 1</Title>
+		<PerformanceLevelSet>
+			<PerformanceScaleReference>scale_1to5</PerformanceScaleReference>
+			<PerformanceLevel>
+				<DisplayOrder>1</DisplayOrder>
+				<Score>
+					<SingleValue>1</SingleValue>
+				</Score>
+				<Label xml:lang="${language}">Level 1</Label>
+				<Indicator id="component_1_level_1">
+					<Description xml:lang="${language}">The behavior that shows this level.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>2</DisplayOrder>
+				<Score>
+					<SingleValue>5</SingleValue>
+				</Score>
+				<Label xml:lang="${language}">Level 2</Label>
+				<Indicator id="component_1_level_2">
+					<Description xml:lang="${language}">The behavior that shows this level.</Description>
+				</Indicator>
+			</PerformanceLevel>
+		</PerformanceLevelSet>
+	</Component>
+</PerformanceFramework>

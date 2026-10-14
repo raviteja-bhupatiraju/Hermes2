@@ -1,0 +1,64 @@
+# Hermes 2: Healthcare LOM Editor
+#
+# Only sources belong in the repository. Builds are reproducible with ./mvnw and are published as release
+# archives (mvnw -Prelease verify writes them to dist/), never committed.
+
+# --- Build output -----------------------------------------------------------------------------------------
+# Maven/Tycho output of every module, including the product archives (releng/*/target/products).
+target/
+# Release archives and checksums (mvnw -Prelease verify).
+/dist/
+# Tycho pomless builds and consumer POMs.
+.polyglot.*
+.tycho-consumer-pom.xml
+# The Maven wrapper downloads Maven itself (distributionType=only-script); never commit a wrapper jar.
+.mvn/wrapper/maven-wrapper.jar
+
+# --- Eclipse IDE / PDE --------------------------------------------------------------------------------------
+# Compiler output of PDE projects (build.properties output.. = bin/).
+bin/
+# IDE and launch-configuration workspaces.
+.metadata/
+runtime-*/
+# Workspace the app creates when run from the project folder.
+/workspace/
+# Project settings (.project, .classpath, .settings/) are deliberately NOT ignored: PDE needs them to
+# import the bundles.
+
+# --- Other IDEs ---------------------------------------------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+
+# --- Java -------------------------------------------------------------------------------------------------
+*.class
+hs_err_pid*.log
+replay_pid*.log
+
+# --- Python (help-src/gen_guide.py) -------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+
+# --- Logs, temporary and merge files ------------------------------------------------------------------------
+*.log
+javac.*.args
+*.tmp
+*.bak
+*.orig
+*.rej
+*.swp
+*~
+# Marker files of docs/capture-screenshots.ps1 (normally deleted by the script).
+docs/screenshots/current
+docs/screenshots/done
+
+# --- Operating systems --------------------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*

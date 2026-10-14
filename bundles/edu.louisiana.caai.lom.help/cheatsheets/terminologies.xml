@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<cheatsheet title="Keep the Terminologies Current">
+   <intro>
+      <description>
+MeSH and ICD-10-CM are released every year. Hermes 2 includes them offline as packages of their own, so a new
+release is an update, not a new version of the application. SNOMED CT and LOINC are searched online with your own
+UMLS license.
+      </description>
+   </intro>
+   <item title="Check for updates" dialog="true" skip="true">
+      <description>
+<b>Help &gt; Check for Updates</b> installs new releases of the application and of the terminologies from the update
+site of your installation.
+      </description>
+      <command serialization="org.eclipse.equinox.p2.ui.sdk.update" confirm="false"/>
+   </item>
+   <item title="Use SNOMED CT and LOINC" dialog="true" skip="true">
+      <description>
+Enter the API key of your UMLS license on the <b>Terminologies</b> preference page and press <b>Test</b>. SNOMED CT and
+LOINC then appear in the keyword lookup.
+      </description>
+      <command serialization="org.eclipse.ui.window.preferences(preferencePageId=edu.louisiana.caai.lom.editor.preferences.terminologies)" confirm="false"/>
+      <onCompletion>The validation checks keyword codes against the offline releases you have; documents coded with an older release may get warnings after an update.</onCompletion>
+   </item>
+</cheatsheet>

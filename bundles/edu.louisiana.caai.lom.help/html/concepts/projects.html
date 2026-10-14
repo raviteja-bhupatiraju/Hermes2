@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Projects and the Workspace</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Projects and the Workspace</h1>
+
+<p class="lead">A <strong>project</strong> is a folder of MedBiquitous documents (Healthcare LOM records and
+documents of the other standards, which can be mixed) that you manage together.
+Projects are validated in the background, searched, and listed in the Projects and Problems views.</p>
+
+<h2>What a project is</h2>
+<ul>
+<li>A project is an ordinary folder anywhere on your disk with a small project file,
+<code>hermes-project.json</code>, that holds the project's name, description and the format of new documents
+(see <a href="../reference/project-file.html">The Project File</a>).</li>
+<li><strong>Every MedBiquitous document below the folder belongs to the project</strong>, including files you
+add with the file explorer, another editor or a version-control tool. Hidden folders (names starting with a dot)
+and the build-output folders <code>target</code>, <code>bin</code> and <code>node_modules</code> are skipped.</li>
+<li>A file counts as a document if it has the extension <code>.xml</code>, <code>.lom</code> or
+<code>.json</code> and is a document of a supported standard, recognized by its root element and namespace: for
+example a Healthcare LOM record (an XML file whose root element is <code>lom</code> in the IEEE LOM namespace, or a
+JSON file whose top-level object has a <code>"lom"</code> object member) or a Curriculum Inventory (root element
+<code>CurriculumInventory</code>). See <a href="documents.html">Documents: XML and JSON</a> for all root
+elements. Only Healthcare LOM has a JSON form.</li>
+<li>Subfolders are allowed and shown in the Projects view.</li>
+</ul>
+
+<h2>The workspace</h2>
+<p>Hermes 2 keeps its open projects in an Eclipse workspace in <code>~/.hermes2/workspace</code> (in your home
+folder), together with the preferences and the window layout. Each project is a workspace project with the
+Hermes project nature whose content stays in the project folder; the workspace writes an Eclipse
+<code>.project</code> file next to <code>hermes-project.json</code>. Because the name, description and format
+are kept in the project file, a project folder can be opened again later, or by another installation of Hermes 2,
+without the workspace.</p>
+<p>The workspace is refreshed automatically when files change outside the application.</p>
+
+<h2>Background validation</h2>
+<p>The project's builder (<span class="ui">MedBiquitous Validation</span>) validates a document whenever it is
+created or changed, also outside the application, and after each save, whatever its standard. It checks the
+same things as the Validation view (XML Schema, model constraints and the rules of the document's standard) and
+reports every problem as a marker in the
+<a href="../reference/views.html#problems">Problems</a> view, where double-clicking opens the document at the
+field concerned. The Projects view shows each document's state with an icon (error, warning, or the XML/JSON
+icon when it is valid) and, in the tooltip of a project, the number of documents and how many have errors or
+warnings.</p>
+
+<h2>Projects versus single files</h2>
+<p>You can also open any MedBiquitous document directly with <span class="ui">File &gt; Open…</span>. A document outside a
+project is validated in its editor (Validation view and inline markers) but does not appear in the Problems view
+and is not included in project searches.</p>
+
+<h2>Closing and deleting</h2>
+<ul>
+<li><span class="ui">Close Project</span> removes a project from the Projects view and the workspace; the files
+stay on the disk. Use <span class="ui">Open Project…</span> to show it again.</li>
+<li><span class="ui">Delete</span> on documents or folders deletes the files from the disk after
+confirmation.</li>
+</ul>
+
+<p class="note">Projects that earlier versions of Hermes 2 kept in the preferences are moved into the workspace
+on the first start.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../tasks/create-project.html">Creating and Opening Projects</a></li>
+<li><a href="../reference/project-file.html">The Project File</a></li>
+<li><a href="../reference/views.html#projects">The Projects view</a></li>
+<li><a href="validation.html">Validation</a></li>
+</ul>
+</div>
+</body>
+</html>

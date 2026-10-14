@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of a new Activity Report 1.0 document: one member registered for one activity (one module). -->
+<ActivityReports xmlns="http://ns.medbiq.org/activityreport/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+	xmlns:m="http://ns.medbiq.org/member/v1/" xmlns:n="http://ns.medbiq.org/name/v1/"
+	xsi:schemaLocation="http://ns.medbiq.org/activityreport/v1/ http://ns.medbiq.org/activityreport/v1/activityreport.xsd">
+	<DateTimeCreated>${dateTime}</DateTimeCreated>
+	<ActivityReport>
+		<ReportingOrganization>Reporting organization</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="example.org">${id}</m:UniqueID>
+		</Member>
+		<Activity>
+			<ProviderOrganization>Provider organization</ProviderOrganization>
+			<ActivityName>${title}</ActivityName>
+			<Module>
+				<ModuleName>${title}</ModuleName>
+				<Metadata>
+					<lom:lom>
+						<lom:general>
+							<lom:title>
+								<lom:string language="${language}">${title}</lom:string>
+							</lom:title>
+							<lom:language>${language}</lom:language>
+						</lom:general>
+					</lom:lom>
+				</Metadata>
+				<Status>Registered</Status>
+				<RegisteredDateTime>${dateTime}</RegisteredDateTime>
+			</Module>
+		</Activity>
+	</ActivityReport>
+</ActivityReports>

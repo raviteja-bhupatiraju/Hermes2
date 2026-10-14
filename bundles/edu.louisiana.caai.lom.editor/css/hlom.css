@@ -1,0 +1,72 @@
+/*
+ * Hermes 2: MedBiquitous Editor workbench theme.
+ * Calm slate-and-white surfaces with the UL Lafayette vermilion (#CE181E) as accent.
+ * Palette: ink #1E293B, slate #475569, muted #94A3B8, background #F4F6F9, bar #EEF2F6, border #DDE3EA.
+ */
+
+.MTrimmedWindow {
+	background-color: #F4F6F9;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.MTrimBar,
+.MToolControl,
+#org-eclipse-ui-main-toolbar,
+.MToolBar {
+	background-color: #F4F6F9;
+}
+
+Shell, .MTrimmedWindow .MPartSashContainer {
+	background-color: #F4F6F9;
+}
+
+/* Part stacks: flat, rounded tab folders with a vermilion highlight on the selected tab. */
+.MPartStack {
+	swt-tab-renderer: url('bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.CTabRendering');
+	swt-simple: true;
+	swt-corner-radius: 8px;
+	swt-shadow-visible: false;
+	swt-outer-keyline-color: #DDE3EA;
+	swt-inner-keyline-color: #FFFFFF;
+	swt-tab-outline: #DDE3EA;
+	swt-unselected-tabs-color: #EEF2F6 #EEF2F6 100%;
+	swt-selected-tab-fill: #FFFFFF;
+	swt-selected-tab-highlight: #CE181E;
+	swt-selected-highlight-top: false;
+	swt-draw-custom-tab-content-background: true;
+	padding: 0px 2px 2px 2px;
+	color: #475569;
+}
+
+.MPartStack.active {
+	swt-selected-tab-highlight: #CE181E;
+	swt-inner-keyline-color: #FFFFFF;
+}
+
+.MPartStack.active.noFocus {
+	swt-selected-tab-highlight: #94A3B8;
+}
+
+CTabItem {
+	color: #475569;
+}
+
+CTabItem:selected {
+	color: #1E293B;
+}
+
+.MPart {
+	background-color: #FFFFFF;
+	color: #1E293B;
+}
+
+/* Views */
+#org-eclipse-ui-views-ContentOutline Tree,
+#org-eclipse-ui-views-PropertySheet Tree,
+#edu-louisiana-caai-lom-editor-validation-ValidationView Table {
+	background-color: #FFFFFF;
+	color: #1E293B;
+}

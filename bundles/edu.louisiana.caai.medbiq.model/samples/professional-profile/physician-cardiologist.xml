@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A fictional sample created for Hermes 2: the Healthcare Professional Profile of an academic cardiologist. The person, the university and its medical center are fictional; telephone numbers use the fictional 555-01xx range and addresses the example.edu domain. -->
+<Members xmlns="http://ns.medbiq.org/member/v1/" xmlns:n="http://ns.medbiq.org/name/v1/" xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.medbiq.org/member/v1/ http://ns.medbiq.org/member/v1/member.xsd">
+	<Member restrictions="Restricted">
+		<UniqueID domain="AAMC">18276453</UniqueID>
+		<UniqueID domain="Gulf Coast University Health">GCU-004817</UniqueID>
+		<Name>
+			<n:FormattedName>Teodora Ilse Brannigan-Vos, MD, PhD</n:FormattedName>
+			<n:Title>Dr.</n:Title>
+			<n:GivenName>Teodora</n:GivenName>
+			<n:GivenName>Ilse</n:GivenName>
+			<n:FamilyName>Brannigan-Vos</n:FamilyName>
+			<n:Degree>MD</n:Degree>
+			<n:Degree>PhD</n:Degree>
+			<n:FormerName>
+				<n:GivenName>Teodora</n:GivenName>
+				<n:GivenName>Ilse</n:GivenName>
+				<n:FamilyName>Brannigan</n:FamilyName>
+			</n:FormerName>
+		</Name>
+		<Address addressCategory="Business" restrictions="Unrestricted">
+			<a:Organization>Division of Cardiology</a:Organization>
+			<a:Organization>Gulf Coast University School of Medicine</a:Organization>
+			<a:StreetAddressLine>1450 Crescent Medical Plaza, Suite 700</a:StreetAddressLine>
+			<a:City>New Orleans</a:City>
+			<a:StateOrProvince>LA</a:StateOrProvince>
+			<a:PostalCode>70112</a:PostalCode>
+			<a:Country>
+				<a:CountryName>United States</a:CountryName>
+				<a:CountryCode>US</a:CountryCode>
+			</a:Country>
+		</Address>
+		<Address addressCategory="Residential" restrictions="Confidential">
+			<a:StreetAddressLine>812 Magnolia Grove Lane</a:StreetAddressLine>
+			<a:City>Metairie</a:City>
+			<a:StateOrProvince>LA</a:StateOrProvince>
+			<a:PostalCode>70005</a:PostalCode>
+			<a:Country>
+				<a:CountryCode>US</a:CountryCode>
+			</a:Country>
+		</Address>
+		<EducationInfo>
+			<Degree discipline="Biochemistry">Bachelor of Science</Degree>
+			<InstitutionInfo>
+				<InstitutionName>Northshore College</InstitutionName>
+				<Address>
+					<a:City>Hammond</a:City>
+					<a:StateOrProvince>LA</a:StateOrProvince>
+					<a:Country>
+						<a:CountryCode>US</a:CountryCode>
+					</a:Country>
+				</Address>
+			</InstitutionInfo>
+			<Distinction>Magna Cum Laude</Distinction>
+			<EducationStatus>Graduated</EducationStatus>
+			<StartDate accuracy="MonthYear">2001-08-01</StartDate>
+			<EndDate>2005-05-14</EndDate>
+			<GraduationDate>2005-05-14</GraduationDate>
+		</EducationInfo>
+		<EducationInfo>
+			<Degree>MD</Degree>
+			<InstitutionInfo>
+				<InstitutionName>Gulf Coast University School of Medicine</InstitutionName>
+				<InstitutionID domain="Gulf Coast University">GCU-SOM</InstitutionID>
+				<Address>
+					<a:StreetAddressLine>1430 Crescent Medical Plaza</a:StreetAddressLine>
+					<a:City>New Orleans</a:City>
+					<a:StateOrProvince>LA</a:StateOrProvince>
+					<a:PostalCode>70112</a:PostalCode>
+					<a:Country>
+						<a:CountryCode>US</a:CountryCode>
+					</a:Country>
+				</Address>
+			</InstitutionInfo>
+			<Distinction>Alpha Omega Alpha</Distinction>
+			<EducationStatus>Graduated</EducationStatus>
+			<StartDate>2005-08-01</StartDate>
+			<EndDate>2012-05-19</EndDate>
+			<GraduationDate>2012-05-19</GraduationDate>
+		</EducationInfo>
+		<EducationInfo>
+			<Degree discipline="Molecular Physiology">PhD</Degree>
+			<InstitutionInfo>
+				<InstitutionName>Gulf Coast University Graduate School of Biomedical Sciences</InstitutionName>
+			</InstitutionInfo>
+			<EducationStatus>Graduated</EducationStatus>
+			<StartDate>2007-07-01</StartDate>
+			<EndDate>2010-12-17</EndDate>
+			<GraduationDate>2010-12-17</GraduationDate>
+		</EducationInfo>
+		<TrainingInfo>
+			<ProgramInfo>
+				<ProgramName type="Residency">Gulf Coast University Internal Medicine Residency Program</ProgramName>
+				<ProgramID domain="Gulf Coast University GME">IM-0211</ProgramID>
+				<Accreditation>ACGME</Accreditation>
+				<Specialty>Internal Medicine</Specialty>
+				<InstitutionInfo>
+					<InstitutionName>Gulf Coast University Medical Center</InstitutionName>
+				</InstitutionInfo>
+			</ProgramInfo>
+			<StartDate>2012-06-24</StartDate>
+			<EndDate>2015-06-30</EndDate>
+			<CompletionDate>2015-06-30</CompletionDate>
+		</TrainingInfo>
+		<TrainingInfo>
+			<ProgramInfo>
+				<ProgramName type="Fellowship">Gulf Coast University Cardiovascular Disease Fellowship</ProgramName>
+				<ProgramID domain="Gulf Coast University GME">CD-0141</ProgramID>
+				<Accreditation>ACGME</Accreditation>
+				<Specialty>Cardiovascular Disease</Specialty>
+				<InstitutionInfo>
+					<InstitutionName>Gulf Coast University Medical Center</InstitutionName>
+				</InstitutionInfo>
+			</ProgramInfo>
+			<Distinction>Chief Fellow</Distinction>
+			<StartDate>2015-07-01</StartDate>
+			<EndDate>2018-06-30</EndDate>
+			<CompletionDate>2018-06-30</CompletionDate>
+		</TrainingInfo>
+		<CertificationInfo>
+			<CertificationOrganization>American Board of Medical Specialties</CertificationOrganization>
+			<CertificationBoard>American Board of Internal Medicine</CertificationBoard>
+			<CertificateStatus>Active</CertificateStatus>
+			<CertificateInfo>
+				<CertificateName certificateID="IM-GEN">Internal Medicine</CertificateName>
+				<CertificateType>General Certificate</CertificateType>
+				<CertificateIssuance>
+					<CertificationID>IM-2015-308812</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Initial</CertificationOccurrence>
+					<CertificationIssueDate accuracy="DayMonthYear">2015-08-20</CertificationIssueDate>
+					<CertificationExpireDate accuracy="DayMonthYear">2025-12-31</CertificationExpireDate>
+					<CertificationStatus>Inactive</CertificationStatus>
+				</CertificateIssuance>
+				<CertificateIssuance>
+					<CertificationID>IM-2025-511290</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Maintenance of Certification</CertificationOccurrence>
+					<CertificationIssueDate accuracy="DayMonthYear">2025-10-01</CertificationIssueDate>
+					<CertificationExpireDate accuracy="DayMonthYear">2035-12-31</CertificationExpireDate>
+					<CertificationStatus>Active</CertificationStatus>
+				</CertificateIssuance>
+			</CertificateInfo>
+			<CertificateInfo>
+				<CertificateName certificateID="IM-CVD">Cardiovascular Disease</CertificateName>
+				<CertificateType>Subcertificate</CertificateType>
+				<CertificateIssuance>
+					<CertificationID>CVD-2018-104471</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Initial</CertificationOccurrence>
+					<CertificationIssueDate accuracy="DayMonthYear">2018-11-01</CertificationIssueDate>
+					<CertificationExpireDate accuracy="DayMonthYear">2028-12-31</CertificationExpireDate>
+					<CertificationStatus>Active</CertificationStatus>
+				</CertificateIssuance>
+			</CertificateInfo>
+		</CertificationInfo>
+		<LicenseInfo>
+			<License>
+				<LicensureEntity code="LA" domain="State">Louisiana State Board of Medical Examiners</LicensureEntity>
+				<LicenseNumber>MD.204118</LicenseNumber>
+				<InitialLicensureDate>2013-07-01</InitialLicensureDate>
+				<LicenseStatus>Active</LicenseStatus>
+				<LicenseExpirationDate>2027-06-30</LicenseExpirationDate>
+			</License>
+			<License>
+				<LicensureEntity code="MS" domain="State">Mississippi State Board of Medical Licensure</LicensureEntity>
+				<LicenseNumber>31907</LicenseNumber>
+				<InitialLicensureDate>2016-03-15</InitialLicensureDate>
+				<LicenseStatus>Inactive</LicenseStatus>
+				<LicenseExpirationDate>2021-06-30</LicenseExpirationDate>
+			</License>
+		</LicenseInfo>
+		<AcademicAppointmentInfo>
+			<FacultyAppointment>
+				<AdministrativeUnit>Department of Medicine</AdministrativeUnit>
+				<EffectiveDate>2018-07-01</EffectiveDate>
+				<InstitutionInfo>
+					<InstitutionName>Gulf Coast University School of Medicine</InstitutionName>
+					<Address>
+						<a:City>New Orleans</a:City>
+						<a:StateOrProvince>LA</a:StateOrProvince>
+						<a:Country>
+							<a:CountryCode>US</a:CountryCode>
+						</a:Country>
+					</Address>
+				</InstitutionInfo>
+				<Title>Associate Professor of Medicine</Title>
+				<DivisionOrSection>Cardiology</DivisionOrSection>
+				<Rank effectiveDate="2023-07-01">Associate Professor</Rank>
+				<Rank effectiveDate="2018-07-01">Assistant Professor</Rank>
+				<PrimaryOrJoint>Primary</PrimaryOrJoint>
+				<FacultyTrack>Clinician-Educator</FacultyTrack>
+				<TenureStatus effectiveDate="2018-07-01">Tenure Eligible Track</TenureStatus>
+				<AppointmentType>Full-time</AppointmentType>
+				<LocationType>School-based</LocationType>
+				<Endowed>No</Endowed>
+			</FacultyAppointment>
+			<AdministrativeAppointment>
+				<AdministrativeUnit>Office of Medical Education</AdministrativeUnit>
+				<EffectiveDate>2022-01-01</EffectiveDate>
+				<InstitutionInfo>
+					<InstitutionName>Gulf Coast University School of Medicine</InstitutionName>
+				</InstitutionInfo>
+				<Title>Assistant Dean for Clinical Skills Education</Title>
+				<AdministrativeLocationType>School-based</AdministrativeLocationType>
+			</AdministrativeAppointment>
+		</AcademicAppointmentInfo>
+		<OccupationInfo>
+			<Occupation>Physician</Occupation>
+			<InstitutionInfo>
+				<InstitutionName>Gulf Coast University Medical Center</InstitutionName>
+			</InstitutionInfo>
+			<OccupationTitle>Attending Cardiologist</OccupationTitle>
+			<Privileges>Admitting</Privileges>
+			<Privileges>Transthoracic and transesophageal echocardiography</Privileges>
+			<Privileges>Diagnostic cardiac catheterization</Privileges>
+			<Practice>Gulf Coast University Heart and Vascular Clinic</Practice>
+			<StartDate>2018-07-01</StartDate>
+			<Specialty>Cardiovascular Disease</Specialty>
+			<Specialty>Internal Medicine</Specialty>
+			<OccupationStatus>Active</OccupationStatus>
+		</OccupationInfo>
+		<PersonalInfo restrictions="Restricted">
+			<PhysicalStatus>Living</PhysicalStatus>
+			<BirthDate accuracy="Year" restrictions="Confidential">1983-01-01</BirthDate>
+			<Language>English</Language>
+			<Language>Spanish</Language>
+			<Citizenship pointInTime="current">
+				<a:CountryName>United States</a:CountryName>
+				<a:CountryCode>US</a:CountryCode>
+			</Citizenship>
+			<CountryOfResidence>
+				<a:CountryCode>US</a:CountryCode>
+			</CountryOfResidence>
+			<Gender>Female</Gender>
+			<ContactNumber restrictions="Unrestricted">
+				<CountryCode>1</CountryCode>
+				<TelephoneNumber>5045550142</TelephoneNumber>
+				<Extension>214</Extension>
+				<Description>Office</Description>
+			</ContactNumber>
+			<ContactNumber restrictions="Unrestricted">
+				<CountryCode>1</CountryCode>
+				<TelephoneNumber>5045550143</TelephoneNumber>
+				<Description>Fax</Description>
+			</ContactNumber>
+			<EmailAddress restrictions="Unrestricted">t.brannigan-vos@example.edu</EmailAddress>
+			<URL>https://www.example.edu/medicine/cardiology/brannigan-vos</URL>
+			<PreferredMethodOfContact>email</PreferredMethodOfContact>
+		</PersonalInfo>
+		<MembershipInfo>
+			<MembershipOrganization>American College of Cardiology</MembershipOrganization>
+			<Country>
+				<a:CountryCode>US</a:CountryCode>
+			</Country>
+			<MemberNumber>ACC-77310452</MemberNumber>
+			<MembershipLevel code="FACC">Fellow</MembershipLevel>
+			<MembershipStatus>Active</MembershipStatus>
+			<MemberSinceDate>2015-09-01</MemberSinceDate>
+			<FellowshipDate>2020-03-28</FellowshipDate>
+			<ComponentGroup>
+				<ComponentGroupGenre>Chapter</ComponentGroupGenre>
+				<ComponentGroupName>Louisiana Chapter</ComponentGroupName>
+				<ComponentGroupRole>Councilor</ComponentGroupRole>
+				<MemberSinceDate>2021-01-01</MemberSinceDate>
+				<MemberUntilDate>2026-12-31</MemberUntilDate>
+			</ComponentGroup>
+		</MembershipInfo>
+		<MembershipInfo>
+			<MembershipOrganization>American Society of Echocardiography</MembershipOrganization>
+			<MembershipLevel>Member</MembershipLevel>
+			<MembershipStatus>Active</MembershipStatus>
+			<MemberSinceDate>2016-06-01</MemberSinceDate>
+			<ComponentGroup>
+				<ComponentGroupGenre>Committee</ComponentGroupGenre>
+				<ComponentGroupName>Education Committee</ComponentGroupName>
+				<ComponentGroupRole>Member</ComponentGroupRole>
+				<MemberSinceDate>2023-07-01</MemberSinceDate>
+			</ComponentGroup>
+		</MembershipInfo>
+		<ModifiedDate>2026-09-30</ModifiedDate>
+	</Member>
+</Members>

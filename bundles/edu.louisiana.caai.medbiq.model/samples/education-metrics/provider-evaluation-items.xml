@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: the MEMS survey items a continuing education provider uses in its activity
+     evaluations (source "gulfcoast-ce.example.org"), including a pre/post comparison with an intended follow-up of
+     three months. The provider and its items are invented. -->
+<SurveyItems xmlns="http://ns.medbiq.org/surveyitem/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/surveyitem/v1/ http://ns.medbiq.org/surveyitems/v1/surveyitems.xsd">
+	<SurveyItem source="gulfcoast-ce.example.org" id="E-04">
+		<SurveyQuestion>The activity was free of commercial bias.</SurveyQuestion>
+		<Responses>
+			<YesNo>
+				<Yes source="gulfcoast-ce.example.org" id="E-04-Y"/>
+				<No source="gulfcoast-ce.example.org" id="E-04-N"/>
+			</YesNo>
+		</Responses>
+	</SurveyItem>
+	<SurveyItem source="gulfcoast-ce.example.org" id="E-05">
+		<SurveyQuestion>The content of the activity is relevant to my practice.</SurveyQuestion>
+		<Responses>
+			<Scale type="likert" points="5">
+				<One label="Strongly agree" source="gulfcoast-ce.example.org" id="L5-1"/>
+				<Two label="Agree" source="gulfcoast-ce.example.org" id="L5-2"/>
+				<Three label="Neither agree nor disagree" source="gulfcoast-ce.example.org" id="L5-3"/>
+				<Four label="Disagree" source="gulfcoast-ce.example.org" id="L5-4"/>
+				<Five label="Strongly disagree" source="gulfcoast-ce.example.org" id="L5-5"/>
+			</Scale>
+		</Responses>
+	</SurveyItem>
+	<SurveyItem source="gulfcoast-ce.example.org" id="E-09">
+		<SurveyQuestion>What is one change you will make in your practice as a result of this activity?</SurveyQuestion>
+		<Responses>
+			<FreeText/>
+		</Responses>
+	</SurveyItem>
+	<Comparison>
+		<SurveyItemForComparison source="gulfcoast-ce.example.org" id="C-11a">
+			<SurveyQuestion>How confident are you in initiating buprenorphine treatment for a patient with opioid use disorder?</SurveyQuestion>
+			<Responses>
+				<Scale type="not confident/very confident" points="4">
+					<One label="Not confident" source="gulfcoast-ce.example.org" id="C4-1"/>
+					<Two label="Somewhat confident" source="gulfcoast-ce.example.org" id="C4-2"/>
+					<Three label="Confident" source="gulfcoast-ce.example.org" id="C4-3"/>
+					<Four label="Very confident" source="gulfcoast-ce.example.org" id="C4-4"/>
+				</Scale>
+			</Responses>
+			<IntendedTiming>Before</IntendedTiming>
+		</SurveyItemForComparison>
+		<SurveyItemForComparison source="gulfcoast-ce.example.org" id="C-11b">
+			<SurveyQuestion>How confident are you in initiating buprenorphine treatment for a patient with opioid use disorder?</SurveyQuestion>
+			<Responses>
+				<Scale type="not confident/very confident" points="4">
+					<One label="Not confident" source="gulfcoast-ce.example.org" id="C4-1"/>
+					<Two label="Somewhat confident" source="gulfcoast-ce.example.org" id="C4-2"/>
+					<Three label="Confident" source="gulfcoast-ce.example.org" id="C4-3"/>
+					<Four label="Very confident" source="gulfcoast-ce.example.org" id="C4-4"/>
+				</Scale>
+			</Responses>
+			<IntendedTiming duration="P3M">After</IntendedTiming>
+		</SurveyItemForComparison>
+	</Comparison>
+</SurveyItems>

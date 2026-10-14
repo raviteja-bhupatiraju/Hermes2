@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.index"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<index>
+   <entry keyword="AAMC Curriculum Inventory">
+      <topic href="html/reference/terminologies.html"/>
+      <topic href="html/tasks/keywords-terminologies.html"/>
+   </entry>
+   <entry keyword="About Hermes 2">
+      <topic href="html/reference/licenses.html"/>
+      <topic href="html/reference/menus-shortcuts.html#help"/>
+   </entry>
+   <entry keyword="Activity Report">
+      <topic href="html/standards/activity-report.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="accrediting body">
+      <topic href="html/reference/editor-pages.html#healthcare-education"/>
+   </entry>
+   <entry keyword="ACGME competencies">
+      <topic href="html/reference/terminologies.html"/>
+      <topic href="html/tasks/keywords-terminologies.html"/>
+   </entry>
+   <entry keyword="activity location">
+      <topic href="html/reference/editor-pages.html#healthcare-education"/>
+      <topic href="html/reference/validation-rules.html"/>
+   </entry>
+   <entry keyword="Add MeSH Keywords">
+      <topic href="html/tasks/keywords-terminologies.html"/>
+   </entry>
+   <entry keyword="annotation">
+      <topic href="html/reference/editor-pages.html#annotation"/>
+   </entry>
+   <entry keyword="audience">
+      <entry keyword="target audience">
+         <topic href="html/reference/editor-pages.html#healthcare-education"/>
+      </entry>
+      <entry keyword="searching by audience">
+         <topic href="html/tasks/search.html"/>
+      </entry>
+   </entry>
+   <entry keyword="author">
+      <entry keyword="recording yourself as author">
+         <topic href="html/tasks/create-document.html"/>
+         <topic href="html/tasks/preferences.html"/>
+      </entry>
+      <entry keyword="contributors">
+         <topic href="html/reference/editor-pages.html#lifecycle"/>
+      </entry>
+   </entry>
+   <entry keyword="Bloom's taxonomy">
+      <topic href="html/reference/terminologies.html"/>
+   </entry>
+   <entry keyword="broken files">
+      <topic href="html/tasks/source-pages.html"/>
+      <topic href="html/concepts/documents.html"/>
+   </entry>
+   <entry keyword="catalog card">
+      <topic href="html/tasks/library-reports.html"/>
+   </entry>
+   <entry keyword="classification">
+      <entry keyword="Classification page">
+         <topic href="html/reference/editor-pages.html#classification"/>
+      </entry>
+      <entry keyword="taxon path">
+         <topic href="html/tasks/keywords-terminologies.html"/>
+      </entry>
+   </entry>
+   <entry keyword="CME">
+      <entry keyword="CME course template">
+         <topic href="html/tasks/create-document.html"/>
+      </entry>
+      <entry keyword="credits">
+         <topic href="html/reference/editor-pages.html#healthcare-education"/>
+      </entry>
+   </entry>
+   <entry keyword="command line (hermes)">
+      <topic href="html/tasks/validate-fix.html#command-line"/>
+      <topic href="html/concepts/validation.html#one-check"/>
+      <entry keyword="hermes info">
+         <topic href="html/tasks/validate-fix.html#command-line"/>
+      </entry>
+      <entry keyword="hermes search">
+         <topic href="html/tasks/validate-fix.html#command-line"/>
+         <topic href="html/tasks/search.html"/>
+      </entry>
+      <entry keyword="hermes validate">
+         <topic href="html/tasks/validate-fix.html#command-line"/>
+         <topic href="html/concepts/validation.html#one-check"/>
+      </entry>
+   </entry>
+   <entry keyword="commercial support">
+      <topic href="html/reference/editor-pages.html#healthcare-education"/>
+      <topic href="html/reference/validation-rules.html"/>
+   </entry>
+   <entry keyword="compare">
+      <entry keyword="comparing documents">
+         <topic href="html/tasks/compare.html"/>
+      </entry>
+      <entry keyword="Compare view">
+         <topic href="html/reference/views.html#compare"/>
+      </entry>
+      <entry keyword="unsaved changes">
+         <topic href="html/tasks/compare.html"/>
+      </entry>
+      <entry keyword="documents of the other standards">
+         <topic href="html/tasks/compare.html"/>
+         <topic href="html/reference/views.html#compare"/>
+      </entry>
+   </entry>
+   <entry keyword="Competency Framework">
+      <topic href="html/standards/competencies.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="Competency Object">
+      <topic href="html/standards/competencies.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="completeness">
+      <topic href="html/reference/editor-pages.html#overview"/>
+      <topic href="html/tasks/library-reports.html"/>
+   </entry>
+   <entry keyword="conformance">
+      <topic href="html/concepts/hlom.html"/>
+      <topic href="html/concepts/validation.html"/>
+   </entry>
+   <entry keyword="content assist">
+      <topic href="html/tasks/source-pages.html"/>
+   </entry>
+   <entry keyword="context help">
+      <topic href="html/reference/views.html#help"/>
+      <topic href="html/tasks/edit-forms.html"/>
+   </entry>
+   <entry keyword="contributors">
+      <topic href="html/reference/editor-pages.html#lifecycle"/>
+      <topic href="html/tasks/edit-forms.html"/>
+   </entry>
+   <entry keyword="convert">
+      <entry keyword="XML to JSON">
+         <topic href="html/concepts/documents.html"/>
+         <topic href="html/tasks/create-project.html"/>
+      </entry>
+   </entry>
+   <entry keyword="credits">
+      <entry keyword="credit entries">
+         <topic href="html/reference/editor-pages.html#healthcare-education"/>
+      </entry>
+      <entry keyword="credit rules">
+         <topic href="html/reference/validation-rules.html"/>
+      </entry>
+      <entry keyword="credit acronyms">
+         <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-acronyms"/>
+      </entry>
+      <entry keyword="CSV credit columns">
+         <topic href="html/tasks/csv-import.html"/>
+      </entry>
+   </entry>
+   <entry keyword="CSV import">
+      <topic href="html/tasks/csv-import.html"/>
+   </entry>
+   <entry keyword="Curriculum Inventory">
+      <topic href="html/standards/curriculum-inventory.html"/>
+      <topic href="html/standards/index.html"/>
+      <entry keyword="Curriculum Inventory v10 (AAMC 2022)">
+         <topic href="html/standards/curriculum-inventory.html"/>
+      </entry>
+      <entry keyword="standardized vocabulary">
+         <topic href="html/reference/terminologies.html"/>
+      </entry>
+   </entry>
+   <entry keyword="dates">
+      <topic href="html/tasks/edit-forms.html"/>
+      <topic href="html/reference/validation-rules.html"/>
+   </entry>
+   <entry keyword="delete">
+      <topic href="html/tasks/create-project.html"/>
+   </entry>
+   <entry keyword="Data Availability Model (Virtual Patient)">
+      <topic href="html/standards/virtual-patient.html"/>
+   </entry>
+   <entry keyword="description">
+      <topic href="html/reference/editor-pages.html#general"/>
+   </entry>
+   <entry keyword="Disclosure of Interests (not supported)">
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="disclosure">
+      <entry keyword="financial relationship">
+         <topic href="html/reference/editor-pages.html#healthcare-education"/>
+         <topic href="html/reference/validation-rules.html"/>
+      </entry>
+      <entry keyword="off-label use">
+         <topic href="html/reference/editor-pages.html#healthcare-education"/>
+      </entry>
+   </entry>
+   <entry keyword="Document menu">
+      <topic href="html/reference/menus-shortcuts.html#document"/>
+   </entry>
+   <entry keyword="Document Tree">
+      <topic href="html/reference/editor-pages.html#tree"/>
+      <topic href="html/tasks/source-pages.html"/>
+   </entry>
+   <entry keyword="duration">
+      <topic href="html/tasks/edit-forms.html"/>
+      <topic href="html/reference/editor-pages.html#technical"/>
+   </entry>
+   <entry keyword="Educational Achievement (not supported)">
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="editor pages">
+      <topic href="html/reference/editor-pages.html"/>
+   </entry>
+   <entry keyword="Educational page">
+      <topic href="html/reference/editor-pages.html#educational"/>
+   </entry>
+   <entry keyword="embedded Healthcare LOM">
+      <topic href="html/tasks/edit-forms.html#other-standards"/>
+      <topic href="html/concepts/hlom.html"/>
+   </entry>
+   <entry keyword="export">
+      <entry keyword="HTML catalog card">
+         <topic href="html/tasks/library-reports.html"/>
+      </entry>
+      <entry keyword="library report">
+         <topic href="html/tasks/library-reports.html"/>
+      </entry>
+   </entry>
+   <entry keyword="extensions (custom elements)">
+      <topic href="html/concepts/documents.html"/>
+      <topic href="html/reference/json-format.html"/>
+   </entry>
+   <entry keyword="F1">
+      <topic href="html/reference/menus-shortcuts.html#help"/>
+   </entry>
+   <entry keyword="file format">
+      <topic href="html/concepts/documents.html"/>
+   </entry>
+   <entry keyword="Fix All">
+      <topic href="html/tasks/validate-fix.html"/>
+      <topic href="html/reference/validation-rules.html"/>
+   </entry>
+   <entry keyword="form pages">
+      <topic href="html/tasks/edit-forms.html"/>
+      <entry keyword="form pages of the other standards">
+         <topic href="html/tasks/edit-forms.html#other-standards"/>
+         <topic href="html/reference/editor-pages.html#other-standards"/>
+      </entry>
+   </entry>
+   <entry keyword="General page">
+      <topic href="html/reference/editor-pages.html#general"/>
+   </entry>
+   <entry keyword="getting started">
+      <topic href="html/getting-started/first-steps.html"/>
+   </entry>
+   <entry keyword="healthcareMetadata">
+      <topic href="html/concepts/hlom.html"/>
+      <topic href="html/reference/validation-rules.html"/>
+   </entry>
+   <entry keyword="Healthcare Asset page">
+      <topic href="html/reference/editor-pages.html#healthcare-asset"/>
+   </entry>
+   <entry keyword="Healthcare Education page">
+      <topic href="html/reference/editor-pages.html#healthcare-education"/>
+   </entry>
+   <entry keyword="Healthcare LOM (HLOM)">
+      <topic href="html/concepts/hlom.html"/>
+   </entry>
+   <entry keyword="Healthcare Professional Profile">
+      <topic href="html/standards/professional-profile.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="hermes-project.json">
+      <topic href="html/reference/project-file.html"/>
+   </entry>
+   <entry keyword="Hermes 2: MedBiquitous Editor">
+      <topic href="html/index.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="HLOM Guide">
+      <topic href="html/reference/views.html#guide"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html"/>
+   </entry>
+   <entry keyword="ICD-10-CM">
+      <topic href="html/reference/terminologies.html"/>
+      <topic href="html/tasks/keywords-terminologies.html"/>
+   </entry>
+   <entry keyword="identifier">
+      <topic href="html/reference/editor-pages.html#general"/>
+   </entry>
+   <entry keyword="IEEE LOM">
+      <topic href="html/concepts/hlom.html"/>
+   </entry>
+   <entry keyword="import">
+      <topic href="html/tasks/csv-import.html"/>
+      <topic href="html/tasks/create-project.html"/>
+   </entry>
+   <entry keyword="language server">
+      <topic href="html/tasks/validate-fix.html#command-line"/>
+      <topic href="html/concepts/validation.html#one-check"/>
+   </entry>
+   <entry keyword="JSON">
+      <entry keyword="JSON format">
+         <topic href="html/reference/json-format.html"/>
+      </entry>
+      <entry keyword="JSON page">
+         <topic href="html/tasks/source-pages.html"/>
+      </entry>
+      <entry keyword="JSON Schema">
+         <topic href="html/concepts/documents.html"/>
+      </entry>
+   </entry>
+   <entry keyword="keyboard shortcuts">
+      <topic href="html/reference/menus-shortcuts.html#keys"/>
+   </entry>
+   <entry keyword="keywords">
+      <entry keyword="coded keywords">
+         <topic href="html/tasks/keywords-terminologies.html"/>
+      </entry>
+      <entry keyword="Look Up">
+         <topic href="html/tasks/keywords-terminologies.html"/>
+      </entry>
+   </entry>
+   <entry keyword="language">
+      <entry keyword="default language">
+         <topic href="html/tasks/preferences.html"/>
+      </entry>
+      <entry keyword="text without language">
+         <topic href="html/reference/validation-rules.html"/>
+      </entry>
+   </entry>
+   <entry keyword="library">
+      <entry keyword="Library view">
+         <topic href="html/reference/views.html#library"/>
+      </entry>
+      <entry keyword="metadata library">
+         <topic href="html/tasks/library-reports.html"/>
+      </entry>
+      <entry keyword="Kind column (standard)">
+         <topic href="html/tasks/library-reports.html"/>
+         <topic href="html/reference/views.html#library"/>
+      </entry>
+   </entry>
+   <entry keyword="licenses">
+      <topic href="html/reference/licenses.html"/>
+      <topic href="html/reference/terminologies.html"/>
+   </entry>
+   <entry keyword="Life Cycle page">
+      <topic href="html/reference/editor-pages.html#lifecycle"/>
+   </entry>
+   <entry keyword="LOINC">
+      <topic href="html/reference/terminologies.html"/>
+   </entry>
+   <entry keyword="MedBiquitous standards">
+      <topic href="html/standards/index.html"/>
+      <topic href="html/concepts/documents.html"/>
+      <entry keyword="supported standards and versions">
+         <topic href="html/standards/index.html"/>
+      </entry>
+      <entry keyword="recognizing the standard of a document">
+         <topic href="html/concepts/documents.html"/>
+      </entry>
+      <entry keyword="documents of the other standards">
+         <topic href="html/getting-started/first-steps.html#other-standards"/>
+         <topic href="html/tasks/create-document.html#standards"/>
+         <topic href="html/reference/editor-pages.html#other-standards"/>
+      </entry>
+   </entry>
+   <entry keyword="Medical Education Metrics (MEMS)">
+      <topic href="html/standards/education-metrics.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="MEMS Survey Items">
+      <topic href="html/standards/education-metrics.html"/>
+   </entry>
+   <entry keyword="menus">
+      <topic href="html/reference/menus-shortcuts.html"/>
+   </entry>
+   <entry keyword="MeSH">
+      <entry keyword="adding MeSH keywords">
+         <topic href="html/tasks/keywords-terminologies.html"/>
+      </entry>
+      <entry keyword="MeSH 2026">
+         <topic href="html/reference/terminologies.html"/>
+      </entry>
+      <entry keyword="MeSH descriptor ID">
+         <topic href="html/reference/validation-rules.html"/>
+      </entry>
+      <entry keyword="online fallback">
+         <topic href="html/tasks/preferences.html"/>
+      </entry>
+   </entry>
+   <entry keyword="Meta-Metadata page">
+      <topic href="html/reference/editor-pages.html#metametadata"/>
+   </entry>
+   <entry keyword="metadata schema">
+      <topic href="html/reference/validation-rules.html"/>
+      <topic href="html/concepts/hlom.html"/>
+   </entry>
+   <entry keyword="multilingual text">
+      <topic href="html/tasks/edit-forms.html"/>
+   </entry>
+   <entry keyword="new document">
+      <topic href="html/tasks/create-document.html"/>
+      <entry keyword="choosing the standard">
+         <topic href="html/tasks/create-document.html#standards"/>
+      </entry>
+   </entry>
+   <entry keyword="Outline view">
+      <topic href="html/reference/views.html#outline"/>
+   </entry>
+   <entry keyword="Overview page">
+      <topic href="html/reference/editor-pages.html#overview"/>
+      <topic href="html/reference/editor-pages.html#other-standards"/>
+   </entry>
+   <entry keyword="preferences">
+      <topic href="html/tasks/preferences.html"/>
+   </entry>
+   <entry keyword="Performance Framework">
+      <topic href="html/standards/competencies.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="Problems view">
+      <topic href="html/reference/views.html#problems"/>
+      <topic href="html/tasks/validate-fix.html"/>
+   </entry>
+   <entry keyword="Professional Profile">
+      <topic href="html/standards/professional-profile.html"/>
+   </entry>
+   <entry keyword="project">
+      <entry keyword="creating a project">
+         <topic href="html/tasks/create-project.html"/>
+      </entry>
+      <entry keyword="opening a project">
+         <topic href="html/tasks/create-project.html"/>
+      </entry>
+      <entry keyword="project file">
+         <topic href="html/reference/project-file.html"/>
+      </entry>
+      <entry keyword="projects and the workspace">
+         <topic href="html/concepts/projects.html"/>
+      </entry>
+   </entry>
+   <entry keyword="Projects view">
+      <topic href="html/reference/views.html#projects"/>
+   </entry>
+   <entry keyword="Properties view">
+      <topic href="html/reference/views.html#properties"/>
+   </entry>
+   <entry keyword="quick fix">
+      <topic href="html/tasks/validate-fix.html"/>
+      <topic href="html/reference/validation-rules.html"/>
+   </entry>
+   <entry keyword="regular expression">
+      <topic href="html/tasks/search.html"/>
+   </entry>
+   <entry keyword="Relation page">
+      <topic href="html/reference/editor-pages.html#relation"/>
+   </entry>
+   <entry keyword="root element">
+      <topic href="html/concepts/documents.html"/>
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="rename">
+      <topic href="html/tasks/create-project.html"/>
+   </entry>
+   <entry keyword="report">
+      <topic href="html/tasks/library-reports.html"/>
+   </entry>
+   <entry keyword="Rights page">
+      <topic href="html/reference/editor-pages.html#rights"/>
+   </entry>
+   <entry keyword="samples">
+      <topic href="html/tasks/create-document.html"/>
+      <topic href="html/reference/views.html#start"/>
+      <entry keyword="MedBiquitous Samples folder">
+         <topic href="html/tasks/create-document.html"/>
+      </entry>
+   </entry>
+   <entry keyword="save">
+      <entry keyword="Save As (convert)">
+         <topic href="html/concepts/documents.html"/>
+      </entry>
+   </entry>
+   <entry keyword="SARIF">
+      <topic href="html/tasks/validate-fix.html#command-line"/>
+   </entry>
+   <entry keyword="search">
+      <entry keyword="searching documents">
+         <topic href="html/tasks/search.html"/>
+      </entry>
+      <entry keyword="Search view">
+         <topic href="html/reference/views.html#search"/>
+      </entry>
+      <entry keyword="field groups">
+         <topic href="html/tasks/search.html"/>
+      </entry>
+      <entry keyword="on the command line">
+         <topic href="html/tasks/validate-fix.html#command-line"/>
+      </entry>
+   </entry>
+   <entry keyword="SNOMED CT">
+      <topic href="html/reference/terminologies.html"/>
+   </entry>
+   <entry keyword="standards">
+      <topic href="html/standards/index.html"/>
+      <entry keyword="choosing the standard of a new document">
+         <topic href="html/tasks/create-document.html#standards"/>
+      </entry>
+      <entry keyword="versions">
+         <topic href="html/standards/index.html"/>
+      </entry>
+   </entry>
+   <entry keyword="specification (PDF)">
+      <topic href="html/reference/menus-shortcuts.html#help"/>
+   </entry>
+   <entry keyword="Survey Items (MEMS)">
+      <topic href="html/standards/education-metrics.html"/>
+   </entry>
+   <entry keyword="Start page">
+      <topic href="html/reference/views.html#start"/>
+   </entry>
+   <entry keyword="Technical page">
+      <topic href="html/reference/editor-pages.html#technical"/>
+   </entry>
+   <entry keyword="template">
+      <topic href="html/tasks/create-document.html"/>
+      <topic href="html/tasks/csv-import.html"/>
+   </entry>
+   <entry keyword="terminologies">
+      <topic href="html/reference/terminologies.html"/>
+      <topic href="html/tasks/keywords-terminologies.html"/>
+   </entry>
+   <entry keyword="translations">
+      <topic href="html/tasks/edit-forms.html"/>
+   </entry>
+   <entry keyword="UMLS">
+      <topic href="html/reference/terminologies.html"/>
+   </entry>
+   <entry keyword="undo">
+      <topic href="html/tasks/edit-forms.html"/>
+      <topic href="html/reference/menus-shortcuts.html#edit"/>
+   </entry>
+   <entry keyword="validation">
+      <entry keyword="about validation">
+         <topic href="html/concepts/validation.html"/>
+      </entry>
+      <entry keyword="fixing problems">
+         <topic href="html/tasks/validate-fix.html"/>
+      </entry>
+      <entry keyword="rules">
+         <topic href="html/reference/validation-rules.html"/>
+      </entry>
+      <entry keyword="validation preferences">
+         <topic href="html/tasks/preferences.html"/>
+      </entry>
+      <entry keyword="command line and language server">
+         <topic href="html/tasks/validate-fix.html#command-line"/>
+         <topic href="html/concepts/validation.html#one-check"/>
+      </entry>
+   </entry>
+   <entry keyword="Validation view">
+      <topic href="html/reference/views.html#validation"/>
+   </entry>
+   <entry keyword="versions of the standards">
+      <topic href="html/standards/index.html"/>
+   </entry>
+   <entry keyword="vCard">
+      <topic href="html/tasks/edit-forms.html"/>
+   </entry>
+   <entry keyword="Virtual Patient">
+      <topic href="html/standards/virtual-patient.html"/>
+      <topic href="html/standards/index.html"/>
+      <entry keyword="Activity Model">
+         <topic href="html/standards/virtual-patient.html"/>
+      </entry>
+      <entry keyword="Data Availability Model">
+         <topic href="html/standards/virtual-patient.html"/>
+      </entry>
+      <entry keyword="Virtual Patient Data">
+         <topic href="html/standards/virtual-patient.html"/>
+      </entry>
+   </entry>
+   <entry keyword="vocabularies">
+      <topic href="html/tasks/edit-forms.html"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-vocabularies"/>
+   </entry>
+   <entry keyword="workbench">
+      <topic href="html/getting-started/workbench.html"/>
+   </entry>
+   <entry keyword="workspace">
+      <topic href="html/concepts/projects.html"/>
+   </entry>
+   <entry keyword="XML">
+      <entry keyword="XML page">
+         <topic href="html/tasks/source-pages.html"/>
+      </entry>
+      <entry keyword="XML Schema validation">
+         <topic href="html/concepts/validation.html"/>
+      </entry>
+   </entry>
+   <entry keyword="XHTML (formatted text)">
+      <topic href="html/tasks/edit-forms.html#other-standards"/>
+      <topic href="html/tasks/source-pages.html"/>
+   </entry>
+</index>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="activityreportv1" nsURI="http://ns.medbiq.org/activityreport/v1/" nsPrefix="ar">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This file represents a composite schema for validation of the following:&#xA;         1) The use of custom vocabulary source/value pairs and &#xA;            LOMv1.0 base schema (i.e., 1484.12.1-2002) vocabulary source/value pairs&#xA;         2) Uniqueness constraints defined by LOMv1.0 base schema&#xA;         3) The use of XML element/attribute extensions to the LOMv1.0 base schema&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 11/14/2003:  1)Updated comment describing vocab/strict.xsd.  Indicated  **&#xA;        **                that the strict.xsd is used to validate vocabularies     **&#xA;        **                defined in the LOM V1.0 Base Schema.                     **&#xA;        **              2)Moved included schema elementNames.xsd just before       **&#xA;        **                elementTypes.xsd.                                        **&#xA;        **              3)Moved the element declaration for the top-level lom      **&#xA;        **                metadata element to a separate file (rootElement.xsd)    **&#xA;        **                and included this file just after elementTypes.xsd.      **&#xA;        **              4)Moved the XML Schema import statements before the XML    **&#xA;        **                Schema include statements.                               **&#xA;        **              5)Moved the element group declaration named                **&#xA;        **                lom:customElements to a separate file (anyElement.xsd)   **&#xA;        **                and included this new file just before the XML Schema    **&#xA;        **                import statments.                                        **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema definition provides the element group declaration and the&#xA;         attribute group declaration used for extension XML elements and attributes.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         ** &#xA;        ** 09/16/2004:  1)Added a attributeGroup customAttributes to support       **&#xA;        **                attribute extensions                                     **&#xA;        **                                                                         ** &#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **                                                                         ** &#xA;        ** 10/11/2004   1)Removed attributeGroup customAttributes declaration.     **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion defines global schema data type declarations&#xA;         for data types defined in the LOMv1.0 base schema.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 11/14/2003:  1)Updated xs:pattern for the DurationString.  The pattern  **&#xA;        **                did not permit zero values for each of the date and      **&#xA;        **                time components.                                         **&#xA;        **                                                                         **&#xA;        ** 03/15/2004:  1)Changed the restriction type for LanguageIdNone from     **&#xA;        **                xs:string to xs:token                                    **&#xA;        **                                                                         ** &#xA;        ** 08/24/2004:  1) To correct a XML Binding to Marshalling issue, a change **&#xA;        **              is needed to resolve a naming convention for two complex   **&#xA;        **              types:                                                     **       &#xA;        **                1.1) Changed the name of the LangString complexType      **&#xA;        **                to LanguageString                                        **&#xA;        **                1.2) Change the  name of the langString completType to   **&#xA;        **                LangString                                               **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         ** &#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Removed the LanguageIdOrNone and LanguageIdNone type     **&#xA;        **                declarations.  The types were not needed.  The           **&#xA;        **                LanguageId type was updated to support attribute         **&#xA;        **                extensions.  The LanguageId will now vaidate any         **&#xA;        **                language defined by 1484.12.3 and the token &quot;none&quot;.      **&#xA;        **              3)Updated VCard to support attribute extensions.           **&#xA;        **              4)Updated LanguageString to reference the xs:language      **&#xA;        **                data type.                                               **       &#xA;        **              5)Updated DateTimeValue to support attribute extensions.   **&#xA;        **              6)Updated DurationValue to support attribute extensions.   **&#xA;        *****************************************************************************&#xA;&#xA;&#x9;24 May 2007 &#x9;NOTE: The Size and Duration types have been renamed SizeBase &#xA;&#x9;&#x9;&#x9;and DurationBase to prevent errors with web services &#xA;&#x9;&#x9;&#x9;development tools. This change does not affect the resulting &#xA;&#x9;&#x9;&#x9;XML document. The change applies only to MedBiquitous &#xA;&#x9;&#x9;&#x9;Healthcare LOM schema files.&#xA;&#xA;      &#xD;&#xA;&#xA;       This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;       License.  To view a copy of this license, see the file license.txt,&#xA;       visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;       Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;    &#xD;&#xA;&#xA;       This component schema defines the XML Schema content model groups customElements &#xA;       and customAttributes to support validation of extension XML elements and attributes. &#xA;&#xA;       This component XSD should be used if extensions are to be supported in LOM &#xA;       XML instances.&#xA;    &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                           CHANGE HISTORY                                **&#xA;        *****************************************************************************&#xA;        ** 03/15/2004:  1)Updated annoation describing purpose and design of the   **&#xA;        **                XSD.                                                     **&#xA;        **                                                                         **&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Added the customAttributes declaration to support        **&#xA;        **                attribute extensions to all LOM data elements.           **&#xA;        *****************************************************************************&#xA;    &#xD;&#xA;&#xA;       This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;       License.  To view a copy of this license, see the file license.txt,&#xA;       visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;       Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;    &#xD;&#xA;&#xA;       This component schema defines attribute group declarations for LOM data&#xA;       elements defined in the LOMv1.0 base schema to support schema-based &#xA;       validation of the uniqueness constraints with a LOM XML instance by &#xA;       introducing the attribute &quot;uniqueElementName&quot; for each LOM data element&#xA;       that appears with a multiplicity of at most one.&#xA;&#xA;       NOTE: For most applications, enforcing the uniqueness constraints using the &#xA;       unique/strict.xsd component XSD is desirable. Although adding the attribute &#xA;       &quot;uniqueElementName&quot; is undesirable, it is unlikely to cause problems.&#xA;&#xA;       Duplicate declarations are included as comments for completeness.  These &#xA;       declarations should remain commented out or they can be removed completely.&#xA;    &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 03/15/2004:  1)Updated annoation describing purpose and design of the   **&#xA;        **                XSD.                                                     **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion defines global element declarations for &#xA;         each of the data elements defined in the LOMv1.0 base schema.  This component&#xA;         schema definition is used to check for the uniqueness of elements declared&#xA;         to be unique within their parent elements by the presence of the &#xA;         &quot;uniqueElementName&quot; attribute.  The XML Schema constraint &quot;unique&quot; is used &#xA;         to enforce uniqueness constraints.&#xA;&#xA;         Duplicate declarations are included as comments for completeness.  These &#xA;         declarations should remain commented out or they can be removed completely.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1) Updated those complexTypes that referenced exteding the **&#xA;        **              LangString complexType to map to the new name for that     **&#xA;        **              complexType - LanguageString:                              **       &#xA;        **                 1.4 Description                                         **       &#xA;        **                 5.10 Description                                        **       &#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              3)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated &quot;language&quot; elements to remove reference to       **&#xA;        **                types that were removed (e.g, languageIdOrNone).         **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;       This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;       License.  To view a copy of this license, see the file license.txt,&#xA;       visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;       Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;    &#xD;&#xA;&#xA;       This component schema defintion defines global schema data type declarations&#xA;       for data elements defined in the LOMv1.0 base schema.  This component XSD&#xA;       defines the aggregation relationship among the LOM data elements.  These aggregation&#xA;       relationships enforce the LOMv1.0 base schema requirement that elements can only&#xA;       be present in a LOM XML instance as elements of the aggregate element to which they&#xA;       belong.&#xA;&#xA;       Duplicate declarations are included as comments for completeness.  These declarations&#xA;       should remain commented out or they can be removed completely.&#xA;    &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                           CHANGE HISTORY                                **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1) Updated those complexTypes that referenced exteding the **&#xA;        **              LangString complexType to map to the new name for that     **&#xA;        **              complexType - LanguageString:                              **       &#xA;        **                 1.2 Title                                               **       &#xA;        **                 1.4 Description                                         **       &#xA;        **                 1.5 Keyword                                             **       &#xA;        **                 1.6 Coverage                                            **       &#xA;        **                 2.1 Version                                             **       &#xA;        **                 4.5 Installation Remarks                                **       &#xA;        **                 4.6 Other Platform Requirements                         **       &#xA;        **                 5.7 Typical Age Range                                   **       &#xA;        **                 5.10 Description                                        **       &#xA;        **                 6.3 Description                                         **       &#xA;        **                 7.2.2 Description                                       **       &#xA;        **                 8.3 Description                                         **       &#xA;        **                 9.2.1 Source                                            **       &#xA;        **                 9.2.2.2 Entry                                           **       &#xA;        **                 9.3 Description                                         **       &#xA;        **                 9.4 Keyword                                             **       &#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              3)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated all complexTypes (non-Vocabulary data typed)     ** &#xA;        **                elements to reference the customAttribute attributeGroup **&#xA;        **                to support attribute extensions.                         **&#xA;        *****************************************************************************&#xA;&#xA;&#x9;24 May 2007 &#x9;NOTE: The Size and Duration types have been renamed SizeBase &#xA;&#x9;&#x9;&#x9;and DurationBase to prevent errors with web services &#xA;&#x9;&#x9;&#x9;development tools. This change does not affect the resulting &#xA;&#x9;&#x9;&#x9;XML document. The change applies only to MedBiquitous &#xA;&#x9;&#x9;&#x9;Healthcare LOM schema files.&#xA;&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion provides the element name declaration for the&#xA;         root element for all LOM XML instances.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema definition provides global type declarations for the standard&#xA;         LOMv1.0 vocabulary tokens for those LOM data elements whose values are taken from&#xA;         a Vocabulary data type.&#xA;&#xA;         This component schema defintion defines the stanard vocabulary value &#xA;         declarations as defined in the LOMv1.0 base schema.  These vocabulary&#xA;         value declarations are used in conjunction with both vocab/custom.xsd and&#xA;         vocab/strict.xsd.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 09/22/2003:  1)Updated comment describing this file to state that this  **&#xA;        **                file is the LOM V1.0 Base Schema vocabulary source and   **&#xA;        **                value declarations.                                      ** &#xA;        **                                                                         **&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              2)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion provides global type declarations for those&#xA;         LOM data elements whose values are taken from a Vocabulary data type.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              2)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/16/2004   1)Added a attributeGroup reference to all vocabulary types **&#xA;        **                to support attribute extensions                          **  &#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;This component XSD requires schema components from other &#xA;       schemas that are defined in other namespaces.  These statements import the &#xA;       appropriate components. The xsi:schemaLocation attribute is used to specify &#xA;       the location of the file that contains the schema that defines the namespace.  &#xA;       The xsi:schemaLocation attribute is optional and is ommitted.  By definition of &#xA;       the composite schemas the appropriate namespaces and related files where those&#xA;       namespaces are defined are brought into scope.  Some XML parsers may require &#xA;       these import statements to contain the optional xsi:schemaLocation attribute.&#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema definition provides simple type declarations for LOM&#xA;         data elements that are defined as Vocabulary data types.&#xA;&#xA;         This component schema definition enforces that vocabulary values are only &#xA;         those specified in 1484.12.3 or in a custom vocabulary.  This component &#xA;         schema definition enforces adherence to the combined use of 1484.12.3&#xA;         defined vocabulary values and custom vocabulary values by checking that both&#xA;         sources and values are taken from either the token set defined in 1484.12.3 or&#xA;         from a custom vocabulary.&#xA;&#xA;         Organizations are free to define their own namespace for the custom vocabulary&#xA;         extensions.  For completeness this XSD is set up to use a namespace defined&#xA;         as xmlns:lx=&quot;http://ltsc.ieee.org/xsd/LOM/custom&quot;&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 03/15/2004:  1)Updated annoation describing purpose and design of the   **&#xA;        **                XSD.                                                     **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA; This is a MedBiquitous defined set of LOM custom vocabularies for healthcare."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityReportsType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivityReports_._type"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateTimeCreated" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DateTimeCreated"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityReport" lowerBound="1" upperBound="-1" eType="#//ActivityReportType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ActivityReport"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityReportType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivityReportType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reportingOrganization" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ReportingOrganization"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" lowerBound="1" eType="ecore:EClass member-v1.ecore#//MemberType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Member"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1" upperBound="-1" eType="#//ActivityType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Activity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xtensibleInfo" eType="#//XtensibleInfoType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="XtensibleInfo"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivityType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerOrganization" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ProviderOrganization"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityName" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ActivityName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1" upperBound="-1" eType="#//ModuleType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Module"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointOfCareLearningData" eType="#//PointOfCareLearningDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="PointOfCareLearningData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityID" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="activityID"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionIDType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CollectionIDType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="type"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreditCertificateType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CreditCertificateType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creditReceived" lowerBound="1" eType="#//CreditReceivedType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CreditReceived"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creditID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CreditID"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreditFocusType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CreditFocusType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Description"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Code"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfCredits" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Decimal">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NumberOfCredits"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreditReceivedType" eSuperTypes="http://ns.medbiq.org/lom/extend/v1/#//CreditsType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CreditReceivedType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creditFocus" upperBound="-1" eType="#//CreditFocusType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CreditFocus"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityReports" upperBound="-2" eType="#//ActivityReportsType"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ActivityReports"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MetadataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lom" eType="ecore:EClass http://ltsc.ieee.org/xsd/LOM#//Lom" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="lom"/>
+        <details key="namespace" value="http://ltsc.ieee.org/xsd/LOM"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="location"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleNameType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ModuleNameType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleID" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="moduleID"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ModuleType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleName" lowerBound="1" eType="#//ModuleNameType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ModuleName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" eType="#//MetadataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Metadata"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1" eType="#//StatusType" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Status"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="StartDateTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="EndDateTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dueDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DueDateTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registeredDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="RegisteredDateTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="completedDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CompletedDateTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiredDateTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ExpiredDateTime"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeEngaged" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Duration">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="TimeEngaged"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="results" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Results"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creditCertificate" upperBound="-1" eType="#//CreditCertificateType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CreditCertificate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NonNullString" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NonNullString"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      <details key="minLength" value="1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PointOfCareLearningDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PointOfCareLearningDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clinicalQuestionOrTopic" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ClinicalQuestionOrTopic"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="searchParameters" unique="false" upperBound="-1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SearchParameters"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceUsed" lowerBound="1" upperBound="-1" eType="#//ResourceUsedType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResourceUsed"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicationToPractice" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ApplicationToPractice"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceUsedType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResourceUsedType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Title"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collection" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Collection"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collectionID" eType="#//CollectionIDType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CollectionID"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceLocation" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResourceLocation"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relevant" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Relevant"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StatusType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatusType"/>
+    </eAnnotations>
+    <eLiterals name="Registered"/>
+    <eLiterals name="Completed" value="1"/>
+    <eLiterals name="Expired" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="StatusTypeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="StatusType:Object"/>
+      <details key="baseType" value="StatusType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XtensibleInfoType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="XtensibleInfoType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="wildcards" value="##other"/>
+        <details key="name" value=":0"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

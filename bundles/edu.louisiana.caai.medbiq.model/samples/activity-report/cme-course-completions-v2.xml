@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Activity Report 2.0): the completions of a live CME course in the first
+     half of 2026, with the credits each physician received, reported to a certifying board. People and
+     organizations are fictional. -->
+<ActivityReports xmlns="http://ns.medbiq.org/activityreport/v2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+	xmlns:m="http://ns.medbiq.org/member/v2/" xmlns:n="http://ns.medbiq.org/name/v2/"
+	xsi:schemaLocation="http://ns.medbiq.org/activityreport/v2/ http://ns.medbiq.org/activityreport/v2/activityreport.xsd"
+	arid="arid:acadianaheart.org:2026H1-0007">
+	<DateTimeCreated>2026-07-02T08:30:00-05:00</DateTimeCreated>
+	<ReportingStartDate>2026-01-01</ReportingStartDate>
+	<ReportingEndDate>2026-06-30</ReportingEndDate>
+	<ActivityReport arid="arid:acadianaheart.org:2026H1-0007-1">
+		<ReportingOrganization>Acadiana Heart Institute, Office of Continuing Medical Education</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="idd:acadianaheart.org:learner">AHI-104233</m:UniqueID>
+			<m:UniqueID domain="idd:bayouboard.org:diplomate">BBIM-20118</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Celeste M. Arceneaux</n:FormattedName>
+				<n:GivenName>Celeste</n:GivenName>
+				<n:FamilyName>Arceneaux</n:FamilyName>
+				<n:Degree>MD</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="AHI-2026-AF02">
+			<ProviderOrganization>Acadiana Heart Institute</ProviderOrganization>
+			<ActivityName>Atrial Fibrillation in Practice 2026</ActivityName>
+			<ActivityInstanceID domain="idd:acadianaheart.org:instance">AF02-2026-05-09</ActivityInstanceID>
+			<Status>Completed</Status>
+			<Module>
+				<ModuleName moduleID="AHI-2026-AF02">Atrial Fibrillation in Practice 2026</ModuleName>
+				<Metadata>
+					<lom:lom>
+						<lom:general>
+							<lom:identifier>
+								<lom:catalog>URI</lom:catalog>
+								<lom:entry>https://cme.acadianaheart.org/activities/AHI-2026-AF02</lom:entry>
+							</lom:identifier>
+							<lom:title>
+								<lom:string language="en">Atrial Fibrillation in Practice 2026</lom:string>
+							</lom:title>
+							<lom:language>en</lom:language>
+							<lom:description>
+								<lom:string language="en">A half-day live symposium on stroke prevention, rate and rhythm control and catheter ablation referral in atrial fibrillation.</lom:string>
+							</lom:description>
+							<lom:keyword>
+								<lom:string language="en">atrial fibrillation</lom:string>
+							</lom:keyword>
+							<lom:keyword>
+								<lom:string language="en">anticoagulation</lom:string>
+							</lom:keyword>
+						</lom:general>
+						<hx:healthcareMetadata>
+							<hx:healthcareEducation>
+								<hx:creditsAvailable>yes</hx:creditsAvailable>
+								<hx:credits>
+									<hx:accreditingBody>ACCME</hx:accreditingBody>
+									<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+									<hx:creditType>CME</hx:creditType>
+									<hx:creditUnit>Credit</hx:creditUnit>
+									<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+									<hx:releaseDate>2026-05-09</hx:releaseDate>
+									<hx:numberOfCredits>3.75</hx:numberOfCredits>
+								</hx:credits>
+								<hx:startDateTime>2026-05-09T08:00:00-05:00</hx:startDateTime>
+								<hx:endDateTime>2026-05-09T12:00:00-05:00</hx:endDateTime>
+								<hx:activityDelivery>live</hx:activityDelivery>
+							</hx:healthcareEducation>
+						</hx:healthcareMetadata>
+					</lom:lom>
+				</Metadata>
+				<Status>Completed</Status>
+				<StartDateTime>2026-05-09T08:00:00-05:00</StartDateTime>
+				<EndDateTime>2026-05-09T12:00:00-05:00</EndDateTime>
+				<RegisteredDateTime>2026-04-12T16:03:00-05:00</RegisteredDateTime>
+				<CompletedDateTime>2026-05-11T07:55:00-05:00</CompletedDateTime>
+				<TimeEngaged>PT3H45M</TimeEngaged>
+				<Results>Evaluation and post-test completed</Results>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:numberOfCredits>3.75</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:104233.af02.amapra1</CreditID>
+				</CreditCertificate>
+			</Module>
+		</Activity>
+	</ActivityReport>
+	<ActivityReport arid="arid:acadianaheart.org:2026H1-0007-2">
+		<ReportingOrganization>Acadiana Heart Institute, Office of Continuing Medical Education</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="idd:acadianaheart.org:learner">AHI-131040</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Jean-Paul Fontenot</n:FormattedName>
+				<n:GivenName>Jean-Paul</n:GivenName>
+				<n:FamilyName>Fontenot</n:FamilyName>
+				<n:Degree>MD</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="AHI-2026-AF02">
+			<ProviderOrganization>Acadiana Heart Institute</ProviderOrganization>
+			<ActivityName>Atrial Fibrillation in Practice 2026</ActivityName>
+			<ActivityInstanceID domain="idd:acadianaheart.org:instance">AF02-2026-05-09</ActivityInstanceID>
+			<Status>Completed</Status>
+			<Module>
+				<ModuleName moduleID="AHI-2026-AF02">Atrial Fibrillation in Practice 2026</ModuleName>
+				<Metadata>
+					<location>https://cme.acadianaheart.org/metadata/AHI-2026-AF02.xml</location>
+				</Metadata>
+				<Status>Completed</Status>
+				<RegisteredDateTime>2026-05-01T11:20:00-05:00</RegisteredDateTime>
+				<CompletedDateTime>2026-05-09T13:10:00-05:00</CompletedDateTime>
+				<TimeEngaged>PT3H</TimeEngaged>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:numberOfCredits>3</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:131040.af02.amapra1</CreditID>
+				</CreditCertificate>
+			</Module>
+		</Activity>
+	</ActivityReport>
+	<ActivityReport arid="arid:acadianaheart.org:2026H1-0007-3">
+		<ReportingOrganization>Acadiana Heart Institute, Office of Continuing Medical Education</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="idd:acadianaheart.org:learner">AHI-098871</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Hannah R. Guidry</n:FormattedName>
+				<n:GivenName>Hannah</n:GivenName>
+				<n:FamilyName>Guidry</n:FamilyName>
+				<n:Degree>DO</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="AHI-2026-AF02">
+			<ProviderOrganization>Acadiana Heart Institute</ProviderOrganization>
+			<ActivityName>Atrial Fibrillation in Practice 2026</ActivityName>
+			<ActivityInstanceID domain="idd:acadianaheart.org:instance">AF02-2026-05-09</ActivityInstanceID>
+			<Status>Completed</Status>
+			<Module>
+				<ModuleName moduleID="AHI-2026-AF02">Atrial Fibrillation in Practice 2026</ModuleName>
+				<Metadata>
+					<location>https://cme.acadianaheart.org/metadata/AHI-2026-AF02.xml</location>
+				</Metadata>
+				<Status>Completed</Status>
+				<RegisteredDateTime>2026-03-28T09:45:00-05:00</RegisteredDateTime>
+				<CompletedDateTime>2026-05-14T18:30:00-05:00</CompletedDateTime>
+				<TimeEngaged>PT3H45M</TimeEngaged>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Acadiana Heart Institute</hx:accreditedProvider>
+						<hx:numberOfCredits>3.75</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:acadianaheart.org:098871.af02.amapra1</CreditID>
+				</CreditCertificate>
+			</Module>
+		</Activity>
+	</ActivityReport>
+</ActivityReports>

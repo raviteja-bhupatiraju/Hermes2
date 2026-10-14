@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The JSON Format</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>The JSON Format</h1>
+
+<p class="lead">Healthcare LOM records with the extension <code>.json</code> are stored in a JSON form that follows
+the naming of the MedBiquitous Healthcare LOM JSON Schema (the other MedBiquitous standards have no JSON form and
+are always stored as XML). This page describes the mapping between the XML and the JSON form, for
+developers and for anyone who edits the JSON page.</p>
+
+<h2>Document</h2>
+<p>A JSON document is an object with these members:</p>
+<table>
+<tr><th>Member</th><th>Contents</th></tr>
+<tr><td><code>"$schema"</code></td><td>The MedBiquitous JSON Schema:
+<code>https://ns.medbiq.org/jsonSchema/healthcare-learning-object-metadata/healthcarelom.schema.json</code>. It is
+referenced but not used for validation (the published schema set is incomplete).</td></tr>
+<tr><td><code>"$schemaLocation"</code></td><td>Only if the XML form had a non-default
+<code>xsi:schemaLocation</code>; kept for the XML form.</td></tr>
+<tr><td><code>"$namespaces"</code></td><td>Only if needed: prefixes of namespaces other than the known ones, mapped to
+their URIs.</td></tr>
+<tr><td><code>"lom"</code></td><td>The record: the <code>lom</code> element.</td></tr>
+</table>
+
+<h2>Mapping rules</h2>
+<ul>
+<li>Every element becomes a member named after the element: <code>"general"</code>, <code>"title"</code>,
+<code>"healthcareEducation"</code>, <code>"creditType"</code>, ….</li>
+<li>Elements that may repeat according to the model are arrays. Because the IEEE LOM binding defines most LOM
+elements as repeatable choices, most LOM members (including <code>"general"</code>, <code>"title"</code>,
+<code>"string"</code>, <code>"source"</code> and <code>"value"</code>) are written as arrays.</li>
+<li>An element with only text is a string, or a number or boolean when its schema type is numeric or boolean (for
+example <code>"numberOfCredits": 1.5</code>).</li>
+<li>An element whose type has text content and attributes is an object with the attributes and
+<code>"content"</code> for the text. Multilingual text therefore reads
+<code>{"language": "en", "content": "…"}</code>, and vocabulary sources and values read
+<code>{"content": "LOMv1.0"}</code>.</li>
+<li>An element with child elements is an object. Attributes declared by the schema are members with the attribute
+name (for example a keyword's <code>"source"</code> and <code>"id"</code>); other attributes are prefixed with
+<code>@</code>.</li>
+<li>Elements and attributes the HLOM schemas don't define are kept with a <code>prefix:</code> name. The prefixes
+<code>hx</code> (healthcare extensions), <code>a</code> (address) and <code>xsi</code> are known; other prefixes are
+declared in <code>"$namespaces"</code>.</li>
+<li>Comments and processing instructions are not kept.</li>
+</ul>
+
+<h2>Example</h2>
+<p>An excerpt of the JSON form of a CME course (the sample “Insulin Pump Therapy”), as written by Hermes 2:</p>
+<pre><code>{
+  "$schema": "https://ns.medbiq.org/jsonSchema/healthcare-learning-object-metadata/healthcarelom.schema.json",
+  "lom": {
+    "general": [
+      {
+        "title": [
+          { "string": [ { "language": "en", "content": "Insulin Pump Therapy" } ] }
+        ],
+        "keyword": [
+          {
+            "id": "D007332",
+            "source": "MeSH",
+            "string": [ { "language": "en", "content": "insulin infusion systems" } ]
+          }
+        ]
+      }
+    ],
+    "lifeCycle": [
+      {
+        "contribute": [
+          {
+            "role": [
+              { "source": [ { "content": "LOMv1.0" } ], "value": [ { "content": "author" } ] }
+            ],
+            "entity": [ { "content": "BEGIN:VCARD\nFN:John Doe\nEND:VCARD" } ]
+          }
+        ]
+      }
+    ],
+    "healthcareMetadata": [
+      {
+        "healthcareEducation": {
+          "creditsAvailable": "yes",
+          "credits": [
+            {
+              "accreditingBody": "ACCME",
+              "creditType": "CME",
+              "creditUnit": "Credit",
+              "pacing": "learner paced",
+              "numberOfCredits": 1.5
+            }
+          ],
+          "participationModality": [ "technology based" ]
+        }
+      }
+    ]
+  }
+}</code></pre>
+
+<h2>Reading JSON</h2>
+<p>When reading, Hermes 2 is lenient: a single object or value may be given where an array is expected, and an element
+with only text may be written as a plain string. So hand-written JSON can use the compact forms
+<code>"title": {"string": {"language": "en", "content": "…"}}</code> and
+<code>"role": {"source": "LOMv1.0", "value": "author"}</code>. Members may be in any order; the XML Schema's element
+order is restored when the document is converted to XML. Saving writes the full form shown above.</p>
+<p>Syntax errors and invalid values are reported at their JSON line. The document is then validated like an XML
+document (XML Schema, model constraints and HLOM rules).</p>
+
+<p class="note">The content assist of the JSON page (<kbd>Ctrl</kbd>+<kbd>Space</kbd>) proposes the members allowed at
+the caret with a value skeleton, so you rarely need to type the structure by hand.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../concepts/documents.html">Documents: XML and JSON</a></li>
+<li><a href="../tasks/source-pages.html">Editing XML and JSON</a></li>
+<li><a href="project-file.html">The Project File</a></li>
+</ul>
+</div>
+</body>
+</html>

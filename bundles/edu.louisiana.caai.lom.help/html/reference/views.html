@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Views</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Views</h1>
+
+<p class="lead">Views surround the editor and show information about your projects and the active document. Most
+can be opened from the <span class="ui">Window</span> menu, the main tool bar or the commands described below.
+Press <kbd>F1</kbd> in a view for its context help.</p>
+
+<h2 id="projects">Projects</h2>
+<p>Your projects with their folders and documents of every MedBiquitous standard. Documents are shown with their
+titles and an icon for their
+validation state; tooltips show the file location, the format and the number of errors and warnings, and for a
+project its description, location, document counts and the format of new documents.</p>
+<ul>
+<li>Tool bar: <span class="ui">New Project…</span>, <span class="ui">Open Project…</span>, <span class="ui">New
+Document…</span>, <span class="ui">Add Existing Documents…</span>, <span class="ui">Refresh</span>.</li>
+<li>View menu: <span class="ui">New Project…</span>, <span class="ui">Open Project…</span>, <span class="ui">Collapse
+All</span>, <span class="ui">Refresh</span>.</li>
+<li>Context menu: <span class="ui">Open</span>, <span class="ui">New Document…</span>, <span class="ui">Add Existing
+Documents…</span>, <span class="ui">New Folder…</span>, <span class="ui">Convert to JSON</span>,
+<span class="ui">Convert to XML</span> (Healthcare LOM), <span class="ui">Rename…</span>, <span class="ui">Delete</span>,
+<span class="ui">Show in File Explorer</span>, <span class="ui">Properties…</span>, <span class="ui">Close
+Project</span>, <span class="ui">Refresh</span>.</li>
+<li>Keys: <kbd>Enter</kbd> opens, <kbd>F2</kbd> renames, <kbd>Delete</kbd> deletes, <kbd>F5</kbd> refreshes. Files
+can be dropped on the view to add them.</li>
+<li>Open: <span class="ui">Window &gt; Show Projects</span>.</li>
+</ul>
+<p>See <a href="../tasks/create-project.html">Creating and Opening Projects</a>.</p>
+
+<h2 id="outline">Outline</h2>
+<p>The element tree of the active document. Selecting an element selects it in the editor and shows its
+attributes in the Properties view.</p>
+
+<h2 id="properties">Properties</h2>
+<p>The attributes of the element selected in the Document Tree or the Outline, editable in place. Also opened with
+<span class="ui">Show Properties View</span> in the <span class="ui">Document</span> menu.</p>
+
+<h2 id="validation">Validation</h2>
+<p>The problems of the active document, of any standard: columns for the quick-fix light bulb (Healthcare LOM),
+<span class="ui">Description</span>, <span class="ui">Element</span>, <span class="ui">Line</span> and
+<span class="ui">Check</span>.</p>
+<ul>
+<li>Tool bar: <span class="ui">Fix All</span>, <span class="ui">Validate Now</span>.</li>
+<li>Context menu: <span class="ui">Quick Fix</span> (submenu), <span class="ui">Quick Fix…</span>
+(<kbd>Ctrl</kbd>+<kbd>1</kbd>), <span class="ui">Fix All…</span>, <span class="ui">Go to Element</span>,
+<span class="ui">Copy Message</span>, <span class="ui">Validate Now</span>.</li>
+<li>Double-click a problem to show its element.</li>
+<li>Open: <span class="ui">Validate</span> on the main tool bar.</li>
+</ul>
+<p>See <a href="../tasks/validate-fix.html">Validating and Fixing Problems</a>.</p>
+
+<h2 id="problems">Problems</h2>
+<p>The standard Eclipse Problems view. It lists the background validation markers (type <span class="ui">Healthcare
+LOM Problem</span>) of all documents of your projects, of every standard, kept up to date whenever documents
+change. Problems are shown at their lines in the files as written. Double-click a
+problem to open the document at the field concerned. The view can be filtered, sorted and grouped with its view
+menu.</p>
+
+<h2 id="library">Library</h2>
+<p>The metadata library: all MedBiquitous documents below a folder, with statistics, search, filter chips (kind and
+status) and sortable columns (status, Title, Kind, Credits, Audience, Modified, Errors, Warnings, Complete, File).
+For documents of standards other than Healthcare LOM, the <span class="ui">Kind</span> column shows the standard;
+credits, audience and completeness are Healthcare LOM columns.</p>
+<ul>
+<li>Tool bar: <span class="ui">Choose Folder…</span>, <span class="ui">Refresh</span>, <span class="ui">Export Library
+Report…</span>.</li>
+<li>Context menu: <span class="ui">Open</span>, <span class="ui">Validate Again</span>, <span class="ui">Export HTML
+Card…</span>, <span class="ui">Reveal in Explorer</span>, <span class="ui">Copy Path</span>.</li>
+<li>Open: <span class="ui">Window &gt; Show Library</span> or the main tool bar.</li>
+</ul>
+<p>See <a href="../tasks/library-reports.html">The Library and HTML Reports</a>.</p>
+
+<h2 id="compare">Compare</h2>
+<p>A field-by-field comparison of two documents of the same standard, with the columns
+<span class="ui">Field</span>, <span class="ui">Left</span> and <span class="ui">Right</span> and a filter.
+Healthcare LOM records are grouped by category and compared semantically; documents of the other standards are
+compared by element path and grouped by the parts of the root element.</p>
+<ul>
+<li>Tool bar: <span class="ui">Show Unchanged Fields</span>, <span class="ui">Expand All</span>,
+<span class="ui">Collapse All</span>, <span class="ui">Swap Left and Right</span>, <span class="ui">Refresh (Re-read
+Files)</span>, <span class="ui">Copy Differences as Text</span>.</li>
+<li>Open: <span class="ui">File &gt; Compare</span>.</li>
+</ul>
+<p>See <a href="../tasks/compare.html">Comparing Documents</a>.</p>
+
+<h2 id="search">Search</h2>
+<p>The results of <span class="ui">Search &gt; Search Documents…</span> (<kbd>Ctrl</kbd>+<kbd>H</kbd>): matching
+fields grouped by project and document, with the matches highlighted. Double-click a field to open the document with
+the field selected. See <a href="../tasks/search.html">Searching Documents</a>.</p>
+
+<h2 id="guide">HLOM Guide</h2>
+<p>The in-application guide to Healthcare LOM (only) and the editor: categories and elements, the healthcare extensions,
+vocabularies, the conformance checklist, credit acronyms, professions and specialties, and how to use the editor,
+with a search. It opens stacked with the Outline.</p>
+<ul>
+<li>Tool bar: <span class="ui">Back</span>, <span class="ui">Forward</span>, <span class="ui">Overview</span>,
+<span class="ui">Print</span>, <span class="ui">Open in Web Browser</span>.</li>
+<li>Open: <span class="ui">Help &gt; HLOM Guide</span>, the main tool bar, or <kbd>Shift</kbd>+<kbd>F1</kbd>
+(<span class="ui">Help &gt; Show Field in HLOM Guide</span>) to show the topic of the focused field.</li>
+<li>If no embedded browser is available, the view offers to open the guide in your web browser.</li>
+</ul>
+<p>You can also open the guide here: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html">HLOM
+Guide</a>.</p>
+
+<h2 id="help">Help</h2>
+<p>The Eclipse Help view. <kbd>F1</kbd> (<span class="ui">Help &gt; Context Help</span>) shows the context help of
+the focused field, view, editor page or dialog in it, with links to the matching topics of this guide and of the
+HLOM Guide. It also offers search and the contents of this guide.</p>
+
+<h2 id="start">Start page</h2>
+<p>Shown in place of the editor area while no document is open (and with <span class="ui">Help &gt; Start
+Page</span>).</p>
+<ul>
+<li>The header: “Hermes 2 MedBiquitous Editor” and the tagline “Create, validate and exchange MedBiquitous
+documents: learning object metadata, curricula, competencies, activity reports, education metrics, professional
+profiles and virtual patients.”</li>
+<li><span class="ui">Get started</span>: <span class="ui">New document…</span> (a document of any MedBiquitous
+standard), <span class="ui">Open…</span>, <span class="ui">New project…</span>, <span class="ui">Open sample…</span>
+(a menu with the Healthcare LOM samples and a submenu of samples for each other standard; samples are copied to
+<code>Documents\MedBiquitous Samples</code>).</li>
+<li><span class="ui">Start from a template</span>: one card per Healthcare LOM template, then one card for each
+other standard.</li>
+<li><span class="ui">Recent documents</span>, with <span class="ui">Clear</span>.</li>
+<li><span class="ui">The MedBiquitous standards</span>: a short introduction to the standards Hermes 2 edits.
+See <a href="../standards/index.html">The MedBiquitous Standards</a>.</li>
+</ul>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../getting-started/workbench.html">A Tour of the Workbench</a></li>
+<li><a href="menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+<li><a href="editor-pages.html">Editor Pages</a></li>
+</ul>
+</div>
+</body>
+</html>

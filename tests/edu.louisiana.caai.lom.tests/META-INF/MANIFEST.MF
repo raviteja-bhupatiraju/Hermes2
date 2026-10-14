@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hermes 2 Tests
+Bundle-SymbolicName: edu.louisiana.caai.lom.tests
+Automatic-Module-Name: edu.louisiana.caai.lom.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: University of Louisiana at Lafayette, Center for Applied Artificial Intelligence (CAAI)
+Bundle-RequiredExecutionEnvironment: JavaSE-25
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.equinox.common,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.edit,
+ edu.louisiana.caai.lom.model,
+ edu.louisiana.caai.lom.editor,
+ edu.louisiana.caai.lom.cli,
+ edu.louisiana.caai.medbiq.model
+Import-Package: org.junit.jupiter.api;version="[5.0.0,6.0.0)",
+ org.junit.jupiter.api.function;version="[5.0.0,6.0.0)",
+ org.junit.jupiter.api.io;version="[5.0.0,6.0.0)",
+ org.osgi.framework

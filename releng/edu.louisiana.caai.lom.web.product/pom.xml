@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- The server of Hermes 2 Web (target/products/edu.louisiana.caai.lom.web.product/<os>/...), archived as
+       hermes-web-<version>-<os>.zip. -->
+  <parent>
+    <groupId>edu.louisiana.caai</groupId>
+    <artifactId>edu.louisiana.caai.lom.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>edu.louisiana.caai.lom.web.product</artifactId>
+  <packaging>eclipse-repository</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <target combine.self="override">
+            <artifact>
+              <groupId>edu.louisiana.caai</groupId>
+              <artifactId>edu.louisiana.caai.lom.web.target</artifactId>
+              <version>1.0.0-SNAPSHOT</version>
+            </artifact>
+          </target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-director-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>materialize-products</id>
+            <goals>
+              <goal>materialize-products</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>archive-products</id>
+            <goals>
+              <goal>archive-products</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <products>
+            <product>
+              <id>edu.louisiana.caai.lom.web.product</id>
+              <rootFolder>hermes-web</rootFolder>
+              <archiveFileName>hermes-web-${project.version}</archiveFileName>
+            </product>
+          </products>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

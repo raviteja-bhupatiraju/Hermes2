@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<toc label="Hermes 2 User Guide" topic="html/index.html">
+   <topic label="Getting Started" href="html/getting-started/first-steps.html">
+      <topic label="First Steps" href="html/getting-started/first-steps.html"/>
+      <topic label="A Tour of the Workbench" href="html/getting-started/workbench.html"/>
+   </topic>
+   <topic label="Concepts" href="html/concepts/hlom.html">
+      <topic label="Healthcare LOM in Brief" href="html/concepts/hlom.html"/>
+      <topic label="Projects and the Workspace" href="html/concepts/projects.html"/>
+      <topic label="Documents: XML and JSON" href="html/concepts/documents.html"/>
+      <topic label="Validation" href="html/concepts/validation.html"/>
+   </topic>
+   <topic label="Tasks" href="html/tasks/create-project.html">
+      <topic label="Creating and Opening Projects" href="html/tasks/create-project.html"/>
+      <topic label="Creating Documents" href="html/tasks/create-document.html"/>
+      <topic label="Editing with the Form Pages" href="html/tasks/edit-forms.html"/>
+      <topic label="Keywords and Terminologies" href="html/tasks/keywords-terminologies.html"/>
+      <topic label="Editing XML and JSON" href="html/tasks/source-pages.html"/>
+      <topic label="Validating and Fixing Problems" href="html/tasks/validate-fix.html"/>
+      <topic label="Searching Documents" href="html/tasks/search.html"/>
+      <topic label="Comparing Documents" href="html/tasks/compare.html"/>
+      <topic label="The Library and HTML Reports" href="html/tasks/library-reports.html"/>
+      <topic label="Importing Records from CSV" href="html/tasks/csv-import.html"/>
+      <topic label="Setting Preferences" href="html/tasks/preferences.html"/>
+   </topic>
+   <topic label="MedBiquitous Standards" href="html/standards/index.html">
+      <topic label="Overview of the Standards" href="html/standards/index.html"/>
+      <topic label="Curriculum Inventory" href="html/standards/curriculum-inventory.html"/>
+      <topic label="Competency Framework, Competency Object and Performance Framework" href="html/standards/competencies.html"/>
+      <topic label="Activity Report" href="html/standards/activity-report.html"/>
+      <topic label="Medical Education Metrics (MEMS)" href="html/standards/education-metrics.html"/>
+      <topic label="Healthcare Professional Profile" href="html/standards/professional-profile.html"/>
+      <topic label="Virtual Patient" href="html/standards/virtual-patient.html"/>
+   </topic>
+   <topic label="Reference" href="html/reference/editor-pages.html">
+      <topic label="Editor Pages" href="html/reference/editor-pages.html"/>
+      <topic label="Views" href="html/reference/views.html"/>
+      <topic label="Menus and Keyboard Shortcuts" href="html/reference/menus-shortcuts.html"/>
+      <topic label="Validation Rules and Quick Fixes" href="html/reference/validation-rules.html"/>
+      <topic label="The JSON Format" href="html/reference/json-format.html"/>
+      <topic label="The Project File" href="html/reference/project-file.html"/>
+      <topic label="Offline Terminologies" href="html/reference/terminologies.html"/>
+      <topic label="HLOM Guide (Elements, Vocabularies, Conformance)" href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html"/>
+      <topic label="Licenses and Acknowledgements" href="html/reference/licenses.html"/>
+   </topic>
+</toc>

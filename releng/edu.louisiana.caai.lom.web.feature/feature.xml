@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hermes 2 Web: the application (Eclipse RAP), the document model and checks it shares with the desktop
+     application, the offline terminologies, and the web server (Jetty with RAP's HTTP service). -->
+<feature
+      id="edu.louisiana.caai.lom.web.feature"
+      label="Hermes 2 Web"
+      version="1.0.0.qualifier"
+      provider-name="University of Louisiana at Lafayette, CAAI">
+
+   <description>
+      MedBiquitous documents in the browser: open, create, edit, check and download Healthcare LOM, Curriculum
+      Inventory, competency, Activity Report, MEMS, Professional Profile and Virtual Patient documents.
+   </description>
+
+   <plugin id="edu.louisiana.caai.lom.web" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.lom.model" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.medbiq.model" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.terminology.mesh" version="0.0.0" fragment="true"/>
+   <plugin id="edu.louisiana.caai.terminology.icd10cm" version="0.0.0" fragment="true"/>
+   <!-- Started by the server configuration (not required by the application). -->
+   <plugin id="org.eclipse.rap.rwt.osgi" version="0.0.0"/>
+   <plugin id="org.eclipse.rap.http.jetty" version="0.0.0"/>
+   <plugin id="org.eclipse.rap.http.registry" version="0.0.0"/>
+   <plugin id="org.eclipse.rap.http.servlet" version="0.0.0"/>
+   <!-- Started by the scripts (java -jar plugins/org.eclipse.equinox.launcher_*.jar). -->
+   <plugin id="org.eclipse.equinox.launcher" version="0.0.0"/>
+
+</feature>

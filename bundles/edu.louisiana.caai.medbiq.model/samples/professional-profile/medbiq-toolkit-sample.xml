@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The sample Healthcare Professional Profile of the MedBiquitous Healthcare Professional Profile Implementation Toolkit (member_sample.xml), included in Hermes 2 with one addition: the ModifiedDate of the profile (2009-06-01), so that its Active license and certificate are current at the time of the profile. Copyright © 2008 MedBiquitous Consortium. All Rights Reserved. http://www.medbiq.org Users are bound by the terms of the MedBiquitous Consortium XML Public License and Terms of Use. -->
+<Members xmlns="http://ns.medbiq.org/member/v1/" xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:n="http://ns.medbiq.org/name/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.medbiq.org/member/v1/ member.xsd">
+	<Member restrictions="Unrestricted">
+		<UniqueID domain="American College of Surgeons">21556222</UniqueID>
+		<Name>
+			<n:GivenName>Emily</n:GivenName>
+			<n:FamilyName>Dickinson</n:FamilyName>
+		</Name>
+		<Address>
+			<a:StreetAddressLine>Department of Surgery</a:StreetAddressLine>
+			<a:StreetAddressLine>600 N. Wolfe Street</a:StreetAddressLine>
+			<a:City>Baltimore</a:City>
+			<a:StateOrProvince>MD</a:StateOrProvince>
+			<a:PostalCode>21287</a:PostalCode>
+			<a:Country>
+				<a:CountryCode>US</a:CountryCode>
+			</a:Country>
+		</Address>
+		<EducationInfo>
+			<Degree>M.D.</Degree>
+			<InstitutionInfo>
+				<InstitutionName>Johns Hopkins University School of Medicine</InstitutionName>
+				<InstitutionID domain="AAMC">133</InstitutionID>
+				<Address>
+					<a:StreetAddressLine>720 Rutland Avenue</a:StreetAddressLine>
+					<a:City>Baltimore</a:City>
+					<a:StateOrProvince>MD</a:StateOrProvince>
+					<a:PostalCode>21205</a:PostalCode>
+					<a:Country>
+						<a:CountryCode>US</a:CountryCode>
+					</a:Country>
+				</Address>
+			</InstitutionInfo>
+			<EducationStatus>Graduated</EducationStatus>
+			<StartDate>1980-08-01</StartDate>
+			<EndDate>1984-07-31</EndDate>
+			<GraduationDate>1984-07-31</GraduationDate>
+		</EducationInfo>
+		<TrainingInfo>
+			<ProgramInfo>
+				<ProgramName>Stanford General Surgery Residency Training Program</ProgramName>
+				<Accreditation>ACGME</Accreditation>
+				<Specialty>Emergency Medicine</Specialty>
+				<InstitutionInfo>
+					<InstitutionName>Stanford School of Medicine</InstitutionName>
+					<Address>
+						<a:StreetAddressLine>300 Pasteur Drive</a:StreetAddressLine>
+						<a:City>Stanford</a:City>
+						<a:StateOrProvince>CA</a:StateOrProvince>
+						<a:PostalCode>94305</a:PostalCode>
+						<a:Country>
+							<a:CountryCode>US</a:CountryCode>
+						</a:Country>
+					</Address>
+				</InstitutionInfo>
+			</ProgramInfo>
+			<Distinction>Chief Resident</Distinction>
+			<TrainingStatus>Completed Specialty Training</TrainingStatus>
+			<StartDate>1984-08-01</StartDate>
+			<EndDate>1989-07-31</EndDate>
+			<CompletionDate>1989-07-31</CompletionDate>
+		</TrainingInfo>
+		<CertificationInfo>
+			<CertificationOrganization>American Board of Medical Specialties</CertificationOrganization>
+			<CertificationBoard>American Board of Surgery</CertificationBoard>
+			<CertificateStatus>Active</CertificateStatus>
+			<CertificateInfo>
+				<CertificateName certificateID = "44444">General Surgery</CertificateName>
+				<CertificateType>General Certificate</CertificateType>
+				<CertificateIssuance>
+					<CertificationID>55555555</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Recertification</CertificationOccurrence>
+					<CertificationIssueDate>1990-01-01</CertificationIssueDate>
+					<CertificationExpireDate>1999-12-31</CertificationExpireDate>
+				</CertificateIssuance>
+				<CertificateIssuance>
+					<CertificationID>566666666</CertificationID>
+					<CertificationDuration>Time-limited</CertificationDuration>
+					<CertificationOccurrence>Recertification</CertificationOccurrence>
+					<CertificationIssueDate>2000-01-01</CertificationIssueDate>
+					<CertificationExpireDate>2009-12-31</CertificationExpireDate>
+					<CertificationStatus>Active</CertificationStatus>
+				</CertificateIssuance>
+			</CertificateInfo>
+		</CertificationInfo>
+		<LicenseInfo>
+			<License>
+				<LicensureEntity code = "MD01"> Maryland Board of Physicians</LicensureEntity>
+				<LicenseNumber>12345654123</LicenseNumber>
+				<InitialLicensureDate>1990-01-31</InitialLicensureDate>
+				<LicenseStatus>Active</LicenseStatus>
+				<LicenseExpirationDate>2010-06-30</LicenseExpirationDate>
+			</License>
+		</LicenseInfo>
+		<DisciplinaryInfo>
+			<BoardOrder>
+				<DisciplinaryEntity>
+					<DisciplinaryEntityName code="MD01">Maryland Board of Physicians</DisciplinaryEntityName>
+					<ContactInformation>
+						<Address>
+							<a:StreetAddressLine>4201 Patterson Avenue</a:StreetAddressLine>
+							<a:City>Baltimore</a:City>
+							<a:StateOrProvince>MD</a:StateOrProvince>
+							<a:Country>
+								<a:CountryCode>US</a:CountryCode>
+							</a:Country>
+						</Address>
+						<ContactNumber>
+							<CountryCode>1</CountryCode>
+							<TelephoneNumber>4107644777</TelephoneNumber>
+							<Description>Office</Description>
+						</ContactNumber>
+						<EmailAddress>mbpmail@rcn.com</EmailAddress>
+					</ContactInformation>
+				</DisciplinaryEntity>
+				<OrderDate>2005-10-15</OrderDate>
+				<ActionForm>Fine</ActionForm>
+				<NoticeOrAction>
+					<BoardAction>
+						<ActionDescription>Fine for failure to submit proof of CME</ActionDescription>
+					</BoardAction>
+				</NoticeOrAction>
+			</BoardOrder>
+		</DisciplinaryInfo>
+		<AcademicAppointmentInfo>
+			<FacultyAppointment>
+				<AdministrativeUnit>Department of Surgery</AdministrativeUnit>
+				<EffectiveDate>2001-01-30</EffectiveDate>
+				<InstitutionInfo>
+					<InstitutionName>Johns Hopkins University School of Medicine</InstitutionName>
+					<Address>
+						<a:City>Baltimore</a:City>
+						<a:StateOrProvince>MD</a:StateOrProvince>
+						<a:Country>
+							<a:CountryCode>US</a:CountryCode>
+						</a:Country>
+					</Address>
+				</InstitutionInfo>
+				<Title>Assistant Professor of Surgery</Title>
+				<Rank>Assistant Professor</Rank>
+				<PrimaryOrJoint>Primary</PrimaryOrJoint>
+				<TenureStatus>Tenure Eligible Track</TenureStatus>
+				<AppointmentType>Full-time</AppointmentType>
+				<LocationType>School-based</LocationType>
+				<Endowed>No</Endowed>
+			</FacultyAppointment>
+		</AcademicAppointmentInfo>
+		<OccupationInfo>
+			<Occupation>Surgeon</Occupation>
+			<Specialty>General Surgery</Specialty>
+			<OccupationStatus>Active</OccupationStatus>
+		</OccupationInfo>
+		<PersonalInfo>
+			<PhysicalStatus>Living</PhysicalStatus>
+			<BirthDate accuracy = "DayMonthYear" restrictions = "Unrestricted" >1959-12-05</BirthDate>
+			<Language>English</Language>
+			<Citizenship>
+				<a:CountryCode>US</a:CountryCode>
+			</Citizenship>
+			<Gender>Female</Gender>
+			<ContactNumber>
+				<CountryCode>1</CountryCode>
+				<TelephoneNumber>4105551212</TelephoneNumber>
+				<Description>Office</Description>
+			</ContactNumber>
+			<EmailAddress>pbshelley@nosuchmail.org</EmailAddress>
+			<PreferredMethodOfContact>email</PreferredMethodOfContact>
+		</PersonalInfo>
+		<MembershipInfo>
+			<MembershipOrganization>American College of Surgeons</MembershipOrganization>
+			<MemberNumber>8888888</MemberNumber>
+			<MembershipLevel>Fellow</MembershipLevel>
+			<MembershipStatus>Active</MembershipStatus>
+			<ComponentGroup>
+				<ComponentGroupName>Scholarships Committee</ComponentGroupName>
+				<ComponentGroupRole>Chair</ComponentGroupRole>
+			</ComponentGroup>
+		</MembershipInfo>
+		<ModifiedDate>2009-06-01</ModifiedDate>
+	</Member>
+</Members>

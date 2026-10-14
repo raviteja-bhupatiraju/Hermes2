@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<cheatsheet title="Repair an Invalid Document">
+   <intro>
+      <description>
+Documents from other tools often break a rule of their standard. Hermes 2 opens them anyway, shows the problems and
+repairs what it can automatically. The <b>samples/invalid</b> folder of the installation has a broken record to
+practice on.
+      </description>
+   </intro>
+   <item title="Open the document" dialog="true" skip="false">
+      <description>
+Open the document (Ctrl+O). A file that is not well-formed XML opens on the <b>XML</b> page with its original text,
+so that you can repair it there.
+      </description>
+      <command serialization="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenCommand" confirm="false"/>
+   </item>
+   <item title="See the problems" skip="false">
+      <description>
+The <b>Problems</b> view lists every problem with its location; double-click one to go to the field.
+      </description>
+      <command serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=org.eclipse.ui.views.ProblemView)" confirm="false"/>
+   </item>
+   <item title="Apply the quick fixes" skip="false">
+      <description>
+Select a problem and press <b>Ctrl+1</b> (or <b>Quick Fix</b> in its context menu). In the Quick Fix dialog, <b>Select
+All</b> applies the same fix to every problem of its kind, in all documents. Problems that need your input (a
+description, a disclosure) lead you to the field.
+      </description>
+   </item>
+   <item title="Review the changes" skip="true">
+      <description>
+Compare the document with its saved version to see, field by field, what the fixes changed before you save.
+      </description>
+      <command serialization="edu.louisiana.caai.lom.editor.compare.withSaved" confirm="false"/>
+      <onCompletion>Save the document (Ctrl+S). To repair many files from the command line, use hermes fix.</onCompletion>
+   </item>
+</cheatsheet>

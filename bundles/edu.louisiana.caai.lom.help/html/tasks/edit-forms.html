@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editing with the Form Pages</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Editing with the Form Pages</h1>
+
+<p class="lead">The form pages present a document as labeled fields: for a Healthcare LOM record, each LOM
+category and the healthcare extensions; for the other MedBiquitous standards, the pages defined for that standard
+(see <a href="#other-standards">Form pages of the other standards</a>). Every edit is applied to the document
+immediately and can be undone.</p>
+
+<h2>Moving around</h2>
+<ul>
+<li>Click a page in the navigation sidebar on the left of the editor. Badges show how many problems each page
+has.</li>
+<li>On the <span class="ui">Overview</span> page, links such as <span class="ui">Not specified</span> in
+<span class="ui">Key facts</span> and the items under <span class="ui">Next steps</span> open the right page.</li>
+<li>Double-click a problem in the Validation or Problems view to go straight to its field.</li>
+</ul>
+<p>The fields of each page are listed in <a href="../reference/editor-pages.html">Editor Pages</a>.</p>
+
+<h2>Getting help on a field</h2>
+<ul>
+<li>Hover over a field or its label to read the specification's description of the element.</li>
+<li>Press <kbd>F1</kbd> to show the field's context help in the Help view, or, in a Healthcare LOM record,
+<kbd>Shift</kbd>+<kbd>F1</kbd> to open its topic in the
+<a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html">HLOM Guide</a>.</li>
+</ul>
+
+<h2>Kinds of fields (Healthcare LOM)</h2>
+<dl>
+<dt>Text fields</dt>
+<dd>Type the value. Some fields offer suggestions from the specification while you type, for example accrediting
+bodies, activity certifications, professions, specialties, reading levels, MIME types and terminology
+names.</dd>
+
+<dt>Multilingual text</dt>
+<dd>Fields such as Title and Description have a language box next to the text (a language tag such as
+<code>en-US</code>). The translations button opens the <span class="ui">Translations</span> dialog, where each
+row holds the same text in another language: use <span class="ui">Add</span> and <span class="ui">Remove</span>
+and click a cell to edit it. The button's tooltip tells you when more languages are available.</dd>
+
+<dt>Lists of text entries</dt>
+<dd>Keywords, descriptions, coverage, professions and similar lists: type a value and press <kbd>Enter</kbd> (or
+click <span class="ui">Add</span>). The list's tool bar removes, moves up and down, and edits translations of the
+selected entry. Keyword lists also have <span class="ui">Look Up…</span> for coded keywords; see
+<a href="keywords-terminologies.html">Keywords and Terminologies</a>.</dd>
+
+<dt>Value lists (tokens)</dt>
+<dd>Languages, formats, locations, metadata schemas, entities and similar values are shown as tokens followed by
+an input field. Type or pick a value and press <kbd>Enter</kbd>. A token's close button removes it,
+double-clicking edits it, and its context menu moves it.</dd>
+
+<dt>Vocabulary fields</dt>
+<dd>A drop-down or a group of check boxes with the IEEE LOM terms and the MedBiquitous healthcare terms in
+separate groups. The editor writes the matching <code>source</code> (<code>LOMv1.0</code> or
+<code>HEALTHCARE_LOMv1</code>) with the value.</dd>
+
+<dt>Healthcare enumerations</dt>
+<dd>Fields such as Credit type, Pacing, Off-label use or Medical image type offer the values defined by the
+healthcare schema. Credit type and Credit unit tooltips explain the acronyms.</dd>
+
+<dt>Dates</dt>
+<dd>Date fields have a date picker. Dates are stored as XML Schema dates (<code>2026-03-01</code>) or date-times
+(<code>2026-05-14T08:30:00</code>).</dd>
+
+<dt>Durations</dt>
+<dd>Typical learning time and Duration take ISO 8601 durations such as <code>PT45M</code> or
+<code>PT1H30M</code>.</dd>
+
+<dt>Master/detail blocks</dt>
+<dd>Repeated structures (identifiers, contributors, educational uses, credits, classifications, relations,
+annotations, requirements) are listed on the left with their details on the right. Use the block's tool bar to
+<span class="ui">Add</span> (+), <span class="ui">Remove</span>, and move entries up or down; select an entry to
+edit its details.</dd>
+</dl>
+
+<h2 id="other-standards">Form pages of the other standards</h2>
+<p>Documents of the other <a href="../standards/index.html">MedBiquitous standards</a> open on an
+<span class="ui">Overview</span> page: the standard and version, the title and description, a link to the
+standard on medbiq.org, the <span class="ui">Contents</span> of the document (the parts of the root element with
+their counts) and the <span class="ui">Validation</span> results. The form pages that follow are defined for each
+standard, grouped in the navigation sidebar like the Healthcare LOM pages; for example, a Curriculum Inventory has
+Report, Institution and Program, Events, Expectations, Academic Levels, Sequence and Integration. The pages of
+each standard are described in its topic.</p>
+<p>The forms are rendered from the standard's schemas:</p>
+<dl>
+<dt>Text and numbers</dt>
+<dd>Single-line or multi-line text fields, checked against the data type of the schema (numbers,
+identifiers…); some fields suggest values recommended by the standard while you type.</dd>
+<dt>Enumerations</dt>
+<dd>A drop-down with the values the schema allows.</dd>
+<dt>Dates</dt>
+<dd>A date picker; dates are stored as XML Schema dates or date-times.</dd>
+<dt>Lists and master/detail blocks</dt>
+<dd>Repeated elements (events, expectations, competencies, reports, members…) are listed on the left with their
+details on the right; the block's tool bar adds, removes and moves entries.</dd>
+<dt>Embedded Healthcare LOM descriptions</dt>
+<dd>Where a standard describes a resource with a Healthcare LOM <code>lom</code> element (for example in a
+Curriculum Inventory, a Competency Object or an Activity Report), the form shows the fields of the description and
+identification of that HLOM description.</dd>
+<dt>Formatted text (XHTML)</dt>
+<dd>Elements with rich XHTML content are shown as a hint (“formatted text (XHTML), edited on the XML page”); edit
+them on the <a href="source-pages.html">XML page</a>.</dd>
+</dl>
+<p>Deeply nested content that the forms don't show is edited in the Document Tree. Validation markers, problem
+badges, undo, and field help on hover work as on the Healthcare LOM pages. The Healthcare LOM tools (MeSH and
+terminology lookups, vocabulary fields, vCards, translations, quick fixes, completeness) are not available for the
+other standards.</p>
+
+<h2>People and organizations (vCards, Healthcare LOM)</h2>
+<p>Contributors and annotation authors are stored as vCards.</p>
+<ol class="steps">
+<li>On the Life Cycle or Meta-Metadata page, select a contributor and click <span class="ui">Add vCard…</span>
+(on the Annotation page: <span class="ui">Compose vCard…</span>).</li>
+<li>In the <span class="ui">Contributor vCard</span> dialog, enter the <span class="ui">Full name</span>,
+<span class="ui">Organization</span> and <span class="ui">Email</span>.</li>
+<li>Click <span class="ui">OK</span>. A vCard 3.0 entry is generated and added.</li>
+</ol>
+
+<h2>Undo, clearing and saving</h2>
+<ul>
+<li>All pages and views share one undo history: <span class="ui">Edit &gt; Undo</span> (<kbd>Ctrl</kbd>+<kbd>Z</kbd>)
+and <span class="ui">Redo</span> (<kbd>Ctrl</kbd>+<kbd>Y</kbd>).</li>
+<li>Clearing a field removes the element, and containers that became empty are removed too, so no empty elements
+are left behind.</li>
+<li>Opening or viewing a page never changes the document; only edits make it dirty.</li>
+<li>Save with <kbd>Ctrl</kbd>+<kbd>S</kbd>.</li>
+</ul>
+
+<h2>Validation markers</h2>
+<p>Fields with problems are marked inline, and the navigation sidebar shows the number of problems per page. Hover
+over a marker to read the message. See <a href="validate-fix.html">Validating and Fixing Problems</a>.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/editor-pages.html">Editor Pages</a></li>
+<li><a href="keywords-terminologies.html">Keywords and Terminologies</a></li>
+<li><a href="source-pages.html">Editing XML and JSON</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-vocabularies">HLOM Guide: Vocabularies</a></li>
+<li><a href="../standards/index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

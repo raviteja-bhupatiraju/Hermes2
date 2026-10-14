@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>edu.louisiana.caai</groupId>
+    <artifactId>edu.louisiana.caai.lom.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>edu.louisiana.caai.lom.ui.tests</artifactId>
+  <packaging>eclipse-test-plugin</packaging>
+
+  <properties>
+    <hermes.offscreen>true</hermes.offscreen>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- The test runtime: the editor feature plus the RCP runtime the product ships with
+             (SWT fragments, CSS theming, equinox.event, felix.scr, ...), which are not reachable through
+             Require-Bundle alone. -->
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <dependency-resolution>
+            <extraRequirements>
+              <requirement>
+                <type>eclipse-feature</type>
+                <id>edu.louisiana.caai.lom.feature</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-feature</type>
+                <id>org.eclipse.rcp</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <!-- The offline terminologies (fragments of the model bundle, installed as features of their own). -->
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>edu.louisiana.caai.terminology.mesh</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>edu.louisiana.caai.terminology.icd10cm</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+            </extraRequirements>
+          </dependency-resolution>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <!-- Runs the tests inside the real application: its workbench advisor, perspective and editor. -->
+          <useUIHarness>true</useUIHarness>
+          <useUIThread>true</useUIThread>
+          <product>edu.louisiana.caai.lom.editor.product</product>
+          <application>edu.louisiana.caai.lom.editor.HlomEditorAdvisorApplication</application>
+          <showEclipseLog>true</showEclipseLog>
+          <!-- The window opens off the screen, so that the tests don't cover the desktop (they drive the widgets
+               directly and need no real input). Run with -Dhermes.offscreen=false to watch them. -->
+          <argLine>-Dhermes.offscreen=${hermes.offscreen}</argLine>
+          <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
+          <bundleStartLevel>
+            <bundle>
+              <id>org.apache.aries.spifly.dynamic.bundle</id>
+              <level>2</level>
+              <autoStart>true</autoStart>
+            </bundle>
+            <bundle>
+              <id>org.eclipse.collections.impl</id>
+              <level>3</level>
+              <autoStart>true</autoStart>
+            </bundle>
+            <bundle>
+              <id>org.apache.felix.scr</id>
+              <level>2</level>
+              <autoStart>true</autoStart>
+            </bundle>
+            <bundle>
+              <id>org.eclipse.equinox.common</id>
+              <level>2</level>
+              <autoStart>true</autoStart>
+            </bundle>
+            <bundle>
+              <id>org.eclipse.equinox.event</id>
+              <level>2</level>
+              <autoStart>true</autoStart>
+            </bundle>
+            <bundle>
+              <id>org.eclipse.core.runtime</id>
+              <level>4</level>
+              <autoStart>true</autoStart>
+            </bundle>
+          </bundleStartLevel>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

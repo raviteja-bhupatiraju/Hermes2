@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ICD-10-CM FY2026 Terminology
+Bundle-SymbolicName: edu.louisiana.caai.terminology.icd10cm
+Bundle-Version: 2026.0.0.qualifier
+Bundle-Vendor: University of Louisiana at Lafayette, Center for Applied Artificial Intelligence (CAAI)
+Fragment-Host: edu.louisiana.caai.lom.model
+Bundle-RequiredExecutionEnvironment: JavaSE-25
+Automatic-Module-Name: edu.louisiana.caai.terminology.icd10cm

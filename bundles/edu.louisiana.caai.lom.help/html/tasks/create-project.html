@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creating and Opening Projects</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Creating and Opening Projects</h1>
+
+<p class="lead">Projects group the documents you work on together: Healthcare LOM records and documents of the
+other MedBiquitous standards, in any mix. You can create a new project folder or turn any existing folder of
+MedBiquitous documents into a project.</p>
+
+<h2>Create a project</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File &gt; New &gt; Project…</span>, click <span class="ui">New Project…</span> on the
+Projects view tool bar, or click <span class="ui">New project…</span> on the start page.</li>
+<li>In the <span class="ui">New Project</span> dialog enter:
+<ul>
+<li><span class="ui">Name</span>: also the name of the project folder.</li>
+<li><span class="ui">Location</span>: the folder in which the project folder is created (default:
+<code>Documents\Hermes Projects</code>). The dialog shows the resulting project folder.</li>
+<li><span class="ui">Description</span> (optional).</li>
+<li><span class="ui">New documents</span>: <span class="ui">XML (.xml)</span> or <span class="ui">JSON
+(.json)</span>. This is the format of new Healthcare LOM records; documents of the other standards are always
+created as XML.</li>
+</ul></li>
+<li>Click <span class="ui">Create</span>.</li>
+</ol>
+<p>If the folder already exists, its MedBiquitous documents become documents of the project. If the folder
+already is a project, use <span class="ui">Open Project</span> instead.</p>
+
+<h2>Open an existing folder as a project</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File &gt; Open Project…</span> or click <span class="ui">Open Project…</span> on the
+Projects view tool bar.</li>
+<li>Select the project folder, or any folder of MedBiquitous documents.</li>
+<li>If the folder has no project file yet, confirm <span class="ui">Make it a project?</span>. Hermes 2 writes
+<code>hermes-project.json</code> into the folder; the documents are not changed.</li>
+</ol>
+
+<h2>Work with documents in a project</h2>
+<p>Select a project or one of its folders in the Projects view and use the tool bar or the context menu:</p>
+<table>
+<tr><th>Action</th><th>What it does</th></tr>
+<tr><td><span class="ui">New Document…</span></td><td>Opens the new-document wizard with the selected folder
+and the project's format preselected.</td></tr>
+<tr><td><span class="ui">Add Existing Documents…</span></td><td>Copies documents (<code>*.xml</code>,
+<code>*.json</code>, <code>*.lom</code>) into the selected folder. Files that aren't documents of a supported
+MedBiquitous standard are skipped; a copy whose name is taken gets a numbered name such as <code>name-2.xml</code>. You can also drop
+files on the view.</td></tr>
+<tr><td><span class="ui">New Folder…</span></td><td>Creates a subfolder.</td></tr>
+<tr><td><span class="ui">Open</span></td><td>Opens the selected documents (also <kbd>Enter</kbd> or
+double-click).</td></tr>
+<tr><td><span class="ui">Convert to JSON</span> / <span class="ui">Convert to XML</span></td><td>Writes the
+document in the other form and removes the original file. Healthcare LOM only: documents of the other standards
+have no JSON form.</td></tr>
+<tr><td><span class="ui">Rename…</span> (<kbd>F2</kbd>)</td><td>Renames a document or folder. A document keeps its
+extension; use Convert to change the format. Open editors are closed first.</td></tr>
+<tr><td><span class="ui">Delete</span> (<kbd>Delete</kbd>)</td><td>Deletes documents or folders (with all their
+contents) from the disk after confirmation.</td></tr>
+<tr><td><span class="ui">Show in File Explorer</span></td><td>Shows the file or folder in the system file
+manager.</td></tr>
+<tr><td><span class="ui">Refresh</span> (<kbd>F5</kbd>)</td><td>Re-reads the folders and validates.</td></tr>
+<tr><td><span class="ui">Collapse All</span></td><td>Collapses the tree (view menu).</td></tr>
+</table>
+
+<h2>Edit the project's properties</h2>
+<ol class="steps">
+<li>Right-click the project and choose <span class="ui">Properties…</span>.</li>
+<li>Change the name, the description or the format of new documents, and click <span class="ui">OK</span>.</li>
+</ol>
+<p>The changes are written to <code>hermes-project.json</code>.</p>
+
+<h2>Close a project</h2>
+<p>Right-click the project and choose <span class="ui">Close Project</span>. The project is removed from the
+Projects view; its files stay on the disk and can be opened again with <span class="ui">Open Project…</span>.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../concepts/projects.html">Projects and the Workspace</a></li>
+<li><a href="../reference/project-file.html">The Project File</a></li>
+<li><a href="create-document.html">Creating Documents</a></li>
+<li><a href="../reference/views.html#projects">The Projects view</a></li>
+</ul>
+</div>
+</body>
+</html>

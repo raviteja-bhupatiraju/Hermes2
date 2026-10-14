@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of a new Curriculum Inventory report, version 1.0 (Hermes 2): one event, one competency
+     object, one academic level and one sequence block that ties them together. Placeholders: ${title}, ${language},
+     ${date}, ${dateTime}, ${id}. -->
+<CurriculumInventory xmlns="http://ns.medbiq.org/curriculuminventory/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+		xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:cf="http://ns.medbiq.org/competencyframework/v1/"
+		xmlns:co="http://ns.medbiq.org/competencyobject/v1/" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+		xmlns:m="http://ns.medbiq.org/member/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/curriculuminventory/v1/ http://ns.medbiq.org/curriculuminventory/v1/curriculuminventory.xsd">
+	<ReportID domain="idd:example.edu:curriculuminventory">${id}</ReportID>
+	<Institution>
+		<m:InstitutionName>Name of the school</m:InstitutionName>
+	</Institution>
+	<Program>
+		<ProgramName>M.D.</ProgramName>
+		<ProgramID domain="idd:example.edu:program">MD</ProgramID>
+	</Program>
+	<Title>${title}</Title>
+	<ReportDate>${date}</ReportDate>
+	<ReportingStartDate>${date}</ReportingStartDate>
+	<ReportingEndDate>${date}</ReportingEndDate>
+	<Language>${language}</Language>
+	<Description>A description of the curriculum.</Description>
+	<Events>
+		<Event id="E1">
+			<Title>First event</Title>
+			<EventDuration>PT1H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='urn:uuid:${id}:objective-1']</CompetencyObjectReference>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM013">Lecture</InstructionalMethod>
+		</Event>
+	</Events>
+	<Expectations>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>urn:uuid:${id}:objective-1</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="${language}">First learning objective</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+		</CompetencyObject>
+	</Expectations>
+	<AcademicLevels>
+		<LevelsInProgram>1</LevelsInProgram>
+		<Level number="1">
+			<Label>Year 1</Label>
+		</Level>
+	</AcademicLevels>
+	<Sequence>
+		<SequenceBlock id="S1" required="Required">
+			<Title>First course</Title>
+			<Timing>
+				<Dates>
+					<StartDate>${date}</StartDate>
+					<EndDate>${date}</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='1']</Level>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='E1']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+	</Sequence>
+</CurriculumInventory>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new Competency Framework 1.0 documents: list each competency object under Includes and state their broader, narrower and related relations under Relation. -->
+<CompetencyFramework xmlns="http://ns.medbiq.org/competencyframework/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/competencyframework/v1/ http://ns.medbiq.org/competencyframework/v1/competencyframework.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>urn:uuid:${id}</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="${language}">${title}</lom:string>
+			</lom:title>
+			<lom:language>${language}</lom:language>
+			<lom:description>
+				<lom:string language="${language}">The knowledge, skills and attitudes this framework describes, and for whom.</lom:string>
+			</lom:description>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:version>
+				<lom:string language="${language}">1.0</lom:string>
+			</lom:version>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>draft</lom:value>
+			</lom:status>
+		</lom:lifeCycle>
+	</lom:lom>
+	<EffectiveDate>${date}</EffectiveDate>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://www.example.org/competencies/competency1</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>https://www.example.org/competencies/competency2</Entry>
+	</Includes>
+	<Relation>
+		<Reference1>
+			<Catalog>URI</Catalog>
+			<Entry>https://www.example.org/competencies/competency1</Entry>
+		</Reference1>
+		<Relationship>http://www.w3.org/2004/02/skos/core#narrower</Relationship>
+		<Reference2>
+			<Catalog>URI</Catalog>
+			<Entry>https://www.example.org/competencies/competency2</Entry>
+		</Reference2>
+	</Relation>
+</CompetencyFramework>

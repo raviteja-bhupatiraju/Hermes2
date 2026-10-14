@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<plugin>
+
+   <!-- The document types of the MedBiquitous standards besides Healthcare LOM: recognized by the namespace of the
+        root element, read and written by MedbiqResourceFactory. The editor (edu.louisiana.caai.lom.editor) is bound to them. -->
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type id="edu.louisiana.caai.medbiq.curriculuminventory.v1" name="%contentType.curriculumInventory1.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/curriculuminventory/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.curriculuminventory.v10" name="%contentType.curriculumInventory10.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/curriculuminventory/v10/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.competencyframework" name="%contentType.competencyframework.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/competencyframework/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.competencyobject" name="%contentType.competencyobject.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/competencyobject/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.performanceframework" name="%contentType.performanceframework.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/performanceframework/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.activityreport.v1" name="%contentType.activityReport1.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/activityreport/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.activityreport.v2" name="%contentType.activityReport2.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/activityreport/v2/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.metrics" name="%contentType.metrics.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/metrics/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.surveyitems" name="%contentType.surveyitems.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/surveyitem/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.member" name="%contentType.member.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/member/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.virtualpatientdata" name="%contentType.virtualpatientdata.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/virtualpatientdata/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.activitymodel" name="%contentType.activitymodel.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/activitymodel/v1/"/>
+         </describer>
+      </content-type>
+      <content-type id="edu.louisiana.caai.medbiq.dataavailabilitymodel" name="%contentType.dataavailabilitymodel.name"
+            base-type="org.eclipse.core.runtime.xml" file-extensions="xml" priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ns.medbiq.org/dataavailabilitymodel/v1/"/>
+         </describer>
+      </content-type>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.curriculuminventory.v1" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.curriculuminventory.v10" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.competencyframework" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.competencyobject" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.performanceframework" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.activityreport.v1" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.activityreport.v2" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.metrics" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.surveyitems" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.member" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.virtualpatientdata" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.activitymodel" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+      <parser contentTypeIdentifier="edu.louisiana.caai.medbiq.dataavailabilitymodel" class="edu.louisiana.caai.medbiq.model.MedbiqResourceFactory"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>edu.louisiana.caai</groupId>
+    <artifactId>edu.louisiana.caai.lom.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>edu.louisiana.caai.lom.product</artifactId>
+  <packaging>eclipse-repository</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-director-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>materialize-products</id>
+            <goals>
+              <goal>materialize-products</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>archive-products</id>
+            <goals>
+              <goal>archive-products</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <products>
+            <product>
+              <id>edu.louisiana.caai.lom.product</id>
+              <rootFolder>Hermes2</rootFolder>
+              <archiveFileName>Hermes2-${project.version}</archiveFileName>
+            </product>
+          </products>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!--
+      mvnw -Prelease verify: writes the release archives and their SHA-256 checksums to dist/ at the
+      repository root (the previous contents of dist/ are deleted).
+
+        Hermes2-<version>-windows-x64.7z      7z, LZMA2 (opens in Explorer on Windows 11, else with 7-Zip)
+        Hermes2-<version>-linux-x64.tar.xz    xz instead of gzip (about 6% smaller)
+        Hermes2-<version>-macos-arm64.tar.gz  gzip (opens in Finder)
+        hermes-cli-<version>.zip              the command line tool and language server alone (Java 25+)
+        SHA256SUMS                               check with: sha256sum -c SHA256SUMS
+
+      The tar archives get Unix permissions explicitly (executable launchers and native libraries), so they
+      are correct even when the release is built on Windows.
+    -->
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.2.0</version>
+            <executions>
+              <execution>
+                <id>release-archives</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target xmlns:cmp="antlib:org.apache.ant.compress">
+                    <taskdef uri="antlib:org.apache.ant.compress" resource="org/apache/ant/compress/antlib.xml"
+                             classpathref="maven.plugin.classpath"/>
+                    <property name="products" location="${project.build.directory}/products"/>
+                    <property name="work" location="${project.build.directory}/release"/>
+                    <property name="dist" location="${project.basedir}/../../dist"/>
+                    <property name="name" value="Hermes2-${unqualifiedVersion}"/>
+                    <property name="tycho" value="${products}/Hermes2-${project.version}"/>
+                    <delete dir="${dist}"/>
+                    <delete dir="${work}"/>
+                    <mkdir dir="${dist}"/>
+                    <mkdir dir="${work}"/>
+
+                    <!-- 7-Zip (if installed, or given with -Dsevenzip=<path to 7z>) compresses all files as one
+                         solid block, about 5% smaller than the built-in writer, which is used otherwise. -->
+                    <condition property="sevenzip" value="${env.PROGRAMFILES}\7-Zip\7z.exe">
+                      <available file="${env.PROGRAMFILES}\7-Zip\7z.exe"/>
+                    </condition>
+                    <condition property="sevenzip" value="7zz">
+                      <available file="7zz" filepath="${env.PATH}"/>
+                    </condition>
+                    <condition property="sevenzip" value="7z">
+                      <or>
+                        <available file="7z" filepath="${env.PATH}"/>
+                        <available file="7z.exe" filepath="${env.PATH}"/>
+                      </or>
+                    </condition>
+                    <property name="windows" location="${products}/edu.louisiana.caai.lom.product/win32/win32/x86_64"/>
+                    <property name="windows.archive" location="${dist}/${name}-windows-x64.7z"/>
+
+                    <!-- The Java runtime of all builds is Eclipse JustJ (a root feature of the product, which sets
+                         -vm in Hermes2.ini), so the builds are standalone and Java is updated like the rest. -->
+                    <!-- The Windows installer, compiled with Inno Setup 6 (ISCC.exe on the PATH, in its usual
+                         install locations, or given with -Discc=<path to ISCC.exe>). -->
+                    <condition property="iscc" value="${env.LOCALAPPDATA}\Programs\Inno Setup 6\ISCC.exe">
+                      <available file="${env.LOCALAPPDATA}\Programs\Inno Setup 6\ISCC.exe"/>
+                    </condition>
+                    <condition property="iscc" value="C:\Program Files (x86)\Inno Setup 6\ISCC.exe">
+                      <available file="C:\Program Files (x86)\Inno Setup 6\ISCC.exe"/>
+                    </condition>
+                    <condition property="iscc" value="${env.PROGRAMFILES}\Inno Setup 6\ISCC.exe">
+                      <available file="${env.PROGRAMFILES}\Inno Setup 6\ISCC.exe"/>
+                    </condition>
+                    <condition property="iscc" value="ISCC.exe">
+                      <and>
+                        <os family="windows"/>
+                        <available file="ISCC.exe" filepath="${env.PATH}"/>
+                      </and>
+                    </condition>
+                    <!-- The Windows build is released as the installer; the 7z archive is only made when Inno Setup
+                         isn't available. -->
+                    <condition property="archive.sevenzip">
+                      <and>
+                        <isset property="sevenzip"/>
+                        <not><isset property="iscc"/></not>
+                      </and>
+                    </condition>
+                    <condition property="archive.builtin">
+                      <not>
+                        <or>
+                          <isset property="sevenzip"/>
+                          <isset property="iscc"/>
+                        </or>
+                      </not>
+                    </condition>
+                    <exec executable="${sevenzip}" dir="${windows}" failonerror="true" if:set="archive.sevenzip"
+                          xmlns:if="ant:if">
+                      <arg line="a -t7z -mx=9 -ms=on -mqs=on -bd -bso0"/>
+                      <arg file="${windows.archive}"/>
+                      <arg value="Hermes2"/>
+                    </exec>
+                    <echo level="info" if:set="archive.sevenzip" xmlns:if="ant:if">Windows archive: ${sevenzip}</echo>
+                    <cmp:sevenz destfile="${windows.archive}" contentCompression="LZMA2" if:set="archive.builtin"
+                                xmlns:if="ant:if">
+                      <zipfileset dir="${windows}/Hermes2" prefix="Hermes2"/>
+                    </cmp:sevenz>
+
+
+                    <!-- Inno Setup can't read paths over 260 characters, which the deepest class files exceed
+                         below target\products: the product is staged in a short temporary folder. -->
+                    <property name="setup.stage" location="${java.io.tmpdir}/hermes2-setup"/>
+                    <delete dir="${setup.stage}" if:set="iscc" xmlns:if="ant:if"/>
+                    <copy todir="${setup.stage}" if:set="iscc" xmlns:if="ant:if">
+                      <fileset dir="${windows}/Hermes2"/>
+                    </copy>
+                    <exec executable="${iscc}" dir="${project.basedir}/installer" failonerror="true" if:set="iscc"
+                          xmlns:if="ant:if">
+                      <arg value="/Q"/>
+                      <arg value="/DAppVersion=${unqualifiedVersion}"/>
+                      <arg value="/DSourceDir=${setup.stage}"/>
+                      <arg value="/DOutputDir=${dist}"/>
+                      <arg value="/DIconFile=${project.basedir}\..\..\bundles\edu.louisiana.caai.lom.editor\icons\app\hlom.ico"/>
+                      <arg file="${project.basedir}/installer/hermes2.iss"/>
+                    </exec>
+                    <delete dir="${setup.stage}" if:set="iscc" xmlns:if="ant:if"/>
+                    <echo level="info" if:set="iscc" xmlns:if="ant:if">Windows installer: ${name}-windows-x64-setup.exe</echo>
+                    <echo level="warning" unless:set="iscc" xmlns:unless="ant:unless">Inno Setup not found (-Discc=...): no Windows installer, the Windows build is released as a 7z archive.</echo>
+
+                    <!-- Tycho's own tar archives have no Unix permissions when built on Windows (the launchers
+                         wouldn't be executable) and record the build user, so the tars are built here from the
+                         materialized products instead. -->
+                    <property name="installs" location="${products}/edu.louisiana.caai.lom.product"/>
+                    <!-- Native libraries, and the programs of the JustJ Java runtime (java, jspawnhelper, ...). -->
+                    <property name="native" value="**/*.so,**/*.dylib,**/*.jnilib,plugins/org.eclipse.justj.*/jre/bin/*,plugins/org.eclipse.justj.*/jre/lib/jspawnhelper,Contents/Eclipse/plugins/org.eclipse.justj.*/jre/bin/*,Contents/Eclipse/plugins/org.eclipse.justj.*/jre/lib/jspawnhelper"/>
+
+                    <tar destfile="${work}/linux.tar" longfile="posix">
+                      <tarfileset dir="${installs}/linux/gtk/x86_64/Hermes2" prefix="Hermes2"
+                                  excludes="Hermes2,cli/hermes,${native}"
+                                  filemode="644" dirmode="755" username="hlom" group="hlom" uid="1000" gid="1000"/>
+                      <tarfileset dir="${installs}/linux/gtk/x86_64/Hermes2" prefix="Hermes2"
+                                  includes="Hermes2,cli/hermes,${native}"
+                                  filemode="755" username="hlom" group="hlom" uid="1000" gid="1000"/>
+                    </tar>
+                    <cmp:xz src="${work}/linux.tar" destfile="${dist}/${name}-linux-x64.tar.xz"/>
+
+                    <tar destfile="${dist}/${name}-macos-arm64.tar.gz" longfile="posix" compression="gzip">
+                      <tarfileset dir="${installs}/macosx/cocoa/aarch64/Hermes2.app" prefix="Hermes2.app"
+                                  excludes="Contents/MacOS/Hermes2,Contents/Eclipse/cli/hermes,${native}"
+                                  filemode="644" dirmode="755" username="hlom" group="hlom" uid="501" gid="20"/>
+                      <tarfileset dir="${installs}/macosx/cocoa/aarch64/Hermes2.app" prefix="Hermes2.app"
+                                  includes="Contents/MacOS/Hermes2,Contents/Eclipse/cli/hermes,${native}"
+                                  filemode="755" username="hlom" group="hlom" uid="501" gid="20"/>
+                    </tar>
+
+                    <!-- The command line tool and language server on its own (any OS with Java 25+). -->
+                    <copy file="${project.basedir}/../edu.louisiana.caai.lom.cli.dist/target/hermes-cli-1.0.0.zip"
+                          tofile="${dist}/hermes-cli-${unqualifiedVersion}.zip"/>
+
+                    <!-- Hermes 2 Web: the server (any OS with Java 25+; start hermes-web or hermes-web.cmd). -->
+                    <copy file="${project.basedir}/../edu.louisiana.caai.lom.web.product/target/products/hermes-web-${project.version}-win32.win32.x86_64.zip"
+                          tofile="${dist}/hermes-web-${unqualifiedVersion}.zip"/>
+
+                    <!-- The update site (p2 repository) for Help > Check for Updates: the application, the
+                         terminology features and their dependencies. Unzip it on the web server at the address set
+                         with -Dhermes.update.site (Hermes2.ini) or the updates.site preference. -->
+                    <zip destfile="${dist}/${name}-update-site.zip" basedir="${project.build.directory}/repository"/>
+
+                    <checksum algorithm="SHA-256" todir="${work}/sums" pattern="{0} *{1}">
+                      <fileset dir="${dist}"/>
+                    </checksum>
+                    <concat destfile="${dist}/SHA256SUMS" fixlastline="yes">
+                      <sort>
+                        <fileset dir="${work}/sums"/>
+                      </sort>
+                      <filterchain>
+                        <linecontainsregexp>
+                          <regexp pattern="\S"/>
+                        </linecontainsregexp>
+                      </filterchain>
+                    </concat>
+                    <fixcrlf file="${dist}/SHA256SUMS" eol="lf"/>
+                    <echo level="info">Release archives in ${dist}</echo>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>1.10.18</version>
+              </dependency>
+              <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant-compress</artifactId>
+                <version>1.5</version>
+              </dependency>
+              <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>1.28.0</version>
+              </dependency>
+              <dependency>
+                <groupId>org.tukaani</groupId>
+                <artifactId>xz</artifactId>
+                <version>1.12</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

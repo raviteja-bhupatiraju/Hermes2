@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: Medical Education Metrics (MEMS) 1.0 report of an online CME/CNE course
+     for the first quarter of 2026 (participation, participant evaluation with MedBiquitous survey items, comparison
+     data and a knowledge assessment). The provider, the course and all numbers are invented. -->
+<MedicalEducationMetrics xmlns="http://ns.medbiq.org/metrics/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+		xmlns:hx="http://ns.medbiq.org/lom/extend/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/metrics/v1/ http://ns.medbiq.org/metrics/v1/medicaleducationmetrics.xsd">
+	<ReportDescription>
+		<RespondentCategory source="Gulf Coast Institute for Clinical Education" id="all">all participants</RespondentCategory>
+		<ReportingStartDate>2026-01-01</ReportingStartDate>
+		<ReportingEndDate>2026-03-31</ReportingEndDate>
+	</ReportDescription>
+	<ActivityDescription>
+		<lom:lom>
+			<lom:general>
+				<lom:identifier>
+					<lom:catalog>URI</lom:catalog>
+					<lom:entry>https://learn.gulfcoast-ce.example.org/activities/oud-primary-care-2025</lom:entry>
+				</lom:identifier>
+				<lom:title>
+					<lom:string language="en">Recognizing and Treating Opioid Use Disorder in Primary Care</lom:string>
+				</lom:title>
+				<lom:language>en</lom:language>
+				<lom:description>
+					<lom:string language="en">A self-paced online course with four case-based modules on screening for opioid use disorder, initiating buprenorphine in the office, safe opioid prescribing and naloxone co-prescribing. Learning objectives: 1) Screen adult patients for opioid use disorder with a validated instrument. 2) Initiate and monitor buprenorphine treatment. 3) Apply current guidance on opioid prescribing and naloxone.</lom:string>
+				</lom:description>
+				<lom:keyword>
+					<lom:string language="en">opioid-related disorders</lom:string>
+				</lom:keyword>
+				<lom:keyword>
+					<lom:string language="en">buprenorphine</lom:string>
+				</lom:keyword>
+				<lom:keyword>
+					<lom:string language="en">primary health care</lom:string>
+				</lom:keyword>
+			</lom:general>
+			<hx:healthcareMetadata>
+				<hx:healthcareEducation>
+					<hx:expirationDate>2027-09-14</hx:expirationDate>
+					<hx:creditsAvailable>yes</hx:creditsAvailable>
+					<hx:credits>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:pacing>learner paced</hx:pacing>
+						<hx:accreditedProvider>Gulf Coast Institute for Clinical Education</hx:accreditedProvider>
+						<hx:releaseDate>2025-09-15</hx:releaseDate>
+						<hx:expirationDate>2027-09-14</hx:expirationDate>
+						<hx:numberOfCredits>1.5</hx:numberOfCredits>
+					</hx:credits>
+					<hx:credits>
+						<hx:accreditingBody>ANCC</hx:accreditingBody>
+						<hx:activityCertification>Nursing contact hours</hx:activityCertification>
+						<hx:creditType>CNE</hx:creditType>
+						<hx:creditUnit>Contact Hour</hx:creditUnit>
+						<hx:pacing>learner paced</hx:pacing>
+						<hx:accreditedProvider>Gulf Coast Institute for Clinical Education</hx:accreditedProvider>
+						<hx:releaseDate>2025-09-15</hx:releaseDate>
+						<hx:expirationDate>2027-09-14</hx:expirationDate>
+						<hx:numberOfCredits>1.5</hx:numberOfCredits>
+					</hx:credits>
+					<hx:targetAudience>
+						<hx:audienceCategory>professional</hx:audienceCategory>
+						<hx:profession>
+							<lom:string language="en">physician</lom:string>
+						</hx:profession>
+						<hx:profession>
+							<lom:string language="en">nurse practitioner</lom:string>
+						</hx:profession>
+						<hx:profession>
+							<lom:string language="en">physician assistant</lom:string>
+						</hx:profession>
+					</hx:targetAudience>
+					<hx:participationModality>technology based</hx:participationModality>
+					<hx:activityDelivery>not live</hx:activityDelivery>
+					<hx:commercialSupport>no</hx:commercialSupport>
+				</hx:healthcareEducation>
+			</hx:healthcareMetadata>
+		</lom:lom>
+		<OtherIncome currency="USD">48000</OtherIncome>
+		<Expenses currency="USD">41250</Expenses>
+		<DesignedToChangeCompetence>true</DesignedToChangeCompetence>
+		<DesignedToChangePerformance>true</DesignedToChangePerformance>
+		<DesignedToChangePatientOutcomes>false</DesignedToChangePatientOutcomes>
+		<ChangesInCompetenceMeasured>true</ChangesInCompetenceMeasured>
+		<ChangesInPerformanceMeasured>false</ChangesInPerformanceMeasured>
+		<ChangesInPatientOutcomesMeasured>false</ChangesInPatientOutcomesMeasured>
+	</ActivityDescription>
+	<ParticipantActivityEvaluation>
+		<SurveyItemData source="medbiq.org" id="10">
+			<SurveyQuestion>The course achieved its educational objectives.</SurveyQuestion>
+			<ResponseData>
+				<ScaleData type="likert" points="5">
+					<One label="Strongly agree" source="medbiq.org" id="20">612</One>
+					<Two label="Agree" source="medbiq.org" id="30">498</Two>
+					<Three label="Neutral" source="medbiq.org" id="40">101</Three>
+					<Four label="Disagree" source="medbiq.org" id="50">26</Four>
+					<Five label="Strongly disagree" source="medbiq.org" id="60">9</Five>
+				</ScaleData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData source="gulfcoast-ce.example.org" id="E-04">
+			<SurveyQuestion>The activity was free of commercial bias.</SurveyQuestion>
+			<ResponseData>
+				<YesNoData>
+					<Yes>1221</Yes>
+					<No>25</No>
+				</YesNoData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData>
+			<SurveyQuestion>How would you characterize your practice?</SurveyQuestion>
+			<ResponseData>
+				<MultipleChoiceSelectOneData>
+					<ResponseItemData source="medbiq.org" id="240">
+						<ResponseText>Hospital based</ResponseText>
+						<TotalRespondents>402</TotalRespondents>
+					</ResponseItemData>
+					<ResponseItemData source="medbiq.org" id="250">
+						<ResponseText>Community based - more than 10 physicians</ResponseText>
+						<TotalRespondents>611</TotalRespondents>
+					</ResponseItemData>
+					<ResponseItemData source="medbiq.org" id="260">
+						<ResponseText>Community-based - less than 10 physicians</ResponseText>
+						<TotalRespondents>188</TotalRespondents>
+					</ResponseItemData>
+					<ResponseItemData source="medbiq.org" id="270">
+						<ResponseText>Other</ResponseText>
+						<TotalRespondents>45</TotalRespondents>
+						<FreeTextData>
+							<TextResponse>Federally qualified health center</TextResponse>
+							<AnalysisCategory>Safety-net clinic</AnalysisCategory>
+						</FreeTextData>
+						<FreeTextData>
+							<TextResponse>Correctional health</TextResponse>
+							<AnalysisCategory>Other setting</AnalysisCategory>
+						</FreeTextData>
+					</ResponseItemData>
+				</MultipleChoiceSelectOneData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData>
+			<SurveyQuestion>What factors do you see as barriers to patients receiving proper treatment? Select all that apply.</SurveyQuestion>
+			<ResponseData>
+				<MultipleChoiceSelectManyData>
+					<ResponseItemData source="medbiq.org" id="280">
+						<ResponseText>Cultural</ResponseText>
+						<TotalRespondents>533</TotalRespondents>
+					</ResponseItemData>
+					<ResponseItemData source="medbiq.org" id="290">
+						<ResponseText>Economic</ResponseText>
+						<TotalRespondents>874</TotalRespondents>
+					</ResponseItemData>
+					<ResponseItemData source="medbiq.org" id="300">
+						<ResponseText>Lack of clinician training</ResponseText>
+						<TotalRespondents>702</TotalRespondents>
+					</ResponseItemData>
+					<ResponseItemData source="medbiq.org" id="310">
+						<ResponseText>Access to care</ResponseText>
+						<TotalRespondents>951</TotalRespondents>
+					</ResponseItemData>
+				</MultipleChoiceSelectManyData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData source="gulfcoast-ce.example.org" id="E-09">
+			<SurveyQuestion>What is one change you will make in your practice as a result of this course?</SurveyQuestion>
+			<ResponseData>
+				<FreeTextData>
+					<TextResponse>Start screening all new adult patients with a single-question opioid screen.</TextResponse>
+					<AnalysisCategory source="gulfcoast-ce.example.org" id="C1">Screening</AnalysisCategory>
+				</FreeTextData>
+				<FreeTextData>
+					<TextResponse>Co-prescribe naloxone with every long-term opioid prescription.</TextResponse>
+					<AnalysisCategory source="gulfcoast-ce.example.org" id="C3">Naloxone</AnalysisCategory>
+				</FreeTextData>
+				<FreeTextData>
+					<TextResponse>Offer buprenorphine in the office instead of referring out.</TextResponse>
+					<AnalysisCategory source="gulfcoast-ce.example.org" id="C2">Treatment initiation</AnalysisCategory>
+				</FreeTextData>
+			</ResponseData>
+		</SurveyItemData>
+		<ComparisonData>
+			<SurveyItemDataForComparison source="medbiq.org" id="70">
+				<SurveyQuestion>Thinking about my expectations for this CME activity, it was important that it provide fair and balanced content.</SurveyQuestion>
+				<ResponseData>
+					<ScaleData type="Low/High" points="7">
+						<One label="Low" source="medbiq.org" id="80">14</One>
+						<Two source="medbiq.org" id="90">22</Two>
+						<Three source="medbiq.org" id="100">57</Three>
+						<Four source="medbiq.org" id="110">143</Four>
+						<Five source="medbiq.org" id="120">298</Five>
+						<Six source="medbiq.org" id="130">401</Six>
+						<Seven label="High" source="medbiq.org" id="140">311</Seven>
+					</ScaleData>
+				</ResponseData>
+				<Timing>Before</Timing>
+			</SurveyItemDataForComparison>
+			<SurveyItemDataForComparison source="medbiq.org" id="150">
+				<SurveyQuestion>Thinking about my participation in this CME activity, I thought it was able to provide fair and balanced content.</SurveyQuestion>
+				<ResponseData>
+					<ScaleData type="Low/High" points="7">
+						<One label="Low" source="medbiq.org" id="150">6</One>
+						<Two source="medbiq.org" id="160">9</Two>
+						<Three source="medbiq.org" id="170">31</Three>
+						<Four source="medbiq.org" id="180">97</Four>
+						<Five source="medbiq.org" id="190">265</Five>
+						<Six source="medbiq.org" id="200">442</Six>
+						<Seven label="High" source="medbiq.org" id="210">396</Seven>
+					</ScaleData>
+				</ResponseData>
+				<Timing>After</Timing>
+			</SurveyItemDataForComparison>
+		</ComparisonData>
+	</ParticipantActivityEvaluation>
+	<KnowledgeAssessment>
+		<MultipleChoiceAssessmentItemData source="gulfcoast-ce.example.org" id="Q1-pre">
+			<Question>Which medication for opioid use disorder can be prescribed in a primary care office?</Question>
+			<AssessmentResponseData>
+				<AssessmentResponseItemData correct="true">
+					<ResponseText>Buprenorphine</ResponseText>
+					<TotalRespondents>861</TotalRespondents>
+				</AssessmentResponseItemData>
+				<AssessmentResponseItemData correct="false">
+					<ResponseText>Methadone for opioid use disorder</ResponseText>
+					<TotalRespondents>377</TotalRespondents>
+				</AssessmentResponseItemData>
+				<AssessmentResponseItemData correct="false">
+					<ResponseText>Neither</ResponseText>
+					<TotalRespondents>74</TotalRespondents>
+				</AssessmentResponseItemData>
+			</AssessmentResponseData>
+			<Timing>Before</Timing>
+		</MultipleChoiceAssessmentItemData>
+		<MultipleChoiceAssessmentItemData source="gulfcoast-ce.example.org" id="Q1-post">
+			<Question>Which medication for opioid use disorder can be prescribed in a primary care office?</Question>
+			<AssessmentResponseData>
+				<AssessmentResponseItemData correct="true">
+					<ResponseText>Buprenorphine</ResponseText>
+					<TotalRespondents>1236</TotalRespondents>
+				</AssessmentResponseItemData>
+				<AssessmentResponseItemData correct="false">
+					<ResponseText>Methadone for opioid use disorder</ResponseText>
+					<TotalRespondents>61</TotalRespondents>
+				</AssessmentResponseItemData>
+				<AssessmentResponseItemData correct="false">
+					<ResponseText>Neither</ResponseText>
+					<TotalRespondents>15</TotalRespondents>
+				</AssessmentResponseItemData>
+			</AssessmentResponseData>
+			<Timing>After</Timing>
+		</MultipleChoiceAssessmentItemData>
+	</KnowledgeAssessment>
+	<ParticipationMetrics>
+		<TargetedAudience>12000</TargetedAudience>
+		<RegisteredParticipants>1840</RegisteredParticipants>
+		<NumberOfParticipantsReceivingCredit>1275</NumberOfParticipantsReceivingCredit>
+		<CreditsAwarded>
+			<hx:accreditingBody>ACCME</hx:accreditingBody>
+			<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+			<hx:creditType>CME</hx:creditType>
+			<hx:creditUnit>Credit</hx:creditUnit>
+			<hx:numberOfCredits>1620</hx:numberOfCredits>
+		</CreditsAwarded>
+		<CreditsAwarded>
+			<hx:accreditingBody>ANCC</hx:accreditingBody>
+			<hx:creditType>CNE</hx:creditType>
+			<hx:creditUnit>Contact Hour</hx:creditUnit>
+			<hx:numberOfCredits>292.5</hx:numberOfCredits>
+		</CreditsAwarded>
+		<NumberOfDistinctHostsOrVisitors>2210</NumberOfDistinctHostsOrVisitors>
+		<NumberOfSuccessfulPageRequests>48760</NumberOfSuccessfulPageRequests>
+		<NumberOfParticipantsCompletingActivity>1312</NumberOfParticipantsCompletingActivity>
+		<ParticipantsByCategory category="first-time participant">1120</ParticipantsByCategory>
+		<ParticipantsByCategory category="returning participant">720</ParticipantsByCategory>
+		<ParticipantsByProfession profession="physician">1402</ParticipantsByProfession>
+		<ParticipantsByProfession profession="nurse practitioner">268</ParticipantsByProfession>
+		<ParticipantsByProfession profession="physician assistant">170</ParticipantsByProfession>
+		<ParticipantsBySpecialty specialty="family medicine">812</ParticipantsBySpecialty>
+		<ParticipantsBySpecialty specialty="internal medicine">590</ParticipantsBySpecialty>
+		<Comments>Counts by category, profession and specialty refer to registered participants. Credit was awarded to participants who completed all four modules and the post-test with a score of at least 75 percent; 1,080 received AMA PRA Category 1 Credit and 195 received nursing contact hours.</Comments>
+	</ParticipationMetrics>
+</MedicalEducationMetrics>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Healthcare LOM in Brief</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Healthcare LOM in Brief</h1>
+
+<p class="lead">Healthcare Learning Object Metadata (HLOM) v1, ANSI/MEDBIQ LO.10.1-2008, is the MedBiquitous
+profile of IEEE Learning Object Metadata (LOM, IEEE 1484.12.1, XML binding IEEE 1484.12.3). It describes
+healthcare learning resources: continuing-education courses and live activities, and medical images, video and
+other assets.</p>
+
+<p>Healthcare LOM is one of the <a href="../standards/index.html">MedBiquitous standards</a> that Hermes 2 edits,
+and the one with the most complete support (JSON form, quick fixes, terminologies, completeness, CSV import and
+HTML reports). Other standards embed HLOM descriptions: Curriculum Inventory, Competency Object and Activity
+Report documents, for example, can describe a resource with a <code>lom</code> element, which their form pages
+show as an embedded description.</p>
+
+<h2>Structure of a record</h2>
+<p>An HLOM record is an XML document whose root element is <code>lom</code> in the IEEE LOM namespace
+<code>http://ltsc.ieee.org/xsd/LOM</code>. It contains the nine LOM categories and one healthcare extension:</p>
+<table>
+<tr><th>Category</th><th>Describes</th><th>Editor page</th></tr>
+<tr><td>1 General</td><td>Identifier, title, language, description, keywords, coverage, structure, aggregation
+level</td><td>General</td></tr>
+<tr><td>2 Life Cycle</td><td>Version, status and contributors (authors, publishers, reviewers…) with dates</td>
+<td>Life Cycle</td></tr>
+<tr><td>3 Meta-Metadata</td><td>The record itself: its identifiers, contributors, metadata schemas and
+language</td><td>Meta-Metadata</td></tr>
+<tr><td>4 Technical</td><td>Formats (MIME types), size, locations (URLs), requirements, duration</td>
+<td>Technical</td></tr>
+<tr><td>5 Educational</td><td>Interactivity, learning resource types, intended end user roles, contexts, difficulty,
+typical learning time</td><td>Educational</td></tr>
+<tr><td>6 Rights</td><td>Cost, copyright and other restrictions, conditions of use</td><td>Rights</td></tr>
+<tr><td>7 Relation</td><td>Related resources and the kind of relationship</td><td>Relation</td></tr>
+<tr><td>8 Annotation</td><td>Comments on the educational use, with author and date</td><td>Annotation</td></tr>
+<tr><td>9 Classification</td><td>Classifications by purpose (for example competency) with taxon paths from a
+taxonomy</td><td>Classification</td></tr>
+<tr><td><code>healthcareMetadata</code></td><td>The MedBiquitous extensions: <code>healthcareEducation</code>
+(credits, target audience, disclosures, schedule, activity location) and <code>healthcareAsset</code> (clinical
+history, image type, specimen, magnification, dimensions)</td><td>Healthcare Education, Healthcare Asset</td></tr>
+</table>
+
+<p>The healthcare extension elements use the namespace <code>http://ns.medbiq.org/lom/extend/v1/</code>
+(prefix <code>hx</code>); the activity location address uses <code>http://ns.medbiq.org/address/v1/</code>
+(prefix <code>a</code>).</p>
+
+<h2>What makes a record conformant</h2>
+<p>A conformant HLOM instance validates against the HLOM XML Schemas, is a conforming IEEE LOM XML instance, and
+meets the specification's <em>Additional Requirements</em>:</p>
+<ul>
+<li><code>metaMetadata</code> declares the metadata schemas <code>LOMv1.0</code> and
+<code>HEALTHCARE_LOMv1</code> (and <code>SCORM_CAM_v1.3</code> if applicable);</li>
+<li><code>healthcareMetadata</code> occurs once.</li>
+</ul>
+<p>Hermes 2 checks both requirements and can add what is missing; see
+<a href="validation.html">Validation</a>. All healthcare extension elements are optional.</p>
+
+<h2>Recurring patterns</h2>
+<dl>
+<dt>Multilingual text (LanguageString)</dt>
+<dd>Titles, descriptions, keywords and similar elements hold one or more <code>string</code> entries, each with
+a <code>language</code> attribute such as <code>en-US</code>. Hermes 2 warns about text without language.</dd>
+<dt>Vocabularies</dt>
+<dd>Elements such as role, learning resource type, context and classification purpose take a
+<code>source</code> and a <code>value</code>. The source is <code>LOMv1.0</code> for IEEE LOM terms and
+<code>HEALTHCARE_LOMv1</code> for the MedBiquitous healthcare terms. The editor writes the matching source when
+you pick a term.</dd>
+<dt>Coded keywords</dt>
+<dd>A keyword may carry <code>hx:source</code> (a terminology such as MeSH, SNOMED or UMLS) and
+<code>hx:id</code> (the code in that terminology, for example the MeSH descriptor <code>D009203</code>).</dd>
+<dt>Credits</dt>
+<dd>One <code>credits</code> entry per type of credit (for example one for CME and one for CNE), each with
+accrediting body, credit type, unit, number of credits, pacing and providers.</dd>
+<dt>People and organizations</dt>
+<dd>Contributors are stored as vCards (vCard 3.0 text).</dd>
+<dt>Dates and durations</dt>
+<dd>Dates follow XML Schema (<code>2026-03-01</code>, <code>2026-05-14T08:30:00</code>); durations use ISO 8601
+(<code>PT1H30M</code>).</dd>
+</dl>
+
+<p class="tip">For the complete element reference, the healthcare vocabularies, credit acronyms, professions and
+specialties, open the <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html">HLOM Guide</a>
+(<span class="ui">Help &gt; HLOM Guide</span>). The specification itself is available as
+<span class="ui">Help &gt; Specification (PDF)</span>.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-elements">HLOM Guide: Elements</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-conformance">HLOM Guide: Conformance</a></li>
+<li><a href="../reference/editor-pages.html">Editor Pages</a></li>
+<li><a href="documents.html">Documents: XML and JSON</a></li>
+<li><a href="../standards/index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

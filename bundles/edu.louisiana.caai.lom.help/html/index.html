@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hermes 2 User Guide</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Hermes 2 User Guide</h1>
+
+<p class="lead"><strong>Hermes 2: MedBiquitous Editor</strong> is a desktop editor for the published
+<a href="standards/index.html">MedBiquitous standards</a> of health professions education: Healthcare Learning
+Object Metadata (HLOM) v1, Curriculum Inventory, Competency Framework, Competency Object, Performance Framework,
+Activity Report, Medical Education Metrics (MEMS) and MEMS Survey Items, Healthcare Professional Profile and
+Virtual Patient.</p>
+
+<p>Documents of every standard can be created from templates, edited on form pages, in the document tree or as
+XML, validated against the standard's published schemas and rules (offline), managed in projects, searched and
+compared. The same checks run on the command line (<code>hermes validate</code>) and in other editors through the
+language server.</p>
+
+<p><strong>Healthcare LOM</strong> (ANSI/MEDBIQ LO.10.1-2008, the healthcare profile of IEEE LOM 1484.12.1 /
+1484.12.3, used to describe continuing-education courses, live activities and medical image assets) has the most
+complete support: HLOM records can also be stored in a JSON form, repaired with quick fixes, coded with offline
+terminologies (MeSH, ICD-10-CM and others), scored for completeness, imported from CSV and published as HTML
+catalog cards and library reports.</p>
+
+<figure>
+<img src="img/01-overview.png" alt="The Overview page of a Healthcare LOM record in Hermes 2">
+<figcaption>The Overview page of a record: summary, key facts, completeness, validation and next steps.</figcaption>
+</figure>
+
+<h2>Where to start</h2>
+<ul class="cards">
+<li><a href="getting-started/first-steps.html">First Steps</a><br>Create, edit, validate and save your first
+record in a few minutes.</li>
+<li><a href="getting-started/workbench.html">A Tour of the Workbench</a><br>The main window, its views and the
+editor.</li>
+<li><a href="standards/index.html">The MedBiquitous Standards</a><br>The standards and versions Hermes 2 edits,
+and what each describes.</li>
+<li><a href="concepts/hlom.html">Healthcare LOM in Brief</a><br>What an HLOM record contains and what makes it
+conformant.</li>
+</ul>
+
+<h2>Contents</h2>
+<h3>Concepts</h3>
+<ul>
+<li><a href="concepts/hlom.html">Healthcare LOM in Brief</a></li>
+<li><a href="concepts/projects.html">Projects and the Workspace</a></li>
+<li><a href="concepts/documents.html">Documents: XML and JSON</a></li>
+<li><a href="concepts/validation.html">Validation</a></li>
+</ul>
+
+<h3>Tasks</h3>
+<ul>
+<li><a href="tasks/create-project.html">Creating and Opening Projects</a></li>
+<li><a href="tasks/create-document.html">Creating Documents</a></li>
+<li><a href="tasks/edit-forms.html">Editing with the Form Pages</a></li>
+<li><a href="tasks/keywords-terminologies.html">Keywords and Terminologies</a></li>
+<li><a href="tasks/source-pages.html">Editing XML and JSON</a></li>
+<li><a href="tasks/validate-fix.html">Validating and Fixing Problems</a></li>
+<li><a href="tasks/search.html">Searching Documents</a></li>
+<li><a href="tasks/compare.html">Comparing Documents</a></li>
+<li><a href="tasks/library-reports.html">The Library and HTML Reports</a></li>
+<li><a href="tasks/csv-import.html">Importing Records from CSV</a></li>
+<li><a href="tasks/preferences.html">Setting Preferences</a></li>
+</ul>
+
+<h3>MedBiquitous Standards</h3>
+<ul>
+<li><a href="standards/index.html">Overview of the Standards</a></li>
+<li><a href="standards/curriculum-inventory.html">Curriculum Inventory</a></li>
+<li><a href="standards/competencies.html">Competency Framework, Competency Object and Performance
+Framework</a></li>
+<li><a href="standards/activity-report.html">Activity Report</a></li>
+<li><a href="standards/education-metrics.html">Medical Education Metrics (MEMS)</a></li>
+<li><a href="standards/professional-profile.html">Healthcare Professional Profile</a></li>
+<li><a href="standards/virtual-patient.html">Virtual Patient</a></li>
+</ul>
+
+<h3>Reference</h3>
+<ul>
+<li><a href="reference/editor-pages.html">Editor Pages</a></li>
+<li><a href="reference/views.html">Views</a></li>
+<li><a href="reference/menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+<li><a href="reference/validation-rules.html">Validation Rules and Quick Fixes</a></li>
+<li><a href="reference/json-format.html">The JSON Format</a></li>
+<li><a href="reference/project-file.html">The Project File</a></li>
+<li><a href="reference/terminologies.html">Offline Terminologies</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html">HLOM Guide (elements, vocabularies,
+conformance)</a></li>
+<li><a href="reference/licenses.html">Licenses and Acknowledgements</a></li>
+</ul>
+
+<h2>Getting help while you work</h2>
+<ul>
+<li>Press <kbd>F1</kbd> to show context help for the focused field, view, page or dialog in the Help view.</li>
+<li>In a Healthcare LOM document, press <kbd>Shift</kbd>+<kbd>F1</kbd> to open the focused field's topic in
+the <span class="ui">HLOM Guide</span> view, the in-application reference to that standard.</li>
+<li>Hover over a field label to read the specification's description of the element.</li>
+<li>Use <span class="ui">Help &gt; Search Help…</span> to search this guide.</li>
+</ul>
+
+<p class="note">Hermes 2 was developed by Ravi Teja Bhupatiraju, University of Louisiana at Lafayette, Center
+for Applied Artificial Intelligence (CAAI), with Eclipse RCP, the Eclipse Modeling Framework and Eclipse
+Nebula.</p>
+</body>
+</html>

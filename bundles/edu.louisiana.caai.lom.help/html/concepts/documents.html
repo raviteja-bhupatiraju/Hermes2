@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documents: XML and JSON</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Documents: XML and JSON</h1>
+
+<p class="lead">Documents of all MedBiquitous standards are XML documents defined by the standards' XML
+Schemas. Healthcare LOM records can in addition be stored in a JSON form that follows the naming of the
+MedBiquitous Healthcare LOM JSON Schema; both forms hold exactly the same information and are edited and validated
+the same way.</p>
+
+<h2>How the standard of a document is recognized</h2>
+<p>Hermes 2 recognizes a document by its root element and namespace, whatever its file name or extension (the
+usual extensions are <code>.xml</code>, <code>.lom</code> and, for HLOM, <code>.json</code>):</p>
+<table>
+<tr><th>Standard</th><th>Root element</th></tr>
+<tr><td>Healthcare LOM 1.0</td><td><code>lom</code> in <code>http://ltsc.ieee.org/xsd/LOM</code> (or, in the JSON
+form, a top-level <code>"lom"</code> object)</td></tr>
+<tr><td>Curriculum Inventory 1.0 and v10</td><td><code>CurriculumInventory</code></td></tr>
+<tr><td>Competency Framework 1.0, Competency Object 1.0, Performance Framework 1.0</td>
+<td><code>CompetencyFramework</code>, <code>CompetencyObject</code>, <code>PerformanceFramework</code></td></tr>
+<tr><td>Activity Report 1.0 and 2.0</td><td><code>ActivityReports</code></td></tr>
+<tr><td>Medical Education Metrics 1.0, MEMS Survey Items 1.0</td><td><code>MedicalEducationMetrics</code>,
+<code>SurveyItems</code></td></tr>
+<tr><td>Healthcare Professional Profile 1.0</td><td><code>Members</code></td></tr>
+<tr><td>Virtual Patient Data, Activity Model and Data Availability Model 1.0</td>
+<td><code>VirtualPatientData</code>, <code>ActivityModel</code>, <code>DataAvailabilityModel</code></td></tr>
+</table>
+<p>The root elements of the other standards are in their namespaces below <code>http://ns.medbiq.org/</code>; the
+namespace also tells the versions apart (for example Activity Report <code>…/activityreport/v1/</code> and
+<code>…/v2/</code>). See <a href="../standards/index.html">The MedBiquitous Standards</a>. Files of other kinds
+are not opened as MedBiquitous documents.</p>
+
+<h2>Which form a file uses</h2>
+<p>This applies to Healthcare LOM records; documents of the other standards are always XML.</p>
+<ul>
+<li>Files with the extension <code>.json</code> are stored in the JSON form.</li>
+<li>All other files (normally <code>.xml</code>, also <code>.lom</code>) are stored as XML.</li>
+</ul>
+<p>New documents use the format chosen in the new-document wizard; its default comes from the project
+(<span class="ui">New documents</span> in the project properties) or from the preference
+<span class="ui">Create new documents in the JSON form (.json) instead of XML</span>.</p>
+
+<h2>One model, several views of it</h2>
+<p>When a document is opened, it is read into a model generated from the XML Schemas of its standard (for
+HLOM, the HLOM XML Schemas; HLOM elements embedded in documents of other standards use the same HLOM model). The
+form pages, the Document Tree, the XML page and, for HLOM, the JSON page all show this one model:</p>
+<ul>
+<li>Edits on the form pages and in the tree change the model directly and are undoable.</li>
+<li>Text edits on the XML or JSON page are applied to the model when you leave the page or save. If the text
+cannot be applied, you are asked to fix it or discard your text changes.</li>
+<li>Saving writes the model in the file's form. Element order is restored from the schema, so a JSON document
+saved as XML is valid against the XML Schema.</li>
+</ul>
+<p>Elements and attributes that the schemas don't define (custom extensions) are kept and shown on the
+Document Tree page.</p>
+
+<h2>Converting between XML and JSON</h2>
+<p>Only Healthcare LOM records have a JSON form; documents of the other standards can't be converted to
+JSON.</p>
+<ul>
+<li><strong>Save As</strong>: choose <span class="ui">File &gt; Save As…</span> and enter a name ending in
+<code>.json</code> or <code>.xml</code>. The document is written in that form.</li>
+<li><strong>Projects view</strong>: right-click documents and choose <span class="ui">Convert to JSON</span> or
+<span class="ui">Convert to XML</span>. The converted file is written next to the original (with a numbered name
+if the name is taken) and the original file is removed. Documents that can't be read without errors must be
+opened and repaired first.</li>
+</ul>
+<p class="note">The conversion is lossless for HLOM content. XML comments and processing instructions are not
+carried into the JSON form.</p>
+
+<h2>Broken files</h2>
+<p>A file that can't be read completely (for example XML that is not well-formed) still opens: its original text
+is shown on the XML or JSON page, with the load problems in the Validation view, so you can repair it in place.
+A document can't be saved while the XML or JSON page holds text with errors.</p>
+
+<h2>The JSON Schema (Healthcare LOM)</h2>
+<p>JSON documents carry a <code>"$schema"</code> member that references the MedBiquitous Healthcare LOM JSON
+Schema. The published JSON Schema set is incomplete (most referenced component schemas are not published and
+several references don't resolve), so Hermes 2 references it but doesn't validate against it. JSON documents are
+instead validated exactly like XML documents: XML Schema, model constraints and HLOM rules, with load problems
+reported at JSON line numbers.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/json-format.html">The JSON Format</a></li>
+<li><a href="../tasks/source-pages.html">Editing XML and JSON</a></li>
+<li><a href="validation.html">Validation</a></li>
+<li><a href="hlom.html">Healthcare LOM in Brief</a></li>
+<li><a href="../standards/index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

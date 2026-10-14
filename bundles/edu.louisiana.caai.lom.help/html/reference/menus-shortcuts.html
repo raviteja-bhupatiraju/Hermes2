@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Menus and Keyboard Shortcuts</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Menus and Keyboard Shortcuts</h1>
+
+<p class="lead">This reference lists the menus of the Hermes 2 main window and its keyboard shortcuts. On macOS,
+use <kbd>Command</kbd> where this page says <kbd>Ctrl</kbd>. Shortcuts can be changed in
+<span class="ui">Window &gt; Preferences… &gt; Keys</span>.</p>
+
+<h2 id="file">File menu</h2>
+<table>
+<tr><th>Item</th><th class="nowrap">Shortcut</th><th>Description</th></tr>
+<tr><td><span class="ui">New &gt; Healthcare LOM Document</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>N</kbd></td>
+<td>Opens the new-document wizard, for a document of any MedBiquitous standard.</td></tr>
+<tr><td><span class="ui">New &gt; Project…</span></td><td></td><td>Creates a project.</td></tr>
+<tr><td><span class="ui">Open…</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>Opens a document
+file.</td></tr>
+<tr><td><span class="ui">Open URI…</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Opens a document
+from a URI.</td></tr>
+<tr><td><span class="ui">Open Project…</span></td><td></td><td>Opens a project folder, or makes a folder a
+project.</td></tr>
+<tr><td><span class="ui">Open Recent</span></td><td></td><td>Recently used documents, and <span class="ui">Clear Recent
+Documents</span>.</td></tr>
+<tr><td><span class="ui">Import from CSV…</span></td><td></td><td>Creates Healthcare LOM records from the rows
+of a CSV file.</td></tr>
+<tr><td><span class="ui">Export as HTML…</span></td><td></td><td>Saves the active Healthcare LOM record as an HTML
+catalog card and opens it in the browser.</td></tr>
+<tr><td><span class="ui">Compare &gt; Compare With Saved Version</span></td><td></td><td>Reviews the unsaved changes
+of the active document.</td></tr>
+<tr><td><span class="ui">Compare &gt; Compare With File…</span></td><td></td><td>Compares the active document with
+another document of the same standard.</td></tr>
+<tr><td><span class="ui">Compare &gt; Compare Two Files…</span></td><td></td><td>Compares two documents of the same
+standard field by field.</td></tr>
+<tr><td><span class="ui">Close</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Closes the active
+editor.</td></tr>
+<tr><td><span class="ui">Close All</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd></td>
+<td>Closes all editors.</td></tr>
+<tr><td><span class="ui">Save</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Saves the active
+document.</td></tr>
+<tr><td><span class="ui">Save As…</span></td><td></td><td>Saves under another name; for a Healthcare LOM record, a
+<code>.json</code> or <code>.xml</code> name converts the document.</td></tr>
+<tr><td><span class="ui">Save All</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
+<td>Saves all modified documents.</td></tr>
+<tr><td><span class="ui">Exit</span></td><td></td><td>Closes Hermes 2.</td></tr>
+</table>
+
+<h2 id="edit">Edit menu</h2>
+<table>
+<tr><th>Item</th><th class="nowrap">Shortcut</th><th>Description</th></tr>
+<tr><td><span class="ui">Undo</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Undoes the last
+change. Form pages, tree and views share one history; on the XML page, undo works on the text.</td></tr>
+<tr><td><span class="ui">Redo</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Redoes the last undone
+change.</td></tr>
+<tr><td><span class="ui">Cut</span>, <span class="ui">Copy</span>, <span class="ui">Paste</span></td>
+<td class="nowrap"><kbd>Ctrl</kbd>+<kbd>X</kbd>, <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd></td>
+<td>Clipboard operations on text or on selected elements.</td></tr>
+<tr><td><span class="ui">Delete</span></td><td class="nowrap"><kbd>Delete</kbd></td><td>Deletes the selection.</td></tr>
+<tr><td><span class="ui">Select All</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Selects all
+text.</td></tr>
+</table>
+
+<h2 id="document">Document menu</h2>
+<p>Shown while a document editor is active.</p>
+<table>
+<tr><th>Item</th><th>Description</th></tr>
+<tr><td><span class="ui">New Child</span>, <span class="ui">New Sibling</span></td><td>Add an element below or next to
+the element selected in the Document Tree or Outline.</td></tr>
+<tr><td><span class="ui">Add MeSH Keywords…</span></td><td>Healthcare LOM records: opens the MeSH lookup and adds
+the chosen descriptors as keywords (also on the editor tool bar).</td></tr>
+<tr><td><span class="ui">Refresh</span></td><td>Refreshes the Document Tree.</td></tr>
+<tr><td><span class="ui">Show Properties View</span></td><td>Opens the Properties view.</td></tr>
+</table>
+<p>The menu may also contain generic commands of the underlying Eclipse Modeling Framework editor (such as
+<span class="ui">Validate</span>, <span class="ui">Control…</span> and <span class="ui">Load Resource…</span>).
+Use the Validation view and the main tool bar's <span class="ui">Validate</span> to check documents.</p>
+
+<h2 id="search">Search menu</h2>
+<table>
+<tr><th>Item</th><th class="nowrap">Shortcut</th><th>Description</th></tr>
+<tr><td><span class="ui">Search Documents…</span></td><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>H</kbd></td><td>Opens the
+Search dialog on the <span class="ui">Hermes Document Search</span> page.</td></tr>
+</table>
+
+<h2 id="window">Window menu</h2>
+<table>
+<tr><th>Item</th><th>Description</th></tr>
+<tr><td><span class="ui">New Window</span></td><td>Opens another workbench window.</td></tr>
+<tr><td><span class="ui">Show Projects</span></td><td>Shows the Projects view.</td></tr>
+<tr><td><span class="ui">Show Library</span></td><td>Shows the Library view.</td></tr>
+<tr><td>(open windows)</td><td>Switches between open windows.</td></tr>
+<tr><td><span class="ui">Preferences…</span></td><td>Opens the preferences.</td></tr>
+</table>
+
+<h2 id="help">Help menu</h2>
+<table>
+<tr><th>Item</th><th class="nowrap">Shortcut</th><th>Description</th></tr>
+<tr><td><span class="ui">User Guide</span></td><td></td><td>Opens this guide in the Help window.</td></tr>
+<tr><td><span class="ui">Search Help…</span></td><td></td><td>Searches this guide.</td></tr>
+<tr><td><span class="ui">Context Help</span></td><td class="nowrap"><kbd>F1</kbd></td><td>Shows the help of the focused
+field, view, page or dialog in the Help view.</td></tr>
+<tr><td><span class="ui">HLOM Guide</span></td><td></td><td>Opens the HLOM Guide view.</td></tr>
+<tr><td><span class="ui">Show Field in HLOM Guide</span></td><td class="nowrap"><kbd>Shift</kbd>+<kbd>F1</kbd></td>
+<td>Opens the HLOM Guide at the topic of the focused field (or its overview).</td></tr>
+<tr><td><span class="ui">Specification (PDF)</span></td><td></td><td>Opens the bundled MedBiquitous Healthcare LOM
+specification v1.1 with your PDF viewer.</td></tr>
+<tr><td><span class="ui">MedBiquitous Website</span></td><td></td><td>Opens the Healthcare LOM page of the
+MedBiquitous website.</td></tr>
+<tr><td><span class="ui">Start Page</span></td><td></td><td>Shows the start page.</td></tr>
+<tr><td><span class="ui">About Hermes 2: MedBiquitous Editor</span></td><td></td><td>Version, the supported
+standards, credits and license notices; <span class="ui">Copy Details</span> copies the version and runtime information.</td></tr>
+</table>
+
+<h2 id="keys">Keyboard shortcuts</h2>
+<h3>General</h3>
+<table>
+<tr><th class="nowrap">Shortcut</th><th>Action</th></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td>New document (of any MedBiquitous standard)</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>Open a document</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Open URI</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Save</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td><td>Save All</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Close the editor</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Undo / Redo</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>H</kbd></td><td>Search Documents</td></tr>
+<tr><td class="nowrap"><kbd>F1</kbd></td><td>Context help in the Help view</td></tr>
+<tr><td class="nowrap"><kbd>Shift</kbd>+<kbd>F1</kbd></td><td>Show the focused field in the HLOM Guide (Healthcare
+LOM)</td></tr>
+</table>
+
+<h3>XML and JSON pages</h3>
+<table>
+<tr><th class="nowrap">Shortcut</th><th>Action</th></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Space</kbd></td><td>Content assist</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td><td>Format</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>/</kbd></td><td>Toggle comment (XML page)</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>1</kbd></td><td>Quick fix for the problems on the caret's line (XML
+page, Healthcare LOM)</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>F</kbd></td><td>Find/Replace</td></tr>
+</table>
+
+<h3>Views</h3>
+<table>
+<tr><th class="nowrap">Shortcut</th><th>Where</th><th>Action</th></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>+<kbd>1</kbd></td><td>Validation view</td><td>Quick fix for the selected
+problem</td></tr>
+<tr><td class="nowrap"><kbd>Enter</kbd></td><td>Projects view</td><td>Open the selected documents</td></tr>
+<tr><td class="nowrap"><kbd>F2</kbd></td><td>Projects view</td><td>Rename</td></tr>
+<tr><td class="nowrap"><kbd>Delete</kbd></td><td>Projects view</td><td>Delete documents or folders</td></tr>
+<tr><td class="nowrap"><kbd>F5</kbd></td><td>Projects view</td><td>Refresh and validate</td></tr>
+<tr><td class="nowrap"><kbd>Enter</kbd> / <kbd>Esc</kbd></td><td>Quick Fix popup</td><td>Apply the selected fix /
+close</td></tr>
+</table>
+
+<h3>Form pages and dialogs</h3>
+<table>
+<tr><th class="nowrap">Shortcut</th><th>Action</th></tr>
+<tr><td class="nowrap"><kbd>Enter</kbd></td><td>Add the typed value to a list or token field</td></tr>
+<tr><td class="nowrap"><kbd>Ctrl</kbd>/<kbd>Shift</kbd>+click</td><td>Select several descriptors or concepts in the
+lookup dialogs</td></tr>
+<tr><td class="nowrap"><kbd>↓</kbd></td><td>Move from the search field to the results in the lookup dialogs</td></tr>
+</table>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="views.html">Views</a></li>
+<li><a href="../getting-started/workbench.html">A Tour of the Workbench</a></li>
+<li><a href="../tasks/source-pages.html">Editing XML and JSON</a></li>
+<li><a href="../tasks/preferences.html">Setting Preferences</a></li>
+</ul>
+</div>
+</body>
+</html>

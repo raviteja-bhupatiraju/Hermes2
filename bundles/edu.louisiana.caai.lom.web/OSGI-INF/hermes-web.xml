@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The web application (Eclipse RAP): RWT's OSGi integration serves it at /hermes on the HTTP service. -->
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="edu.louisiana.caai.lom.web.configuration">
+   <implementation class="edu.louisiana.caai.lom.web.HermesWebConfiguration"/>
+   <service>
+      <provide interface="org.eclipse.rap.rwt.application.ApplicationConfiguration"/>
+   </service>
+</scr:component>

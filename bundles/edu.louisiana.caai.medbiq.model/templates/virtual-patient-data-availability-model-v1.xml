@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new MedBiquitous Virtual Patient Data Availability Models (dataavailabilitymodel.xml of a virtual patient package). -->
+<DataAvailabilityModel xmlns="http://ns.medbiq.org/dataavailabilitymodel/v1/"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/dataavailabilitymodel/v1/ http://ns.medbiq.org/dataavailabilitymodel/v1/dataavailabilitymodel.xsd">
+	<!-- A DAMNode groups the data an activity node shows. ItemPath points into the Virtual Patient Data
+	     (/VirtualPatientData/InterviewItem[@id='i1'], /VirtualPatientData/PatientDemographics/CoreDemographics/Name/text())
+	     or to a media resource of the package manifest (/manifest/resources/resource[@identifier='r1']). -->
+	<DAMNode id="d1">
+		<DAMNodeLabel>${title}</DAMNodeLabel>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/VPDText[@id='v1']</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+	<DAMNode id="d2">
+		<DAMNodeLabel>Next step</DAMNodeLabel>
+		<DAMNodeItem display="immediately">
+			<ItemPath>/VirtualPatientData/PatientDemographics</ItemPath>
+			<ItemOrder>1</ItemOrder>
+		</DAMNodeItem>
+	</DAMNode>
+</DataAvailabilityModel>

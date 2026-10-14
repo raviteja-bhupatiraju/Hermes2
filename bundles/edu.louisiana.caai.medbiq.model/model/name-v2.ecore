@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="namev2" nsURI="http://ns.medbiq.org/name/v2/" nsPrefix="n">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="&#xA;      DCterms XML Schema&#xA;      XML Schema for http://purl.org/dc/terms/ namespace&#xA; &#xA;      Created 2008-02-11&#xA;&#xA;      Created by &#xA;&#xA;      Tim Cole (t-cole3@uiuc.edu)&#xA;      Tom Habing (thabing@uiuc.edu)&#xA;      Jane Hunter (jane@dstc.edu.au)&#xA;      Pete Johnston (p.johnston@ukoln.ac.uk),&#xA;      Carl Lagoze (lagoze@cs.cornell.edu)&#xA;&#xA;      This schema declares XML elements for the DC elements and&#xA;      DC element refinements from the http://purl.org/dc/terms/ namespace.&#xA;      &#xA;      It reuses the complexType dc:SimpleLiteral, imported from the dc.xsd&#xA;      schema, which permits simple element content, and makes the xml:lang&#xA;      attribute available.&#xA;&#xA;      This complexType permits the derivation of other complexTypes&#xA;      which would permit child elements.&#xA;&#xA;      XML elements corresponding to DC elements are declared as substitutable for the abstract element dc:any, and &#xA;      XML elements corresponding to DC element refinements are defined as substitutable for the base elements &#xA;      which they refine.&#xA;&#xA;      This means that the default type for all XML elements (i.e. corresponding to all DC elements and &#xA;      element refinements) is dc:SimpleLiteral.&#xA;&#xA;      Encoding schemes are defined as complexTypes which are restrictions&#xA;      of the dc:SimpleLiteral complexType. These complexTypes restrict &#xA;      values to an appropriates syntax or format using data typing,&#xA;      regular expressions, or enumerated lists.&#xA;  &#xA;      In order to specify one of these encodings an xsi:type attribute must &#xA;      be used in the instance document.&#xA;&#xA;      Also, note that one shortcoming of this approach is that any type can be &#xA;      applied to any of the elements or refinements.  There is no convenient way&#xA;      to restrict types to specific elements using this approach.&#xA;&#xA;      Changes in 2008-02-11 version:&#xA;      &#xA;      Add element declarations corresponding to 15 new dcterms URIs, and amend use of substitutionGroups.&#xA;      &#xA;      Add compexType definitions corresponding to ISO639-3, RFC4646.&#xA;      &#xA;    &#xD;&#xA;&#xA;      DCMES 1.1 XML Schema&#xA;      XML Schema for http://purl.org/dc/elements/1.1/ namespace&#xA;&#xA;      Created 2008-02-11&#xA;&#xA;      Created by &#xA;&#xA;      Tim Cole (t-cole3@uiuc.edu)&#xA;      Tom Habing (thabing@uiuc.edu)&#xA;      Jane Hunter (jane@dstc.edu.au)&#xA;      Pete Johnston (p.johnston@ukoln.ac.uk),&#xA;      Carl Lagoze (lagoze@cs.cornell.edu)&#xA;&#xA;      This schema declares XML elements for the 15 DC elements from the&#xA;      http://purl.org/dc/elements/1.1/ namespace.&#xA;&#xA;      It defines a complexType SimpleLiteral which permits mixed content &#xA;      and makes the xml:lang attribute available. It disallows child elements by&#xA;      use of minOcccurs/maxOccurs.&#xA;&#xA;      However, this complexType does permit the derivation of other complexTypes&#xA;      which would permit child elements.&#xA;&#xA;      All elements are declared as substitutable for the abstract element any, &#xA;      which means that the default type for all elements is dc:SimpleLiteral.&#xA;&#xA;    &#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;  &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>&#xD;&#xA;        &#xD;&#xA;    &lt;h1>About the XML namespace&lt;/h1>&#xD;&#xA;        &#xD;&#xA;    &lt;div class=&quot;bodytext&quot;>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      This schema document describes the XML namespace, in a form&#xD;&#xA;      suitable for import by other schema documents.&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;              See &#xD;&#xA;        &lt;a href=&quot;http://www.w3.org/XML/1998/namespace.html&quot;>&#xD;&#xA;      http://www.w3.org/XML/1998/namespace.html&lt;/a>&#xD;&#xA;         and&#xD;&#xA;      &#xD;&#xA;        &lt;a href=&quot;http://www.w3.org/TR/REC-xml&quot;>&#xD;&#xA;      http://www.w3.org/TR/REC-xml&lt;/a>&#xD;&#xA;         for information &#xD;&#xA;      about this namespace.&#xD;&#xA;     &#xD;&#xA;      &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      Note that local names in this namespace are intended to be&#xD;&#xA;      defined only by the World Wide Web Consortium or its subgroups.&#xD;&#xA;      The names currently defined in this namespace are listed below.&#xD;&#xA;      They should not be used with conflicting semantics by any Working&#xD;&#xA;      Group, specification, or document instance.&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;           &#xD;&#xA;      See further below in this document for more information about &#xD;&#xA;        &lt;a href=&quot;#usage&quot;>how to refer to this schema document from your own&#xD;&#xA;      XSD schema documents&lt;/a>&#xD;&#xA;         and about &#xD;&#xA;        &lt;a href=&quot;#nsversioning&quot;>the&#xD;&#xA;      namespace-versioning policy governing this schema document&lt;/a>&#xD;&#xA;        .&#xD;&#xA;     &#xD;&#xA;      &lt;/p>&#xD;&#xA;          &#xD;&#xA;    &lt;/div>&#xD;&#xA;       &#xD;&#xA;  &lt;/div>&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;  &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>&#xD;&#xA;       &#xD;&#xA;    &#xD;&#xA;    &lt;h3>Father (in any context at all)&lt;/h3>&#xD;&#xA;     &#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &lt;div class=&quot;bodytext&quot;>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      denotes Jon Bosak, the chair of &#xD;&#xA;      the original XML Working Group.  This name is reserved by &#xD;&#xA;      the following decision of the W3C XML Plenary and &#xD;&#xA;      XML Coordination groups:&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;blockquote>&#xD;&#xA;               &#xD;&#xA;        &lt;p>&#xD;&#xA;&#x9;In appreciation for his vision, leadership and&#xD;&#xA;&#x9;dedication the W3C XML Plenary on this 10th day of&#xD;&#xA;&#x9;February, 2000, reserves for Jon Bosak in perpetuity&#xD;&#xA;&#x9;the XML name &quot;xml:Father&quot;.&#xD;&#xA;       &lt;/p>&#xD;&#xA;             &#xD;&#xA;      &lt;/blockquote>&#xD;&#xA;          &#xD;&#xA;    &lt;/div>&#xD;&#xA;       &#xD;&#xA;  &lt;/div>&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;  &lt;div id=&quot;usage&quot; xml:id=&quot;usage&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>&#xD;&#xA;        &#xD;&#xA;    &lt;h2>&#xD;&#xA;      &lt;a name=&quot;usage&quot;>About this schema document&lt;/a>&#xD;&#xA;    &lt;/h2>&#xD;&#xA;        &#xD;&#xA;    &lt;div class=&quot;bodytext&quot;>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;              This schema defines attributes and an attribute group suitable&#xD;&#xA;      for use by schemas wishing to allow &#xD;&#xA;        &lt;code>xml:base&lt;/code>&#xD;&#xA;        ,&#xD;&#xA;      &#xD;&#xA;        &lt;code>xml:lang&lt;/code>&#xD;&#xA;        , &#xD;&#xA;        &lt;code>xml:space&lt;/code>&#xD;&#xA;         or&#xD;&#xA;      &#xD;&#xA;        &lt;code>xml:id&lt;/code>&#xD;&#xA;         attributes on elements they define.&#xD;&#xA;     &#xD;&#xA;      &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      To enable this, such a schema must import this schema for&#xD;&#xA;      the XML namespace, e.g. as follows:&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;pre>&#xD;&#xA;          &amp;lt;schema . . .&amp;gt;&#xD;&#xA;           . . .&#xD;&#xA;           &amp;lt;import namespace=&quot;http://www.w3.org/XML/1998/namespace&quot;&#xD;&#xA;                      schemaLocation=&quot;http://www.w3.org/2001/xml.xsd&quot;/&amp;gt;&#xD;&#xA;     &lt;/pre>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      or&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;pre>&#xD;&#xA;           &amp;lt;import namespace=&quot;http://www.w3.org/XML/1998/namespace&quot;&#xD;&#xA;                      schemaLocation=&quot;http://www.w3.org/2009/01/xml.xsd&quot;/&amp;gt;&#xD;&#xA;     &lt;/pre>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      Subsequently, qualified reference to any of the attributes or the&#xD;&#xA;      group defined below will have the desired effect, e.g.&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;pre>&#xD;&#xA;          &amp;lt;type . . .&amp;gt;&#xD;&#xA;           . . .&#xD;&#xA;           &amp;lt;attributeGroup ref=&quot;xml:specialAttrs&quot;/&amp;gt;&#xD;&#xA;     &lt;/pre>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      will define a type which will schema-validate an instance element&#xD;&#xA;      with any of those attributes.&#xD;&#xA;     &lt;/p>&#xD;&#xA;          &#xD;&#xA;    &lt;/div>&#xD;&#xA;       &#xD;&#xA;  &lt;/div>&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;  &lt;div id=&quot;nsversioning&quot; xml:id=&quot;nsversioning&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>&#xD;&#xA;        &#xD;&#xA;    &lt;h2>&#xD;&#xA;      &lt;a name=&quot;nsversioning&quot;>Versioning policy for this schema document&lt;/a>&#xD;&#xA;    &lt;/h2>&#xD;&#xA;        &#xD;&#xA;    &lt;div class=&quot;bodytext&quot;>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;              In keeping with the XML Schema WG's standard versioning&#xD;&#xA;      policy, this schema document will persist at&#xD;&#xA;      &#xD;&#xA;        &lt;a href=&quot;http://www.w3.org/2009/01/xml.xsd&quot;>&#xD;&#xA;       http://www.w3.org/2009/01/xml.xsd&lt;/a>&#xD;&#xA;        .&#xD;&#xA;     &#xD;&#xA;      &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;              At the date of issue it can also be found at&#xD;&#xA;      &#xD;&#xA;        &lt;a href=&quot;http://www.w3.org/2001/xml.xsd&quot;>&#xD;&#xA;       http://www.w3.org/2001/xml.xsd&lt;/a>&#xD;&#xA;        .&#xD;&#xA;     &#xD;&#xA;      &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;              The schema document at that URI may however change in the future,&#xD;&#xA;      in order to remain compatible with the latest version of XML&#xD;&#xA;      Schema itself, or with the XML namespace itself.  In other words,&#xD;&#xA;      if the XML Schema or XML namespaces change, the version of this&#xD;&#xA;      document at &#xD;&#xA;        &lt;a href=&quot;http://www.w3.org/2001/xml.xsd&quot;>&#xD;&#xA;       http://www.w3.org/2001/xml.xsd &#xD;&#xA;      &lt;/a>&#xD;&#xA;         &#xD;&#xA;      will change accordingly; the version at &#xD;&#xA;      &#xD;&#xA;        &lt;a href=&quot;http://www.w3.org/2009/01/xml.xsd&quot;>&#xD;&#xA;       http://www.w3.org/2009/01/xml.xsd &#xD;&#xA;      &lt;/a>&#xD;&#xA;         &#xD;&#xA;      will not change.&#xD;&#xA;     &#xD;&#xA;      &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;p>&#xD;&#xA;      Previous dated (and unchanging) versions of this schema &#xD;&#xA;      document are at:&#xD;&#xA;     &lt;/p>&#xD;&#xA;           &#xD;&#xA;      &lt;ul>&#xD;&#xA;              &#xD;&#xA;        &lt;li>&#xD;&#xA;          &lt;a href=&quot;http://www.w3.org/2009/01/xml.xsd&quot;>&#xD;&#xA;&#x9;http://www.w3.org/2009/01/xml.xsd&lt;/a>&#xD;&#xA;        &lt;/li>&#xD;&#xA;              &#xD;&#xA;        &lt;li>&#xD;&#xA;          &lt;a href=&quot;http://www.w3.org/2007/08/xml.xsd&quot;>&#xD;&#xA;&#x9;http://www.w3.org/2007/08/xml.xsd&lt;/a>&#xD;&#xA;        &lt;/li>&#xD;&#xA;              &#xD;&#xA;        &lt;li>&#xD;&#xA;          &lt;a href=&quot;http://www.w3.org/2004/10/xml.xsd&quot;>&#xD;&#xA;&#x9;http://www.w3.org/2004/10/xml.xsd&lt;/a>&#xD;&#xA;        &lt;/li>&#xD;&#xA;              &#xD;&#xA;        &lt;li>&#xD;&#xA;          &lt;a href=&quot;http://www.w3.org/2001/03/xml.xsd&quot;>&#xD;&#xA;&#x9;http://www.w3.org/2001/03/xml.xsd&lt;/a>&#xD;&#xA;        &lt;/li>&#xD;&#xA;             &#xD;&#xA;      &lt;/ul>&#xD;&#xA;          &#xD;&#xA;    &lt;/div>&#xD;&#xA;       &#xD;&#xA;  &lt;/div>&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&#xA;      DCMI Type Vocabulary XML Schema&#xA;      XML Schema for http://purl.org/dc/dcmitype/ namespace&#xA;&#xA;      Created 2008-02-11&#xA;&#xA;      Created by &#xA;&#xA;      Tim Cole (t-cole3@uiuc.edu)&#xA;      Tom Habing (thabing@uiuc.edu)&#xA;      Jane Hunter (jane@dstc.edu.au)&#xA;      Pete Johnston (p.johnston@ukoln.ac.uk),&#xA;      Carl Lagoze (lagoze@cs.cornell.edu)&#xA;&#xA;      This schema defines a simpleType which enumerates&#xA;      the allowable values for the DCMI Type Vocabulary.&#xA;    "/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="NameDetails">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NameDetails"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formattedName" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FormattedName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Title"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="givenName" unique="false" upperBound="-1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="GivenName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="familyName" unique="false" upperBound="-1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FamilyName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generationIdentifier" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="GenerationIdentifier"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="degree" unique="false" upperBound="-1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Degree"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"
+        iD="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="restrictions" eType="ecore:EEnum common-v2.ecore#//RestrictionsType"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="restrictions"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validityDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="validityDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NameType" eSuperTypes="#//NameDetails">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NameType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" upperBound="-1" eType="#//NameDetails" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Alias"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formerName" upperBound="-1" eType="#//NameDetails" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FormerName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NonNullString" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NonNullString"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      <details key="minLength" value="1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" upperBound="-2" eType="#//NameType" volatile="true" transient="true"
+        derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Name"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

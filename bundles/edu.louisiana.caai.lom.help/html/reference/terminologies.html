@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Offline Terminologies</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Offline Terminologies</h1>
+
+<p class="lead">Complete terminologies ship with Hermes 2 and are searched without a network connection: in keyword
+lists (<span class="ui">Look Up…</span>), with <span class="ui">Add MeSH Keywords</span>, for classification taxon
+paths, in content assist on the XML and JSON pages, and by validation. These lookups are used in Healthcare LOM
+records.</p>
+
+<h2>Included terminologies</h2>
+<table>
+<tr><th>Terminology</th><th>Version</th><th>Contents</th><th>Used for</th></tr>
+<tr><td><strong>MeSH</strong>: Medical Subject Headings (U.S. National Library of Medicine)</td><td>2026</td><td>All
+31,110 descriptors with entry terms, scope notes, tree numbers and see-also references.</td><td>Keywords
+(<code>hx:source="MeSH"</code>), taxon paths</td></tr>
+<tr><td><strong>ICD-10-CM</strong>: International Classification of Diseases, Tenth Revision, Clinical Modification
+(National Center for Health Statistics, CDC)</td><td>FY2026</td><td>All chapters, blocks, categories and codes,
+including 7th-character codes, with inclusion terms.</td><td>Keywords (<code>hx:source="ICD-10-CM"</code>), taxon
+paths</td></tr>
+<tr><td><strong>ACGME</strong>: ACGME Core Competencies (Accreditation Council for Graduate Medical Education)</td>
+<td>Outcome Project order, as in the HLOM specification</td><td>The six core competencies, coded <code>a</code>–<code>f</code>
+as in the specification's examples: a Patient Care and Procedural Skills, b Medical Knowledge, c Practice-based
+Learning and Improvement, d Interpersonal and Communication Skills, e Professionalism, f Systems-based Practice.</td>
+<td>Taxon paths (classification purpose “competency”)</td></tr>
+<tr><td><strong>Bloom</strong>: Bloom's Taxonomy (revised)</td><td>Anderson &amp; Krathwohl, 2001</td><td>The six
+cognitive process categories (1 Remember … 6 Create) with their cognitive processes (for example 1.1 Recognizing),
+and the four knowledge dimensions (A Factual … D Metacognitive Knowledge).</td>
+<td>Taxon paths (educational objectives)</td></tr>
+<tr><td><strong>AAMC CI</strong>: AAMC/MedBiquitous Curriculum Inventory standardized vocabulary</td><td>March
+2016</td><td>32 instructional methods (IM…), 19 assessment methods (AM…) and 27 resource types (RE…),
+for example IM001 Case-Based Instruction/Learning.</td><td>Taxon paths</td></tr>
+</table>
+<p><span class="ui">Window &gt; Preferences… &gt; Healthcare LOM &gt; Terminologies</span> lists the terminologies with
+their version, source and license notice; each lookup shows the notice in its details.</p>
+
+<h2>Source names</h2>
+<p>Hermes 2 writes <code>MeSH</code> and <code>ICD-10-CM</code> as keyword source. For taxon paths it writes the
+terminology's name, for example “ACGME Core Competencies”. When reading sources, common aliases are recognized as
+well, for example <code>Medical Subject Headings</code>, <code>MSH</code>, <code>ICD-10</code>, <code>ICD10CM</code>,
+<code>ACGME Competencies</code>, <code>Bloom's Taxonomy</code> or <code>Curriculum Inventory</code>.</p>
+
+<h2>MeSH online fallback</h2>
+<p>The NLM MeSH service is used only if you turn on <span class="ui">Look up unknown descriptor IDs online</span>
+(<span class="ui">Preferences &gt; Healthcare LOM &gt; MeSH</span>), and then only for descriptor IDs newer than the
+offline index. The default service is the NLM MeSH RDF API, <code>https://id.nlm.nih.gov/mesh/</code>.</p>
+
+<h2>Terminologies that are not included</h2>
+<p><strong>SNOMED CT</strong>, <strong>UMLS</strong> and <strong>LOINC</strong> require a license of each user and are
+not included. You can still enter them as keyword or taxon sources by hand (for example
+<code>hx:source="SNOMED CT"</code> with the concept ID in <code>hx:id</code>); their codes are not checked.</p>
+
+<h2>Licenses</h2>
+<ul>
+<li><strong>MeSH</strong>: courtesy of the U.S. National Library of Medicine, used under the NLM terms and conditions;
+the index contains a subset of the descriptor data (names, entry terms, scope notes, tree numbers, see-also references)
+and is not an official NLM product.</li>
+<li><strong>ICD-10-CM</strong>: published by NCHS and in the public domain in the United States (ICD-10 copyright World
+Health Organization).</li>
+<li><strong>AAMC Curriculum Inventory vocabulary</strong>: Copyright 2016 Association of American Medical Colleges,
+used under the MedBiquitous Standards Public License; converted to a searchable index, wording unchanged.</li>
+<li><strong>ACGME</strong> and <strong>Bloom</strong>: category names and codes; descriptions summarized.</li>
+</ul>
+
+<p class="note">For developers: the indexes are <code>terminology/*.tsv.gz</code> in the bundle
+<code>edu.louisiana.caai.lom.model</code>. They are generated from the published sources by
+<code>terminology-src/build_terminologies.py</code>; its README lists the downloads and how to regenerate them.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../tasks/keywords-terminologies.html">Keywords and Terminologies</a></li>
+<li><a href="licenses.html">Licenses and Acknowledgements</a></li>
+<li><a href="validation-rules.html">Validation Rules and Quick Fixes</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#mesh-keywords">HLOM Guide: MeSH keywords</a></li>
+</ul>
+</div>
+</body>
+</html>

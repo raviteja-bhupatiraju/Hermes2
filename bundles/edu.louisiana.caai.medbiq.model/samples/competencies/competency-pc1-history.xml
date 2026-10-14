@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Competency Object 1.0): a patient care sub-competency of
+     core-competencies-framework.xml (narrower than Patient Care), assessed with the milestones of
+     milestones-performance-framework.xml. The organization and URIs are fictional. -->
+<CompetencyObject xmlns="http://ns.medbiq.org/competencyobject/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/competencyobject/v1/ http://ns.medbiq.org/competencyobject/v1/competencyobject.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>https://gme.lakeside.example.org/competencies/patient-care/pc1-history</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="en">PC1: Gathers essential and accurate information about the patient</lom:string>
+			</lom:title>
+			<lom:language>en</lom:language>
+			<lom:description>
+				<lom:string language="en">Acquires an accurate and relevant history and performs a physical examination appropriate to the patient's problem, using collateral sources and existing records when needed.</lom:string>
+			</lom:description>
+		</lom:general>
+	</lom:lom>
+	<Status>Active</Status>
+	<Category term="sub-competency" scheme="https://gme.lakeside.example.org/categories/levels" label="Sub-competency"/>
+	<Category term="measurable outcomes" scheme="https://gme.lakeside.example.org/categories/kinds" label="Measurable outcome"/>
+</CompetencyObject>

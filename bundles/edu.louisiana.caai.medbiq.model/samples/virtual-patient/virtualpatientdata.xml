@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: the Virtual Patient Data (VPD) of a virtual patient case, "Chest pain
+     in a 58-year-old man". The patient, the case and its data are invented for teaching the MedBiquitous Virtual
+     Patient 1.0 format; they are not clinical guidance. dataavailabilitymodel.xml and activitymodel.xml in this
+     folder complete the package (the media resources r-photo and r-ecg belong to its imsmanifest.xml, not
+     included). -->
+<VirtualPatientData xmlns="http://ns.medbiq.org/virtualpatientdata/v1/"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/virtualpatientdata/v1/ http://ns.medbiq.org/virtualpatientdata/v1/virtualpatientdata.xsd">
+	<PatientDemographics id="pd1">
+		<CoreDemographics id="cd1">
+			<PatientID>VP-2026-058</PatientID>
+			<Name>Thomas Arden</Name>
+			<Age>P58Y</Age>
+			<Sex>Male</Sex>
+		</CoreDemographics>
+		<DemographicCharacteristic id="dc1">
+			<Title>Occupation</Title>
+			<Description>Long-distance truck driver</Description>
+		</DemographicCharacteristic>
+		<DemographicCharacteristic id="dc2">
+			<Title>Smoking status</Title>
+			<Description>Current smoker, about 30 pack-years</Description>
+		</DemographicCharacteristic>
+		<DemographicCharacteristic id="dc3">
+			<Title>Marital status</Title>
+			<Description>Married, two adult children</Description>
+		</DemographicCharacteristic>
+	</PatientDemographics>
+	<VPDText id="v-cc" textType="chief complaint">
+		<div xmlns="http://www.w3.org/1999/xhtml">Pressure-like chest pain for the last 45 minutes.</div>
+	</VPDText>
+	<VPDText id="v-intro" textType="narrative">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>It is 6:40 in the morning. <strong>Mr. Arden</strong>, 58, is brought to the emergency department by his wife. He is pale and sweaty and keeps a fist pressed against his sternum.</p>
+			<p>"It started while I was loading the truck. It feels like someone is sitting on my chest."</p>
+		</div>
+	</VPDText>
+	<VPDText id="v-history" textType="history">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Known hypertension and type 2 diabetes for eight years. No previous cardiac events. His father died of a heart attack at 61.</p>
+		</div>
+	</VPDText>
+	<VPDText id="v-allergy" textType="allergy">
+		<div xmlns="http://www.w3.org/1999/xhtml">Penicillin (generalized rash in childhood).</div>
+	</VPDText>
+	<VPDText id="v-ecg-feedback" textType="narrative">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Good decision: a 12-lead ECG within ten minutes of arrival is the key first test in acute chest pain.</p>
+			<vpd:media xmlns:vpd="http://ns.medbiq.org/virtualpatientdata/v1/" refPath="/manifest/resources/resource[@identifier='r-ecg']" width="640" align="center">
+				<p>ECG: ST elevation in leads II, III and aVF with reciprocal ST depression in I and aVL.</p>
+			</vpd:media>
+		</div>
+	</VPDText>
+	<VPDText id="v-ddx" textType="problem">
+		<div xmlns="http://www.w3.org/1999/xhtml">Acute chest pain with ST elevation in the inferior leads and a raised troponin. Which diagnoses do you consider?</div>
+	</VPDText>
+	<VPDText id="v-pci-outcome" textType="narrative">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>The catheterization team opens an occluded right coronary artery 70 minutes after arrival. The pain resolves and Mr. Arden goes home on day four on secondary prevention.</p>
+		</div>
+	</VPDText>
+	<VPDText id="v-discharge-outcome" textType="narrative">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>Two hours after being sent home Mr. Arden collapses in his kitchen. The ECG and troponin had shown an ongoing myocardial infarction. <em>Start the case again.</em></p>
+		</div>
+	</VPDText>
+	<Medication id="m1">
+		<MedicationName source="RxNorm" sourceID="29046">lisinopril</MedicationName>
+		<Dose>10 mg</Dose>
+		<Route>oral</Route>
+		<Frequency>once daily</Frequency>
+	</Medication>
+	<Medication id="m2">
+		<MedicationName source="RxNorm" sourceID="6809">metformin</MedicationName>
+		<Dose>1000 mg</Dose>
+		<Route>oral</Route>
+		<Frequency>twice daily</Frequency>
+	</Medication>
+	<InterviewItem id="i1">
+		<Question>When did the pain start, and what were you doing?</Question>
+		<Response>About 45 minutes ago, while I was lifting boxes onto the truck. It hasn't let up since.</Response>
+	</InterviewItem>
+	<InterviewItem id="i2">
+		<Question>Can you describe the pain?</Question>
+		<Response>Heavy, like a weight on my chest. Maybe 8 out of 10.</Response>
+	</InterviewItem>
+	<InterviewItem id="i3">
+		<Question>Does the pain spread anywhere?</Question>
+		<Response>Into my jaw and down my left arm.</Response>
+	</InterviewItem>
+	<InterviewItem id="i4">
+		<Question>Do you have any other symptoms?</Question>
+		<Response>I feel sick to my stomach and I'm sweating a lot. A bit short of breath, too.</Response>
+	</InterviewItem>
+	<InterviewItem id="i5">
+		<Question>Have you had pain like this before?</Question>
+		<Response>Some tightness on the stairs the last few weeks, but it always went away after a minute.</Response>
+	</InterviewItem>
+	<InterviewItem id="i6">
+		<Question>Do you take any medicines regularly?</Question>
+		<Response>Pills for my blood pressure and for my sugar. I can never remember the names.</Response>
+	</InterviewItem>
+	<PhysicalExam id="pe1">
+		<ExamName>General appearance</ExamName>
+		<Action>Inspect</Action>
+		<Finding>Pale, diaphoretic, anxious</Finding>
+		<Description>Alert and oriented; in obvious distress, holding his chest.</Description>
+	</PhysicalExam>
+	<PhysicalExam id="pe2">
+		<ExamName>Blood pressure</ExamName>
+		<LocationOnBody>
+			<BodyPart source="SNOMED CT" sourceID="40983000">Upper arm</BodyPart>
+			<RightOrLeft>Right</RightOrLeft>
+		</LocationOnBody>
+		<Action>Measure with a sphygmomanometer</Action>
+		<Finding>104/68 mmHg</Finding>
+		<Description>Systolic 104 mmHg, diastolic 68 mmHg; heart rate 54/min, regular.</Description>
+	</PhysicalExam>
+	<PhysicalExam id="pe3">
+		<ExamName>Cardiac auscultation</ExamName>
+		<LocationOnBody>
+			<BodyPart>Chest</BodyPart>
+			<FrontOrBack>Front</FrontOrBack>
+		</LocationOnBody>
+		<Action>Auscultate</Action>
+		<Finding>Fourth heart sound, no murmur</Finding>
+		<Description>Bradycardic regular rhythm with an S4 gallop; no murmur or rub.</Description>
+	</PhysicalExam>
+	<PhysicalExam id="pe4">
+		<ExamName>Lung auscultation</ExamName>
+		<LocationOnBody>
+			<BodyPart>Chest</BodyPart>
+			<FrontOrBack>Back</FrontOrBack>
+		</LocationOnBody>
+		<Action>Auscultate</Action>
+		<Finding>Clear</Finding>
+		<Description>Vesicular breath sounds on both sides, no crackles.</Description>
+	</PhysicalExam>
+	<DiagnosticTest id="t1">
+		<TestName>12-lead ECG, ST segment in II, III, aVF</TestName>
+		<Unit>mm</Unit>
+		<Result>3 mm ST elevation</Result>
+		<Normal>less than 1 mm</Normal>
+	</DiagnosticTest>
+	<DiagnosticTest id="t2">
+		<TestName>High-sensitivity troponin I</TestName>
+		<Unit>ng/L</Unit>
+		<Result>412</Result>
+		<Normal>less than 26</Normal>
+	</DiagnosticTest>
+	<DiagnosticTest id="t3">
+		<TestName>Serum creatinine</TestName>
+		<Unit>mg/dL</Unit>
+		<Result>1.0</Result>
+		<Normal>0.7 to 1.3</Normal>
+	</DiagnosticTest>
+	<Diagnosis id="dx1" authorDiagnosis="true">
+		<DiagnosisName source="ICD-10" sourceID="I21.1">Acute inferior ST-elevation myocardial infarction</DiagnosisName>
+		<Likelihood>high</Likelihood>
+	</Diagnosis>
+	<Diagnosis id="dx2">
+		<DiagnosisName source="ICD-10" sourceID="I71.0">Aortic dissection</DiagnosisName>
+		<Likelihood>low</Likelihood>
+	</Diagnosis>
+	<Diagnosis id="dx3">
+		<DiagnosisName source="ICD-10" sourceID="I26.9">Pulmonary embolism</DiagnosisName>
+		<Likelihood>low</Likelihood>
+	</Diagnosis>
+	<Diagnosis id="dx4">
+		<DiagnosisName source="ICD-10" sourceID="K21.9">Gastro-oesophageal reflux disease</DiagnosisName>
+		<Likelihood>none</Likelihood>
+	</Diagnosis>
+	<Intervention id="int1">
+		<InterventionName>Aspirin loading dose</InterventionName>
+		<Medication id="m3">
+			<MedicationName source="RxNorm" sourceID="1191">aspirin</MedicationName>
+			<Dose>300 mg</Dose>
+			<Route>oral, chewed</Route>
+			<Frequency>once</Frequency>
+		</Medication>
+		<Appropriateness>always</Appropriateness>
+		<Results>The pain eases slightly; no side effects.</Results>
+	</Intervention>
+	<Intervention id="int2">
+		<InterventionName>Primary percutaneous coronary intervention</InterventionName>
+		<Appropriateness>always</Appropriateness>
+		<Results>Occluded right coronary artery reopened and stented; TIMI 3 flow.</Results>
+	</Intervention>
+	<Intervention id="int3">
+		<InterventionName>Discharge home with antacids</InterventionName>
+		<Appropriateness>never</Appropriateness>
+		<Results>The patient collapses at home two hours later.</Results>
+	</Intervention>
+	<Organization>
+		<Section>
+			<Item idRef="cd1" label="Patient"/>
+			<Item idRef="v-cc" label="Chief complaint"/>
+			<Item idRef="v-intro" label="Presentation"/>
+		</Section>
+		<Section>
+			<Item idRef="v-history" label="Past history"/>
+			<Item idRef="v-allergy" label="Allergies"/>
+			<Item idRef="i1" label="Onset"/>
+			<Item idRef="i2" label="Character"/>
+			<Item idRef="i3" label="Radiation"/>
+			<Item idRef="i4" label="Associated symptoms"/>
+			<Item idRef="i5" label="Previous episodes"/>
+			<Item idRef="i6" label="Medications"/>
+		</Section>
+		<Section>
+			<Item idRef="pe1" label="General appearance"/>
+			<Item idRef="pe2" label="Blood pressure"/>
+			<Item idRef="pe3" label="Heart"/>
+			<Item idRef="pe4" label="Lungs"/>
+		</Section>
+		<Section>
+			<Item idRef="t1" label="ECG"/>
+			<Item idRef="t2" label="Troponin"/>
+			<Item idRef="t3" label="Creatinine"/>
+		</Section>
+	</Organization>
+</VirtualPatientData>

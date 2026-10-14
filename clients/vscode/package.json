@@ -1,0 +1,41 @@
+{
+  "name": "hermes-medbiquitous",
+  "displayName": "Hermes 2: MedBiquitous Documents",
+  "description": "Validation, quick fixes, hovers, formatting and outline for MedBiquitous Healthcare LOM documents (XML and JSON), using the Hermes 2 language server.",
+  "version": "1.0.0",
+  "publisher": "ul-lafayette-caai",
+  "license": "SEE LICENSE IN ../../README.md",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Linters",
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:xml",
+    "onLanguage:json"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Hermes 2",
+      "properties": {
+        "hermes.path": {
+          "type": "string",
+          "default": "",
+          "description": "The hermes launcher (hermes or hermes.cmd in the cli folder of a Hermes 2 installation, or of the hermes-cli download). Empty: hermes on the PATH."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "hermes.restart",
+        "title": "Hermes: Restart Language Server"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode-languageclient": "9.0.1"
+  }
+}

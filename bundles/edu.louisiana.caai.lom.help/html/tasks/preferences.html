@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Setting Preferences</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Setting Preferences</h1>
+
+<p class="lead">Choose <span class="ui">Window &gt; Preferences…</span> to set the defaults for new documents,
+your author identity, validation, the MeSH online fallback and keyboard shortcuts.</p>
+
+<h2>Healthcare LOM</h2>
+<p>Defaults for new Healthcare LOM documents and the identity recorded as their author. The default language is
+also proposed for new documents of the other standards; the JSON and author settings apply to Healthcare LOM
+only.</p>
+<table>
+<tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+<tr><td colspan="3"><strong>New documents</strong></td></tr>
+<tr><td><span class="ui">Default language</span></td><td>Language tag (ISO 639 language, optional ISO 3166
+country) of the record and of new text, for example <code>en-US</code> or <code>fr</code>.</td><td><code>en-US</code></td></tr>
+<tr><td><span class="ui">Add me as author and meta-metadata creator of new documents</span></td><td>Writes your vCard
+into Life Cycle and Meta-Metadata of new documents.</td><td>On</td></tr>
+<tr><td><span class="ui">Create new documents in the JSON form (.json) instead of XML</span></td><td>The default
+format in the new-document wizard (projects have their own setting).</td><td>Off</td></tr>
+<tr><td colspan="3"><strong>Author</strong> — your identity as contributor, written as a vCard</td></tr>
+<tr><td><span class="ui">Full name</span>, <span class="ui">Organization</span>, <span class="ui">Email</span></td>
+<td>The vCard preview below the fields shows the result.</td><td>Empty</td></tr>
+<tr><td colspan="3"><strong>Library</strong></td></tr>
+<tr><td><span class="ui">Folder</span></td><td>The folder in which the Library view looks for MedBiquitous
+documents.</td><td><code>Documents\Healthcare LOM</code></td></tr>
+</table>
+
+<h2>Healthcare LOM &gt; Validation</h2>
+<p>How documents are checked against the schemas and rules of their standard. These settings apply to
+documents of all standards.</p>
+<table>
+<tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+<tr><td><span class="ui">Validate after each change</span></td><td>Validate the active document in the background
+while you edit. The tool bar's <span class="ui">Validate</span> always validates on demand.</td><td>On</td></tr>
+<tr><td><span class="ui">Delay after the last change</span></td><td>Milliseconds to wait after the last change
+(100–10,000).</td><td>600</td></tr>
+<tr><td><span class="ui">Show informational hints (best practices)</span></td><td>List problems of severity
+Info, such as a missing description.</td><td>On</td></tr>
+</table>
+
+<h2>Healthcare LOM &gt; MeSH</h2>
+<p>All MeSH searches and details come from the offline MeSH index shipped with Hermes 2.</p>
+<table>
+<tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+<tr><td><span class="ui">Look up unknown descriptor IDs online</span></td><td>Look up descriptor IDs the offline
+index doesn't know (descriptors introduced after its release) with the online service.</td><td>Off</td></tr>
+<tr><td><span class="ui">Service URL</span></td><td>An http(s) address of the NLM MeSH RDF API.
+<span class="ui">Test Connection</span> checks it.</td><td><code>https://id.nlm.nih.gov/mesh/</code></td></tr>
+</table>
+
+<h2>Healthcare LOM &gt; Terminologies</h2>
+<p>Lists the included terminologies with their version, source and license notice. There is nothing to set; see
+<a href="../reference/terminologies.html">Offline Terminologies</a>.</p>
+
+<h2>Keys</h2>
+<p>The <span class="ui">Keys</span> page lets you view and change keyboard shortcuts. The commands of Hermes 2 are in
+the categories <span class="ui">File</span>, <span class="ui">Edit</span>, <span class="ui">Text Editing</span>,
+<span class="ui">Window</span> and <span class="ui">Healthcare LOM Help</span>.</p>
+
+<p class="note">Preferences are stored in the workspace, <code>~/.hermes2/workspace</code>. Use
+<span class="ui">Restore Defaults</span> on a page to return to the defaults.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="create-document.html">Creating Documents</a></li>
+<li><a href="../concepts/validation.html">Validation</a></li>
+<li><a href="keywords-terminologies.html">Keywords and Terminologies</a></li>
+<li><a href="../reference/menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+</ul>
+</div>
+</body>
+</html>

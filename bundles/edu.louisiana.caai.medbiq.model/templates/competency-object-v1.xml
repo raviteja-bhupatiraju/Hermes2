@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new Competency Object 1.0 documents: the title is the statement of the competency, outcome or objective; publish the document at the URI of its identifier. -->
+<CompetencyObject xmlns="http://ns.medbiq.org/competencyobject/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/competencyobject/v1/ http://ns.medbiq.org/competencyobject/v1/competencyobject.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>urn:uuid:${id}</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="${language}">${title}</lom:string>
+			</lom:title>
+			<lom:language>${language}</lom:language>
+			<lom:description>
+				<lom:string language="${language}">What the learner is expected to know or be able to do.</lom:string>
+			</lom:description>
+		</lom:general>
+	</lom:lom>
+	<Status>Active</Status>
+	<Category term="competency"/>
+</CompetencyObject>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validation Rules and Quick Fixes</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Validation Rules and Quick Fixes</h1>
+
+<p class="lead">Besides the XML Schema and model checks, Hermes 2 applies the HLOM rules below to Healthcare
+LOM records (check <span class="ui">Rules</span>). The second table lists the quick fixes offered for them.</p>
+
+<p class="note">This page covers Healthcare LOM. Documents of the other MedBiquitous standards are checked against
+their own schemas and rules, which are described in the topics of the standards under
+<a href="../standards/index.html">The MedBiquitous Standards</a>; they have no quick fixes.</p>
+
+<h2>HLOM rules</h2>
+<p>Text in <i>italics</i> stands for values taken from the document.</p>
+<table>
+<tr><th>Message</th><th>Severity</th><th>Checks</th></tr>
+<tr><td>Meta-Metadata must declare the metadata schema "LOMv1.0" (HLOM Additional Requirements).</td>
+<td class="sev-error">Error</td><td><code>metaMetadata/metadataSchema</code> contains <code>LOMv1.0</code>.</td></tr>
+<tr><td>Meta-Metadata must declare the metadata schema "HEALTHCARE_LOMv1" (HLOM Additional Requirements).</td>
+<td class="sev-error">Error</td><td><code>metaMetadata/metadataSchema</code> contains
+<code>HEALTHCARE_LOMv1</code>.</td></tr>
+<tr><td>healthcareMetadata must occur once in a Healthcare LOM record.</td><td class="sev-error">Error</td>
+<td>The record has a <code>healthcareMetadata</code> element.</td></tr>
+<tr><td>The learning object has no title (1.2 General.Title).</td><td class="sev-warning">Warning</td><td>General has a
+non-blank title.</td></tr>
+<tr><td>The learning object has no description (1.4 General.Description).</td><td class="sev-info">Info</td>
+<td>General has a description.</td></tr>
+<tr><td>Text "<i>text</i>" has no language.</td><td class="sev-warning">Warning</td><td>Every multilingual text entry
+(<code>string</code>) has a <code>language</code>.</td></tr>
+<tr><td>Credits are available, but no credit information is given.</td><td class="sev-warning">Warning</td>
+<td>Credits available is “yes” and there is no credit entry.</td></tr>
+<tr><td>Credits are marked as not available, but credit information is given.</td><td class="sev-warning">Warning</td>
+<td>Credits available is “no” and there are credit entries.</td></tr>
+<tr><td>The credit release date is after the credit expiration date.</td><td class="sev-error">Error</td><td>Each credit
+entry's release date is not after its expiration date.</td></tr>
+<tr><td>The activity starts after it ends.</td><td class="sev-error">Error</td><td>Start date/time is not after end
+date/time.</td></tr>
+<tr><td>Off-label use is indicated, but no off-label description is given.</td><td class="sev-warning">Warning</td>
+<td>Off-label use “yes” requires an off-label description.</td></tr>
+<tr><td>Commercial support is indicated, but no acknowledgement is given.</td><td class="sev-warning">Warning</td>
+<td>Commercial support “yes” requires a commercial support acknowledgement.</td></tr>
+<tr><td>A relevant financial relationship is indicated, but no disclosure is given.</td>
+<td class="sev-warning">Warning</td><td>Relevant financial relationship “yes” requires a disclosure.</td></tr>
+<tr><td>The MeSH keyword <i>"text"</i> has no descriptor ID; add the MeSH unique ID (e.g. D009203) in hx:id.</td>
+<td class="sev-warning">Warning</td><td>Keywords (in General and in classifications) with source MeSH have an
+<code>hx:id</code>.</td></tr>
+<tr><td>The MeSH keyword <i>"text"</i> has the ID "<i>id</i>", which is not a MeSH descriptor ID (D followed by 6 or 9
+digits, e.g. D009203).</td><td class="sev-warning">Warning</td><td>The format of MeSH descriptor IDs.</td></tr>
+<tr><td>The keyword <i>"text"</i> has the <i>terminology</i> code "<i>code</i>", which is not in <i>terminology
+version</i>.</td><td class="sev-warning">Warning</td><td>A keyword's code exists in the included terminology
+(MeSH 2026, ICD-10-CM FY2026, …) named by its source.</td></tr>
+<tr><td>The taxon ID "<i>code</i>" is not a code of <i>terminology</i> (<i>version</i>).</td>
+<td class="sev-warning">Warning</td><td>Taxon IDs of a taxon path whose source names an included terminology exist in
+it.</td></tr>
+</table>
+<p>The terminology checks recognize a terminology by its name or common aliases in the source (for example
+<code>MeSH</code>, <code>MSH</code>, <code>ICD-10-CM</code>, <code>ICD10</code>, <code>ACGME Core
+Competencies</code>). Sources of other terminologies are not checked.</p>
+
+<h3>Schema and model problems</h3>
+<p>XML Schema problems use the messages of the XML parser (without the <code>cvc-…</code> error codes), for example
+for misplaced or unknown elements, missing required content or values outside an enumeration. Model problems
+report data types, patterns and multiplicities; a document without a <code>&lt;lom&gt;</code> root element is
+reported as “The document has no &lt;lom&gt; root element.”</p>
+
+<h2>Quick fixes</h2>
+<p><em>Automatic</em> fixes are included in <span class="ui">Fix All</span>; the others are offered only individually
+(<kbd>Ctrl</kbd>+<kbd>1</kbd>).</p>
+<table>
+<tr><th>Quick fix</th><th>For the problem</th><th>Effect</th><th>Automatic</th></tr>
+<tr><td>Declare metadata schema LOMv1.0</td><td>Missing metadata schema “LOMv1.0”</td><td>Adds
+<code>&lt;metadataSchema&gt;LOMv1.0&lt;/metadataSchema&gt;</code> to Meta-Metadata (creating Meta-Metadata if
+necessary).</td><td>Yes</td></tr>
+<tr><td>Declare metadata schema HEALTHCARE_LOMv1</td><td>Missing metadata schema “HEALTHCARE_LOMv1”</td><td>Adds
+<code>&lt;metadataSchema&gt;HEALTHCARE_LOMv1&lt;/metadataSchema&gt;</code> to Meta-Metadata.</td><td>Yes</td></tr>
+<tr><td>Add healthcareMetadata</td><td>healthcareMetadata must occur once</td><td>Adds the element; fill in the
+Healthcare Education or Healthcare Asset page afterwards.</td><td>Yes</td></tr>
+<tr><td>Set the language to <i>language</i></td><td>Text has no language</td><td>Tags the text with the document
+language: the first General language, else the first Meta-Metadata language, else <code>en-US</code>.</td>
+<td>Yes</td></tr>
+<tr><td>Swap start and end date</td><td>The activity starts after it ends</td><td>Exchanges the activity's start and
+end date/time.</td><td>Yes</td></tr>
+<tr><td>Swap release and expiration date</td><td>The credit release date is after the credit expiration date</td>
+<td>Exchanges the credit's release and expiration dates.</td><td>Yes</td></tr>
+<tr><td>Remove the credit information</td><td>Credits are marked as not available, but credit information is
+given</td><td>Deletes all credit entries.</td><td>No</td></tr>
+<tr><td>Mark credits as available</td><td>Credits are marked as not available, but credit information is given</td>
+<td>Sets Credits available to “yes” and keeps the credit entries.</td><td>No</td></tr>
+<tr><td>Add a credit entry</td><td>Credits are available, but no credit information is given</td><td>Adds an empty
+credit entry; enter the accrediting body, credit type and number of credits.</td><td>No</td></tr>
+<tr><td>Mark credits as not available</td><td>Credits are available, but no credit information is given</td>
+<td>Sets Credits available to “no”.</td><td>No</td></tr>
+<tr><td>Go to Title</td><td>No title</td><td>Shows the General page.</td><td>No</td></tr>
+<tr><td>Go to Description</td><td>No description</td><td>Shows the General page.</td><td>No</td></tr>
+<tr><td>Go to Off-label Description</td><td>Off-label use without description</td><td>Shows the off-label
+description field.</td><td>No</td></tr>
+<tr><td>Go to Commercial Support Acknowledgement</td><td>Commercial support without acknowledgement</td><td>Shows
+the acknowledgement field.</td><td>No</td></tr>
+<tr><td>Go to Financial Relationship Disclosure</td><td>Financial relationship without disclosure</td><td>Shows the
+disclosure field.</td><td>No</td></tr>
+<tr><td>Go to MeSH Keyword</td><td>MeSH keyword problems</td><td>Shows the keyword; look up its descriptor ID, for
+example with Add MeSH Keywords.</td><td>No</td></tr>
+<tr><td>Go to Activity Location</td><td>An activity location without country (schema problem)</td><td>Shows the
+activity location; enter the country of the address.</td><td>No</td></tr>
+<tr><td>Go to Element</td><td>Any problem with a known element</td><td>Shows the element the problem refers to.</td>
+<td>No</td></tr>
+</table>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../tasks/validate-fix.html">Validating and Fixing Problems</a></li>
+<li><a href="../concepts/validation.html">Validation</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-conformance">HLOM Guide: Conformance</a></li>
+<li><a href="terminologies.html">Offline Terminologies</a></li>
+</ul>
+</div>
+</body>
+</html>

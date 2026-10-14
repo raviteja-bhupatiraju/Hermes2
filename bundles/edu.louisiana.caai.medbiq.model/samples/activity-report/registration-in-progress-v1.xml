@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Activity Report 1.0): a pediatrician's progress in an online
+     self-assessment activity reported to a certifying board, with one module completed, one registered (started,
+     not completed) and one expired. People and organizations are fictional. -->
+<ActivityReports xmlns="http://ns.medbiq.org/activityreport/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+	xmlns:m="http://ns.medbiq.org/member/v1/" xmlns:n="http://ns.medbiq.org/name/v1/"
+	xsi:schemaLocation="http://ns.medbiq.org/activityreport/v1/ http://ns.medbiq.org/activityreport/v1/activityreport.xsd">
+	<DateTimeCreated>2026-06-30T23:00:00-05:00</DateTimeCreated>
+	<ActivityReport>
+		<ReportingOrganization>Gulf Coast Pediatric Society</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="gulfcoastpeds.org">GCPS-55120</m:UniqueID>
+			<m:UniqueID domain="Southern Board of Pediatrics">SBP-0098311</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Dr. Marcus A. Thibodeaux</n:FormattedName>
+				<n:GivenName>Marcus</n:GivenName>
+				<n:FamilyName>Thibodeaux</n:FamilyName>
+				<n:Degree>MD</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="GCPS-PSA-2026">
+			<ProviderOrganization>Gulf Coast Pediatric Society</ProviderOrganization>
+			<ActivityName>Pediatric Self-Assessment 2026</ActivityName>
+			<Module>
+				<ModuleName moduleID="PSA-2026-ASTHMA">Asthma Management in Primary Care</ModuleName>
+				<Metadata>
+					<lom:lom>
+						<lom:general>
+							<lom:title>
+								<lom:string language="en">Asthma Management in Primary Care</lom:string>
+							</lom:title>
+							<lom:language>en</lom:language>
+							<lom:description>
+								<lom:string language="en">Thirty case-based questions with critiques on the diagnosis, step therapy and follow-up of asthma in children.</lom:string>
+							</lom:description>
+						</lom:general>
+						<hx:healthcareMetadata>
+							<hx:healthcareEducation>
+								<hx:creditsAvailable>yes</hx:creditsAvailable>
+								<hx:credits>
+									<hx:accreditingBody>ACCME</hx:accreditingBody>
+									<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+									<hx:creditType>CME</hx:creditType>
+									<hx:creditUnit>Credit</hx:creditUnit>
+									<hx:pacing>learner paced</hx:pacing>
+									<hx:accreditedProvider>Gulf Coast Pediatric Society</hx:accreditedProvider>
+									<hx:releaseDate>2026-01-05</hx:releaseDate>
+									<hx:expirationDate>2027-01-04</hx:expirationDate>
+									<hx:numberOfCredits>5</hx:numberOfCredits>
+								</hx:credits>
+								<hx:participationModality>technology based</hx:participationModality>
+							</hx:healthcareEducation>
+						</hx:healthcareMetadata>
+					</lom:lom>
+				</Metadata>
+				<Status>Completed</Status>
+				<StartDateTime>2026-02-03T20:10:00-06:00</StartDateTime>
+				<RegisteredDateTime>2026-02-03T20:05:00-06:00</RegisteredDateTime>
+				<CompletedDateTime>2026-02-11T22:40:00-06:00</CompletedDateTime>
+				<TimeEngaged>PT4H45M</TimeEngaged>
+				<Results>Passed (26 of 30 correct)</Results>
+				<CreditCertificate>
+					<CreditReceived>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:accreditedProvider>Gulf Coast Pediatric Society</hx:accreditedProvider>
+						<hx:numberOfCredits>5</hx:numberOfCredits>
+					</CreditReceived>
+					<CreditID>ccid:gulfcoastpeds.org:55120.psa2026.asthma</CreditID>
+				</CreditCertificate>
+			</Module>
+			<Module>
+				<ModuleName moduleID="PSA-2026-NEONATAL">Neonatal Jaundice</ModuleName>
+				<Status>Registered</Status>
+				<StartDateTime>2026-05-19T21:00:00-05:00</StartDateTime>
+				<DueDateTime>2026-12-31T23:59:59-06:00</DueDateTime>
+				<RegisteredDateTime>2026-05-19T20:58:00-05:00</RegisteredDateTime>
+				<TimeEngaged>PT1H20M</TimeEngaged>
+			</Module>
+			<Module>
+				<ModuleName moduleID="PSA-2025-ADHD">ADHD: Diagnosis and Follow-up</ModuleName>
+				<Status>Expired</Status>
+				<DueDateTime>2026-03-31T23:59:59-05:00</DueDateTime>
+				<RegisteredDateTime>2025-09-02T18:30:00-05:00</RegisteredDateTime>
+				<ExpiredDateTime>2026-04-01T00:00:00-05:00</ExpiredDateTime>
+			</Module>
+		</Activity>
+	</ActivityReport>
+</ActivityReports>

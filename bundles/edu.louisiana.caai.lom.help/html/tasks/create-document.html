@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creating Documents</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Creating Documents</h1>
+
+<p class="lead">New documents of any MedBiquitous standard are created with the <span class="ui">New
+MedBiquitous Document</span> wizard. Healthcare LOM records start from one of five templates; documents of the
+other standards start from the template of their standard. Every template produces a complete, schema-valid
+document.</p>
+
+<h2>Create a document</h2>
+<ol class="steps">
+<li>Open the wizard in one of these ways:
+<ul>
+<li><span class="ui">File &gt; New &gt; Healthcare LOM Document</span> or <kbd>Ctrl</kbd>+<kbd>N</kbd>;</li>
+<li>the <span class="ui">New MedBiquitous Document</span> button of the main tool bar;</li>
+<li><span class="ui">New document…</span> (“Create a document of any MedBiquitous standard”) or a template card
+on the start page; the card of another standard opens the wizard with that standard chosen;</li>
+<li><span class="ui">New Document…</span> in the Projects view (creates the document in the selected project
+folder, in the project's format).</li>
+</ul></li>
+<li>Choose the <span class="ui">Standard</span> at the top of the wizard: <span class="ui">Healthcare LOM 1.0
+(learning object metadata)</span>, or one of the other standards and versions (for example
+<span class="ui">Curriculum Inventory v10 (AAMC 2022)</span> or <span class="ui">Activity Report 2.0</span>); see
+<a href="#standards">Documents of the other standards</a>.</li>
+<li>Under <span class="ui">Start from</span>, click a template (for Healthcare LOM, see the table below; another
+standard shows the single card of its template).</li>
+<li>Enter the <span class="ui">Title</span>. It can be left empty, but you will be reminded that the document has
+no title yet.</li>
+<li>Check the <span class="ui">Language</span>: a language tag such as <code>en-US</code> or <code>fr</code>. It is
+used as the language of the record and of its text.</li>
+<li>Choose the <span class="ui">Format</span>: <span class="ui">XML (.xml)</span> or <span class="ui">JSON
+(.json)</span>. JSON is available for Healthcare LOM only; documents of the other standards are XML.</li>
+<li>Check the <span class="ui">File</span> (or click <span class="ui">Browse…</span>). By default it is in the
+folder of your most recent document, else in your Documents folder.</li>
+<li>Click <span class="ui">Finish</span>. The document is created and opened in the editor.</li>
+</ol>
+
+<p class="note">If the file exists, you are asked whether to replace it. A JSON document must use the extension
+<code>.json</code>; with any other extension it is saved as XML, and the wizard warns you about this.</p>
+
+<h2>Healthcare LOM templates</h2>
+<table>
+<tr><th>Template</th><th>Contents</th></tr>
+<tr><td><span class="ui">Blank record</span></td><td>A minimal, conformant Healthcare LOM record with just a title
+and language.</td></tr>
+<tr><td><span class="ui">CME course</span></td><td>An accredited continuing education course: authors and
+publisher, learner context, rights, one CME credit entry, physician audience and disclosures.</td></tr>
+<tr><td><span class="ui">Medical image asset</span></td><td>A medical image (JPEG) with technical format, image
+learning resource type and the healthcare asset details: image type, orientation and dimensions.</td></tr>
+<tr><td><span class="ui">Patient education resource</span></td><td>Plain-language material for patients and
+caregivers: patient education context, patient audience and a grade 8 reading level.</td></tr>
+<tr><td><span class="ui">Live workshop</span></td><td>A live conference or workshop session with venue, country and
+start and end date and time.</td></tr>
+</table>
+<p>Templates contain placeholders such as “Author Name”, “Publishing Organization” or “Venue Name”. Replace them
+with real values; the Overview page's <span class="ui">Next steps</span> point to what is most valuable to add.</p>
+
+<h2 id="standards">Documents of the other standards</h2>
+<p>When you choose another standard, the gallery shows one card, <span class="ui">New <i>standard</i></span>: a
+document with the content the standard's schemas require, ready to be completed. The title and language you enter
+are written into it where the standard has a place for them. The format is always XML (the JSON option is
+disabled).</p>
+<table>
+<tr><th>Standard</th><th>Versions offered</th><th>More information</th></tr>
+<tr><td>Curriculum Inventory</td><td>1.0, v10 (AAMC 2022)</td><td><a href="../standards/curriculum-inventory.html">Curriculum
+Inventory</a></td></tr>
+<tr><td>Competency Framework, Competency Object, Performance Framework</td><td>1.0</td>
+<td><a href="../standards/competencies.html">Competencies</a></td></tr>
+<tr><td>Activity Report</td><td>1.0, 2.0</td><td><a href="../standards/activity-report.html">Activity Report</a></td></tr>
+<tr><td>Medical Education Metrics, MEMS Survey Items</td><td>1.0</td>
+<td><a href="../standards/education-metrics.html">Medical Education Metrics</a></td></tr>
+<tr><td>Healthcare Professional Profile</td><td>1.0</td>
+<td><a href="../standards/professional-profile.html">Healthcare Professional Profile</a></td></tr>
+<tr><td>Virtual Patient Data, Virtual Patient Activity Model, Virtual Patient Data Availability Model</td>
+<td>1.0</td><td><a href="../standards/virtual-patient.html">Virtual Patient</a></td></tr>
+</table>
+<p>The start page's <span class="ui">Start from a template</span> section has a card for each of these standards
+after the Healthcare LOM templates.</p>
+
+<h2>Recording yourself as author (Healthcare LOM)</h2>
+<p>If <span class="ui">Add me as author and meta-metadata creator of new documents</span> is selected in
+<span class="ui">Window &gt; Preferences… &gt; Healthcare LOM</span> and your name is entered there, new documents
+list you as author (Life Cycle) and as creator of the metadata (Meta-Metadata), as a vCard built from your name,
+organization and email.</p>
+
+<h2>Other ways to get documents</h2>
+<ul>
+<li><strong>Samples</strong>: <span class="ui">Open sample…</span> on the start page copies a sample document
+to <code>Documents\MedBiquitous Samples</code> and opens it. The menu lists the Healthcare LOM samples first (CME
+courses with credits and disclosures, a course with several credit types, medical image assets and a live
+workshop), followed by a submenu of samples for each other standard.</li>
+<li><strong>Existing files</strong>: <span class="ui">File &gt; Open…</span> (<kbd>Ctrl</kbd>+<kbd>O</kbd>),
+<span class="ui">File &gt; Open URI…</span> (<kbd>Ctrl</kbd>+<kbd>U</kbd>) and <span class="ui">File &gt; Open
+Recent</span>; or add them to a project.</li>
+<li><strong>Spreadsheets</strong>: <a href="csv-import.html">Import from CSV</a> creates one Healthcare LOM
+record per row.</li>
+</ul>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="edit-forms.html">Editing with the Form Pages</a></li>
+<li><a href="create-project.html">Creating and Opening Projects</a></li>
+<li><a href="../concepts/documents.html">Documents: XML and JSON</a></li>
+<li><a href="csv-import.html">Importing Records from CSV</a></li>
+<li><a href="../standards/index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

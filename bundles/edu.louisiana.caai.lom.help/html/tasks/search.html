@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Searching Documents</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Searching Documents</h1>
+
+<p class="lead">Search the field values of all documents of your projects, of every MedBiquitous standard, for
+a word, a phrase or a regular expression, optionally limited to certain kinds of fields, and open the matching
+fields in the editor.</p>
+
+<h2>Search</h2>
+<ol class="steps">
+<li>Choose <span class="ui">Search &gt; Search Documents…</span> or press <kbd>Ctrl</kbd>+<kbd>H</kbd>. The
+Search dialog opens on the <span class="ui">Hermes Document Search</span> page.</li>
+<li>In <span class="ui">Containing text</span>, type what to find. Selected text is filled in, and earlier
+searches are available in the drop-down list.</li>
+<li>Choose options as needed:
+<ul>
+<li><span class="ui">Case sensitive</span>: match upper and lower case exactly.</li>
+<li><span class="ui">Whole word</span>: match only whole words.</li>
+<li><span class="ui">Regular expression</span>: interpret the text as a Java regular expression, for example
+<code>CM[EN]</code> or <code>D0\d{5}</code>. An invalid expression is reported in the dialog.</li>
+</ul></li>
+<li>Under <span class="ui">Search In</span>, keep <span class="ui">All fields</span> or select field groups (see
+below). The groups are listed under the name of their standard. At least one group must be chosen.</li>
+<li>Choose the <span class="ui">Scope</span>: <span class="ui">Workspace</span> (all projects),
+<span class="ui">Selected resources</span>, <span class="ui">Enclosing projects</span> (the projects of the
+selection) or a <span class="ui">Working set</span>.</li>
+<li>Click <span class="ui">Search</span>.</li>
+</ol>
+
+<h2>Field groups</h2>
+<p>Every standard defines its own field groups, shown in the dialog under the standard's name (a standard
+with several versions, such as Curriculum Inventory, is listed once). Selecting groups limits the search to their
+fields; <span class="ui">All fields</span> searches every field of every document.</p>
+<h3>Healthcare LOM</h3>
+<table>
+<tr><th>Group</th><th>Elements searched</th></tr>
+<tr><td>Titles</td><td>General title</td></tr>
+<tr><td>Descriptions</td><td>Descriptions, off-label description, commercial support acknowledgement, financial
+relationship disclosures, clinical history</td></tr>
+<tr><td>Keywords</td><td>Keywords (text, source and ID)</td></tr>
+<tr><td>Contributors and sponsors</td><td>Contributors (vCards, roles, dates), activity sponsorship, accredited and
+non-accredited providers, contact</td></tr>
+<tr><td>Identifiers and locations</td><td>Identifiers, technical locations (URLs), related resources</td></tr>
+<tr><td>Classifications</td><td>Classifications (purpose, taxon paths, descriptions, keywords)</td></tr>
+<tr><td>Credits and accreditation</td><td>Credits, accrediting body, activity certification, credits
+available</td></tr>
+<tr><td>Audience</td><td>Target audience, specialties, professions, intended end user roles, contexts, audience
+categories, reading levels</td></tr>
+</table>
+<h3>Other standards</h3>
+<p>The other standards have groups for their main parts, for example Titles, Events, Expectations
+(competencies), Academic levels and Sequence blocks of a Curriculum Inventory. The groups of each standard are listed in its topic under
+<a href="../standards/index.html">The MedBiquitous Standards</a>.</p>
+
+<h2>What is searched</h2>
+<ul>
+<li>Element text and attribute values, so you can search for MeSH descriptor IDs (<code>D018805</code>) and
+other codes as well as for text.</li>
+<li>All documents of the projects in the scope: Healthcare LOM records (XML and JSON) and documents of the
+other standards. Documents outside projects are not searched; to search any folder, use <code>hermes search</code>
+on the command line (see <a href="validate-fix.html#command-line">Validate outside Hermes 2</a>).</li>
+<li>Documents with unsaved changes are searched as edited, not as saved.</li>
+</ul>
+
+<h2>Work with the results</h2>
+<p>The <span class="ui">Search</span> view lists the matches grouped by project, document and field, with the
+number of matches and the matching text highlighted. The view's title summarizes the search: the query, the
+scope, the number of matches and the number of documents.</p>
+<ul>
+<li>Double-click a field to open its document and select the field in the editor; double-click a document to open
+it.</li>
+<li>Hover over a field to see its element path and full value.</li>
+<li>Use the Search view's tool bar to step through matches, switch between the tree and a flat list, run the
+search again or go back to earlier searches.</li>
+</ul>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/views.html#search">The Search view</a></li>
+<li><a href="../concepts/projects.html">Projects and the Workspace</a></li>
+<li><a href="library-reports.html">The Library and HTML Reports</a> (search a folder of records)</li>
+<li><a href="../reference/menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+</ul>
+</div>
+</body>
+</html>

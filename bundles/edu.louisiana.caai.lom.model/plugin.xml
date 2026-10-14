@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. Generated from the MedBiquitous Healthcare LOM v1 schemas.
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hlom -->
+      <package
+            uri="http://ns.medbiq.org/lom/extend/v1/"
+            class="edu.louisiana.caai.lom.model.healthcare.HealthcarePackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated hlom -->
+      <parser
+            type="healthcare"
+            class="edu.louisiana.caai.lom.model.healthcare.util.HealthcareResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hlom -->
+      <package
+            uri="http://ltsc.ieee.org/xsd/LOM"
+            class="edu.louisiana.caai.lom.model.lom.LomPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <!-- @generated hlom -->
+      <parser
+            contentTypeIdentifier="edu.louisiana.caai.lom.hlom"
+            class="edu.louisiana.caai.lom.model.lom.util.LomResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <!-- @generated hlom -->
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml,lom"
+            id="edu.louisiana.caai.lom.hlom"
+            name="%_UI_Lom_content_type"
+            priority="normal">
+         <describer class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter name="namespace" value="http://ltsc.ieee.org/xsd/LOM"/>
+         </describer>
+      </content-type>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <!-- The JSON form of HLOM documents (see HlomJson); read and written by LomResourceImpl. -->
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="json"
+            id="edu.louisiana.caai.lom.hlom.json"
+            name="%_UI_LomJson_content_type"
+            priority="normal"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="edu.louisiana.caai.lom.hlom.json"
+            class="edu.louisiana.caai.lom.model.lom.util.LomResourceFactoryImpl"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="json"
+            class="edu.louisiana.caai.lom.model.lom.util.LomResourceFactoryImpl"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hlom -->
+      <package
+            uri="http://ns.medbiq.org/address/v1/"
+            class="edu.louisiana.caai.lom.model.address.AddressPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated hlom -->
+      <parser
+            type="address"
+            class="edu.louisiana.caai.lom.model.address.util.AddressResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hlom -->
+      <package
+            uri="http://ltsc.ieee.org/xsd/LOM/vocab"
+            class="edu.louisiana.caai.lom.model.vocab.VocabPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated hlom -->
+      <parser
+            type="vocab"
+            class="edu.louisiana.caai.lom.model.vocab.util.VocabResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated hlom -->
+      <package
+            uri="http://ns.medbiq.org/lom/vocab/v1/"
+            class="edu.louisiana.caai.lom.model.healthcarevocab.HealthcarevocabPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated hlom -->
+      <parser
+            type="healthcarevocab"
+            class="edu.louisiana.caai.lom.model.healthcarevocab.util.HealthcarevocabResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

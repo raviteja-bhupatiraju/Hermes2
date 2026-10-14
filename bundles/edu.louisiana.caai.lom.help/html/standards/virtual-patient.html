@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MedBiquitous Virtual Patient</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>MedBiquitous Virtual Patient</h1>
+
+<p class="lead">MedBiquitous Virtual Patient (MVP) 1.0, ANSI/MEDBIQ VP.10.1-2010, is the MedBiquitous standard for
+exchanging and reusing virtual patients: "interactive computer simulations of real-life clinical scenarios for the
+purpose of medical training, education, or assessment". A virtual patient is a package of three XML documents,
+media files and a manifest; Hermes 2 edits and checks the three documents.</p>
+
+<h2>The parts of a virtual patient</h2>
+<p>The specification defines five components. A virtual patient package (a SCORM 2004 4th Edition content package,
+one virtual patient per package) holds them in fixed files:</p>
+<table>
+<tr><th>Component</th><th>File</th><th>Holds</th><th>Hermes document type</th></tr>
+<tr><td>Virtual Patient Data (VPD)</td><td><code>virtualpatientdata.xml</code></td><td>The clinical and
+demographic data: demographics, narrative texts, interview items, physical exams, diagnostic tests, diagnoses,
+interventions, medications</td><td>Virtual Patient Data 1.0</td></tr>
+<tr><td>Data Availability Model (DAM)</td><td><code>dataavailabilitymodel.xml</code></td><td>Groups (DAM nodes) of VPD
+data and media that are shown together, and when each item is displayed</td><td>Virtual Patient Data Availability
+Model 1.0</td></tr>
+<tr><td>Activity Model (AM)</td><td><code>activitymodel.xml</code></td><td>What the learner can do: activity nodes,
+the links between them, counters, timers and rules</td><td>Virtual Patient Activity Model 1.0</td></tr>
+<tr><td>Media Resources (MR)</td><td>any, listed in <code>imsmanifest.xml</code></td><td>Images, video, audio,
+documents, each with a resource identifier in the manifest</td><td>(edited outside Hermes)</td></tr>
+<tr><td>Player</td><td>an HTML launch page</td><td>The functional specification of conformant players</td>
+<td>(not a document)</td></tr>
+</table>
+<p>All content lives in the VPD or in media resources. The Activity Model refers only to DAM nodes, and the DAM
+refers to the data and media, always with XPath expressions:</p>
+<ul>
+<li>an activity node shows a DAM node: <code>/DataAvailabilityModel/DAMNode[@id='dam-history']</code>;</li>
+<li>a DAM node item points to VPD data, by id or by a unique path:
+<code>/VirtualPatientData/InterviewItem[@id='i1']</code>,
+<code>/VirtualPatientData/PatientDemographics/CoreDemographics/Name/text()</code>;</li>
+<li>or to a media resource of the manifest: <code>/manifest/resources/resource[@identifier='r-ecg']</code>;</li>
+<li>links and rules refer to activity nodes:
+<code>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-start']</code>.</li>
+</ul>
+
+<h2 id="vpd">Virtual Patient Data</h2>
+<p>The root element <code>VirtualPatientData</code> (namespace
+<code>http://ns.medbiq.org/virtualpatientdata/v1/</code>) contains, in this order: <code>PatientDemographics</code>,
+<code>VPDText</code>, <code>Medication</code>, <code>InterviewItem</code>, <code>PhysicalExam</code>,
+<code>DiagnosticTest</code>, <code>Diagnosis</code>, <code>Intervention</code>, <code>Organization</code> and
+<code>XtensibleInfo</code>. Every data element has an <code>id</code> by which the DAM selects it.</p>
+<table>
+<tr><th>Editor page</th><th>Elements</th></tr>
+<tr><td>Patient</td><td><code>PatientDemographics</code>: <code>CoreDemographics</code> (name, patient ID, age as
+a duration such as <code>P58Y</code>, sex, race, species, breed) and <code>DemographicCharacteristic</code>s</td></tr>
+<tr><td>Narrative</td><td><code>VPDText</code>: chief complaint, history, problem, allergy or narrative texts. The
+text is a restricted XHTML <code>div</code> (paragraphs, lists, headings, tables, images, links, and the MVP
+<code>media</code> element that refers to a resource of the manifest); it is edited on the XML page.</td></tr>
+<tr><td>History</td><td><code>InterviewItem</code> (question and response) and <code>Medication</code> (name,
+dose, route, frequency)</td></tr>
+<tr><td>Physical Exam</td><td><code>PhysicalExam</code>: exam, location on the body, action, finding,
+description</td></tr>
+<tr><td>Diagnostic Tests</td><td><code>DiagnosticTest</code>: test name, unit, result, normal range</td></tr>
+<tr><td>Diagnoses</td><td><code>Diagnosis</code>: differential diagnoses with a likelihood; the author's final
+diagnosis has <code>authorDiagnosis="true"</code></td></tr>
+<tr><td>Interventions</td><td><code>Intervention</code>: name, an optional medication, appropriateness (always, ok,
+never, none) and results</td></tr>
+<tr><td>Organization</td><td><code>Organization</code>: sections and items (<code>idRef</code>) that arrange the
+data for authoring systems</td></tr>
+</table>
+<p>The title of a VPD document is the patient's name (or patient ID).</p>
+
+<h2 id="dam">Data Availability Model</h2>
+<p>The root element <code>DataAvailabilityModel</code> (namespace
+<code>http://ns.medbiq.org/dataavailabilitymodel/v1/</code>) holds one or more <code>DAMNode</code>s. A DAM node has
+an id, an optional label for authors and one or more <code>DAMNodeItem</code>s. An item has:</p>
+<ul>
+<li><code>ItemPath</code>: the VPD element or media resource it shows;</li>
+<li><code>display</code>: <code>immediately</code> (the default), <code>ontrigger</code> (after a learner
+interaction), <code>delayed</code> or <code>ifrequested</code> (only if the learner asked for it, such as an
+ordered test);</li>
+<li>optionally <code>ItemComment</code> (a DAM node with feedback shown after the item is triggered),
+<code>DAMNodePath</code>s (DAM nodes included as sub-groups), <code>ItemOrder</code>, and
+<code>AlternativePath</code> (only for an <code>ItemPath</code> into <code>XtensibleInfo</code>).</li>
+</ul>
+<p>The single editor page <span class="ui">DAM Nodes</span> lists the nodes and their items; the path fields offer
+the usual path patterns while you type. The DAM has no title element, so Hermes titles it by its number of
+nodes.</p>
+
+<h2 id="am">Activity Model</h2>
+<p>The root element <code>ActivityModel</code> (namespace <code>http://ns.medbiq.org/activitymodel/v1/</code>)
+contains <code>Properties</code> (counters and a timer), <code>ActivityNodes</code> (node sections containing
+activity nodes or further sections), <code>Links</code> and <code>XtensibleInfo</code>.</p>
+<ul>
+<li><b>Activity nodes</b> (page <span class="ui">Activity Nodes</span>): each node has an id, a label and a
+<code>Content</code> DAM node. "The first node in the Activity Model file is considered to be the first node in the
+activity"; a node with no links leaving it (or only one back to the first node) is an end node. Node rules add to or
+subtract from counters, allow entry only under a Boolean condition on visited nodes and triggered data
+(<code>ConditionalRule</code>), choose one leaving link at random (<code>Probability</code>) or make the node
+reachable from a navigation menu (<code>NavigateGlobal</code>). A node may have its own timer.</li>
+<li><b>Links</b> (page <span class="ui">Links</span>): one-way links from <code>ActivityNodeA</code> to
+<code>ActivityNodeB</code> with a label, a <code>Weighting</code> (percent) and counter actions.</li>
+<li><b>Counters and Timer</b> (page <span class="ui">Counters and Timer</span>): counters such as patient health
+or costs with an initial value and rules that redirect the learner or show a message at a threshold, and the timer
+of the whole activity.</li>
+</ul>
+<p>The title of an Activity Model is the label of its first node section, which usually names the case.</p>
+
+<h2 id="rules">Rules Hermes checks</h2>
+<p>Besides the XML Schemas, Hermes checks what the specification states and what the references require:</p>
+<table>
+<tr><th>Document</th><th>Rule</th><th>Severity</th></tr>
+<tr><td>VPD</td><td>Ids are unique: two elements of the same kind with the same id are an error (the DAM could not
+tell them apart), the same id on different kinds a warning (Organization items refer to "a single virtual patient
+data element")</td><td>Error / warning</td></tr>
+<tr><td>VPD</td><td>Organization items refer to existing ids</td><td>Error</td></tr>
+<tr><td>VPD</td><td>Images in VPDText are local to the package; no JavaScript (script elements, event attributes)</td><td>Error</td></tr>
+<tr><td>VPD</td><td>A Breed comes with a Species</td><td>Warning</td></tr>
+<tr><td>VPD</td><td>One of the diagnoses is marked as the author's final diagnosis</td><td>Info</td></tr>
+<tr><td>AM</td><td>Activity node, node section and counter ids are unique</td><td>Error</td></tr>
+<tr><td>AM</td><td>Links, rule redirections and condition operands refer to existing activity nodes; counter actions
+to existing counters (no dangling links)</td><td>Error</td></tr>
+<tr><td>AM</td><td>Condition operands are activity nodes or VPD elements; VPD paths use VPD element names</td>
+<td>Warning / error</td></tr>
+<tr><td>AM</td><td>Every activity node can be reached from the first node through links, rule redirections or
+NavigateGlobal</td><td>Warning</td></tr>
+<tr><td>AM</td><td>The weightings of the links leaving a node add up to 100; a node with Probability on has weighted
+links</td><td>Warning</td></tr>
+<tr><td>AM</td><td>Links have a label unless their label is not displayed</td><td>Info</td></tr>
+<tr><td>DAM</td><td>DAM node ids are unique; ItemComment and DAMNodePath refer to existing DAM nodes</td>
+<td>Error</td></tr>
+<tr><td>DAM</td><td>No cyclic inclusions ("referencing a DAMNode that ultimately leads to a DAMNode including itself
+[is] not permitted")</td><td>Error</td></tr>
+<tr><td>DAM</td><td><code>ItemPath</code> and <code>AlternativePath</code> into the VPD use VPD element names (checked
+against the VPD schema, up to <code>XtensibleInfo</code> or the XHTML text)</td><td>Error</td></tr>
+<tr><td>DAM</td><td><code>AlternativePath</code> only with an ItemPath into <code>XtensibleInfo</code>; distinct
+<code>ItemOrder</code>s in a node</td><td>Warning / info</td></tr>
+</table>
+<p><b>Checks across the package.</b> When a document lies in a folder with the other documents under the file names
+the specification prescribes, Hermes also checks the references between them: the <code>Content</code> of each
+activity node must name a DAM node of <code>dataavailabilitymodel.xml</code>, and every VPD path of the DAM and of
+condition operands must select an element of <code>virtualpatientdata.xml</code>. These are warnings, since the other
+document may still be in progress; they use the saved files. Media references (<code>/manifest/...</code>) are not
+checked.</p>
+
+<h2>Templates and samples</h2>
+<p>New documents of the three types start from templates: a VPD with the patient's
+name and a chief complaint, an Activity Model with a node section named after the case, two nodes and a link, and a
+DAM with two nodes pointing into that VPD. Save them as <code>virtualpatientdata.xml</code>,
+<code>activitymodel.xml</code> and <code>dataavailabilitymodel.xml</code> in one folder so that the package checks
+apply.</p>
+<p>The samples (<code>samples/virtual-patient</code> of the MedBiquitous model bundle) are one fictional branching
+case, "Chest pain in a 58-year-old man": the VPD of the patient with interview, examination, ECG and troponin,
+diagnoses, interventions and medications; a DAM that progressively releases the data, with feedback on ordering the
+ECG and test results shown only if requested; and an Activity Model with two node sections, counters, a timer, a
+conditional rule and a branch to a good and a bad outcome.</p>
+
+<h2>Specification</h2>
+<p>The MedBiquitous Virtual Patient Specifications and Description Document 1.0 (April 6, 2010), the Player
+Specification, the schemas and the implementation toolkit are available from the
+<a href="https://www.medbiq.org/standards/virtual-patient">MedBiquitous Virtual Patient page</a>. Help texts
+of the elements quote or summarize the specification, © MedBiquitous Consortium, used under the MedBiquitous
+Consortium XML Public License and Terms of Use.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/editor-pages.html">Editor Pages</a></li>
+<li><a href="../reference/validation-rules.html">Validation Rules and Quick Fixes</a></li>
+<li><a href="../concepts/documents.html">Documents: XML and JSON</a></li>
+<li><a href="index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

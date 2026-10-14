@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Importing Records from CSV</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Importing Records from CSV</h1>
+
+<p class="lead">If your course catalog is kept in a spreadsheet, Hermes 2 can turn it into Healthcare LOM records:
+one record per row, each validated before it is written.</p>
+
+<h2>Prepare the spreadsheet</h2>
+<ul>
+<li>Save it as CSV. Comma, semicolon, tab and vertical bar (<code>|</code>) delimiters and UTF-8, UTF-16 and
+Windows-1252 encodings are detected automatically.</li>
+<li>Use the first row for column headers. Headers such as “Title”, “Course Code”, “Credits”, “CME Credits”,
+“Specialties” or “hx:creditType” are recognized automatically.</li>
+<li>Separate several values in a cell with <code>;</code>, for example <code>physician; registered nurse</code>.</li>
+<li>Credit columns take one value per credit: <code>CME; CNE</code> in the credit type column with
+<code>1.5; 2</code> in the credits column.</li>
+<li>Tag keywords with MeSH descriptors as <code>Sepsis [MeSH:D018805]</code>.</li>
+<li>Write contributors as <code>Name &lt;email&gt;</code>.</li>
+</ul>
+<p>A complete example, <code>samples/import/courses.csv</code> (six fictional courses and assets), is part of the
+Hermes 2 source repository.</p>
+
+<h2>Import</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File &gt; Import from CSV…</span> or click <span class="ui">Create records from the
+rows of a CSV file</span> on the main tool bar.</li>
+<li><strong>Import from CSV</strong> page: choose the <span class="ui">File</span>. Check the detected
+<span class="ui">Delimiter</span> and <span class="ui">Encoding</span> (change them if the preview looks wrong).
+Under <span class="ui">Start each record from</span>, choose the template every record starts from, set the
+<span class="ui">Default language</span> for rows without a language of their own, and decide whether to
+<span class="ui">Remove template placeholders that no column fills</span> (“Author Name”, “Venue Name”, …).
+Click <span class="ui">Next</span>.</li>
+<li><strong>Map Columns to HLOM Fields</strong>: columns were matched by their names. Click a field to change the
+mapping; ignored columns are not imported. <span class="ui">Match by Name</span> repeats the automatic matching
+and <span class="ui">Ignore All</span> clears it. Selecting a field shows its help and an example. Click
+<span class="ui">Next</span>.</li>
+<li><strong>Review the Records</strong>: every row was converted and validated against the HLOM schemas and rules.
+The table shows each record's status, kind and credits; below it, the <span class="ui">Notes</span> tab lists the
+problems and how values were interpreted, and the <span class="ui">XML</span> tab shows the generated record.
+Uncheck rows you don't want, or use <span class="ui">Select All</span>, <span class="ui">Select Valid</span> and
+<span class="ui">Select None</span>. Click <span class="ui">Next</span>.</li>
+<li><strong>Save the Records</strong>: choose the <span class="ui">Folder</span> and the <span class="ui">File
+names</span> pattern (a preview shows the resulting names). Choose whether to <span class="ui">Replace existing
+files with the same name</span>, <span class="ui">Show the folder in the Library afterwards</span> and
+<span class="ui">Open the first record in the editor</span>. Click <span class="ui">Finish</span>.</li>
+</ol>
+
+<h2>Friendly values</h2>
+<p>Common spreadsheet values are interpreted, and every interpretation is listed in the notes. For example,
+“self-paced” becomes the pacing value <em>learner paced</em>, “CT” becomes the medical image type <em>computed axial
+tomography scan</em>, and “90” in a duration column becomes <code>PT1H30M</code>.</p>
+
+<h2>File name placeholders</h2>
+<table>
+<tr><th>Placeholder</th><th>Replaced by</th></tr>
+<tr><td><code>{title}</code></td><td>The record's title</td></tr>
+<tr><td><code>{row}</code></td><td>The row number</td></tr>
+<tr><td><code>{n}</code></td><td>A running number: 001, 002, …</td></tr>
+<tr><td><code>{id}</code></td><td>The record's identifier</td></tr>
+<tr><td><code>{kind}</code></td><td>The kind of record</td></tr>
+<tr><td><code>{template}</code></td><td>The template</td></tr>
+<tr><td><code>{date}</code></td><td>The date</td></tr>
+<tr><td><code>{column:Header}</code></td><td>The value of the column with that header</td></tr>
+</table>
+<p>The extension <code>.xml</code> is added; duplicate names get <code>-2</code>, <code>-3</code>, …. Existing
+files are never replaced unless you select the replace option.</p>
+
+<h2>Importable fields</h2>
+<p>Columns can be mapped to 65 HLOM fields in these groups: General, Life cycle, Technical, Educational, Rights,
+Classification, Healthcare education, Credits, Target audience, Activity location and Healthcare asset. Each field
+lists the header names it recognizes, a description and an example in the mapping page.</p>
+
+<p class="note">Imported records are written as XML. For developers: the importer is also registered as the
+Eclipse import wizard <span class="ui">HLOM Records from CSV</span> (category <span class="ui">Healthcare
+LOM</span>).</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="create-document.html">Creating Documents</a></li>
+<li><a href="library-reports.html">The Library and HTML Reports</a></li>
+<li><a href="keywords-terminologies.html">Keywords and Terminologies</a></li>
+<li><a href="validate-fix.html">Validating and Fixing Problems</a></li>
+</ul>
+</div>
+</body>
+</html>

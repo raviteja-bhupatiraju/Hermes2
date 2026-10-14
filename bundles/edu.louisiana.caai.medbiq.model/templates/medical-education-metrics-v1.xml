@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of a new Medical Education Metrics (MEMS) 1.0 report (placeholders: ${title}, ${language}, ${date}, ${id}). -->
+<MedicalEducationMetrics xmlns="http://ns.medbiq.org/metrics/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+		xmlns:hx="http://ns.medbiq.org/lom/extend/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/metrics/v1/ http://ns.medbiq.org/metrics/v1/medicaleducationmetrics.xsd">
+	<ReportDescription>
+		<ReportingStartDate>${date}</ReportingStartDate>
+		<ReportingEndDate>${date}</ReportingEndDate>
+	</ReportDescription>
+	<ActivityDescription>
+		<lom:lom>
+			<lom:general>
+				<lom:identifier>
+					<lom:catalog>URI</lom:catalog>
+					<lom:entry>urn:uuid:${id}</lom:entry>
+				</lom:identifier>
+				<lom:title>
+					<lom:string language="${language}">${title}</lom:string>
+				</lom:title>
+				<lom:language>${language}</lom:language>
+			</lom:general>
+		</lom:lom>
+	</ActivityDescription>
+	<ParticipationMetrics>
+		<RegisteredParticipants>0</RegisteredParticipants>
+		<NumberOfParticipantsCompletingActivity>0</NumberOfParticipantsCompletingActivity>
+	</ParticipationMetrics>
+</MedicalEducationMetrics>

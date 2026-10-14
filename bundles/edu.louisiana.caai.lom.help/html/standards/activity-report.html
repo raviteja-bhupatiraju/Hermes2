@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Activity Report</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Activity Report</h1>
+
+<p class="lead">The MedBiquitous Activity Report records the learning and certification activities of physicians
+and other healthcare professionals: who registered for, completed or let expire which activity, when, with which
+results and which credits. Continuing education providers, specialty societies, certifying and licensing boards and
+portfolio systems exchange activity reports, for example as digital CE certificates and transcripts or to track
+Maintenance of Certification (MoC) activities.</p>
+
+<p>Activity reports reuse two other MedBiquitous standards: the person is described with the
+<a href="professional-profile.html">Healthcare Professional Profile</a> (<code>Member</code>), and an activity can be
+described with an embedded <a href="../concepts/hlom.html">Healthcare LOM</a> record (<code>lom</code>), whose
+healthcare extension also lists the credits the activity offers.</p>
+
+<h2 id="versions">Document types and versions</h2>
+<table>
+<tr><th>Document type</th><th>Namespace</th><th>Notes</th></tr>
+<tr><td>Activity Report 1.0 (<code>activity-report-v1</code>)</td>
+<td><code>http://ns.medbiq.org/activityreport/v1/</code></td>
+<td>The standard of 2009 (ANSI/MEDBIQ). Uses Professional Profile 1.0 (<code>member/v1</code>).</td></tr>
+<tr><td>Activity Report 2.0 (<code>activity-report-v2</code>)</td>
+<td><code>http://ns.medbiq.org/activityreport/v2/</code></td>
+<td>The point release (specification 1.54, 2019). Uses Professional Profile 2.0 (<code>member/v2</code>) and the
+common types (<code>common/v2</code>). Adds report identifiers (<code>arid</code>), a reporting period, learner
+demographics (<code>Participants</code>), an activity status and results, launch details, commercial support and
+regulatory information, in particular for the FDA Opioid Analgesic REMS.</td></tr>
+</table>
+
+<h2 id="structure">Structure of a document</h2>
+<p>The root element <code>ActivityReports</code> holds the date and time the reports were created
+(<code>DateTimeCreated</code>; in 2.0 also <code>ReportingStartDate</code> and <code>ReportingEndDate</code>, the
+first and last day of the reporting period, and an <code>arid</code>) and one or more <code>ActivityReport</code>
+elements. Each activity report contains:</p>
+<ul>
+<li><code>ReportingOrganization</code>: the organization that is the source of the report.</li>
+<li><code>Member</code>: the single person the report is about (Professional Profile: <code>UniqueID</code> with a
+<code>domain</code>, <code>Name</code>, licenses…). In 2.0 a report has a <code>Member</code> and/or
+<code>Participants</code>: anonymous demographics of the learners of an activity (local identifier, state of primary
+practice, DEA registration, profession, practice area, surgical procedures, time in practice).</li>
+<li>One or more <code>Activity</code> elements: the provider organization, the activity name (for continuing
+education, the title of the course) and its <code>Module</code>s. An activity without parts has one module named like
+the activity; a broad activity (such as a quality improvement program) has a module per topic.</li>
+<li>For each module: optional <code>Metadata</code> (an embedded <code>lom</code> record or the
+<code>location</code> of one), the <code>Status</code> (Registered, Completed or Expired), the registration, start,
+due, end, completion and expiration dates, the <code>TimeEngaged</code> (an ISO 8601 duration such as
+<code>PT1H30M</code>), the <code>Results</code> and one <code>CreditCertificate</code> per type of credit received:
+the <code>CreditReceived</code> (accrediting body, activity certification such as AMA PRA Category 1 Credit, credit
+type and unit, number of credits, optional credit focus categories) and a globally unique <code>CreditID</code>
+(<code>ccid:providerdomain:localidentifier</code>).</li>
+<li>Optionally <code>PointOfCareLearningData</code>: the clinical question, the search parameters, the resources used
+and the application to practice, as required for Internet point-of-care learning credit.</li>
+</ul>
+<p>Elements of other namespaces can extend <code>ActivityReports</code>, <code>ActivityReport</code>,
+<code>Activity</code> and <code>Module</code> in 2.0 (the preferred method); <code>XtensibleInfo</code> remains for
+backward compatibility. The conventional prefixes are <code>m</code> (member), <code>n</code> (name),
+<code>a</code> (address), <code>lom</code> and <code>hx</code> (Healthcare LOM).</p>
+<p>Reports are exchanged as documents or through the Activity Report web services, whose create, read, update and
+delete operations take an <code>ActivityReports</code> document.</p>
+
+<h2 id="pages">Editor pages</h2>
+<table>
+<tr><th>Page</th><th>Shows</th></tr>
+<tr><td>Report</td><td>The creation date and time; in 2.0 the document's <code>arid</code> and the reporting
+period.</td></tr>
+<tr><td>Participants</td><td>The list of activity reports with the reporting organization and the
+<code>Member</code> (unique IDs and their domains, name, licenses); in 2.0 the report's <code>arid</code> and the
+<code>Participants</code>.</td></tr>
+<tr><td>Activities</td><td>For each report, its activities (provider, name, IDs) and modules, with the module's
+Healthcare LOM description and the credits it offers.</td></tr>
+<tr><td>Status and Results</td><td>The status, dates, time engaged and results of each module (and, in 2.0, of each
+activity).</td></tr>
+<tr><td>Credits</td><td>The credit certificates of each module.</td></tr>
+<tr><td>Regulation and Launch (2.0)</td><td>Commercial supporter, launch details and regulatory information
+(regulations and regulatory classifications) of each activity.</td></tr>
+<tr><td>Point-of-Care Learning</td><td>The point-of-care learning data of each activity.</td></tr>
+</table>
+<p>Pages list the activity reports, then the activities of the selected report, then its modules: select an item to
+edit its details. The values of unique IDs and regulation URIs are edited in a list, their <code>domain</code> and
+<code>label</code> attributes in the list below it. Everything else (extensions, the rest of the Professional Profile
+and of the Healthcare LOM record) is edited in the tree or on the XML page.</p>
+
+<h2 id="rules">Rules</h2>
+<p>Besides the XML schemas, Hermes checks what the specification (Activity Report Specifications 1.54) and the
+Activity Report Implementation Guidelines 1.0 state, and what follows from the meaning of the data:</p>
+<table>
+<tr><th>Check</th><th>Severity</th></tr>
+<tr><td>The reporting period runs forward: <code>ReportingStartDate</code> is not after
+<code>ReportingEndDate</code> (2.0).</td><td>Error</td></tr>
+<tr><td>Completion and expiration dates of modules fall within the reporting period (2.0); the reports are not
+created before the period starts nor in the future.</td><td>Warning</td></tr>
+<tr><td>Dates of a module are in order: start before end, registration and start before completion, registration
+before expiration (errors); due date not before registration (warning).</td><td>Error / Warning</td></tr>
+<tr><td>A Completed module has a <code>CompletedDateTime</code> (guidelines); a module with a completion date is
+Completed; an Expired module has an <code>ExpiredDateTime</code> and a Registered one a registration or start date
+(info).</td><td>Warning / Info</td></tr>
+<tr><td>A Completed module whose metadata offers credits reports the credits received; credit certificates belong
+to Completed modules, and not to modules whose metadata says no credits are available.</td><td>Warning</td></tr>
+<tr><td>The credits received are given, positive and not above the credits the module's Healthcare LOM metadata
+offers for that certification (or credit type and unit); a credit focus is not larger than its certificate; one
+certificate per type of credit.</td><td>Warning</td></tr>
+<tr><td><code>CreditID</code> uses <code>ccid:providerdomain:localidentifier</code> (warning) and is unique
+(error); <code>arid</code> uses <code>arid:domain:localidentifier</code> (warning) and is unique (error).</td>
+<td>Error / Warning</td></tr>
+<tr><td>A Member is identified: by a <code>UniqueID</code> or at least a name (error); with a <code>UniqueID</code>
+and its domain, as the guidelines recommend (warning).</td><td>Error / Warning</td></tr>
+<tr><td>An activity report has at most one <code>Member</code> and one <code>Participants</code> element
+(2.0).</td><td>Error</td></tr>
+<tr><td>No duplicates: the same person in two reports, the same participant twice, the same activity twice in a report
+or the same module twice in an activity.</td><td>Warning</td></tr>
+<tr><td><code>LaunchAction</code> is one of the recommended values Noaction, Activity, CE, Registry (2.0).</td>
+<td>Info</td></tr>
+</table>
+
+<h2 id="samples">Samples and templates</h2>
+<p>New documents of either version start with one report on one member registered for one activity whose module is
+described by a Healthcare LOM title. The samples (fictional people and organizations) are:</p>
+<ul>
+<li><code>cme-course-completions-v1.xml</code>, <code>cme-course-completions-v2.xml</code>: a live CME course
+completed by three physicians, with the AMA PRA Category 1 credits (and MOC points) they received.</li>
+<li><code>registration-in-progress-v1.xml</code>: a self-assessment activity with a completed, a registered and an
+expired module; <code>registration-in-progress-v2.xml</code>: a nurse registered for an online course, with launch
+details.</li>
+<li><code>rems-participants-v2.xml</code>: learner demographics of an Opioid Analgesic REMS compliant activity.</li>
+</ul>
+
+<h2 id="links">Specification</h2>
+<ul>
+<li><a href="https://www.medbiq.org/standards/activity-report">Activity Report</a> at MedBiquitous: the
+specification, implementation guidelines and schemas.</li>
+<li>Schemas: <code>http://ns.medbiq.org/activityreport/v1/activityreport.xsd</code> and
+<code>http://ns.medbiq.org/activityreport/v2/activityreport.xsd</code>.</li>
+</ul>
+<p>Element descriptions in the editor quote or summarize the Activity Report specification, © MedBiquitous
+Consortium, used under the MedBiquitous Standards Public License.</p>
+</body>
+</html>

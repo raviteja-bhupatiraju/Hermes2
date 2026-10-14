@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Library and HTML Reports</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>The Library and HTML Reports</h1>
+
+<p class="lead">The metadata library shows all MedBiquitous documents below a folder in one table, with their
+validation status and, for Healthcare LOM records, their kind, credits, audience and completeness. HLOM records and
+libraries can be published as printable HTML.</p>
+
+<p>Documents of the other standards are listed with their title and validation status; their
+<span class="ui">Kind</span> column shows the standard (for example <span class="ui">Curriculum Inventory</span>).
+Credits, audience, completeness and the HTML catalog card are Healthcare LOM features.</p>
+
+<h2>Open the library</h2>
+<ol class="steps">
+<li>Choose <span class="ui">Window &gt; Show Library</span> or click <span class="ui">Show the metadata
+library</span> on the main tool bar.</li>
+<li>Click <span class="ui">Choose Folder…</span> on the view's tool bar and select the folder that contains your
+records. The library remembers the folder (also set in <span class="ui">Preferences &gt; Healthcare LOM &gt;
+Library</span>; default <code>Documents\Healthcare LOM</code>).</li>
+</ol>
+<p>Records are found and validated in the background; the header shows the progress and then the statistics: the
+number of records, how many are valid or have warnings or errors, and the credits offered.</p>
+
+<h2>Find records</h2>
+<ul>
+<li>Type in the search field to filter by titles, keywords, MeSH IDs, authors and other text.</li>
+<li>Click the filter chips to show only <span class="ui">Offerings</span>, <span class="ui">Image assets</span> or
+<span class="ui">Learning objects</span>, and only records with <span class="ui">Errors</span>,
+<span class="ui">Warnings</span> or that are <span class="ui">Valid</span>.</li>
+<li>Click a column header to sort: status, <span class="ui">Title</span>, <span class="ui">Kind</span>,
+<span class="ui">Credits</span>, <span class="ui">Audience</span>, <span class="ui">Modified</span>,
+<span class="ui">Errors</span>, <span class="ui">Warnings</span>, <span class="ui">Complete</span> (how completely
+the record is described) and <span class="ui">File</span>.</li>
+</ul>
+
+<h2>Work with records</h2>
+<p>Double-click a record to open it. The context menu offers:</p>
+<table>
+<tr><th>Action</th><th>Purpose</th></tr>
+<tr><td><span class="ui">Open</span></td><td>Open the record in the editor.</td></tr>
+<tr><td><span class="ui">Validate Again</span></td><td>Reload and validate the selected records.</td></tr>
+<tr><td><span class="ui">Export HTML Card…</span></td><td>Save the selected record as an HTML catalog card.</td></tr>
+<tr><td><span class="ui">Reveal in Explorer</span></td><td>Open the folder containing the record.</td></tr>
+<tr><td><span class="ui">Copy Path</span></td><td>Copy the file path to the clipboard.</td></tr>
+</table>
+<p>Saving a record in the editor revalidates it in the library. <span class="ui">Refresh</span> scans the folder
+again.</p>
+
+<h2>Export a catalog card</h2>
+<p>A catalog card is a printable one-page HTML summary of a Healthcare LOM record.</p>
+<ol class="steps">
+<li>Open the record and choose <span class="ui">File &gt; Export as HTML…</span> (or click <span class="ui">Export
+the active record as an HTML catalog card</span> on the main tool bar; in the library, use
+<span class="ui">Export HTML Card…</span>).</li>
+<li>Choose the file name and folder and save. The card opens in your web browser.</li>
+</ol>
+
+<h2>Export a library report</h2>
+<ol class="steps">
+<li>In the Library view, filter and sort the records you want to include.</li>
+<li>Click <span class="ui">Export Library Report…</span> on the view's tool bar.</li>
+<li>Choose the file and save. The report contains the records shown, can be sorted in the browser, and opens in
+your web browser.</li>
+</ol>
+
+<p class="tip">The <span class="ui">Library</span> perspective arranges the library across the top with the
+editor and the validation below it, which is convenient for reviewing many records.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/views.html#library">The Library view</a></li>
+<li><a href="search.html">Searching Documents</a></li>
+<li><a href="csv-import.html">Importing Records from CSV</a></li>
+<li><a href="preferences.html">Setting Preferences</a></li>
+</ul>
+</div>
+</body>
+</html>

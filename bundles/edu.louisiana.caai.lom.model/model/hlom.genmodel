@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. Generated from the MedBiquitous Healthcare LOM v1 schemas."
+    modelDirectory="/edu.louisiana.caai.lom.model/src-gen"
+    editDirectory=""
+    editorDirectory="/edu.louisiana.caai.lom.editor/src-gen"
+    modelPluginID="edu.louisiana.caai.lom.model" modelName="Hlom" editPluginID="edu.louisiana.caai.lom.edit" editorPluginID="edu.louisiana.caai.lom.editor" editPluginClass="edu.louisiana.caai.lom.edit.HlomEditPlugin" editorPluginClass="edu.louisiana.caai.lom.editor.HlomEditorPlugin" testsPluginID="edu.louisiana.caai.lom.tests" richClientPlatform="true" codeFormatting="true" importOrganizing="true" operationReflection="true" language="en" testsDirectory="/edu.louisiana.caai.lom.tests/src-gen"
+    importerID="org.eclipse.xsd.ecore.importer" generateModelWizard="false" complianceLevel="21.0" copyrightFields="false">
+  <foreignModel>schema/healthcarelom.xsd</foreignModel>
+  <genPackages adapterFactory="false" prefix="Healthcare" basePackage="edu.louisiana.caai.lom.model" resource="XML"
+      disposableProviderFactory="true" ecorePackage="healthcare.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//ActivityDeliveryType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ActivityDeliveryType/live"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ActivityDeliveryType/notLive"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//ActivitySponsorshipType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ActivitySponsorshipType/direct"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ActivitySponsorshipType/joint"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//AudienceCategoryType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//AudienceCategoryType/general"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//AudienceCategoryType/patient"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//AudienceCategoryType/caregiver"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//AudienceCategoryType/professional"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//CreditTypeType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditTypeType/CME"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditTypeType/CE"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditTypeType/CNE"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditTypeType/CPE"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditTypeType/CHES"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditTypeType/CPD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//CreditUnitType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/CECH"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/CEH"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/CEU"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/Cognate"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/ContactHour"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/Credit"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/Hour"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/Unit"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/CreditHour"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//CreditUnitType/Point"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//MedicalImageTypeType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/angiogram"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/computedAxialTomographyScan"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/electrocardiogram"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/endoscopicImage"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/magneticResonanceImage"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/mammogram"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/micrograph"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/nuclearMedicineScan"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/photograph"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/radiograph"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//MedicalImageTypeType/ultrasound"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//OrientationType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//OrientationType/axial"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//OrientationType/coronal"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//OrientationType/horizontal"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//OrientationType/longitudinal"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//OrientationType/sagittal"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//OrientationType/transverse"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//PacingType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//PacingType/learnerPaced"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//PacingType/providerPaced"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//ParticipationModalityType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ParticipationModalityType/conferenceWorkshop"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ParticipationModalityType/technologyBased"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ParticipationModalityType/onTheJob"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//ParticipationModalityType/print"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//SpecimenTypeType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//SpecimenTypeType/cell"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//SpecimenTypeType/organ"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//SpecimenTypeType/organSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//SpecimenTypeType/organelle"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//SpecimenTypeType/tissue"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcare.ecore#//YesNoType">
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//YesNoType/yes"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcare.ecore#//YesNoType/no"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="healthcare.ecore#//ActivityDeliveryTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//ActivitySponsorshipTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//AudienceCategoryTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//CreditTypeTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//CreditUnitTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//MedicalImageTypeTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//OrientationTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//PacingTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//ParticipationModalityTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//SpecimenTypeTypeObject"/>
+    <genDataTypes ecoreDataType="healthcare.ecore#//YesNoTypeObject"/>
+    <genClasses ecoreClass="healthcare.ecore#//ActivityLocationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//ActivityLocationType/room"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//ActivityLocationType/building"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//ActivityLocationType/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//CreditsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/accreditingBody"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/activityCertification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/creditType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/creditUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/pacing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/accreditedProvider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/nonAccreditedProvider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/releaseDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/expirationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//CreditsType/numberOfCredits"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//CustomElementsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute healthcare.ecore#//CustomElementsType/any"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/accreditedProvider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/accreditingBody"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/activityCertification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/activityDelivery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/activityFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/activityLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/activitySponsorship"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/annotated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/audienceCategory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/building"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/clinicalHistory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/commercialSupport"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/commercialSupportAcknowledgement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/contact"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/credits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/creditsAvailable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/creditType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/creditUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/customElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/endDateTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/expirationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/fileHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/fileWidth"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/healthcareAsset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/healthcareEducation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/healthcareMetadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/magnification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/medicalImageType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/nonAccreditedProvider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/numberOfCredits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/offLabelDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/offLabelUse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/orientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/pacing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/participationModality"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/profession"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/readingLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/releaseDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/relevantFinancialRelationship"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/relevantFinancialRelationshipDisclosure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/room"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/specialty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/specimenType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//DocumentRoot/startDateTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//DocumentRoot/targetAudience"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//HealthcareAssetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/annotated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareAssetType/clinicalHistory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/magnification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/orientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/medicalImageType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/specimenType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/fileHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/fileWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareAssetType/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//HealthcareEducationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/expirationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/creditsAvailable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/credits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/targetAudience"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/activityLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/startDateTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/endDateTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/activitySponsorship"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/participationModality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/activityDelivery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/activityFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/offLabelUse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/offLabelDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/commercialSupport"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/commercialSupportAcknowledgement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/relevantFinancialRelationship"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareEducationType/relevantFinancialRelationshipDisclosure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/contact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareEducationType/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//HealthcareMetadataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareMetadataType/healthcareEducation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//HealthcareMetadataType/healthcareAsset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//HealthcareMetadataType/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="healthcare.ecore#//TargetAudienceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//TargetAudienceType/audienceCategory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//TargetAudienceType/profession"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//TargetAudienceType/specialty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference healthcare.ecore#//TargetAudienceType/readingLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute healthcare.ecore#//TargetAudienceType/uniqueElementName"/>
+    </genClasses>
+  </genPackages>
+  <genPackages adapterFactory="false" prefix="Lom" basePackage="edu.louisiana.caai.lom.model" resource="XML" fileExtensions="xml,lom" contentTypeIdentifier="edu.louisiana.caai.lom.hlom"
+      disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
+      ecorePackage="lom.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//AggregationLevelValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//AggregationLevelValues/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//AggregationLevelValues/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//AggregationLevelValues/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//AggregationLevelValues/_4"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//ContextValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//ContextValues/school"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//ContextValues/higherEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//ContextValues/training"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//ContextValues/other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//CopyrightAndOtherRestrictionsValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//CopyrightAndOtherRestrictionsValues/yes"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//CopyrightAndOtherRestrictionsValues/no"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//CostValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//CostValues/yes"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//CostValues/no"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//DifficultyValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//DifficultyValues/veryEasy"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//DifficultyValues/easy"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//DifficultyValues/medium"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//DifficultyValues/difficult"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//DifficultyValues/veryDifficult"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//IntendedEndUserRoleValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//IntendedEndUserRoleValues/teacher"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//IntendedEndUserRoleValues/author"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//IntendedEndUserRoleValues/learner"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//IntendedEndUserRoleValues/manager"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//InteractivityLevelValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityLevelValues/veryLow"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityLevelValues/low"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityLevelValues/medium"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityLevelValues/high"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityLevelValues/veryHigh"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//InteractivityTypeValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityTypeValues/active"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityTypeValues/expositive"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//InteractivityTypeValues/mixed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//KindValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/ispartof"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/haspart"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/isversionof"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/hasversion"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/isformatof"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/hasformat"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/references"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/isreferencedby"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/isbasedon"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/isbasisfor"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/requires"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//KindValues/isrequiredby"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//LearningResourceTypeValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/exercise"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/simulation"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/questionnaire"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/diagram"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/figure"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/graph"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/index"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/slide"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/table"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/narrativeText"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/exam"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/experiment"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/problemStatement"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/selfAssessment"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//LearningResourceTypeValues/lecture"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//NameValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/pcDos"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/msWindows"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/macos"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/unix"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/multiOs"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/none"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/any"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/netscapeCommunicator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/msInternetExplorer"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/opera"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//NameValues/amaya"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//PurposeValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/discipline"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/idea"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/prerequisite"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/educationalObjective"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/accessibilityRestrictions"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/educationalLevel"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/skillLevel"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/securityLevel"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//PurposeValues/competency"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//RoleMetaValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleMetaValues/creator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleMetaValues/validator"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//RoleValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/author"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/publisher"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/initiator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/terminator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/validator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/editor"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/graphicalDesigner"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/technicalImplementer"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/contentProvider"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/technicalValidator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/educationalValidator"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/scriptWriter"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/instructionalDesigner"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//RoleValues/subjectMatterExpert"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//SemanticDensityValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//SemanticDensityValues/veryLow"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//SemanticDensityValues/low"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//SemanticDensityValues/medium"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//SemanticDensityValues/high"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//SemanticDensityValues/veryHigh"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//SourceValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//SourceValues/LOMv10"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//StatusValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StatusValues/draft"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StatusValues/final"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StatusValues/revised"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StatusValues/unavailable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//StructureValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StructureValues/atomic"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StructureValues/collection"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StructureValues/networked"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StructureValues/hierarchical"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//StructureValues/linear"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="lom.ecore#//TypeValues">
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//TypeValues/operatingSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="lom.ecore#//TypeValues/browser"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="lom.ecore#//AggregationLevelValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//CharacterString"/>
+    <genDataTypes ecoreDataType="lom.ecore#//ContextValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//CopyrightAndOtherRestrictionsValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//CostValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//DateTimeString"/>
+    <genDataTypes ecoreDataType="lom.ecore#//DifficultyValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//DurationString"/>
+    <genDataTypes ecoreDataType="lom.ecore#//InteractivityLevelValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//IntendedEndUserRoleValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//InteractivityTypeValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//KindValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//LearningResourceTypeValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//MimeType"/>
+    <genDataTypes ecoreDataType="lom.ecore#//NameValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//PurposeValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//RoleMetaValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//RoleValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//SemanticDensityValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//SizeBase"/>
+    <genDataTypes ecoreDataType="lom.ecore#//SourceValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//StatusValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//StructureValuesObject"/>
+    <genDataTypes ecoreDataType="lom.ecore#//TypeValuesObject"/>
+    <genClasses ecoreClass="lom.ecore#//AggregationLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevel/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//AggregationLevelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevelValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevelValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevelValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//AggregationLevelVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevelVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//AggregationLevelVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//AggregationLevelVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevelVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//AggregationLevelVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Annotation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Annotation/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Annotation/entity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Annotation/date"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Annotation/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Annotation/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Annotation/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Catalog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Catalog/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Catalog/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Catalog/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Classification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Classification/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Classification/purpose"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Classification/taxonPath"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Classification/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Classification/keyword"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Classification/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Classification/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Context"/>
+    <genClasses ecoreClass="lom.ecore#//ContextValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//ContextValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//ContextValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//ContextValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//ContextVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//ContextVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//ContextVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//ContextVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//ContextVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//ContextVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Contribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Contribute/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Contribute/role"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Contribute/entity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Contribute/date"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Contribute/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Contribute/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//ContributeMeta">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//ContributeMeta/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//ContributeMeta/role"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//ContributeMeta/entity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//ContributeMeta/date"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//ContributeMeta/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//ContributeMeta/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//CopyrightAndOtherRestrictions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictions/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//CopyrightAndOtherRestrictionsValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictionsValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictionsValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictionsValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//CopyrightAndOtherRestrictionsVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictionsVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//CopyrightAndOtherRestrictionsVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//CopyrightAndOtherRestrictionsVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictionsVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//CopyrightAndOtherRestrictionsVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Cost">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Cost/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//CostValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CostValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CostValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//CostValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//CostVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//CostVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//CostVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//CostVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//CostVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//CostVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Coverage"/>
+    <genClasses ecoreClass="lom.ecore#//Date">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Date/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Date/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DateTime">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DateTime/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DateTime/dateTime"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DateTime/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DateTime/any"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DateTimeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DateTimeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DateTimeValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DateTimeValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Description/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Difficulty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Difficulty/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DifficultyValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DifficultyValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DifficultyValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DifficultyValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DifficultyVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DifficultyVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DifficultyVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DifficultyVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DifficultyVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DifficultyVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Duration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Duration/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Duration/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DurationBase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DurationBase/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DurationBase/duration"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DurationBase/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DurationBase/any"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DurationValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DurationValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DurationValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//DurationValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Educational">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Educational/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/interactivityType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/learningResourceType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/interactivityLevel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/semanticDensity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/intendedEndUserRole"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/context"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/typicalAgeRange"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/difficulty"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/typicalLearningTime"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Educational/language"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Educational/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Educational/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Entity/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Entry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Entry/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Entry/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Entry/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//EntryTaxon">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//EntryTaxon/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Format">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Format/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Format/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//General">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//General/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/identifier"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/title"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/language"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/keyword"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/coverage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/structure"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//General/aggregationLevel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//General/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//General/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//General/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Id">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Id/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Id/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Id/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Identifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Identifier/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Identifier/catalog"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Identifier/entry"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Identifier/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Identifier/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InstallationRemarks">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InstallationRemarks/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//IntendedEndUserRole"/>
+    <genClasses ecoreClass="lom.ecore#//IntendedEndUserRoleValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//IntendedEndUserRoleValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//IntendedEndUserRoleValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//IntendedEndUserRoleValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//IntendedEndUserRoleVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//IntendedEndUserRoleVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//IntendedEndUserRoleVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//IntendedEndUserRoleVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//IntendedEndUserRoleVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//IntendedEndUserRoleVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InteractivityLevel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevel/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InteractivityLevelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevelValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevelValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevelValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InteractivityLevelVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevelVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//InteractivityLevelVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//InteractivityLevelVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevelVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityLevelVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InteractivityType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityType/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Keyword">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Keyword/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Keyword/source"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//KindValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//KindValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//KindValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//KindValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//LangString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LangString/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LangString/language"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LangString/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//LanguageString">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LanguageString/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//LanguageString/string"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LanguageString/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LanguageString/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference lom.ecore#//DocumentRoot/lom"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InteractivityTypeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityTypeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityTypeValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityTypeValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//InteractivityTypeVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityTypeVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//InteractivityTypeVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//InteractivityTypeVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityTypeVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//InteractivityTypeVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Kind">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Kind/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//KindVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//KindVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//KindVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//KindVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//KindVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//KindVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Language">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Language/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//LanguageId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LanguageId/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LanguageId/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//LearningResourceType"/>
+    <genClasses ecoreClass="lom.ecore#//LearningResourceTypeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LearningResourceTypeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LearningResourceTypeValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LearningResourceTypeValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//LearningResourceTypeVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LearningResourceTypeVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//LearningResourceTypeVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//LearningResourceTypeVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LearningResourceTypeVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LearningResourceTypeVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//LifeCycle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LifeCycle/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//LifeCycle/version"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//LifeCycle/status"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//LifeCycle/contribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LifeCycle/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//LifeCycle/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//LifeCycle/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Location/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Location/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Lom">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Lom/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/general"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/lifeCycle"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/metaMetadata"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/technical"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/educational"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/rights"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/relation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/annotation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/classification"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/healthcareMetadata"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Lom/customElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Lom/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//MaximumVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MaximumVersion/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MaximumVersion/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//MaximumVersion/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//MetadataSchema">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MetadataSchema/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//MetadataSchema/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//MetaMetadata">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//MetaMetadata/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//MetaMetadata/identifier"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//MetaMetadata/contribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//MetaMetadata/metadataSchema"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//MetaMetadata/language"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MetaMetadata/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MetaMetadata/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//MetaMetadata/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//MinimumVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MinimumVersion/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//MinimumVersion/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//MinimumVersion/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Name">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Name/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//NameValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//NameValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//NameValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//NameValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//NameVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//NameVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//NameVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//NameVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//NameVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//NameVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//OrComposite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//OrComposite/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//OrComposite/type"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//OrComposite/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//OrComposite/minimumVersion"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//OrComposite/maximumVersion"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//OrComposite/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//OrComposite/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//OtherPlatformRequirements"/>
+    <genClasses ecoreClass="lom.ecore#//Purpose">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Purpose/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//PurposeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//PurposeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//PurposeValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//PurposeValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//PurposeVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//PurposeVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//PurposeVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//PurposeVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//PurposeVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//PurposeVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Relation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Relation/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Relation/kind"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Relation/resource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Relation/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Relation/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Requirement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Requirement/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Requirement/orComposite"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Requirement/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Requirement/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Resource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Resource/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Resource/identifier"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Resource/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Resource/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Resource/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Resource/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Rights">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Rights/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Rights/cost"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Rights/copyrightAndOtherRestrictions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Rights/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Rights/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Rights/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Rights/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Role/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//RoleMeta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMeta/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//RoleMetaValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMetaValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMetaValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMetaValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//RoleMetaVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMetaVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//RoleMetaVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//RoleMetaVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMetaVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//RoleMetaVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//RoleValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//RoleValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//RoleVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//RoleVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//RoleVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//RoleVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//RoleVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//RoleVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//SemanticDensity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensity/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//SemanticDensityValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensityValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensityValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensityValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//SemanticDensityVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensityVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//SemanticDensityVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//SemanticDensityVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensityVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//SemanticDensityVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Size">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Size/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Size/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Size/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Source">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Source/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//SourceValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//SourceValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//SourceValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//SourceValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Status">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Status/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//StatusValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//StatusValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//StatusValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//StatusValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//StatusVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//StatusVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//StatusVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//StatusVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//StatusVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//StatusVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Structure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Structure/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//StructureValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//StructureValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//StructureValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//StructureValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//StructureVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//StructureVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//StructureVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//StructureVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//StructureVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//StructureVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Taxon">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Taxon/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Taxon/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Taxon/entry"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Taxon/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Taxon/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//TaxonPath">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//TaxonPath/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//TaxonPath/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//TaxonPath/taxon"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//TaxonPath/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//TaxonPath/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Technical">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Technical/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/format"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/size"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/location"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/requirement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/installationRemarks"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/otherPlatformRequirements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//Technical/duration"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Technical/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Technical/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//Technical/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Title">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Title/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Type/uniqueElementName"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//TypeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//TypeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//TypeValue/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//TypeValue/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//TypeVocab">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//TypeVocab/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//TypeVocab/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference lom.ecore#//TypeVocab/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//TypeVocab/any"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//TypeVocab/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//TypicalAgeRange"/>
+    <genClasses ecoreClass="lom.ecore#//TypicalLearningTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//TypicalLearningTime/uniqueElementName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//TypicalLearningTime/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//VCard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//VCard/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute lom.ecore#//VCard/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="lom.ecore#//Version">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute lom.ecore#//Version/uniqueElementName"/>
+    </genClasses>
+  </genPackages>
+  <genPackages adapterFactory="false" prefix="Address" basePackage="edu.louisiana.caai.lom.model" resource="XML"
+      disposableProviderFactory="true" ecorePackage="address.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="address.ecore#//AddressCategoryType">
+      <genEnumLiterals ecoreEnumLiteral="address.ecore#//AddressCategoryType/Residential"/>
+      <genEnumLiterals ecoreEnumLiteral="address.ecore#//AddressCategoryType/Business"/>
+      <genEnumLiterals ecoreEnumLiteral="address.ecore#//AddressCategoryType/Undeliverable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="address.ecore#//RestrictionsType">
+      <genEnumLiterals ecoreEnumLiteral="address.ecore#//RestrictionsType/Unrestricted"/>
+      <genEnumLiterals ecoreEnumLiteral="address.ecore#//RestrictionsType/Restricted"/>
+      <genEnumLiterals ecoreEnumLiteral="address.ecore#//RestrictionsType/Confidential"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="address.ecore#//AddressCategoryTypeObject"/>
+    <genDataTypes ecoreDataType="address.ecore#//NonNullString"/>
+    <genDataTypes ecoreDataType="address.ecore#//RestrictionsTypeObject"/>
+    <genClasses ecoreClass="address.ecore#//AddressType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/iD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/organization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference address.ecore#//AddressType/streetAddressLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/stateOrProvince"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/postalCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/region"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/district"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference address.ecore#//AddressType/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/addressCategory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//AddressType/restrictions"/>
+    </genClasses>
+    <genClasses ecoreClass="address.ecore#//CountryType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//CountryType/countryName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//CountryType/countryCode"/>
+    </genClasses>
+    <genClasses ecoreClass="address.ecore#//StreetAddressLineType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//StreetAddressLineType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//StreetAddressLineType/restrictions"/>
+    </genClasses>
+    <genClasses ecoreClass="address.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute address.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference address.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference address.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference address.ecore#//DocumentRoot/address"/>
+    </genClasses>
+  </genPackages>
+  <genPackages adapterFactory="false" prefix="Vocab" basePackage="edu.louisiana.caai.lom.model" resource="XML"
+      disposableProviderFactory="true" ecorePackage="vocab.ecore#/">
+    <genDataTypes ecoreDataType="vocab.ecore#//AggregationLevel"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Context"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//CopyrightAndOtherRestrictions"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Cost"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Difficulty"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//IntendedEndUserRole"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//InteractivityLevel"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//InteractivityType"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Kind"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//LearningResourceType"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Name"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Purpose"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Role"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//RoleMeta"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//SemanticDensity"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Source"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Status"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Structure"/>
+    <genDataTypes ecoreDataType="vocab.ecore#//Type"/>
+  </genPackages>
+  <genPackages adapterFactory="false" prefix="Healthcarevocab" basePackage="edu.louisiana.caai.lom.model"
+      resource="XML" disposableProviderFactory="true" ecorePackage="healthcarevocab.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcarevocab.ecore#//ContextValues">
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/patientEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/caregiverEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/primaryEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/secondaryEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/vocationalTraining"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/undergraduateEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/undergraduateProfessionalEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/graduateProfessionalEducation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//ContextValues/continuingProfessionalDevelopment"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcarevocab.ecore#//LearningResourceTypeValues">
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/animation"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/audio"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/caseStudy"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/collaborativeForum"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/game"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/image"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/reference"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/tutorial"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/video"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//LearningResourceTypeValues/virtualPatient"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcarevocab.ecore#//PurposeValues">
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//PurposeValues/learningOutcome"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//PurposeValues/clinicalGuideline"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//PurposeValues/drugList"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//PurposeValues/levelOfEvidence"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcarevocab.ecore#//RoleValues">
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//RoleValues/other"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//RoleValues/reviewer"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//RoleValues/programmer"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//RoleValues/producer"/>
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//RoleValues/director"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="healthcarevocab.ecore#//SourceValues">
+      <genEnumLiterals ecoreEnumLiteral="healthcarevocab.ecore#//SourceValues/HEALTHCARELOMv1"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="healthcarevocab.ecore#//ContextValuesObject"/>
+    <genDataTypes ecoreDataType="healthcarevocab.ecore#//LearningResourceTypeValuesObject"/>
+    <genDataTypes ecoreDataType="healthcarevocab.ecore#//PurposeValuesObject"/>
+    <genDataTypes ecoreDataType="healthcarevocab.ecore#//RoleValuesObject"/>
+    <genDataTypes ecoreDataType="healthcarevocab.ecore#//SourceValuesObject"/>
+  </genPackages>
+</genmodel:GenModel>

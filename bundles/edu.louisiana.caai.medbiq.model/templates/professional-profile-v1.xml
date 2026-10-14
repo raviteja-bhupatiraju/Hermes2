@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new Healthcare Professional Profile 1.0 documents (placeholders: ${title}, ${language}, ${date}, ${dateTime}, ${id}). -->
+<Members xmlns="http://ns.medbiq.org/member/v1/" xmlns:n="http://ns.medbiq.org/name/v1/" xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.medbiq.org/member/v1/ http://ns.medbiq.org/member/v1/member.xsd">
+	<Member>
+		<UniqueID domain="Your organization">${id}</UniqueID>
+		<Name>
+			<n:FormattedName>${title}</n:FormattedName>
+		</Name>
+		<ModifiedDate>${date}</ModifiedDate>
+	</Member>
+</Members>

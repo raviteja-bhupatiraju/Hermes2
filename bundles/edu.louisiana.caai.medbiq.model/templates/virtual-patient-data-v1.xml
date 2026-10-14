@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new MedBiquitous Virtual Patient Data documents (virtualpatientdata.xml of a virtual patient package). -->
+<VirtualPatientData xmlns="http://ns.medbiq.org/virtualpatientdata/v1/"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/virtualpatientdata/v1/ http://ns.medbiq.org/virtualpatientdata/v1/virtualpatientdata.xsd">
+	<!-- Each data element has an id that is unique in this document: the Data Availability Model refers to it
+	     with an ItemPath such as /VirtualPatientData/VPDText[@id='v1']. -->
+	<PatientDemographics id="pd1">
+		<CoreDemographics id="cd1">
+			<Name>${title}</Name>
+		</CoreDemographics>
+	</PatientDemographics>
+	<VPDText id="v1" textType="chief complaint">
+		<div xmlns="http://www.w3.org/1999/xhtml">The chief complaint, in the patient's words.</div>
+	</VPDText>
+	<!-- Then: Medication, InterviewItem, PhysicalExam, DiagnosticTest, Diagnosis, Intervention, Organization. -->
+</VirtualPatientData>

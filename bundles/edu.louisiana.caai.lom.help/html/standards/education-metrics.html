@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Medical Education Metrics (MEMS)</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Medical Education Metrics (MEMS)</h1>
+
+<p class="lead">The MedBiquitous Medical Education Metrics standard (MEMS, ANSI/MEDBIQ ME.10.1-2009) is a common
+format for the outcomes of health professions education, in particular continuing education activities: how many
+clinicians were targeted, registered, completed the activity and received credit, how participants evaluated it and
+how they did on knowledge assessments. Providers, accrediting bodies, supporters and government agencies exchange
+and compile such reports to gauge the reach and effectiveness of activities and programs. The MEMS Survey Items define
+standardized survey questions with identified responses, so that evaluation data from different providers can be
+aggregated.</p>
+
+<p>A metrics report describes its activity with an embedded <a href="../concepts/hlom.html">Healthcare LOM</a>
+record (title, identifier, credits offered, commercial support) and reports credits awarded with the credit type of
+the <a href="activity-report.html">Activity Report</a> standard.</p>
+
+<h2 id="versions">Document types and versions</h2>
+<table>
+<tr><th>Document type</th><th>Root element and namespace</th><th>Notes</th></tr>
+<tr><td>Medical Education Metrics 1.0 (<code>medical-education-metrics-v1</code>)</td>
+<td><code>MedicalEducationMetrics</code>, <code>http://ns.medbiq.org/metrics/v1/</code></td>
+<td>The ANSI standard of 2009: the evaluation data of one educational activity.</td></tr>
+<tr><td>MEMS Survey Items 1.0 (<code>survey-items-v1</code>)</td>
+<td><code>SurveyItems</code>, <code>http://ns.medbiq.org/surveyitem/v1/</code></td>
+<td>Survey questions and their response structures (schema <code>surveyitems/v1/surveyitems.xsd</code>).</td></tr>
+</table>
+<p>MEMS 2.0, the revision for exchanging continuing education data of the FDA Opioid Analgesic REMS, is a working draft
+and is not supported.</p>
+
+<h2 id="structure">Structure of a metrics report</h2>
+<p>The root element <code>MedicalEducationMetrics</code> contains evaluation data for one educational activity:</p>
+<ul>
+<li><code>ReportDescription</code>: the reporting period (<code>ReportingStartDate</code> and
+<code>ReportingEndDate</code>, its first and last day) and optionally a <code>RespondentCategory</code>, when the data
+cover only some participants (for example one profession).</li>
+<li><code>ActivityDescription</code>: the activity's Healthcare LOM record (<code>lom</code>; to uniquely identify the
+activity, use a LOM identifier such as its URL), the <code>CommercialSupportAmount</code> received from each source,
+<code>AdvertisingAndExhibitIncome</code>, <code>OtherIncome</code> and <code>Expenses</code> (integers with an ISO 4217
+<code>currency</code>), and whether the activity is designed to change competence, performance or patient outcomes
+and whether such changes were measured.</li>
+<li><code>ParticipantActivityEvaluation</code> (optional): <code>SurveyItemData</code>, each a
+<code>SurveyQuestion</code> with its <code>ResponseData</code> (<code>YesNoData</code>, <code>ScaleData</code> of 3 to
+10 points, <code>MultipleChoiceSelectOneData</code> or <code>MultipleChoiceSelectManyData</code> with the number of
+respondents per response, or <code>FreeTextData</code> with analysis categories), and <code>ComparisonData</code>:
+related items asked at different times (<code>Timing</code> Before, During or After, with a <code>duration</code> such
+as <code>P30D</code>). <code>source</code> and <code>id</code> attributes tie items and responses to a standardized
+instrument such as the MEMS Survey Items.</li>
+<li><code>KnowledgeAssessment</code> (optional): <code>MultipleChoiceAssessmentItemData</code> (a question, its
+responses marked <code>correct</code> with the number of learners who chose them, the timing and optional LOM
+classifications) and <code>AssessmentScoreData</code> (an assessment's name, <code>ScoreMethod</code>, one
+<code>ScoreValue</code> per learner, timing and description).</li>
+<li><code>ParticipationMetrics</code>: <code>TargetedAudience</code>, <code>RegisteredParticipants</code>,
+<code>NumberOfParticipantsReceivingCredit</code>, <code>CreditsAwarded</code> (per type of credit, the total number of
+credits), web statistics (<code>NumberOfDistinctHostsOrVisitors</code>,
+<code>NumberOfSuccessfulPageRequests</code>), <code>NumberOfParticipantsCompletingActivity</code>, counts by category,
+profession and specialty, and <code>Comments</code>.</li>
+<li><code>XtensibleInfo</code> (optional): elements of other namespaces defined by the implementing
+organization.</li>
+</ul>
+<p>The conventional prefixes are <code>lom</code> and <code>hx</code> (Healthcare LOM); the MEMS elements use the
+default namespace.</p>
+
+<h2 id="survey-items">Structure of a survey items document</h2>
+<p>The root element <code>SurveyItems</code> contains <code>SurveyItem</code>s and <code>Comparison</code>s. A survey
+item has a <code>SurveyQuestion</code> and <code>Responses</code>: <code>YesNo</code> (a <code>Yes</code> and a
+<code>No</code> response), a <code>Scale</code> (a <code>type</code> such as likert, a number of <code>points</code> from
+3 to 10 and the point elements <code>One</code> to <code>Ten</code> with a <code>label</code>),
+<code>MultipleChoiceSelectOne</code> or <code>MultipleChoiceSelectMany</code> (<code>ResponseItem</code>s with their
+text) or <code>FreeText</code>. Items and responses have a <code>source</code> (vocabulary) and an <code>id</code>.
+A <code>Comparison</code> groups <code>SurveyItemForComparison</code>s, each with an <code>IntendedTiming</code>
+(Before, During, After and an XML Schema <code>duration</code>: After with P3M means three months after the
+activity).</p>
+<p>The Survey Items specification publishes items with source <code>medbiq.org</code>: item 10 ("The course achieved
+its educational objectives.", a 5-point Likert scale with responses 20 to 60), the comparison items 70 and 150 (fair
+and balanced content, expected before and perceived after the activity, 7-point Low/High scales with responses 80 to
+140 and 150 to 210), and the responses 220 and 230 (yes/no), 240 to 270 (practice setting) and 280 to 310 (barriers
+to treatment). Hermes resolves references to them in both document types.</p>
+
+<h2 id="pages">Editor pages</h2>
+<table>
+<tr><th>Page</th><th>Shows</th></tr>
+<tr><td colspan="2"><b>Medical Education Metrics</b></td></tr>
+<tr><td>Report Description</td><td>The reporting period and the respondent category.</td></tr>
+<tr><td>Activity Description</td><td>The activity's Healthcare LOM description (title, description, keywords,
+identifiers), the credits it offers, its dates, modality and commercial support (from the healthcare education
+metadata), its intent and the outcomes measured, and the finances.</td></tr>
+<tr><td>Participation Metrics</td><td>Participant counts, web statistics, comments, the credits awarded and the
+participants by category, profession and specialty.</td></tr>
+<tr><td>Participant Activity Evaluation</td><td>The survey items with their responses (yes/no, scale, multiple choice,
+free text) and the comparison data.</td></tr>
+<tr><td>Knowledge Assessment</td><td>The multiple choice assessment items with their responses, and the assessment
+scores.</td></tr>
+<tr><td>Extensible Information</td><td>The <code>XtensibleInfo</code> element (its content is edited on the XML
+page).</td></tr>
+<tr><td colspan="2"><b>MEMS Survey Items</b></td></tr>
+<tr><td>Survey Items</td><td>Each survey item with its question, source, id and response structure.</td></tr>
+<tr><td>Comparisons</td><td>The comparisons and the survey items compared, with their intended timing.</td></tr>
+</table>
+<p>Lists show the survey items, responses and assessments; select one to edit it. Some values are the content of a
+repeated element with attributes (the counts by category, profession and specialty, the commercial support amounts):
+the forms edit their attributes, the values are edited in the tree or on the XML page. The texts of multiple choice
+response items are edited in a list, their source and id in the list below it.</p>
+
+<h2 id="rules">Rules</h2>
+<p>Besides the XML schemas, Hermes checks what the MEMS specification (ANSI/MEDBIQ ME.10.1-2009) and the Survey
+Items specification state, and what follows from the meaning of the data:</p>
+<table>
+<tr><th>Check</th><th>Severity</th></tr>
+<tr><td colspan="2"><b>Medical Education Metrics</b></td></tr>
+<tr><td>The reporting period runs forward (<code>ReportingEndDate</code> not before
+<code>ReportingStartDate</code>).</td><td>Error</td></tr>
+<tr><td>The period does not start in the future; the activity's credits are not released, and a live activity does not
+start, after the period ends.</td><td>Warning</td></tr>
+<tr><td>The activity has a Healthcare LOM title and identifier (the specification's usage note).</td>
+<td>Warning</td></tr>
+<tr><td>Currencies are 3-character strings (error) and ISO 4217 codes (warning); amounts other than 0 have a currency;
+commercial support names its <code>supportSource</code> and agrees with the LOM <code>commercialSupport</code>
+flag.</td><td>Error / Warning</td></tr>
+<tr><td>Counts, credits and amounts are not negative.</td><td>Error</td></tr>
+<tr><td>Participation counts are consistent: completers and participants receiving credit not more than registered
+participants (warning), credit recipients not more than completers and registered not more than targeted (info),
+page requests not fewer than distinct hosts (warning); <code>ParticipationMetrics</code> is not empty.</td>
+<td>Warning / Info</td></tr>
+<tr><td>Counts by category, profession and specialty name what they count (error), name it once and do not add up to
+more than the participants (warning; info for specialties).</td><td>Error / Warning / Info</td></tr>
+<tr><td>Credits awarded have a credit type and number; they do not exceed the participants receiving credit times the
+credits the activity offers of that type; they agree with <code>NumberOfParticipantsReceivingCredit</code> and the
+LOM <code>creditsAvailable</code> flag.</td><td>Warning / Info</td></tr>
+<tr><td>Scales: <code>points</code> is an integer from 3 to 10 and matches the point elements used ("scales should
+only use subelements corresponding to the number of points"); the first and last points are labelled.</td>
+<td>Error / Warning</td></tr>
+<tr><td>Respondents of a question (the sum for single-answer questions, each response for select-many questions and
+assessment items), free text responses and assessment scores do not outnumber the participants.</td>
+<td>Warning</td></tr>
+<tr><td>Questions are not blank; response options are not listed twice; a survey item is reported once; comparison
+data hold two or more items; timing durations are XML Schema durations (such as P1D).</td><td>Error / Warning</td></tr>
+<tr><td>Assessment items have a correct response; scores fit the <code>ScoreMethod</code> (Percent and Percentile 0 to
+100, Stanine 1 to 9, Normal Curve Equivalent 1 to 99, Scaled, Standard, Raw and Equated numeric); a Local method is
+described.</td><td>Error / Warning / Info</td></tr>
+<tr><td colspan="2"><b>Both document types</b></td></tr>
+<tr><td>References to the MedBiquitous survey items (source <code>medbiq.org</code>) resolve: the item and response ids
+exist, the responses have the item's structure, number of points, labels and texts and belong to the item (warnings);
+a different question text is reported as info.</td><td>Warning / Info</td></tr>
+<tr><td>An id has a source (info); a response id of a source identifies one response.</td><td>Warning / Info</td></tr>
+<tr><td colspan="2"><b>MEMS Survey Items</b></td></tr>
+<tr><td>The document defines survey items; item ids are unique per source (error).</td><td>Error / Warning</td></tr>
+<tr><td>A scale has a type and points; its points are an integer from 3 to 10 with one point element each (error); the
+first and last points are labelled.</td><td>Error / Warning</td></tr>
+<tr><td>Multiple choice items offer two or more non-empty, distinct response items; comparisons hold two or more
+items.</td><td>Error / Warning</td></tr>
+</table>
+<p>References to survey items of other sources (for example a provider's own items in a survey items document of the
+project) are not resolved across documents.</p>
+
+<h2 id="samples">Samples and templates</h2>
+<p>A new metrics report starts with a reporting period of today, an activity with a Healthcare LOM title and
+identifier and empty participant counts; a new survey items document starts with one 5-point Likert item. The samples
+are:</p>
+<ul>
+<li><code>online-cme-course-report.xml</code>: a fictional online CME/CNE course on opioid use disorder, with
+participation by profession and specialty, credits awarded, MedBiquitous survey items, comparison data and a pre/post
+knowledge assessment.</li>
+<li><code>live-workshop-report.xml</code>: a fictional one-day workshop with commercial support, a 30-day follow-up
+comparison and the pre-test and follow-up scores of each learner.</li>
+<li><code>medbiq-survey-items.xml</code>: the survey items of the Survey Items specification (source
+<code>medbiq.org</code>).</li>
+<li><code>provider-evaluation-items.xml</code>: a fictional provider's evaluation items, including "The activity was
+free of commercial bias." and a confidence comparison with a three-month follow-up.</li>
+</ul>
+
+<h2 id="links">Specification</h2>
+<ul>
+<li><a href="https://www.medbiq.org/standards/medical-education-metrics-mems">Medical Education Metrics (MEMS)</a> at
+MedBiquitous: the MEMS 1.0 specification, the Survey Items specification and the schemas.</li>
+<li>Schemas: <code>http://ns.medbiq.org/metrics/v1/medicaleducationmetrics.xsd</code> and
+<code>http://ns.medbiq.org/surveyitems/v1/surveyitems.xsd</code>.</li>
+</ul>
+<p>Element descriptions in the editor quote or summarize the Medical Education Metrics and Survey Items
+specifications, © MedBiquitous Consortium, used under the MedBiquitous Consortium XML Public License.</p>
+</body>
+</html>

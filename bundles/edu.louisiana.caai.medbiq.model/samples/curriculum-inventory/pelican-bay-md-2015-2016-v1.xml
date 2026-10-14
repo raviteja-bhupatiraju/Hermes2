@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: the Curriculum Inventory report (version 1.0) of the M.D. program of a
+     fictional medical school for the academic year 2015-2016. Institution, identifiers and curriculum are invented.
+     It shows nested sequence blocks for a track (main and rural tracks of the clerkship year, as in section 3.5.4 of
+     the Curriculum Inventory Implementation Guidelines) and selectives. Methods and resource types use the
+     Curriculum Inventory Standardized Instructional and Assessment Methods and Resource Types (AAMC/MedBiquitous);
+     keywords are MeSH descriptors. -->
+<CurriculumInventory xmlns="http://ns.medbiq.org/curriculuminventory/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+		xmlns:a="http://ns.medbiq.org/address/v1/" xmlns:cf="http://ns.medbiq.org/competencyframework/v1/"
+		xmlns:co="http://ns.medbiq.org/competencyobject/v1/" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+		xmlns:m="http://ns.medbiq.org/member/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/curriculuminventory/v1/ http://ns.medbiq.org/curriculuminventory/v1/curriculuminventory.xsd">
+	<ReportID domain="idd:pelicanbay.example:curriculuminventory">PBSOM-2015-2016</ReportID>
+	<Institution>
+		<m:InstitutionName>Pelican Bay School of Medicine</m:InstitutionName>
+		<m:InstitutionID domain="idd:pelicanbay.example:institution">PBSOM</m:InstitutionID>
+		<m:Address>
+			<a:StreetAddressLine>45 Harbor Drive</a:StreetAddressLine>
+			<a:City>Pelican Bay</a:City>
+			<a:StateOrProvince>FL</a:StateOrProvince>
+			<a:Country>
+				<a:CountryCode>US</a:CountryCode>
+			</a:Country>
+		</m:Address>
+	</Institution>
+	<Program>
+		<ProgramName>M.D.</ProgramName>
+		<ProgramID domain="idd:pelicanbay.example:program">MD</ProgramID>
+		<EducationalContext>undergraduate professional education</EducationalContext>
+	</Program>
+	<Title>Pelican Bay School of Medicine M.D. Curriculum 2015-2016</Title>
+	<ReportDate>2016-07-15</ReportDate>
+	<ReportingStartDate>2015-07-01</ReportingStartDate>
+	<ReportingEndDate>2016-06-30</ReportingEndDate>
+	<Language>en-US</Language>
+	<Description>A traditional four-year curriculum with discipline-based basic science courses, a clerkship year with a main track and a rural track, and a fourth year with sub-internship selectives.</Description>
+	<Events>
+		<Event id="BIO-LEC">
+			<Title>Medical Biochemistry Lectures</Title>
+			<EventDuration>PT40H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D001671">
+				<lom:string language="en">Biochemistry</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/2']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE018">Written or Visual Media (or Digital Equivalent)</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM013">Lecture</InstructionalMethod>
+		</Event>
+		<Event id="HIS-LAB">
+			<Title>Histology Laboratory</Title>
+			<EventDuration>PT24H</EventDuration>
+			<ResourceType source="AAMC" sourceID="RE026">Wet Laboratory</ResourceType>
+			<ResourceType source="AAMC" sourceID="RE025">Virtual/Computerized Laboratory</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM012">Laboratory</InstructionalMethod>
+		</Event>
+		<Event id="BIO-EXAM">
+			<Title>Medical Biochemistry Final Examination</Title>
+			<EventDuration>PT3H</EventDuration>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM004">Exam - Institutionally Developed, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<Event id="ICM-PE">
+			<Title>Introduction to Clinical Medicine: Physical Examination Skills</Title>
+			<EventDuration>PT16H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D010808">
+				<lom:string language="en">Physical Examination</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D006326">
+				<lom:string language="en">Heart Auscultation</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/1']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE022">Task Trainer</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM006">Demonstration</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM022">Role Play/Dramatization</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM002">Clinical Performance Rating/Checklist</AssessmentMethod>
+		</Event>
+		<Event id="NEU-CBL">
+			<Title>Neuroscience Case-Based Sessions</Title>
+			<EventDuration>PT12H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/2']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE024">Virtual Patient</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM001">Case-Based Instruction/Learning</InstructionalMethod>
+		</Event>
+		<Event id="NEU-EXAM">
+			<Title>Neuroscience Final Examination</Title>
+			<EventDuration>PT3H</EventDuration>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM004">Exam - Institutionally Developed, Written/Computer-based</AssessmentMethod>
+		</Event>
+		<Event id="GR">
+			<Title>Department of Medicine Grand Rounds</Title>
+			<EventDuration>PT20H</EventDuration>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM005">Conference</InstructionalMethod>
+			<AssessmentMethod purpose="Formative" source="AAMC" sourceID="AM012">Participation</AssessmentMethod>
+		</Event>
+		<Event id="IM-CLK">
+			<Title>Internal Medicine Clerkship</Title>
+			<EventDuration>PT320H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D002982">
+				<lom:string language="en">Clinical Clerkship</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/1']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE015">Patient - Receiving Clinical Care</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM003">Clinical Experience - Inpatient</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM002">Clinical Performance Rating/Checklist</AssessmentMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM008">Exam - Nationally Normed/Standardized, Subject</AssessmentMethod>
+		</Event>
+		<Event id="SURG-CLK">
+			<Title>General Surgery Clerkship</Title>
+			<EventDuration>PT320H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D013502">
+				<lom:string language="en">General Surgery</lom:string>
+			</Keyword>
+			<ResourceType source="AAMC" sourceID="RE015">Patient - Receiving Clinical Care</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM003">Clinical Experience - Inpatient</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM029">Ward Rounds</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM005">Exam - Institutionally Developed, Oral</AssessmentMethod>
+		</Event>
+		<Event id="RFM-CLK">
+			<Title>Rural Family Medicine Longitudinal Clerkship</Title>
+			<EventDuration>PT480H</EventDuration>
+			<Keyword hx:source="MeSH" hx:id="D019035">
+				<lom:string language="en">Rural Health Services</lom:string>
+			</Keyword>
+			<Keyword hx:source="MeSH" hx:id="D005194">
+				<lom:string language="en">Family Practice</lom:string>
+			</Keyword>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/3']</CompetencyObjectReference>
+			<ResourceType source="AAMC" sourceID="RE015">Patient - Receiving Clinical Care</ResourceType>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM002">Clinical Experience - Ambulatory</InstructionalMethod>
+			<InstructionalMethod primary="false" source="AAMC" sourceID="IM014">Mentorship</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM014">Portfolio-Based Assessment</AssessmentMethod>
+		</Event>
+		<Event id="SUBI-IM">
+			<Title>Sub-Internship in Internal Medicine</Title>
+			<EventDuration>PT160H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/4']</CompetencyObjectReference>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM003">Clinical Experience - Inpatient</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM009">Multisource Assessment</AssessmentMethod>
+		</Event>
+		<Event id="SUBI-SURG">
+			<Title>Sub-Internship in Surgery</Title>
+			<EventDuration>PT160H</EventDuration>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/4']</CompetencyObjectReference>
+			<InstructionalMethod primary="true" source="AAMC" sourceID="IM003">Clinical Experience - Inpatient</InstructionalMethod>
+			<AssessmentMethod purpose="Summative" source="AAMC" sourceID="AM009">Multisource Assessment</AssessmentMethod>
+		</Event>
+	</Events>
+	<Expectations>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>http://med.pelicanbay.example/objectives/1</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Gather a complete history and perform a physical examination</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>http://med.pelicanbay.example/objectives/2</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Apply the foundational sciences to clinical reasoning</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>http://med.pelicanbay.example/objectives/3</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Provide continuity care in rural and underserved communities</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+		</CompetencyObject>
+		<CompetencyObject>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>http://med.pelicanbay.example/objectives/4</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Take responsibility for patient care at the level of an intern</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+		</CompetencyObject>
+		<CompetencyFramework>
+			<lom:lom>
+				<lom:general>
+					<lom:identifier>
+						<lom:catalog>URI</lom:catalog>
+						<lom:entry>http://med.pelicanbay.example/objectives</lom:entry>
+					</lom:identifier>
+					<lom:title>
+						<lom:string language="en">Pelican Bay M.D. Program Objectives</lom:string>
+					</lom:title>
+				</lom:general>
+			</lom:lom>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>http://med.pelicanbay.example/objectives/1</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>http://med.pelicanbay.example/objectives/2</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>http://med.pelicanbay.example/objectives/3</cf:Entry>
+			</cf:Includes>
+			<cf:Includes>
+				<cf:Catalog>URI</cf:Catalog>
+				<cf:Entry>http://med.pelicanbay.example/objectives/4</cf:Entry>
+			</cf:Includes>
+		</CompetencyFramework>
+	</Expectations>
+	<AcademicLevels>
+		<LevelsInProgram>4</LevelsInProgram>
+		<Level number="1">
+			<Label>Year 1</Label>
+		</Level>
+		<Level number="2">
+			<Label>Year 2</Label>
+		</Level>
+		<Level number="3">
+			<Label>Year 3</Label>
+			<Description>Clerkship year (main or rural track)</Description>
+		</Level>
+		<Level number="4">
+			<Label>Year 4</Label>
+		</Level>
+	</AcademicLevels>
+	<Sequence>
+		<Description>Year 1 and Year 2 consist of discipline-based courses; the clerkship year offers a main track and a rural track; Year 4 requires one sub-internship selective.</Description>
+		<SequenceBlock id="Y1" required="Required" order="Ordered">
+			<Title>Year 1</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-08-03</StartDate>
+					<EndDate>2016-05-27</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='1']</Level>
+			<SequenceBlockReference order="1">/CurriculumInventory/Sequence/SequenceBlock[@id='BIO']</SequenceBlockReference>
+			<SequenceBlockReference order="2">/CurriculumInventory/Sequence/SequenceBlock[@id='ICM']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="BIO" required="Required">
+			<Title>Medical Biochemistry and Histology</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-08-03</StartDate>
+					<EndDate>2015-12-18</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='1']</Level>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='BIO-LEC']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='HIS-LAB']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='BIO-EXAM']</EventReference>
+				<StartDate>2015-12-18</StartDate>
+				<EndDate>2015-12-18</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="ICM" required="Required">
+			<Title>Introduction to Clinical Medicine</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2016-01-04</StartDate>
+					<EndDate>2016-05-27</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='1']</Level>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='ICM-PE']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="Y2" required="Required">
+			<Title>Year 2: Neuroscience and Behavior</Title>
+			<Timing>
+				<Duration>P3M</Duration>
+				<Dates>
+					<StartDate>2015-08-03</StartDate>
+					<EndDate>2015-10-30</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='2']</Level>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/2']</CompetencyObjectReference>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='NEU-CBL']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='NEU-EXAM']</EventReference>
+				<StartDate>2015-10-30</StartDate>
+				<EndDate>2015-10-30</EndDate>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="Y3" required="Required">
+			<Title>Year 3 Clerkship Phase</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2016-06-24</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='CORE']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='TRACKS']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="CORE" required="Required">
+			<Title>Clerkships Required of All Students</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2016-06-24</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='IM-CLK']</EventReference>
+			</SequenceBlockEvent>
+			<SequenceBlockEvent required="false">
+				<EventReference>/CurriculumInventory/Events/Event[@id='GR']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="TRACKS" required="Required" order="Unordered" minimum="1" maximum="1">
+			<Title>Clerkship Tracks</Title>
+			<Description>Each student completes either the main track or the rural track.</Description>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2016-06-24</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='MAIN']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='RURAL']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="MAIN" required="Optional" track="true">
+			<Title>Main Track</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2016-06-24</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='SURG']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="SURG" required="Required In Track">
+			<Title>General Surgery Clerkship</Title>
+			<Timing>
+				<Duration>P56D</Duration>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<ClerkshipModel>rotation</ClerkshipModel>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='SURG-CLK']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="RURAL" required="Optional" track="true">
+			<Title>Rural Track</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2016-06-24</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/3']</CompetencyObjectReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='RFM']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="RFM" required="Required In Track">
+			<Title>Rural Family Medicine Longitudinal Clerkship</Title>
+			<Timing>
+				<Duration>P6M</Duration>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='3']</Level>
+			<ClerkshipModel>integrated</ClerkshipModel>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='RFM-CLK']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="Y4" required="Required">
+			<Title>Year 4</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2016-05-13</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='4']</Level>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='SUBI']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="SUBI" required="Required" order="Unordered" minimum="1" maximum="1">
+			<Title>Sub-Internship Selective</Title>
+			<Timing>
+				<Dates>
+					<StartDate>2015-07-06</StartDate>
+					<EndDate>2015-12-18</EndDate>
+				</Dates>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='4']</Level>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='SUBI-IM']</SequenceBlockReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='SUBI-SURG']</SequenceBlockReference>
+		</SequenceBlock>
+		<SequenceBlock id="SUBI-IM" required="Optional">
+			<Title>Sub-Internship in Internal Medicine</Title>
+			<Timing>
+				<Duration>P28D</Duration>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='4']</Level>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='SUBI-IM']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+		<SequenceBlock id="SUBI-SURG" required="Optional">
+			<Title>Sub-Internship in Surgery</Title>
+			<Timing>
+				<Duration>P28D</Duration>
+			</Timing>
+			<Level>/CurriculumInventory/AcademicLevels/Level[@number='4']</Level>
+			<SequenceBlockEvent required="true">
+				<EventReference>/CurriculumInventory/Events/Event[@id='SUBI-SURG']</EventReference>
+			</SequenceBlockEvent>
+		</SequenceBlock>
+	</Sequence>
+	<Integration>
+		<IntegrationBlock id="RURAL-HEALTH">
+			<Title>Rural Health</Title>
+			<Description>Care of rural and underserved populations, from the first-year physical examination course to the rural track.</Description>
+			<CompetencyObjectReference>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='http://med.pelicanbay.example/objectives/3']</CompetencyObjectReference>
+			<EventReference>/CurriculumInventory/Events/Event[@id='RFM-CLK']</EventReference>
+			<SequenceBlockReference>/CurriculumInventory/Sequence/SequenceBlock[@id='RURAL']</SequenceBlockReference>
+		</IntegrationBlock>
+	</Integration>
+</CurriculumInventory>

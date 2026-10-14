@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editing XML and JSON</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Editing XML and JSON</h1>
+
+<p class="lead">Every document has an <span class="ui">XML</span> page in the <span class="ui">Source</span>
+group of the navigation sidebar; Healthcare LOM records also have a <span class="ui">JSON</span> page. Both show
+the whole document as text and can be edited directly. Documents of the other MedBiquitous standards have no JSON
+page.</p>
+
+<h2>How text edits are applied</h2>
+<ul>
+<li>Text changes are applied to the document when you leave the page or save. Until then the other pages show
+the previous state.</li>
+<li>If the text has errors when you leave the page, you are asked to fix it or to discard your text changes.</li>
+<li>A document can't be saved while the XML or JSON page holds text with errors.</li>
+<li>Undo and redo on the XML page work on the text; on the other pages they work on the model.</li>
+</ul>
+
+<h2>The XML page</h2>
+<figure>
+<img src="../img/14-xml.png" alt="The XML page with syntax highlighting and problem markers">
+<figcaption>The XML page: syntax highlighting, folding and live schema checking.</figcaption>
+</figure>
+<table>
+<tr><th>Feature</th><th>How to use it</th></tr>
+<tr><td>Content assist</td><td><kbd>Ctrl</kbd>+<kbd>Space</kbd>: the child elements allowed at the caret
+(inserted with their end tag), the end tag of the current element, enumeration values and attribute names, taken
+from the schemas of the document's standard. In Healthcare LOM records also: skeletons for vocabularies and
+multilingual text, vocabulary terms in <code>&lt;value&gt;</code> (updating the sibling
+<code>&lt;source&gt;</code>), sources, healthcare enumeration values, language tags and values recommended by the
+specification.</td></tr>
+<tr><td>Hovers</td><td>Hover over an element or attribute name to read its help, taken for the other standards
+from the schemas of the document's standard.</td></tr>
+<tr><td>Live checking</td><td>The text is checked against the XML Schema of the document's standard as you type:
+squiggles in the text, markers in the vertical and overview rulers, and hovers with the messages. The document's
+validation results are shown as well.</td></tr>
+<tr><td>Quick fix</td><td>Healthcare LOM: <kbd>Ctrl</kbd>+<kbd>1</kbd> on a line with a problem offers the same
+fixes as the Validation view. If you have changed the text since the last validation, apply your edits (and validate again)
+first.</td></tr>
+<tr><td>Format</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> or <span class="ui">Format</span> in the
+context menu re-indents the XML.</td></tr>
+<tr><td>Toggle comment</td><td><kbd>Ctrl</kbd>+<kbd>/</kbd> comments or uncomments the selected lines.</td></tr>
+<tr><td>Navigation aids</td><td>Matching start and end tags are highlighted; elements can be folded.</td></tr>
+<tr><td>Find/Replace</td><td><kbd>Ctrl</kbd>+<kbd>F</kbd>.</td></tr>
+</table>
+
+<p>In documents of the other standards, the XML page is also where formatted text (XHTML content, for
+example in competency statements or virtual patient data) is edited; the form pages only point to it.</p>
+
+<h2>The JSON page (Healthcare LOM)</h2>
+<p>The JSON page shows a Healthcare LOM record in the JSON form described in
+<a href="../reference/json-format.html">The JSON Format</a>.</p>
+<table>
+<tr><th>Feature</th><th>How to use it</th></tr>
+<tr><td>Content assist</td><td><kbd>Ctrl</kbd>+<kbd>Space</kbd>: member names allowed in the current object that
+are not yet present (inserted with a value skeleton), and values: vocabulary terms and sources, healthcare
+enumeration values, language tags, recommended values, keyword sources and terminology codes. Assist also works
+in incomplete JSON.</td></tr>
+<tr><td>Live syntax checking</td><td>Syntax errors are marked as you type. Problems found when the JSON is applied
+are reported at JSON line numbers.</td></tr>
+<tr><td>Format</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> or <span class="ui">Format</span> in the
+context menu.</td></tr>
+<tr><td>Find/Replace</td><td><kbd>Ctrl</kbd>+<kbd>F</kbd>.</td></tr>
+</table>
+
+<h2>The Document Tree page</h2>
+<p>The <span class="ui">Document Tree</span> page shows every element of the document, including custom extension
+elements that the form pages don't show. Select an element to see and edit its attributes in the
+<span class="ui">Properties</span> view; use <span class="ui">New Child</span> and <span class="ui">New
+Sibling</span> in the context menu or the <span class="ui">Document</span> menu to add elements.</p>
+<figure>
+<img src="../img/13-tree.png" alt="The Document Tree page with the Properties view">
+<figcaption>The Document Tree page.</figcaption>
+</figure>
+
+<h2>Repairing a broken file</h2>
+<p>A file that isn't well-formed opens with its original text on the XML (or JSON) page and the load problems in
+the Validation view. Correct the text; when it can be read, leave the page or save, and the form pages show the
+repaired document.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../concepts/documents.html">Documents: XML and JSON</a></li>
+<li><a href="../reference/json-format.html">The JSON Format</a></li>
+<li><a href="validate-fix.html">Validating and Fixing Problems</a></li>
+<li><a href="../reference/menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample record created for Hermes 2 (not part of the HLOM specification). -->
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM https://ns.medbiq.org/lom/healthcarelom.xsd">
+   <general>
+      <identifier>
+         <catalog>URL</catalog>
+         <entry>
+           http://www.medicalschool.edu/images/dialysisdrainage.jpg
+         </entry>
+      </identifier>
+      <title>
+         <string language="en">Chest Radiograph: Right Lower Lobe Pneumonia</string>
+      </title>
+      <description>
+         <string language="en">Posteroanterior chest X-ray showing right lower lobe consolidation with air bronchograms.</string>
+      </description>
+      <keyword hx:source="MeSH" hx:id="D011014">
+         <string language="en">Pneumonia</string>
+      </keyword>
+      <keyword hx:source="MeSH" hx:id="D013902">
+         <string language="en">Radiography, Thoracic</string>
+      </keyword>
+   </general>
+   <lifeCycle>
+      <contribute>
+         <role>
+            <source>LOMv1.0</source>
+            <value>publisher</value>
+         </role>
+         <entity>BEGIN:VCARD
+FN:Anystate Medical School
+END:VCARD</entity>
+      </contribute>
+   </lifeCycle>
+   <metaMetadata>
+      <identifier>
+         <catalog>URL</catalog>
+         <entry>http://www.medicalschool.edu/metadata/metadata010</entry>
+      </identifier>
+      <metadataSchema>LOMv1.0</metadataSchema>
+      <metadataSchema>HEALTHCARE_LOMv1</metadataSchema>
+   </metaMetadata>
+   <technical>
+      <format>image/jpeg</format>
+      <size>135090</size>
+   </technical>
+   <educational>
+      <learningResourceType>
+         <source>HEALTHCARE_LOMv1</source>
+         <value>image</value>
+      </learningResourceType>
+   </educational>
+   <rights>
+      <cost>
+         <source>LOMv1.0</source>
+         <value>no</value>
+      </cost>
+      <copyrightAndOtherRestrictions>
+         <source>LOMv1.0</source>
+         <value>yes</value>
+      </copyrightAndOtherRestrictions>
+      <description>
+         <string language="en">Creative Commons Attribution-Noncommercial-Sharealike license. Contact Joe Shmoe at jshmoe@medicalschool.edu for more information.</string>
+      </description>
+   </rights>
+   <hx:healthcareMetadata>
+      <hx:healthcareAsset>
+         <hx:annotated>yes</hx:annotated>
+         <hx:orientation>coronal</hx:orientation>
+         <hx:specimenType>organ system</hx:specimenType>
+         <hx:fileHeight>736</hx:fileHeight>
+         <hx:fileWidth>806</hx:fileWidth>
+      </hx:healthcareAsset>
+   </hx:healthcareMetadata>
+</lom>

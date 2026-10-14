@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ICD-10-CM FY2026 Terminology: installed and updated on its own (Help > Check for Updates), independent of the application. -->
+<feature
+      id="edu.louisiana.caai.terminology.icd10cm.feature"
+      label="ICD-10-CM FY2026 Terminology"
+      version="2026.0.0.qualifier"
+      provider-name="University of Louisiana at Lafayette, CAAI">
+
+   <description>
+      ICD-10-CM FY2026 (NCHS): chapters, blocks, categories and codes, for the offline lookup.
+   </description>
+
+   <license url="https://www.medbiq.org/">
+      See the license notices in Preferences &gt; Healthcare LOM &gt; Terminologies.
+   </license>
+
+   <requires>
+      <import plugin="edu.louisiana.caai.lom.model" version="1.0.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="edu.louisiana.caai.terminology.icd10cm"
+         version="0.0.0"
+         fragment="true"/>
+
+</feature>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>edu.louisiana.caai</groupId>
+  <artifactId>edu.louisiana.caai.lom.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Hermes 2: MedBiquitous Editor</name>
+  <organization>
+    <name>University of Louisiana at Lafayette, Center for Applied Artificial Intelligence (CAAI)</name>
+  </organization>
+
+  <properties>
+    <tycho.version>5.0.4</tycho.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>releng/edu.louisiana.caai.lom.target</module>
+    <module>releng/edu.louisiana.caai.lom.web.target</module>
+    <module>bundles/edu.louisiana.caai.lom.model</module>
+    <module>bundles/edu.louisiana.caai.terminology.mesh</module>
+    <module>bundles/edu.louisiana.caai.terminology.icd10cm</module>
+    <module>bundles/edu.louisiana.caai.medbiq.model</module>
+    <module>bundles/edu.louisiana.caai.lom.edit</module>
+    <module>bundles/edu.louisiana.caai.lom.editor</module>
+    <module>bundles/edu.louisiana.caai.lom.help</module>
+    <module>bundles/edu.louisiana.caai.lom.cli</module>
+    <module>bundles/edu.louisiana.caai.lom.web</module>
+    <module>tests/edu.louisiana.caai.lom.tests</module>
+    <module>tests/edu.louisiana.caai.lom.ui.tests</module>
+    <module>releng/edu.louisiana.caai.lom.cli.dist</module>
+    <module>releng/edu.louisiana.caai.lom.feature</module>
+    <module>releng/edu.louisiana.caai.terminology.mesh.feature</module>
+    <module>releng/edu.louisiana.caai.terminology.icd10cm.feature</module>
+    <!-- The web server first: the release step of the desktop product copies its archive to dist/. -->
+    <module>releng/edu.louisiana.caai.lom.web.feature</module>
+    <module>releng/edu.louisiana.caai.lom.web.product</module>
+    <module>releng/edu.louisiana.caai.lom.product</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <target>
+            <artifact>
+              <groupId>edu.louisiana.caai</groupId>
+              <artifactId>edu.louisiana.caai.lom.target</artifactId>
+              <version>1.0.0-SNAPSHOT</version>
+            </artifact>
+          </target>
+          <!-- JustJ (the Java runtime of the Linux and macOS builds): resolved without the build's own Java, as
+               its documentation describes. -->
+          <resolveWithExecutionEnvironmentConstraints>false</resolveWithExecutionEnvironmentConstraints>
+          <dependency-resolution>
+            <profileProperties>
+              <org.eclipse.justj.buildtime>true</org.eclipse.justj.buildtime>
+            </profileProperties>
+          </dependency-resolution>
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>aarch64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

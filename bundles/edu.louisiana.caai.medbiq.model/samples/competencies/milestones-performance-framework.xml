@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Performance Framework 1.0): milestones-like performance levels for
+     competencies of core-competencies-framework.xml. Patient Care groups two sub-competencies (nested components)
+     rated on a five-level milestone scale, with indicators, a threshold and additional information; Professionalism
+     is rated with score ranges on a percentage scale. Organizations, people and URIs are fictional; the levels are
+     not an official milestone set. -->
+<PerformanceFramework xmlns="http://ns.medbiq.org/performanceframework/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/performanceframework/v1/ http://ns.medbiq.org/performanceframework/v1/performanceframework.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>https://gme.lakeside.example.org/performance/resident-milestones/2024</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="en">Lakeside GME Resident Milestones</lom:string>
+			</lom:title>
+			<lom:language>en</lom:language>
+			<lom:description>
+				<lom:string language="en">Developmental milestones for the semiannual review of residents by the clinical competency committees of the Lakeside Graduate Medical Education Consortium. The milestones describe the development of the resident; they do not represent the entirety of physician competence.</lom:string>
+			</lom:description>
+			<lom:keyword>
+				<lom:string language="en">milestones</lom:string>
+			</lom:keyword>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:version>
+				<lom:string language="en">2024</lom:string>
+			</lom:version>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>final</lom:value>
+			</lom:status>
+			<lom:contribute>
+				<lom:role>
+					<lom:source>LOMv1.0</lom:source>
+					<lom:value>publisher</lom:value>
+				</lom:role>
+				<lom:entity>BEGIN:VCARD&#13;&#10;VERSION:3.0&#13;&#10;FN:Lakeside Graduate Medical Education Consortium&#13;&#10;END:VCARD</lom:entity>
+			</lom:contribute>
+		</lom:lifeCycle>
+		<lom:educational>
+			<lom:context>
+				<lom:source>HEALTHCARE_LOMv1</lom:source>
+				<lom:value>graduate professional education</lom:value>
+			</lom:context>
+		</lom:educational>
+	</lom:lom>
+	<EffectiveDate>2024-07-01</EffectiveDate>
+	<SupportingInformation>
+		<Reference>
+			<rdf:Description rdf:about="https://gme.lakeside.example.org/performance/resident-milestones/2024/guidebook.pdf"/>
+			<dcterms:format>application/pdf</dcterms:format>
+		</Reference>
+	</SupportingInformation>
+	<SupportingInformation>
+		<xhtml:div>
+			<xhtml:p>Clinical competency committees select, for each component, the highest level whose indicators the resident demonstrates <xhtml:em>consistently</xhtml:em>. Level 4 is the recommended target for graduation.</xhtml:p>
+		</xhtml:div>
+	</SupportingInformation>
+	<PerformanceScale id="scale_milestones">
+		<LeastCompetent>1</LeastCompetent>
+		<MostCompetent>5</MostCompetent>
+	</PerformanceScale>
+	<PerformanceScale id="scale_percent">
+		<LeastCompetent>0</LeastCompetent>
+		<MostCompetent>100</MostCompetent>
+	</PerformanceScale>
+	<Component id="comp_pc">
+		<Title xml:lang="en">Patient Care</Title>
+		<Abbreviation xml:lang="en">PC</Abbreviation>
+		<Competency>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/patient-care"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyobject/v1/"/>
+			</Reference>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/core/2024"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyframework/v1/"/>
+				<dcterms:format>application/xml</dcterms:format>
+			</Reference>
+		</Competency>
+		<ComponentReference>comp_pc1</ComponentReference>
+		<ComponentReference>comp_pc2</ComponentReference>
+	</Component>
+	<Component id="comp_pc1">
+		<Title xml:lang="en">Gathers essential and accurate information about the patient</Title>
+		<Abbreviation xml:lang="en">PC1</Abbreviation>
+		<Competency>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/patient-care/pc1-history"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyobject/v1/"/>
+			</Reference>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/core/2024"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyframework/v1/"/>
+				<dcterms:format>application/xml</dcterms:format>
+			</Reference>
+		</Competency>
+		<Author>Milestone Working Group, Lakeside GME Consortium</Author>
+		<Reviewer>Clinical Competency Committee, Internal Medicine</Reviewer>
+		<Threshold>
+			<Title xml:lang="en">Ready for unsupervised practice</Title>
+			<Description xml:lang="en">The level residents should reach before graduation from the program.</Description>
+			<MinimumAcceptableScore>4</MinimumAcceptableScore>
+		</Threshold>
+		<AdditionalInformation position="1">
+			<Label xml:lang="en">assessment method</Label>
+			<Text xml:lang="en">Direct observation of history taking and physical examination (mini-CEX), at least twice per rotation.</Text>
+		</AdditionalInformation>
+		<AdditionalInformation position="1">
+			<Label xml:lang="en">note</Label>
+			<Text xml:lang="en">Collateral information includes family members, previous providers and the health information exchange.</Text>
+		</AdditionalInformation>
+		<PerformanceLevelSet>
+			<PerformanceScaleReference>scale_milestones</PerformanceScaleReference>
+			<PerformanceLevel>
+				<DisplayOrder>1</DisplayOrder>
+				<Score>
+					<SingleValue>1</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 1</Label>
+				<Indicator id="pc1_l1_a">
+					<Description xml:lang="en">Acquires a general medical history and performs a general physical examination.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>2</DisplayOrder>
+				<Score>
+					<SingleValue>2</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 2</Label>
+				<Indicator id="pc1_l2_a">
+					<Description xml:lang="en">Acquires a focused history and performs a physical examination guided by the patient's problem.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>3</DisplayOrder>
+				<Score>
+					<SingleValue>3</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 3</Label>
+				<Indicator id="pc1_l3_a">
+					<Description xml:lang="en">Acquires an accurate and relevant history, including collateral sources, and identifies subtle physical findings.</Description>
+				</Indicator>
+				<Indicator id="pc1_l3_b">
+					<Description xml:lang="en">Uses existing records to complement the history.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>4</DisplayOrder>
+				<Score>
+					<SingleValue>4</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 4</Label>
+				<Indicator id="pc1_l4_a">
+					<Description xml:lang="en">Obtains relevant historical subtleties and performs a hypothesis-driven examination in complex presentations.</Description>
+					<AdditionalInformation>
+						<Label xml:lang="en">example</Label>
+						<Text xml:lang="en">Elicits a history of intermittent claudication in a patient admitted with chest pain.</Text>
+					</AdditionalInformation>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>5</DisplayOrder>
+				<Score>
+					<SingleValue>5</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 5</Label>
+				<Label xml:lang="en">Aspirational</Label>
+				<Indicator id="pc1_l5_a">
+					<Description xml:lang="en">Models the gathering of subtle and reliable information from the patient for junior members of the health care team.</Description>
+				</Indicator>
+			</PerformanceLevel>
+		</PerformanceLevelSet>
+	</Component>
+	<Component id="comp_pc2">
+		<Title xml:lang="en">Develops and achieves a comprehensive management plan</Title>
+		<Abbreviation xml:lang="en">PC2</Abbreviation>
+		<Competency>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/patient-care/pc2-management-plan"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyobject/v1/"/>
+			</Reference>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/core/2024"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyframework/v1/"/>
+			</Reference>
+		</Competency>
+		<PerformanceLevelSet>
+			<PerformanceScaleReference>scale_milestones</PerformanceScaleReference>
+			<PerformanceLevel>
+				<DisplayOrder>1</DisplayOrder>
+				<Score>
+					<SingleValue>1</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 1</Label>
+				<Indicator id="pc2_l1_a">
+					<Description xml:lang="en">Develops a management plan for common conditions with direct supervision.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>2</DisplayOrder>
+				<Score>
+					<SingleValue>2</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 2</Label>
+				<Indicator id="pc2_l2_a">
+					<Description xml:lang="en">Develops and adjusts management plans for common conditions.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>3</DisplayOrder>
+				<Score>
+					<SingleValue>3</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 3</Label>
+				<Indicator id="pc2_l3_a">
+					<Description xml:lang="en">Develops comprehensive management plans for patients with multiple conditions.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>4</DisplayOrder>
+				<Score>
+					<SingleValue>4</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 4</Label>
+				<Indicator id="pc2_l4_a">
+					<Description xml:lang="en">Achieves management plans that integrate the patient's preferences and the resources of the health system.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>5</DisplayOrder>
+				<Score>
+					<SingleValue>5</SingleValue>
+				</Score>
+				<Label xml:lang="en">Level 5</Label>
+				<Indicator id="pc2_l5_a">
+					<Description xml:lang="en">Develops institutional pathways for the management of complex conditions.</Description>
+				</Indicator>
+			</PerformanceLevel>
+		</PerformanceLevelSet>
+	</Component>
+	<Component id="comp_prof">
+		<Title xml:lang="en">Professionalism</Title>
+		<Abbreviation xml:lang="en">PROF</Abbreviation>
+		<Competency>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/professionalism"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyobject/v1/"/>
+			</Reference>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/competencies/core/2024"/>
+				<rdf:type rdf:resource="http://ns.medbiq.org/competencyframework/v1/"/>
+			</Reference>
+		</Competency>
+		<Threshold>
+			<Title xml:lang="en">Progression to the next training year</Title>
+			<MinimumAcceptableScore>60</MinimumAcceptableScore>
+		</Threshold>
+		<AdditionalInformation>
+			<Label xml:lang="en">resource</Label>
+			<Text xml:lang="en">Physician charter on medical professionalism</Text>
+			<Reference>
+				<rdf:Description rdf:about="https://gme.lakeside.example.org/resources/professionalism-charter"/>
+				<dcterms:format>text/html</dcterms:format>
+			</Reference>
+		</AdditionalInformation>
+		<PerformanceLevelSet>
+			<PerformanceScaleReference>scale_percent</PerformanceScaleReference>
+			<PerformanceLevel>
+				<DisplayOrder>1</DisplayOrder>
+				<Score>
+					<Range>
+						<MinScore>0</MinScore>
+						<MaxScore>59</MaxScore>
+					</Range>
+				</Score>
+				<Label xml:lang="en">Below expectations</Label>
+				<Indicator id="prof_l1_a">
+					<Description xml:lang="en">Is late for or misses clinical duties without notice.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>2</DisplayOrder>
+				<Score>
+					<Range>
+						<MinScore>60</MinScore>
+						<MaxScore>84</MaxScore>
+					</Range>
+				</Score>
+				<Label xml:lang="en">Meets expectations</Label>
+				<Indicator id="prof_l2_a">
+					<Description xml:lang="en">Completes clinical duties reliably and responds to feedback.</Description>
+				</Indicator>
+			</PerformanceLevel>
+			<PerformanceLevel>
+				<DisplayOrder>3</DisplayOrder>
+				<Score>
+					<Range>
+						<MinScore>85</MinScore>
+						<MaxScore>100</MaxScore>
+					</Range>
+				</Score>
+				<Label xml:lang="en">Exceeds expectations</Label>
+				<Indicator id="prof_l3_a">
+					<Description xml:lang="en">Recognizes and addresses lapses in professional behavior in the team.</Description>
+				</Indicator>
+			</PerformanceLevel>
+		</PerformanceLevelSet>
+	</Component>
+</PerformanceFramework>

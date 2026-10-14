@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the form pages of Curriculum Inventory documents (types curriculum-inventory-v1 and
+     curriculum-inventory-v10): ids page_<type id>_<page id> with "-" written "_", as made by
+     edu.louisiana.caai.lom.editor.help.HelpContexts.page. Pages are defined in
+     edu.louisiana.caai.medbiq.model.standards.CurriculumInventory. -->
+<contexts>
+
+   <!-- Curriculum Inventory 1.0 -->
+   <context id="page_curriculum_inventory_v1_report" title="Report (Curriculum Inventory 1.0)">
+      <description>The report: its title, report ID (with the domain of the organization that issued it), the date it was created, the reporting period it covers, its default language, a description of the curriculum (required in 1.0) and a supporting link.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v1_program" title="Institution and Program (Curriculum Inventory 1.0)">
+      <description>The institution whose curriculum is described (name, ID, address) and the educational program (name, ID, educational context, profession, specialty).</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v1_events" title="Events (Curriculum Inventory 1.0)">
+      <description>The education and assessment events of the curriculum. Each event needs a unique id, a title, a duration (such as PT2H) and at least one instructional or assessment method; mark one instructional method as primary. Methods and resource types are offered from the standardized Curriculum Inventory vocabulary.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v1_expectations" title="Expectations (Curriculum Inventory 1.0)">
+      <description>Competency objects (competencies, learning objectives, outcomes) and the competency frameworks that organize them. Events, sequence blocks and integration blocks reference a competency object by its identifier (lom/general/identifier/entry).</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v1_levels" title="Academic Levels (Curriculum Inventory 1.0)">
+      <description>The levels of the program (years, phases), numbered from 1. LevelsInProgram must equal the number of levels.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v1_sequence" title="Sequence (Curriculum Inventory 1.0)">
+      <description>The sequence blocks of the curriculum (years, phases, courses, clerkships): timing, academic level, events and nested blocks. Use the required, order, minimum, maximum and track attributes for parallel blocks, electives, selectives and tracks.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v1_integration" title="Integration (Curriculum Inventory 1.0)">
+      <description>Integration blocks: themes woven through the curriculum, with the competency objects, events and sequence blocks associated with them.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+
+   <!-- Curriculum Inventory v10 (AAMC point release) -->
+   <context id="page_curriculum_inventory_v10_report" title="Report (Curriculum Inventory v10)">
+      <description>The report: its title, report ID (with the domain of the organization that issued it), the date it was created, the reporting period it covers, its default language, an optional description of the curriculum and a supporting link.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v10_program" title="Institution and Program (Curriculum Inventory v10)">
+      <description>The institution whose curriculum is described (name, ID, address) and the educational program (name, ID, educational context, profession, specialty).</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v10_events" title="Events (Curriculum Inventory v10)">
+      <description>The education and assessment events of the curriculum. Each event needs a unique id, a title, a duration (such as PT2H) and at least one instructional or assessment method; mark one instructional method as primary and, in v10, give the time spent on each method. Methods and resource types are offered from the standardized Curriculum Inventory vocabulary.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v10_expectations" title="Expectations (Curriculum Inventory v10)">
+      <description>Competency objects (competencies, learning objectives, outcomes) and the competency frameworks that organize them. Events, sequence blocks and integration blocks reference a competency object by its identifier (lom/general/identifier/entry).</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v10_levels" title="Academic Levels (Curriculum Inventory v10)">
+      <description>The levels of the program (years, phases), numbered from 1. LevelsInProgram must equal the number of levels.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v10_sequence" title="Sequence (Curriculum Inventory v10)">
+      <description>The sequence blocks of the curriculum (years, phases, courses, clerkships): timing, starting and ending academic levels, events and nested blocks. Use the required, order, minimum, maximum and track attributes for parallel blocks, electives, selectives and tracks.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_curriculum_inventory_v10_integration" title="Integration (Curriculum Inventory v10)">
+      <description>Integration blocks: themes woven through the curriculum, with the competency objects, events and sequence blocks associated with them.</description>
+      <topic href="html/standards/curriculum-inventory.html" label="Curriculum Inventory"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+</contexts>

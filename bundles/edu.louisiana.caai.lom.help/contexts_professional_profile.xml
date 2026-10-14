@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the form pages of Healthcare Professional Profile documents (professional-profile-v1):
+     ids page_<type id>_<page id> with - written _ (edu.louisiana.caai.lom.editor.help.HelpContexts.page). -->
+<contexts>
+   <context id="page_professional_profile_v1_members" title="Members">
+      <description>The healthcare professionals of the document. Each Member needs a Name (given and family names, formatted name, degrees, aliases, former names) and should be identified by one or more UniqueIDs with the domain that issued them (such as AAMC or NPI).</description>
+      <topic href="html/standards/professional-profile.html#structure" label="Healthcare Professional Profile: Structure"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_professional_profile_v1_contact" title="Contact">
+      <description>Postal addresses (MedBiquitous Address: organizations, street address lines, city, state or province, postal code and the required country with its ISO 3166 code), telephone numbers, email addresses, web pages and the preferred method of contact of each member.</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_personal" title="Personal Information">
+      <description>Physical status, birth and deceased dates, gender, languages, citizenship, countries of residence, race, ethnicity, tax number and family members. Set the restrictions of data that may not be shared or published.</description>
+      <topic href="html/standards/professional-profile.html#structure" label="Healthcare Professional Profile: Structure"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_education" title="Education and Training">
+      <description>Degrees and certificates with the institution, distinction, status and dates (EducationInfo); residencies, fellowships and other postgraduate programs with accreditation, specialty, training status and dates (TrainingInfo).</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_certification" title="Certification">
+      <description>Certification by medical specialty boards: the certification organization and board, the certificates (general certificates and subcertificates) and each issuance (initial certification, recertification, maintenance of certification) with its dates and status.</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_licensure" title="Licensure and Discipline">
+      <description>Professional licenses issued by government boards (licensure entity, number, initial licensure and expiration dates, status) and board orders: the disciplinary entity with either a board notice or a board action, its span or term and any appeal.</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_occupation" title="Occupation and Specialties">
+      <description>Occupations of each member: occupation, institution, title, privileges, practice, dates, medical specialties and status (Active or Retired).</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_appointments" title="Academic Appointments">
+      <description>Faculty appointments (title, rank and tenure status with the current one first, track, appointment type, effort, location, endowment), chair, division or section and administrative appointments, each with its institution and dates.</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+   <context id="page_professional_profile_v1_memberships" title="Memberships">
+      <description>Memberships in professional medical societies and related organizations (organization, country, member number, level, role, status, member since and fellowship dates) and in their chapters, special interest groups and committees.</description>
+      <topic href="html/standards/professional-profile.html#pages" label="Healthcare Professional Profile: Editor Pages"/>
+      <topic href="html/standards/professional-profile.html#rules" label="Healthcare Professional Profile: Rules"/>
+   </context>
+</contexts>

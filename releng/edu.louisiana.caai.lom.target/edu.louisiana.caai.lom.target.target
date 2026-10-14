@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+<target name="Hermes 2: Healthcare LOM Editor (Eclipse 2026-09)" sequenceNumber="6">
+  <locations>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <repository location="https://download.eclipse.org/releases/2026-09/"/>
+      <repository location="https://download.eclipse.org/nebula/releases/latest/"/>
+      <!-- Eclipse RCP (E4 runtime + 3.x compatibility workbench) and launchers -->
+      <unit id="org.eclipse.rcp.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+      <!-- UI building blocks -->
+      <unit id="org.eclipse.ui.forms" version="0.0.0"/>
+      <unit id="org.eclipse.ui.views" version="0.0.0"/>
+      <unit id="org.eclipse.ui.workbench.texteditor" version="0.0.0"/>
+      <unit id="org.eclipse.jface.text" version="0.0.0"/>
+      <!-- The workspace: Hermes projects, background validation (Problems view) and search -->
+      <unit id="org.eclipse.core.resources" version="0.0.0"/>
+      <unit id="org.eclipse.ui.ide" version="0.0.0"/>
+      <unit id="org.eclipse.search" version="0.0.0"/>
+      <unit id="org.eclipse.compare" version="0.0.0"/>
+      <unit id="org.eclipse.ltk.core.refactoring" version="0.0.0"/>
+      <unit id="org.eclipse.ltk.ui.refactoring" version="0.0.0"/>
+      <unit id="org.eclipse.team.ui" version="0.0.0"/>
+      <!-- Optional Git version control of Hermes projects (EGit: Team menu, Git views, Git perspective) -->
+      <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
+      <!-- The Eclipse help system: Help Contents, help search, context help (F1) and the Help view -->
+      <unit id="org.eclipse.help.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ui.views.log" version="0.0.0"/>
+      <unit id="org.eclipse.ui.cheatsheets" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.p2.user.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.zest.core" version="0.0.0"/>
+      <!-- The OSGi ServiceLoader mediator: registers the Eclipse Collections implementation that NatTable uses. -->
+      <unit id="org.apache.aries.spifly.dynamic.bundle" version="0.0.0"/>
+      <unit id="org.eclipse.zest.layouts" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.ganttchart" version="0.0.0"/>
+      <!-- EMF runtime, edit, editor UI and data binding -->
+      <unit id="org.eclipse.emf.ecore.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.common.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.edit.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.common.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.edit.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.databinding.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.databinding.edit.feature.group" version="0.0.0"/>
+      <!-- Eclipse Nebula community widgets -->
+      <unit id="org.eclipse.nebula.widgets.cdatetime.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.chips.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.badgedlabel.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.opal.commons.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.opal.notifier.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.opal.titledseparator.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.nebula.widgets.opal.textassist.feature.feature.group" version="0.0.0"/>
+      <!-- Tests -->
+      <!-- Required by Tycho surefire whenever useUIHarness=true (UI tests only; not part of the product) -->
+      <unit id="org.eclipse.ui.ide.application" version="0.0.0"/>
+      <unit id="junit-jupiter-api" version="5.14.4"/>
+      <unit id="junit-jupiter-engine" version="5.14.4"/>
+      <unit id="junit-platform-launcher" version="1.14.4"/>
+      <!-- Used by Tycho's JUnit 5 test provider -->
+      <unit id="junit-platform-suite-api" version="1.14.4"/>
+      <unit id="junit-platform-suite-engine" version="1.14.4"/>
+      <unit id="junit-platform-suite-commons" version="1.14.4"/>
+    </location>
+        <!-- NatTable: the table views of large lists (events, library). -->
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+         <repository location="https://download.eclipse.org/nattable/releases/2.7.0/repository/"/>
+         <unit id="org.eclipse.nebula.widgets.nattable.core" version="0.0.0"/>
+         <!-- NatTable uses Eclipse Collections; the implementation is found at run time (not a bundle requirement). -->
+         <unit id="org.eclipse.collections.impl" version="0.0.0"/>
+      </location>
+       <!-- JustJ: the Java runtime of the Linux and macOS builds (the Windows build bundles a jlink runtime). -->
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <repository location="https://download.eclipse.org/justj/jres/27/updates/release/latest/"/>
+      <unit id="org.eclipse.justj.openjdk.hotspot.jre.full.stripped.feature.group" version="0.0.0"/>
+    </location>
+  </locations>
+  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25"/>
+</target>

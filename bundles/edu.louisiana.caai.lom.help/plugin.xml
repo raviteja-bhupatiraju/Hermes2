@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<plugin>
+
+   <!-- The user guide (Help > Help Contents). -->
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc.xml" primary="true"/>
+   </extension>
+
+   <!-- Context help (F1) of the views, editor pages and dialogs, and of the fields of the form pages. The ids are
+        those of edu.louisiana.caai.lom.editor.help.HelpContexts. -->
+   <extension point="org.eclipse.help.contexts">
+      <contexts file="contexts.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <contexts file="contexts_fields.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <!-- The form pages of the other MedBiquitous standards (ids: page_<type id>_<page id>, '-' written '_'). -->
+      <contexts file="contexts_curriculum_inventory.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <contexts file="contexts_competencies.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <contexts file="contexts_activity_report.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <contexts file="contexts_education_metrics.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <contexts file="contexts_professional_profile.xml" plugin="edu.louisiana.caai.lom.editor"/>
+      <contexts file="contexts_virtual_patient.xml" plugin="edu.louisiana.caai.lom.editor"/>
+   </extension>
+
+   <!-- The keyword index of the user guide. -->
+   <extension point="org.eclipse.help.index">
+      <index file="index.xml"/>
+   </extension>
+
+   <!-- Help > Cheat Sheets: guided workflows whose steps run the commands of the application. -->
+   <extension point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <category id="edu.louisiana.caai.lom.help.cheatsheets" name="%cheatsheets.category"/>
+      <cheatsheet id="edu.louisiana.caai.lom.help.cheatsheets.firstRecord" name="%cheatsheet.firstRecord.name"
+            category="edu.louisiana.caai.lom.help.cheatsheets" contentFile="cheatsheets/first-record.xml">
+         <description>%cheatsheet.firstRecord.description</description>
+      </cheatsheet>
+      <cheatsheet id="edu.louisiana.caai.lom.help.cheatsheets.curriculumInventory"
+            name="%cheatsheet.curriculumInventory.name" category="edu.louisiana.caai.lom.help.cheatsheets"
+            contentFile="cheatsheets/curriculum-inventory.xml">
+         <description>%cheatsheet.curriculumInventory.description</description>
+      </cheatsheet>
+      <cheatsheet id="edu.louisiana.caai.lom.help.cheatsheets.repair" name="%cheatsheet.repair.name"
+            category="edu.louisiana.caai.lom.help.cheatsheets" contentFile="cheatsheets/repair.xml">
+         <description>%cheatsheet.repair.description</description>
+      </cheatsheet>
+      <cheatsheet id="edu.louisiana.caai.lom.help.cheatsheets.terminologies" name="%cheatsheet.terminologies.name"
+            category="edu.louisiana.caai.lom.help.cheatsheets" contentFile="cheatsheets/terminologies.xml">
+         <description>%cheatsheet.terminologies.description</description>
+      </cheatsheet>
+   </extension>
+
+</plugin>

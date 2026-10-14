@@ -1,0 +1,118 @@
+/**
+ * Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. Generated from the MedBiquitous Healthcare LOM v1 schemas.
+ */
+package edu.louisiana.caai.lom.model.lom;
+
+import org.eclipse.emf.common.util.Enumerator;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.util.FeatureMap;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Name Value</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link edu.louisiana.caai.lom.model.lom.NameValue#getValue <em>Value</em>}</li>
+ *   <li>{@link edu.louisiana.caai.lom.model.lom.NameValue#getUniqueElementName <em>Unique Element Name</em>}</li>
+ *   <li>{@link edu.louisiana.caai.lom.model.lom.NameValue#getAnyAttribute <em>Any Attribute</em>}</li>
+ * </ul>
+ *
+ * @see edu.louisiana.caai.lom.model.lom.LomPackage#getNameValue()
+ * @model extendedMetaData="name='nameValue' kind='simple'"
+ * @generated
+ */
+public interface NameValue extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(Enumerator)
+	 * @see edu.louisiana.caai.lom.model.lom.LomPackage#getNameValue_Value()
+	 * @model dataType="edu.louisiana.caai.lom.model.vocab.Name"
+	 *        extendedMetaData="name=':0' kind='simple'"
+	 * @generated
+	 */
+	Enumerator getValue();
+
+	/**
+	 * Sets the value of the '{@link edu.louisiana.caai.lom.model.lom.NameValue#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(Enumerator value);
+
+	/**
+	 * Returns the value of the '<em><b>Unique Element Name</b></em>' attribute.
+	 * The default value is <code>"value"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Unique Element Name</em>' attribute.
+	 * @see #isSetUniqueElementName()
+	 * @see #unsetUniqueElementName()
+	 * @see #setUniqueElementName(Object)
+	 * @see edu.louisiana.caai.lom.model.lom.LomPackage#getNameValue_UniqueElementName()
+	 * @model default="value" unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.AnySimpleType"
+	 *        extendedMetaData="kind='attribute' name='uniqueElementName'"
+	 * @generated
+	 */
+	Object getUniqueElementName();
+
+	/**
+	 * Sets the value of the '{@link edu.louisiana.caai.lom.model.lom.NameValue#getUniqueElementName <em>Unique Element Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Unique Element Name</em>' attribute.
+	 * @see #isSetUniqueElementName()
+	 * @see #unsetUniqueElementName()
+	 * @see #getUniqueElementName()
+	 * @generated
+	 */
+	void setUniqueElementName(Object value);
+
+	/**
+	 * Unsets the value of the '{@link edu.louisiana.caai.lom.model.lom.NameValue#getUniqueElementName <em>Unique Element Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetUniqueElementName()
+	 * @see #getUniqueElementName()
+	 * @see #setUniqueElementName(Object)
+	 * @generated
+	 */
+	void unsetUniqueElementName();
+
+	/**
+	 * Returns whether the value of the '{@link edu.louisiana.caai.lom.model.lom.NameValue#getUniqueElementName <em>Unique Element Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Unique Element Name</em>' attribute is set.
+	 * @see #unsetUniqueElementName()
+	 * @see #getUniqueElementName()
+	 * @see #setUniqueElementName(Object)
+	 * @generated
+	 */
+	boolean isSetUniqueElementName();
+
+	/**
+	 * Returns the value of the '<em><b>Any Attribute</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Any Attribute</em>' attribute list.
+	 * @see edu.louisiana.caai.lom.model.lom.LomPackage#getNameValue_AnyAttribute()
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+	 *        extendedMetaData="kind='attributeWildcard' wildcards='!##http://ltsc.ieee.org/xsd/LOM/extend' name=':2' processing='lax'"
+	 * @generated
+	 */
+	FeatureMap getAnyAttribute();
+
+} // NameValue

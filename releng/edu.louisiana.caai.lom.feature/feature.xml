@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="edu.louisiana.caai.lom.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName"
+      plugin="edu.louisiana.caai.lom.editor">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license>
+      %license
+   </license>
+
+   <plugin id="edu.louisiana.caai.lom.model" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.medbiq.model" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.lom.edit" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.lom.editor" version="0.0.0"/>
+   <plugin id="edu.louisiana.caai.lom.help" version="0.0.0"/>
+   <!-- Window > Error Log: the messages of the application, for support. -->
+   <plugin id="org.eclipse.ui.views.log" version="0.0.0"/>
+   <!-- Help > Cheat Sheets. -->
+   <plugin id="org.eclipse.ui.cheatsheets" version="0.0.0"/>
+   <!-- The implementation of Eclipse Collections for NatTable, registered as OSGi services by the ServiceLoader
+        mediator (SPI Fly); both started in the product configuration. -->
+   <plugin id="org.eclipse.collections.impl" version="0.0.0"/>
+   <plugin id="org.apache.aries.spifly.dynamic.bundle" version="0.0.0"/>
+   <!-- Secure storage (the UMLS API key), protected by the operating system's key store where there is one. -->
+   <plugin id="org.eclipse.equinox.security" version="0.0.0"/>
+   <plugin id="org.eclipse.equinox.security.ui" version="0.0.0"/>
+   <plugin id="org.eclipse.equinox.security.win32" os="win32" arch="x86_64" fragment="true" version="0.0.0"/>
+   <plugin id="org.eclipse.equinox.security.macosx" os="macosx" fragment="true" version="0.0.0"/>
+   <plugin id="org.eclipse.equinox.security.linux" os="linux" fragment="true" version="0.0.0"/>
+
+</feature>

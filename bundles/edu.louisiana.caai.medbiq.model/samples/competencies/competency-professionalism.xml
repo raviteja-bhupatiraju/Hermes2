@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Competency Object 1.0): the professionalism domain of the core
+     competencies in core-competencies-framework.xml. It replaces the 2018 statement (Replaces) and links to a formatted
+     version of the statement. The organization and URIs are fictional. -->
+<CompetencyObject xmlns="http://ns.medbiq.org/competencyobject/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/competencyobject/v1/ http://ns.medbiq.org/competencyobject/v1/competencyobject.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>https://gme.lakeside.example.org/competencies/professionalism</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="en">Professionalism</lom:string>
+			</lom:title>
+			<lom:language>en</lom:language>
+			<lom:description>
+				<lom:string language="en">Residents demonstrate a commitment to carrying out professional responsibilities and an adherence to ethical principles: compassion, integrity and respect for others, accountability to patients and society, and sensitivity to a diverse patient population.</lom:string>
+			</lom:description>
+			<lom:keyword>
+				<lom:string language="en">ethics</lom:string>
+			</lom:keyword>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:version>
+				<lom:string language="en">2024</lom:string>
+			</lom:version>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>revised</lom:value>
+			</lom:status>
+		</lom:lifeCycle>
+	</lom:lom>
+	<Status>Active</Status>
+	<Replaces>https://gme.lakeside.example.org/competencies/2018/professionalism</Replaces>
+	<Category term="competency domain" scheme="https://gme.lakeside.example.org/categories/levels" label="Competency domain"/>
+	<Category term="role"/>
+	<References>
+		<Reference>Accreditation Council for Graduate Medical Education. ACGME Common Program Requirements (Residency), section IV.B.1.a), Professionalism. https://www.acgme.org/</Reference>
+		<Reference>American Board of Internal Medicine Foundation, ACP-ASIM Foundation and European Federation of Internal Medicine. Medical professionalism in the new millennium: a physician charter. Annals of Internal Medicine 2002;136(3):243-6.</Reference>
+	</References>
+	<SupportingInformation>
+		<Link>https://gme.lakeside.example.org/competencies/professionalism.html</Link>
+	</SupportingInformation>
+</CompetencyObject>

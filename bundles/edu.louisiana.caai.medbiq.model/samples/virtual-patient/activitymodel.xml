@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: the Activity Model (AM) of the virtual patient case "Chest pain in a
+     58-year-old man", a branching case. The first activity node is the start of the activity; each node shows a
+     DAMNode of dataavailabilitymodel.xml; links, counters, a timer and a conditional rule control the path. -->
+<ActivityModel xmlns="http://ns.medbiq.org/activitymodel/v1/"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/activitymodel/v1/ http://ns.medbiq.org/activitymodel/v1/activitymodel.xsd">
+	<Properties>
+		<Counters>
+			<Counter id="c-myocardium">
+				<CounterLabel>Myocardium saved</CounterLabel>
+				<CounterUnitsSuffix>%</CounterUnitsSuffix>
+				<CounterInitValue>100</CounterInitValue>
+				<CounterRules>
+					<Rule>
+						<Relation>leq</Relation>
+						<Value>40</Value>
+						<RuleMessage>Time is muscle: a large part of the threatened myocardium has been lost.</RuleMessage>
+					</Rule>
+				</CounterRules>
+			</Counter>
+			<Counter id="c-cost" isVisible="false">
+				<CounterLabel>Cost of investigations</CounterLabel>
+				<CounterUnitsPrefix>$</CounterUnitsPrefix>
+				<CounterInitValue>0</CounterInitValue>
+			</Counter>
+		</Counters>
+		<Timer isVisible="true">
+			<TimerDeltaSeconds>1800</TimerDeltaSeconds>
+			<TimerDirection>down</TimerDirection>
+			<TimerRules>
+				<Rule>
+					<Relation>leq</Relation>
+					<Value>0</Value>
+					<RuleRedirect>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-discharge']</RuleRedirect>
+					<RuleMessage>Thirty minutes have passed without a treatment decision.</RuleMessage>
+				</Rule>
+			</TimerRules>
+		</Timer>
+	</Properties>
+	<ActivityNodes>
+		<NodeSection id="s-assessment" label="Chest pain in a 58-year-old man">
+			<ActivityNode id="n-start" label="Presentation">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-intro']</Content>
+			</ActivityNode>
+			<ActivityNode id="n-history" label="Take a history">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-history']</Content>
+				<Rules>
+					<CounterActionRule>
+						<CounterOperator>-</CounterOperator>
+						<CounterRuleValue>5</CounterRuleValue>
+						<CounterPath>/ActivityModel/Properties/Counters/Counter[@id='c-myocardium']</CounterPath>
+					</CounterActionRule>
+					<NavigateGlobal>on</NavigateGlobal>
+				</Rules>
+			</ActivityNode>
+			<ActivityNode id="n-exam" label="Examine the patient">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-exam']</Content>
+				<Rules>
+					<CounterActionRule>
+						<CounterOperator>-</CounterOperator>
+						<CounterRuleValue>5</CounterRuleValue>
+						<CounterPath>/ActivityModel/Properties/Counters/Counter[@id='c-myocardium']</CounterPath>
+					</CounterActionRule>
+					<NavigateGlobal>on</NavigateGlobal>
+				</Rules>
+			</ActivityNode>
+			<ActivityNode id="n-tests" label="Order investigations">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-tests']</Content>
+				<Rules>
+					<CounterActionRule>
+						<CounterOperator>+</CounterOperator>
+						<CounterRuleValue>180</CounterRuleValue>
+						<CounterPath>/ActivityModel/Properties/Counters/Counter[@id='c-cost']</CounterPath>
+					</CounterActionRule>
+				</Rules>
+				<Services>
+					<Timer isVisible="true">
+						<TimerDeltaSeconds>600</TimerDeltaSeconds>
+						<TimerDirection>down</TimerDirection>
+						<TimerRules>
+							<Rule>
+								<Relation>leq</Relation>
+								<Value>0</Value>
+								<RuleMessage>An ECG should be recorded within ten minutes of arrival.</RuleMessage>
+							</Rule>
+						</TimerRules>
+					</Timer>
+				</Services>
+			</ActivityNode>
+		</NodeSection>
+		<NodeSection id="s-management" label="Diagnosis and management">
+			<ActivityNode id="n-ddx" label="Differential diagnosis">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-ddx']</Content>
+				<Rules>
+					<ConditionalRule>
+						<Operator>
+							<And>
+								<Operand>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-tests']</Operand>
+								<Operand>/VirtualPatientData/DiagnosticTest[@id='t1']</Operand>
+							</And>
+						</Operator>
+						<RuleRedirect>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-tests']</RuleRedirect>
+						<RuleMessage>Record an ECG before you commit to a diagnosis.</RuleMessage>
+					</ConditionalRule>
+				</Rules>
+			</ActivityNode>
+			<ActivityNode id="n-management" label="Decide on management">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-management']</Content>
+			</ActivityNode>
+			<ActivityNode id="n-pci" label="Primary PCI">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-pci']</Content>
+			</ActivityNode>
+			<ActivityNode id="n-discharge" label="Discharged home">
+				<Content>/DataAvailabilityModel/DAMNode[@id='dam-discharge']</Content>
+				<Rules>
+					<CounterActionRule>
+						<CounterOperator>=</CounterOperator>
+						<CounterRuleValue>0</CounterRuleValue>
+						<CounterPath>/ActivityModel/Properties/Counters/Counter[@id='c-myocardium']</CounterPath>
+					</CounterActionRule>
+				</Rules>
+			</ActivityNode>
+		</NodeSection>
+	</ActivityNodes>
+	<Links>
+		<Link label="Take a history">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-start']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-history']</ActivityNodeB>
+		</Link>
+		<Link label="Order an ECG and blood tests now">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-start']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-tests']</ActivityNodeB>
+		</Link>
+		<Link label="Examine the patient">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-history']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-exam']</ActivityNodeB>
+		</Link>
+		<Link label="Order investigations">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-exam']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-tests']</ActivityNodeB>
+		</Link>
+		<Link label="Consider the diagnosis">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-tests']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-ddx']</ActivityNodeB>
+		</Link>
+		<Link label="Decide on management">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-ddx']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-management']</ActivityNodeB>
+		</Link>
+		<Link label="Activate the catheterization laboratory">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-management']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-pci']</ActivityNodeB>
+			<CounterActionRule>
+				<CounterOperator>+</CounterOperator>
+				<CounterRuleValue>2400</CounterRuleValue>
+				<CounterPath>/ActivityModel/Properties/Counters/Counter[@id='c-cost']</CounterPath>
+			</CounterActionRule>
+		</Link>
+		<Link label="Discharge with antacids">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-management']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-discharge']</ActivityNodeB>
+		</Link>
+		<Link label="Start the case again">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-discharge']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n-start']</ActivityNodeB>
+		</Link>
+	</Links>
+</ActivityModel>

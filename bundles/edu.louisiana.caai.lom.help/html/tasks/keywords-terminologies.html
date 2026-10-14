@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Keywords and Terminologies</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Keywords and Terminologies</h1>
+
+<p class="lead">Keywords coded with a clinical terminology make records easier to find and to link with other
+health sciences content. Hermes 2 includes MeSH, ICD-10-CM and several educational taxonomies and searches them
+offline.</p>
+
+<p class="note">The keyword and terminology tools described here (<span class="ui">Add MeSH Keywords</span>,
+<span class="ui">Look Up…</span> and the taxon path lookup) work in Healthcare LOM records. Documents of the other
+MedBiquitous standards don't offer them.</p>
+
+<h2>How coded keywords are stored</h2>
+<p>A keyword is multilingual text with two optional MedBiquitous attributes: <code>hx:source</code>, the
+terminology, and <code>hx:id</code>, the code in it. For example:</p>
+<pre><code>&lt;keyword hx:source="MeSH" hx:id="D018805"&gt;
+  &lt;string language="en-US"&gt;Sepsis&lt;/string&gt;
+&lt;/keyword&gt;</code></pre>
+<p>Hermes 2 writes <code>MeSH</code> or <code>ICD-10-CM</code> as the source. You can also type other sources by
+hand, for example SNOMED CT or UMLS, which are not included because they require a license of each user.</p>
+
+<h2>Add MeSH keywords</h2>
+<ol class="steps">
+<li>With a document open, click <span class="ui">Add MeSH Keywords…</span> on the editor tool bar or choose it
+from the <span class="ui">Document</span> menu.</li>
+<li>In the <span class="ui">Add MeSH Keywords</span> dialog, type at least two characters: a name such as
+<em>myocardial infarction</em>, or a descriptor ID such as <code>D009203</code>.</li>
+<li>Select one or more descriptors (hold <kbd>Ctrl</kbd> or <kbd>Shift</kbd> to select several). The details
+pane shows the scope note, tree numbers, entry terms and see-also references. Descriptors that are already
+keywords of the document are marked.</li>
+<li>Click <span class="ui">Add Keywords</span>, or double-click a descriptor to add it right away.</li>
+</ol>
+<p>The keywords are added to <span class="ui">General &gt; Keywords</span> with <code>hx:source="MeSH"</code> and
+the descriptor ID.</p>
+
+<h2>Add MeSH or ICD-10-CM keywords from a keyword list</h2>
+<ol class="steps">
+<li>On the General page (or in a classification), click <span class="ui">Look Up…</span> on the tool bar of the
+<span class="ui">Keywords</span> list.</li>
+<li>In the <span class="ui">Add Coded Keywords</span> dialog, choose the <span class="ui">Terminology</span>
+(MeSH or ICD-10-CM).</li>
+<li>Type in <span class="ui">Search</span> (names, synonyms or codes, for example <em>sepsis</em> or
+<code>A41.9</code>), or browse the hierarchy. The details show the hierarchy, definition, synonyms and entry
+terms, tree numbers (MeSH) and related concepts.</li>
+<li>Select concepts and click <span class="ui">Add</span>. Concepts that are already keywords with the same source
+and code are skipped.</li>
+</ol>
+
+<h2>Fill a classification taxon path</h2>
+<p>Classifications record, for example, the competencies or learning outcomes a resource addresses as a path in
+a taxonomy.</p>
+<ol class="steps">
+<li>On the Classification page, add a classification and choose its <span class="ui">Purpose</span> (for example
+<em>competency</em>).</li>
+<li>Add a taxon path and click <span class="ui">Look up in MeSH, ICD-10-CM, ACGME, Bloom's taxonomy or AAMC
+Curriculum Inventory…</span>.</li>
+<li>In the <span class="ui">Look Up Taxon Path</span> dialog, choose the terminology, find the concept and click
+<span class="ui">Use</span>.</li>
+</ol>
+<p>The taxon path's <span class="ui">Source</span> is set to the terminology (for example “ACGME Core
+Competencies”) and its <span class="ui">Taxa</span> to the concept's path in the hierarchy, from general to
+specific, each with ID and entry. For example, the ACGME competency Medical Knowledge has the ID <code>b</code>,
+as in the specification's examples.</p>
+
+<h2>Checks on coded keywords</h2>
+<p>Validation warns when:</p>
+<ul>
+<li>a keyword with source MeSH has no descriptor ID, or an ID that is not a MeSH descriptor ID (<code>D</code>
+followed by 6 or 9 digits);</li>
+<li>a keyword's code doesn't exist in the included terminology (for example an unknown ICD-10-CM code);</li>
+<li>a taxon ID is not a code of the terminology named as the taxon path's source.</li>
+</ul>
+<p>The <span class="ui">Go to MeSH Keyword</span> quick fix shows the keyword concerned.</p>
+
+<h2>MeSH descriptors newer than the index</h2>
+<p>All lookups use the offline MeSH 2026 index. If you work with descriptor IDs introduced after it, you can let
+Hermes 2 look up unknown IDs with the NLM MeSH service: select <span class="ui">Look up unknown descriptor IDs
+online</span> in <span class="ui">Window &gt; Preferences… &gt; Healthcare LOM &gt; MeSH</span>. This is off by
+default.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/terminologies.html">Offline Terminologies</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#mesh-keywords">HLOM Guide: MeSH keywords</a></li>
+<li><a href="edit-forms.html">Editing with the Form Pages</a></li>
+<li><a href="preferences.html">Setting Preferences</a></li>
+</ul>
+</div>
+</body>
+</html>

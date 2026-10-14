@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM healthcarelom.xsd">
+   <general>
+      <identifier>
+         <catalog>URL</catalog>
+         <entry>http://www.atsdr.cdc.gov/HEC/CSEM/arsenic/index.html</entry>
+      </identifier>
+      <title>
+         <string language="en">Arsenic Toxicity</string>
+      </title>
+      <language>en</language>
+      <description>
+         <string language="en">Provides a general introduction to arsenic toxicity in the environment.</string>
+      </description>
+      <keyword hx:source="MeSH" hx:id="D001151">
+         <string language="en">arsenic</string>
+      </keyword>
+      <keyword hx:source="MeSH" hx:id="D019550">
+         <string language="en">environmental medicine</string>
+      </keyword>
+   </general>
+   <lifeCycle>
+      <version>
+         <string language="en">1.0</string>
+      </version>
+      <status>
+         <source>LOMv1.0</source>
+         <value>final</value>
+      </status>
+      <contribute>
+         <role>
+            <source>LOMv1.0</source>
+            <value>author</value>
+         </role>
+         <entity>BEGIN:VCARD\nFN:John DoeEND:VCARD</entity>
+      </contribute>
+      <contribute>
+         <role>
+            <source>LOMv1.0</source>
+            <value>publisher</value>
+         </role>
+         <entity>BEGIN:VCARD\nFN:Centers for Disease Control and PreventionEND:VCARD</entity>
+         <date>
+            <dateTime>2005-10-30</dateTime>
+            <description>
+               <string language="en">Publication date</string>
+            </description>
+         </date>
+      </contribute>
+   </lifeCycle>
+   <metaMetadata>
+      <identifier>
+         <catalog>URL</catalog>
+         <entry>http://www.cd.gov/metadata/001</entry>
+      </identifier>
+      <contribute>
+         <role>
+            <source>LOMv1.0</source>
+            <value>creator</value>
+         </role>
+         <entity>Centers for Disease Control and Prevention</entity>
+         <date>
+            <dateTime>2005-10-30</dateTime>
+         </date>
+      </contribute>
+      <metadataSchema>LOMv1.0</metadataSchema>
+      <metadataSchema>SCORM_CAM_v1.3</metadataSchema>
+      <metadataSchema>HEALTHCARE_LOMv1</metadataSchema>
+   </metaMetadata>
+   <technical>
+      <format>application/http</format>
+      <location>http://www.atsdr.cdc.gov/HEC/CSEM/arsenic/index.html
+      </location>
+   </technical>
+   <educational>
+      <context>
+         <source>HEALTHCARE_LOMv1</source>
+         <value>continuing professional development</value>
+      </context>
+   </educational>
+   <rights>
+      <cost>
+         <source>LOMv1.0</source>
+         <value>no</value>
+      </cost>
+      <copyrightAndOtherRestrictions>
+         <source>LOMv1.0</source>
+         <value>no</value>
+      </copyrightAndOtherRestrictions>
+   </rights>
+   <classification>
+      <purpose>
+         <source>LOMv1.0</source>
+         <value>educational objective</value>
+      </purpose>
+      <description>
+         <string language="en">Discuss the major exposure route for arsenic</string>
+      </description>
+   </classification>
+   <classification>
+      <purpose>
+         <source>LOMv1.0</source>
+         <value>educational objective</value>
+      </purpose>
+      <description>
+         <string language="en">Describe two potential environmental and occupational sources of arsenic exposure</string>
+      </description>
+   </classification>
+   <classification>
+      <purpose>
+         <source>LOMv1.0</source>
+         <value>educational objective</value>
+      </purpose>
+      <description>
+         <string language="en">Identify evaluation and treatment protocols for persons exposed to arsenic</string>
+      </description>
+   </classification>
+   <classification>
+      <purpose>
+         <source>LOMv1.0</source>
+         <value>competency</value>
+      </purpose>
+      <taxonPath>
+         <source>
+            <string language="en">ACGME Core Competencies</string>
+         </source>
+         <taxon>
+            <id>b</id>
+            <entry>
+               <string language="en">Medical Knowledge</string>
+            </entry>
+         </taxon>
+      </taxonPath>
+   </classification>
+   <hx:healthcareMetadata>
+      <hx:healthcareEducation>
+         <hx:expirationDate>2006-10-30</hx:expirationDate>
+         <hx:creditsAvailable>yes</hx:creditsAvailable>
+         <hx:credits>
+            <hx:accreditingBody>ACCME</hx:accreditingBody>
+            <hx:activityCertification>AMA PRA category 1</hx:activityCertification>
+            <hx:creditType>CME</hx:creditType>
+            <hx:creditUnit>Credit</hx:creditUnit>
+            <hx:accreditedProvider>Centers for Disease Control and Prevention</hx:accreditedProvider>
+            <hx:releaseDate>2005-10-30</hx:releaseDate>
+            <hx:expirationDate>2006-10-30</hx:expirationDate>
+            <hx:numberOfCredits>1.5</hx:numberOfCredits>
+         </hx:credits>
+         <hx:credits>
+            <hx:accreditingBody>ANCC</hx:accreditingBody>
+            <hx:creditType>CNE</hx:creditType>
+            <hx:creditUnit>Contact Hour</hx:creditUnit>
+            <hx:pacing>learner paced</hx:pacing>
+            <hx:accreditedProvider>Centers for Disease Control and Prevention</hx:accreditedProvider>
+            <hx:releaseDate>2005-10-30</hx:releaseDate>
+            <hx:expirationDate>2006-10-30</hx:expirationDate>
+            <hx:numberOfCredits>1.7</hx:numberOfCredits>
+         </hx:credits>
+         <hx:targetAudience>
+            <hx:audienceCategory>professional</hx:audienceCategory>
+            <hx:profession>
+               <string language="en">physician</string>
+            </hx:profession>
+            <hx:profession>
+               <string language="en">registered nurse</string>
+            </hx:profession>
+            <hx:specialty>
+               <string language="en">family practice</string>
+            </hx:specialty>
+            <hx:readingLevel>
+               <string language="en">above grade 12</string>
+            </hx:readingLevel>
+         </hx:targetAudience>
+         <hx:activitySponsorship>direct</hx:activitySponsorship>
+         <hx:participationModality>technology based</hx:participationModality>
+         <hx:activityDelivery>not live</hx:activityDelivery>
+         <hx:activityFormat>
+            <string language="en">course</string>
+         </hx:activityFormat>
+         <hx:commercialSupport>no</hx:commercialSupport>
+         <hx:relevantFinancialRelationship>
+            no
+         </hx:relevantFinancialRelationship>
+         <hx:contact>John Doe, jdoe@cdc.gov</hx:contact>
+      </hx:healthcareEducation>
+   </hx:healthcareMetadata>
+</lom>

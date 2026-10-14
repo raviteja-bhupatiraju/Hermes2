@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editor Pages</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Editor Pages</h1>
+
+<p class="lead">The editor shows the pages of the document's standard. For a Healthcare LOM record it has
+twelve form pages, the Document Tree and the XML and JSON source pages; this reference lists the sections and
+fields of each of them. For the meaning and permitted values of each HLOM element, follow the links to the
+<a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-elements">HLOM Guide</a> or press
+<kbd>Shift</kbd>+<kbd>F1</kbd> in a field. Documents of the other MedBiquitous standards have the pages described
+in <a href="#other-standards">Pages of the other standards</a>.</p>
+
+<h2>Healthcare LOM pages</h2>
+
+<table>
+<tr><th>Navigation group</th><th>Pages</th></tr>
+<tr><td>Overview</td><td><a href="#overview">Overview</a></td></tr>
+<tr><td>Description</td><td><a href="#general">General</a>, <a href="#lifecycle">Life Cycle</a>,
+<a href="#educational">Educational</a>, <a href="#rights">Rights</a>, <a href="#classification">Classification</a>,
+<a href="#relation">Relation</a>, <a href="#annotation">Annotation</a></td></tr>
+<tr><td>Healthcare</td><td><a href="#healthcare-education">Healthcare Education</a>,
+<a href="#healthcare-asset">Healthcare Asset</a></td></tr>
+<tr><td>Record</td><td><a href="#metametadata">Meta-Metadata</a>, <a href="#technical">Technical</a></td></tr>
+<tr><td>Source</td><td><a href="#tree">Document Tree</a>, <a href="#xml">XML</a>, <a href="#json">JSON</a></td></tr>
+</table>
+
+<h2 id="overview">Overview</h2>
+<p>Summary, completeness and validation status of the record. The page is read-only; its links open the page where
+something can be added.</p>
+<figure>
+<img src="../img/01-overview.png" alt="The Overview page">
+<figcaption>The Overview page.</figcaption>
+</figure>
+<table>
+<tr><th>Section</th><th>Contents</th></tr>
+<tr><td>Summary card</td><td>The kind of record (for example “Educational offering · CME 1.5 Credit · Learner
+paced” or “Medical image asset”), title, description, languages and the keywords, with MeSH-coded keywords
+highlighted. <span class="ui">Add a title</span> appears when the title is missing.</td></tr>
+<tr><td>Key facts</td><td>Version &amp; status, Contributors, Published, Resource type, Context, Format; for
+educational offerings also Expires, Target audience, Credits and Location; for assets Image. Facts that are
+<span class="ui">Not specified</span> link to their page.</td></tr>
+<tr><td>Completeness</td><td>A score of the recommended Healthcare LOM elements (based on the HLOM specification)
+rated Excellent (90 or more), Good (70 or more), Fair (45 or more) or Needs work, with a progress bar per category
+and the missing elements in its tooltip. Categories that don't apply to the record are marked
+<span class="ui">Not applicable</span>.</td></tr>
+<tr><td>Validation</td><td>The number of errors, warnings and infos and the first problems (click one to go to
+it), or “Conforms to the Healthcare LOM v1 schemas and rules”. <span class="ui">Show problems</span> opens the
+Validation view.</td></tr>
+<tr><td>Next steps</td><td>The most valuable additions to this record, each linking to its page.</td></tr>
+</table>
+
+<h2 id="general">General (LOM category 1)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Title and Description</td><td>Title (multilingual), Description (list), Keywords (list with
+<span class="ui">Look Up…</span>), Coverage (list)</td></tr>
+<tr><td>Identification</td><td>Identifiers (master/detail): Catalog, Entry</td></tr>
+<tr><td>Characteristics</td><td>Languages, Structure, Aggregation level</td></tr>
+</table>
+<figure>
+<img src="../img/02-general.png" alt="The General page">
+<figcaption>The General page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-general">General</a>.</p>
+
+<h2 id="lifecycle">Life Cycle (LOM category 2)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>State</td><td>Version, Status</td></tr>
+<tr><td>Contributors</td><td>Contributions (master/detail): Role, Entities (vCards; <span class="ui">Add
+vCard…</span>), Date, Date description</td></tr>
+</table>
+<p>Use the publisher's contribution date for the release date and a reviewer's date for the review date.
+Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-lifeCycle">Life Cycle</a>.</p>
+
+<figure>
+<img src="../img/03-life-cycle.png" alt="The Life Cycle page">
+<figcaption>The Life Cycle page.</figcaption>
+</figure>
+<h2 id="educational">Educational (LOM category 5)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Educational Uses</td><td>One entry per distinct intended use (master/detail): Interactivity type, Learning
+resource types (check boxes), Interactivity level, Semantic density, Intended end user roles (check boxes), Contexts
+(check boxes), Typical age range, Difficulty, Typical learning time (ISO 8601, e.g. <code>PT45M</code>),
+Descriptions, Languages</td></tr>
+</table>
+<figure>
+<img src="../img/04-educational.png" alt="The Educational page">
+<figcaption>The Educational page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-educational">Educational</a>.</p>
+
+<h2 id="rights">Rights (LOM category 6)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Conditions of Use</td><td>Cost, Copyright and other restrictions</td></tr>
+<tr><td>Description</td><td>Description (comments on the conditions of use)</td></tr>
+</table>
+<figure>
+<img src="../img/05-rights.png" alt="The Rights page">
+<figcaption>The Rights page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-rights">Rights</a>.</p>
+
+<h2 id="classification">Classification (LOM category 9)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Classifications</td><td>One entry per classification purpose (master/detail): Purpose; Taxon paths, each
+with Source and <span class="ui">Look up in MeSH, ICD-10-CM, ACGME, Bloom's taxonomy or AAMC Curriculum
+Inventory…</span>, and Taxa (general to specific) with ID and Entry; Description; Keywords</td></tr>
+</table>
+<figure>
+<img src="../img/06-classification.png" alt="The Classification page">
+<figcaption>The Classification page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-classification">Classification</a>.</p>
+
+<h2 id="relation">Relation (LOM category 7)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Relations</td><td>Relations (master/detail): Kind; Target Resource with identifiers (Catalog, Entry) and
+Description</td></tr>
+</table>
+<figure>
+<img src="../img/07-relation.png" alt="The Relation page">
+<figcaption>The Relation page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-relation">Relation</a>.</p>
+
+<h2 id="annotation">Annotation (LOM category 8)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Annotations</td><td>Annotations (master/detail): Entity (vCard text; <span class="ui">Compose
+vCard…</span>), Date (<code>YYYY-MM-DD</code>), Description</td></tr>
+</table>
+<figure>
+<img src="../img/08-annotation.png" alt="The Annotation page">
+<figcaption>The Annotation page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-annotation">Annotation</a>.</p>
+
+<h2 id="healthcare-education">Healthcare Education</h2>
+<p>The MedBiquitous extension for educational offerings (<code>healthcareMetadata/healthcareEducation</code>).</p>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Educational Offering</td><td>Expiration date, Contact, Activity sponsorship, Participation modality,
+Activity delivery, Activity format</td></tr>
+<tr><td>Schedule</td><td>Start date/time, End date/time (for live activities)</td></tr>
+<tr><td>Target Audience</td><td>Audience categories, Professions, Specialties, Reading levels</td></tr>
+<tr><td>Disclosures</td><td>Off-label use, Off-label description, Commercial support, Acknowledgement, Relevant
+financial relationship, Disclosures</td></tr>
+<tr><td>Credits</td><td>Credits available; credit entries, one per type of credit (master/detail): Accrediting body,
+Activity certification, Credit type, Credit unit, Number of credits, Pacing, Accredited provider, Non-accredited
+providers, Release date, Expiration date</td></tr>
+<tr><td>Activity Location</td><td>Room, Building, Organizations, Street address lines, City, State/province, Postal
+code, Region, District, Country name, Country code, Address category, Restrictions. The address schema requires a
+country (name and/or ISO 3166 code) when a location is given.</td></tr>
+</table>
+<figure>
+<img src="../img/09-healthcare-education.png" alt="The Healthcare Education page">
+<figcaption>The Healthcare Education page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#sec-healthcareEducation">healthcareEducation</a>,
+<a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#sec-credits">credits</a>,
+<a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-acronyms">credit acronyms</a>.</p>
+
+<h2 id="healthcare-asset">Healthcare Asset</h2>
+<p>The MedBiquitous extension for images and other assets (<code>healthcareMetadata/healthcareAsset</code>).</p>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Subject</td><td>Clinical history, Specimen type</td></tr>
+<tr><td>Image</td><td>Medical image type, Annotated, Orientation, Magnification (a whole number, e.g. 100), File
+width, File height (in pixels)</td></tr>
+</table>
+<figure>
+<img src="../img/10-healthcare-asset.png" alt="The Healthcare Asset page">
+<figcaption>The Healthcare Asset page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#sec-healthcareAsset">healthcareAsset</a>.</p>
+
+<h2 id="metametadata">Meta-Metadata (LOM category 3)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Identification</td><td>Identifiers of the metadata record (master/detail): Catalog, Entry</td></tr>
+<tr><td>Schemas and Language</td><td>Metadata schemas (Healthcare LOM records list <code>LOMv1.0</code> and
+<code>HEALTHCARE_LOMv1</code>, and <code>SCORM_CAM_v1.3</code> if applicable), Language</td></tr>
+<tr><td>Contributors</td><td>Persons and organizations that created or validated the record (master/detail): Role,
+Entities (<span class="ui">Add vCard…</span>), Date, Date description</td></tr>
+</table>
+<figure>
+<img src="../img/11-meta-metadata.png" alt="The Meta-Metadata page">
+<figcaption>The Meta-Metadata page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-metaMetadata">Meta-Metadata</a>.</p>
+
+<h2 id="technical">Technical (LOM category 4)</h2>
+<table>
+<tr><th>Section</th><th>Fields</th></tr>
+<tr><td>Characteristics</td><td>Formats (MIME types), Size (bytes), Locations</td></tr>
+<tr><td>Duration</td><td>Duration (ISO 8601, e.g. <code>PT1H30M</code>), Description</td></tr>
+<tr><td>Requirements</td><td>Requirements (master/detail), each satisfied if any of its Alternatives is: Type, Name,
+Minimum version, Maximum version</td></tr>
+<tr><td>Remarks</td><td>Installation remarks, Other platform requirements</td></tr>
+</table>
+<figure>
+<img src="../img/12-technical.png" alt="The Technical page">
+<figcaption>The Technical page.</figcaption>
+</figure>
+<p>Guide: <a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-technical">Technical</a>.</p>
+
+<h2 id="tree">Document Tree</h2>
+<p>All elements of the document, including custom extension elements. Select an element to edit it in the
+Properties view; the context menu (and the <span class="ui">Document</span> menu) add children and siblings. The
+Outline view shows the same tree.</p>
+
+<figure>
+<img src="../img/13-tree.png" alt="The Document Tree page">
+<figcaption>The Document Tree page.</figcaption>
+</figure>
+<h2 id="xml">XML</h2>
+<p>The XML source with syntax highlighting, content assist, live schema checking, quick fixes, formatting, comment
+toggling, matching-tag highlighting and folding. See <a href="../tasks/source-pages.html">Editing XML and
+JSON</a>.</p>
+
+<figure>
+<img src="../img/14-xml.png" alt="The XML page">
+<figcaption>The XML page.</figcaption>
+</figure>
+<h2 id="json">JSON</h2>
+<p>The document in the JSON form of the MedBiquitous Healthcare LOM JSON Schema, with highlighting, content assist,
+live syntax checking and formatting. See <a href="json-format.html">The JSON Format</a>. Healthcare LOM only.</p>
+
+<h2 id="other-standards">Pages of the other standards</h2>
+<p>Documents of Curriculum Inventory, Competency Framework, Competency Object, Performance Framework, Activity
+Report, Medical Education Metrics, MEMS Survey Items, Healthcare Professional Profile and the Virtual Patient
+standards have these pages:</p>
+<table>
+<tr><th>Page</th><th>Contents</th></tr>
+<tr><td>Overview</td><td>The standard and version, the title and description of the document and a link to the
+standard on medbiq.org; <span class="ui">Contents</span>: the parts of the root element with their counts (or
+“The document has no content yet.”); <span class="ui">Validation</span>: the numbers of errors, warnings and infos
+and the first problems (click one to go to it). Read-only.</td></tr>
+<tr><td>Form pages</td><td>Defined per standard and grouped in the navigation sidebar. The fields are rendered from
+the standard's schemas: text, drop-downs for enumerations, date pickers, lists and master/detail blocks for
+repeated elements, embedded Healthcare LOM descriptions, and hints for formatted text (XHTML) that is edited on
+the XML page. See <a href="../tasks/edit-forms.html#other-standards">Form pages of the other standards</a> and the
+topic of each standard under <a href="../standards/index.html">The MedBiquitous Standards</a>.</td></tr>
+<tr><td>Document Tree</td><td>All elements of the document, as for Healthcare LOM.</td></tr>
+<tr><td>XML</td><td>The XML source with content assist and hovers from the standard's schemas and live schema
+checking. No quick fixes.</td></tr>
+</table>
+<p>There is no JSON page, and the Healthcare LOM tools (MeSH and terminology lookups, quick fixes, completeness)
+are not available for these documents.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../tasks/edit-forms.html">Editing with the Form Pages</a></li>
+<li><a href="../concepts/hlom.html">Healthcare LOM in Brief</a></li>
+<li><a href="views.html">Views</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html">HLOM Guide</a></li>
+<li><a href="../standards/index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

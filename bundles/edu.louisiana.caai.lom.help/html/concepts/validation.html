@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validation</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Validation</h1>
+
+<p class="lead">Hermes 2 checks every document against the published XML Schemas of its MedBiquitous
+standard, the constraints of its data model and the rules of the standard. Validation works offline: the schemas
+of all supported standards (with the schemas they import) and the terminologies are bundled with the
+application.</p>
+
+<h2>The three checks</h2>
+<p>Each problem names the check that reported it (the <span class="ui">Check</span> column of the Validation
+view):</p>
+<table>
+<tr><th>Check</th><th>What it verifies</th></tr>
+<tr><td class="nowrap">XML Schema</td><td>The XML form of the document against the bundled XML Schemas of its
+standard: element names and order, required content, enumerations and data types. For Healthcare LOM these are
+the HLOM v1 XML Schemas (IEEE LOM binding, healthcare extensions, address schema); JSON documents are checked
+through their XML form. For the other standards, the schemas published at <code>http://ns.medbiq.org/</code> for
+the document's namespace and version.</td></tr>
+<tr><td class="nowrap">Model</td><td>Constraints of the model generated from the schemas: data types, patterns and
+multiplicities. A document without the root element of its standard (for HLOM, <code>&lt;lom&gt;</code>) is
+reported here.</td></tr>
+<tr><td class="nowrap">Rules</td><td>For Healthcare LOM: the specification's Additional Requirements (metadata
+schemas, <code>healthcareMetadata</code>) and consistency checks the schemas can't express: title and description,
+languages of text, credits, dates, disclosures, MeSH descriptor IDs and terminology codes. See
+<a href="../reference/validation-rules.html">Validation Rules and Quick Fixes</a>. For the other standards, the
+rules of that standard that the schemas can't express (for example the reporting period and the references between the parts of
+a Curriculum Inventory) are reported under the same check; they are described in the
+<a href="../standards/index.html">topics of the standards</a>.</td></tr>
+</table>
+
+<h2>Severities</h2>
+<ul>
+<li><span class="sev-error">Error</span>: the document is not a conformant instance of its standard (for
+example, not a conformant Healthcare LOM instance).</li>
+<li><span class="sev-warning">Warning</span>: probably a mistake, for example credits marked as available but
+not described.</li>
+<li><span class="sev-info">Info</span>: a best practice, for example a missing description. Infos can be hidden
+with the preference <span class="ui">Show informational hints (best practices)</span>.</li>
+</ul>
+
+<h2>When documents are validated</h2>
+<ul>
+<li><strong>While you edit</strong>: the active document is validated in the background after each change
+(by default 600 milliseconds after the last change; see
+<a href="../tasks/preferences.html">Setting Preferences</a>).</li>
+<li><strong>On demand</strong>: the <span class="ui">Validate</span> button of the main tool bar and
+<span class="ui">Validate Now</span> in the Validation view.</li>
+<li><strong>In projects</strong>: every project document is validated in the background whenever it changes,
+also outside the application.</li>
+<li><strong>Outside Hermes 2</strong>: with the <code>hermes validate</code> command and, in other editors, with
+the Hermes language server (see below).</li>
+</ul>
+
+<h2 id="one-check">One check everywhere</h2>
+<p>The editor, the background validation of projects (Problems view), the <code>hermes</code> command line tool and
+the language server all run the same check, for documents of every standard. A document therefore has the same
+problems wherever it is checked, and each problem is reported at its line and column in the file as written (for
+HLOM JSON documents, at the JSON line).</p>
+<ul>
+<li><strong>Command line</strong>: <code>hermes validate &lt;file|folder&gt;…</code> checks documents and reports
+their problems as text, JSON or SARIF (<code>--format</code>); <code>--fail-on error|warning|never</code> sets
+when the exit code is 1, for use in scripts and continuous integration. <code>hermes info</code> shows the type
+of each document (standard and version), its title and its problem counts, and <code>hermes search</code> finds
+text in the field values of documents of any standard. The tool is in the <code>cli</code> folder of the
+installation (or the separate <code>hermes-cli</code> archive).</li>
+<li><strong>Language server</strong>: <code>hermes lsp</code> validates MedBiquitous documents while they are
+edited in any editor with Language Server Protocol support and leaves other XML and JSON files alone.</li>
+</ul>
+<p class="note">The commands that change documents, <code>hermes convert</code> (to JSON) and <code>hermes
+fix</code> (automatic quick fixes), apply to Healthcare LOM records, the only documents with a JSON form and quick
+fixes.</p>
+
+<h2>Where problems are shown</h2>
+<table>
+<tr><th>Place</th><th>Shows</th></tr>
+<tr><td>Validation view</td><td>All problems of the active document, with quick fixes, <span class="ui">Fix
+All</span> and <span class="ui">Go to Element</span>.</td></tr>
+<tr><td>Problems view</td><td>The problems of all documents of your projects, as markers; double-click opens the
+document at the field.</td></tr>
+<tr><td>Form pages</td><td>Markers next to the affected fields, and problem badges on the pages in the
+navigation sidebar.</td></tr>
+<tr><td>Overview page</td><td>Error, warning and info counts and the first problems, or a confirmation that the
+document conforms.</td></tr>
+<tr><td>XML and JSON pages</td><td>Squiggles in the text, markers in the rulers and hovers with the
+message.</td></tr>
+<tr><td>Projects view and Library</td><td>A validation state per document.</td></tr>
+</table>
+
+<h2>Quick fixes (Healthcare LOM)</h2>
+<p>Many problems of Healthcare LOM records can be repaired automatically; documents of the other standards have
+no quick fixes, so their problems are corrected on the form pages, in the tree or on the XML page. A light bulb marks problems with a quick fix; press
+<kbd>Ctrl</kbd>+<kbd>1</kbd> in the Validation view or on the XML page to choose one. Problems that need your
+input offer “Go to” fixes that show the right field. <span class="ui">Fix All</span> applies every automatic fix
+in one undoable step. See <a href="../tasks/validate-fix.html">Validating and Fixing Problems</a>.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../tasks/validate-fix.html">Validating and Fixing Problems</a></li>
+<li><a href="../reference/validation-rules.html">Validation Rules and Quick Fixes</a></li>
+<li><a href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-conformance">HLOM Guide: Conformance</a></li>
+<li><a href="hlom.html">Healthcare LOM in Brief</a></li>
+<li><a href="../standards/index.html">The MedBiquitous Standards</a></li>
+</ul>
+</div>
+</body>
+</html>

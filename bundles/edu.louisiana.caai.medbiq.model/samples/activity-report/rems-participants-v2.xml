@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Activity Report 2.0): learner demographics of an Opioid Analgesic REMS
+     compliant activity for a reporting period, as described in the specification's Opioid REMS example (learners are
+     identified only by local identifiers). Learners and organizations are fictional; the regulation URI is the
+     FDA's public Opioid Analgesic REMS page. -->
+<ActivityReports xmlns="http://ns.medbiq.org/activityreport/v2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/activityreport/v2/ http://ns.medbiq.org/activityreport/v2/activityreport.xsd"
+	arid="arid:bayoumedical.edu:REMS-2026Q2">
+	<DateTimeCreated>2026-07-15T10:00:00-05:00</DateTimeCreated>
+	<ReportingStartDate>2026-04-01</ReportingStartDate>
+	<ReportingEndDate>2026-06-30</ReportingEndDate>
+	<ActivityReport arid="arid:bayoumedical.edu:REMS-2026Q2-PM101">
+		<ReportingOrganization>Bayou Medical College, Continuing Education</ReportingOrganization>
+		<Participants>
+			<Participant>
+				<LocalIdentifier domain="idd:bayoumedical.edu:ce">L-204611</LocalIdentifier>
+				<StateOfPrimaryPractice>Louisiana</StateOfPrimaryPractice>
+				<DEARegistration>Individual</DEARegistration>
+				<Profession>Physician</Profession>
+				<PracticeArea>Family Medicine</PracticeArea>
+				<SurgicalProcedures>false</SurgicalProcedures>
+				<TimeInPractice>11-15 years</TimeInPractice>
+			</Participant>
+			<Participant>
+				<LocalIdentifier domain="idd:bayoumedical.edu:ce">L-204702</LocalIdentifier>
+				<StateOfPrimaryPractice>Mississippi</StateOfPrimaryPractice>
+				<DEARegistration>Individual</DEARegistration>
+				<Profession>Advanced practice nurse</Profession>
+				<PracticeArea>Pain</PracticeArea>
+				<SurgicalProcedures>false</SurgicalProcedures>
+				<TimeInPractice>6-10 years</TimeInPractice>
+			</Participant>
+			<Participant>
+				<LocalIdentifier domain="idd:bayoumedical.edu:ce">L-205118</LocalIdentifier>
+				<StateOfPrimaryPractice>Louisiana</StateOfPrimaryPractice>
+				<DEARegistration>Institutional</DEARegistration>
+				<Profession>Physician</Profession>
+				<PracticeArea>Orthopedic surgery</PracticeArea>
+				<SurgicalProcedures>true</SurgicalProcedures>
+				<TimeInPractice>0-5 years post training</TimeInPractice>
+			</Participant>
+			<Participant>
+				<LocalIdentifier domain="idd:bayoumedical.edu:ce">L-205390</LocalIdentifier>
+				<StateOfPrimaryPractice>Texas</StateOfPrimaryPractice>
+				<DEARegistration>None</DEARegistration>
+				<Profession>Pharmacist</Profession>
+				<PracticeArea>N/A</PracticeArea>
+				<TimeInPractice>21+ years</TimeInPractice>
+			</Participant>
+		</Participants>
+		<Activity activityID="BMC-PM101">
+			<ProviderOrganization>Bayou Medical College</ProviderOrganization>
+			<ActivityName>Pain Management and Safe Opioid Prescribing</ActivityName>
+			<ActivityInstanceID domain="idd:bayoumedical.edu:instance">PM101-2026-ONLINE</ActivityInstanceID>
+			<Status>Completed</Status>
+			<LaunchDetails>
+				<LaunchAction>Noaction</LaunchAction>
+				<ActivityLocation>https://ce.bayoumedical.edu/activities/PM101</ActivityLocation>
+			</LaunchDetails>
+			<CommercialSupporter>Opioid Analgesic REMS Program Companies</CommercialSupporter>
+			<RegulatoryInformation>
+				<CompliantToRegulation label="Opioid Analgesic REMS">https://www.fda.gov/drugs/information-drug-class/opioid-analgesic-risk-evaluation-and-mitigation-strategy-rems</CompliantToRegulation>
+				<RegulatoryClassification>
+					<ClassificationRelation>Instruction Addresses</ClassificationRelation>
+					<Regulation label="Opioid Analgesic REMS">https://www.fda.gov/drugs/information-drug-class/opioid-analgesic-risk-evaluation-and-mitigation-strategy-rems</Regulation>
+					<ComponentID>II</ComponentID>
+					<ComponentTitle>Creating the Pain Treatment Plan</ComponentTitle>
+				</RegulatoryClassification>
+				<RegulatoryClassification>
+					<ClassificationRelation>Assessment Addresses</ClassificationRelation>
+					<Regulation label="Opioid Analgesic REMS">https://www.fda.gov/drugs/information-drug-class/opioid-analgesic-risk-evaluation-and-mitigation-strategy-rems</Regulation>
+					<ComponentID>IV</ComponentID>
+					<ComponentTitle>Managing Patients Taking Opioid Analgesics</ComponentTitle>
+				</RegulatoryClassification>
+			</RegulatoryInformation>
+			<Module>
+				<ModuleName moduleID="BMC-PM101">Pain Management and Safe Opioid Prescribing</ModuleName>
+				<Results>Pass</Results>
+			</Module>
+			<Results>Pass</Results>
+		</Activity>
+	</ActivityReport>
+</ActivityReports>

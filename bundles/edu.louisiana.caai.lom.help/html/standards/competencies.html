@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Quotations from the MedBiquitous Competency Framework, Competency Object and Performance Framework specifications
+     are Copyright (c) 2011-2015 MedBiquitous Consortium, used under the MedBiquitous XML Public License. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Competencies: Competency Framework, Competency Object and Performance Framework</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Competencies: Competency Framework, Competency Object and Performance Framework</h1>
+
+<p class="lead">Three MedBiquitous standards describe what learners are expected to be able to do and how well:
+a <b>Competency Object</b> states one expectation (a competency, learning outcome, learning objective or
+professional role), a <b>Competency Framework</b> organizes competency objects and their relationships, and a
+<b>Performance Framework</b> describes levels of performance (such as milestones) for the competencies of a
+framework. All three describe themselves with embedded Healthcare LOM metadata.</p>
+
+<h2 id="types">Document types</h2>
+<table>
+<tr><th>Document type</th><th>Root element</th><th>Namespace</th><th>Specification</th></tr>
+<tr><td>Competency Framework 1.0</td><td><code>CompetencyFramework</code></td>
+<td><code>http://ns.medbiq.org/competencyframework/v1/</code></td><td>MEDBIQ CF.10.1-2012</td></tr>
+<tr><td>Competency Object 1.0</td><td><code>CompetencyObject</code></td>
+<td><code>http://ns.medbiq.org/competencyobject/v1/</code></td><td>Competency Object Specifications (2011)</td></tr>
+<tr><td>Performance Framework 1.0</td><td><code>PerformanceFramework</code></td>
+<td><code>http://ns.medbiq.org/performanceframework/v1/</code></td><td>ANSI/MEDBIQ PF.10.1-2015</td></tr>
+</table>
+<p>The editor recognizes the documents by root element and namespace. The title of a document is the title of its
+Healthcare LOM metadata (<code>lom/general/title</code>); its description is the LOM description or a summary
+(such as “8 included competencies, 3 relations”).</p>
+
+<h2 id="structure">Structure of the documents</h2>
+<h3 id="structure-object">Competency Object</h3>
+<p>A competency object is “an umbrella term used to describe any abstract statement of learning or performance
+expectations, and information related to the statement.” It contains:</p>
+<ul>
+<li><code>lom:lom</code> — the identifier (required, a URI with the catalog <code>URI</code>), the title (required:
+the statement itself), the description (recommended), publisher and copyright.</li>
+<li><code>Status</code> — <code>Active</code> (default) or <code>Retired</code>; <code>Replaces</code> and
+<code>IsReplacedBy</code> — URIs of earlier and later versions.</li>
+<li><code>Category</code> — categories modeled after the Atom category element: a required <code>term</code>, an
+optional <code>scheme</code> URI and a display <code>label</code>.</li>
+<li><code>References/Reference</code> — references to the literature; <code>SupportingInformation</code> — a
+<code>Link</code> or formatted XHTML text.</li>
+</ul>
+<h3 id="structure-framework">Competency Framework</h3>
+<p>A competency framework is “an organized and structured representation of a set of interrelated and purposeful
+competency objects.” It contains:</p>
+<ul>
+<li><code>lom:lom</code> — identifier (a URI), title, description, version, status, publisher, educational context,
+rights and target profession.</li>
+<li><code>EffectiveDate</code>, <code>RetiredDate</code>, <code>Replaces</code>, <code>IsReplacedBy</code> —
+versioning (“whenever a substantive change has been made to a competency framework, a new unique identifier and
+version number should be assigned”).</li>
+<li><code>SupportingInformation</code> — links to or embeds the human readable framework and its introduction.</li>
+<li><code>Includes</code> (one or more) — the <code>Catalog</code> and <code>Entry</code> of every competency of the
+framework: “All competencies included in the framework must be referenced using the Includes element, including
+any competency object or framework referenced in a relations element.”</li>
+<li><code>Relation</code> — <code>Reference1</code> has a broader (<code>skos:broader</code>), narrower
+(<code>skos:narrower</code>) or related (<code>skos:related</code>) concept <code>Reference2</code>. Broader and
+narrower are converse; “Cyclical references are forbidden as are any references that result in a hierarchical
+conflict.”</li>
+</ul>
+<h3 id="structure-performance">Performance Framework</h3>
+<p>A performance framework describes “one or more sets of performance levels to be used in assessing competence or
+performance.” It contains:</p>
+<ul>
+<li><code>lom:lom</code>, the dates and versions and <code>SupportingInformation</code> (an RDF
+<code>Reference</code> or XHTML text), as in a competency framework.</li>
+<li><code>PerformanceScale</code> (one or more) — an <code>id</code> and the scores of the
+<code>LeastCompetent</code> and <code>MostCompetent</code> ends; lower numbers may mean higher competence.</li>
+<li><code>Component</code> (one or more) — an <code>id</code>, titles, abbreviations, <code>Competency</code>
+references (two RDF references: “once to reference a competency object, once to reference the relevant competency
+framework”), authors, reviewers, <code>Threshold</code>s (a minimum acceptable score for a decision such as
+entrustment), <code>AdditionalInformation</code>, and either <code>ComponentReference</code>s to nested components
+or a <code>PerformanceLevelSet</code>.</li>
+<li><code>PerformanceLevelSet</code> — the <code>PerformanceScaleReference</code> and two or more
+<code>PerformanceLevel</code>s, each with a <code>DisplayOrder</code>, a <code>Score</code> (a single value or a
+<code>Range</code>), labels, <code>Indicator</code>s (behavioral markers with an <code>id</code>) and additional
+information.</li>
+</ul>
+
+<h2 id="pages">Editor pages</h2>
+<p>Besides the Overview, the Document Tree, the XML and the JSON pages, the editor has these form pages. Formatted
+text (XHTML) and RDF references are edited on the XML page.</p>
+<table>
+<tr><th>Type</th><th>Page</th><th>Contents</th></tr>
+<tr><td rowspan="5">Competency Framework</td><td id="cf-description">Description</td><td>Title, description,
+keywords, languages, identifiers and contributors; version, life-cycle status, educational context and rights
+(Healthcare LOM).</td></tr>
+<tr><td id="cf-versioning">Dates and Versions</td><td>Effective and retired dates; Replaces and Is replaced by.</td></tr>
+<tr><td id="cf-supporting">Supporting Information</td><td>Links and formatted text.</td></tr>
+<tr><td id="cf-includes">Included Competencies</td><td>Catalog and entry of each included competency.</td></tr>
+<tr><td id="cf-relations">Relations</td><td>Reference 1, relationship (broader, narrower, related) and
+Reference 2.</td></tr>
+<tr><td rowspan="4">Competency Object</td><td id="co-description">Description</td><td>The statement (title),
+description, identifiers and contributors; status and rights (Healthcare LOM).</td></tr>
+<tr><td id="co-status">Status and Versions</td><td>Active or Retired; Replaces and Is replaced by.</td></tr>
+<tr><td id="co-categories">Categories</td><td>Term, scheme and label of each category.</td></tr>
+<tr><td id="co-references">References and Supporting Information</td><td>Literature references; a link or
+formatted text.</td></tr>
+<tr><td rowspan="6">Performance Framework</td><td id="pf-description">Description</td><td>As for a competency
+framework.</td></tr>
+<tr><td id="pf-versioning">Dates and Versions</td><td>Effective and retired dates; Replaces and Is replaced by.</td></tr>
+<tr><td id="pf-supporting">Supporting Information</td><td>References (format) and formatted text.</td></tr>
+<tr><td id="pf-scales">Performance Scales</td><td>Id, least and most competent score of each scale.</td></tr>
+<tr><td id="pf-components">Components</td><td>Id, titles, abbreviations, authors, reviewers, nested components,
+thresholds and additional information.</td></tr>
+<tr><td id="pf-levels">Performance Levels</td><td>For each component: the scale, and for each level its display
+order, score (single value or range), labels, indicators and additional information.</td></tr>
+</table>
+
+<h2 id="rules">Rules Hermes checks</h2>
+<p>Besides the XML Schemas, Hermes checks these rules of the specifications (and of the meaning of the data). They
+appear in the Validation view as <i>Rules</i> problems.</p>
+<table>
+<tr><th>Rule</th><th>Types</th><th>Severity</th></tr>
+<tr><td>The LOM title is present (“Defines the title … Required”).</td><td>all</td><td>error</td></tr>
+<tr><td>An identifier with the catalog <code>URI</code> is present and its entry is an absolute URI (“identifiers
+must be in the form of a URI”).</td><td>all</td><td>error</td></tr>
+<tr><td>A description, a publisher (role publisher) and a life-cycle status are recommended.</td><td>all
+(publisher and status: frameworks)</td><td>info</td></tr>
+<tr><td>The effective date is not after the retired date.</td><td>frameworks</td><td>error</td></tr>
+<tr><td>A retired framework names its replacement (IsReplacedBy); a replaced framework gives its retired date.</td>
+<td>frameworks</td><td>warning (retired) / info (retiring, replaced)</td></tr>
+<tr><td>Replaces and IsReplacedBy are absolute URIs, not the document's own identifier and not the same URI in
+both.</td><td>all</td><td>warning / error</td></tr>
+<tr><td>Supporting information links are absolute URIs (“Link must contain a valid URI”).</td><td>framework,
+object</td><td>warning</td></tr>
+<tr><td>A competency is included only once; included competencies with the catalog URI have URI entries.</td>
+<td>framework</td><td>warning / error</td></tr>
+<tr><td>Both references of each relation are included competencies.</td><td>framework</td><td>error</td></tr>
+<tr><td>No relation relates a competency to itself, and broader/narrower relations form no cycle.</td>
+<td>framework</td><td>error</td></tr>
+<tr><td>A relation is not stated twice (a broader b equals b narrower a).</td><td>framework</td><td>warning</td></tr>
+<tr><td>The Status is stated; a Retired object names its replacement; an Active object is not replaced.</td>
+<td>object</td><td>warning</td></tr>
+<tr><td>Category terms are not empty, schemes are URIs, categories are not repeated.</td><td>object</td>
+<td>error / warning</td></tr>
+<tr><td>A performance scale has two different ends; unused scales are reported.</td><td>performance</td>
+<td>error / info</td></tr>
+<tr><td>ComponentReference names another component (not itself, not a scale or indicator), without cycles.</td>
+<td>performance</td><td>error</td></tr>
+<tr><td>PerformanceScaleReference names a performance scale.</td><td>performance</td><td>error</td></tr>
+<tr><td>Display orders are unique within a level set; scores lie on the scale.</td><td>performance</td>
+<td>error</td></tr>
+<tr><td>Scores follow the display order consistently (rising or falling), levels don't share or overlap scores,
+ranges run from the least to the most competent end.</td><td>performance</td><td>warning</td></tr>
+<tr><td>Threshold scores lie on the component's scale.</td><td>performance</td><td>warning</td></tr>
+<tr><td>Competency references name a resource (rdf:about), two different ones, typed as a competency object and a
+competency framework when typed.</td><td>performance</td><td>warning</td></tr>
+<tr><td>Additional information positions are unique per label; labels are the recommended values (assessment
+method, background, example, note, reference, resource).</td><td>performance</td><td>warning / info</td></tr>
+</table>
+<p>Hermes cannot check that the referenced competency objects and frameworks exist: they are other documents,
+usually on the web.</p>
+
+<h2 id="samples">Samples and templates</h2>
+<p>New documents start from a template with the title, the language, a <code>urn:uuid:</code> identifier and the
+date filled in: a framework with two included competencies and one relation, a competency object with its status
+and a category, and a performance framework with a 1–5 scale and one component with two levels.</p>
+<p>The samples (folder <code>samples/competencies</code> of the plug-in <code>edu.louisiana.caai.medbiq.model</code>)
+are fictional, except the sample of the MedBiquitous implementation toolkit:</p>
+<ul>
+<li><code>core-competencies-framework.xml</code> — six core competency domains (modeled on the ACGME domains) with
+patient care sub-competencies and relations.</li>
+<li><code>competency-patient-care.xml</code>, <code>competency-professionalism.xml</code>,
+<code>competency-pc1-history.xml</code> — competency objects of that framework.</li>
+<li><code>milestones-performance-framework.xml</code> — milestones-like levels, nested components, thresholds,
+indicators and score ranges.</li>
+<li><code>sample_framework.xml</code> — “The Competent Physician”, the sample of the MedBiquitous Competency
+Framework toolkit (© 2012 MedBiquitous Consortium).</li>
+</ul>
+
+<h2 id="links">Specifications</h2>
+<ul>
+<li><a href="https://www.medbiq.org/standards/competency-framework">Competency Framework</a></li>
+<li><a href="https://www.medbiq.org/standards/competency-object">Competency Object</a></li>
+<li><a href="https://www.medbiq.org/standards/performance-framework">Performance Framework</a></li>
+<li>Schemas: <code>http://ns.medbiq.org/competencyframework/v1/competencyframework.xsd</code>,
+<code>http://ns.medbiq.org/competencyobject/v1/competencyobject.xsd</code>,
+<code>http://ns.medbiq.org/performanceframework/v1/performanceframework.xsd</code></li>
+</ul>
+</body>
+</html>

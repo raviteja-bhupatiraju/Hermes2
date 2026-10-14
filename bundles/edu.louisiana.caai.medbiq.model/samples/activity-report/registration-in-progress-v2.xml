@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Activity Report 2.0): a nurse registered for an online CNE course and
+     has not completed it yet; the launch details let the receiving portfolio send her back to the activity.
+     People and organizations are fictional. -->
+<ActivityReports xmlns="http://ns.medbiq.org/activityreport/v2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/"
+	xmlns:m="http://ns.medbiq.org/member/v2/" xmlns:n="http://ns.medbiq.org/name/v2/"
+	xsi:schemaLocation="http://ns.medbiq.org/activityreport/v2/ http://ns.medbiq.org/activityreport/v2/activityreport.xsd"
+	arid="arid:pelicannurses.org:2026-09-W38">
+	<DateTimeCreated>2026-09-21T06:00:00-05:00</DateTimeCreated>
+	<ReportingStartDate>2026-09-14</ReportingStartDate>
+	<ReportingEndDate>2026-09-20</ReportingEndDate>
+	<ActivityReport arid="arid:pelicannurses.org:2026-09-W38-0412">
+		<ReportingOrganization>Pelican State Nurses Association</ReportingOrganization>
+		<Member>
+			<m:UniqueID domain="idd:pelicannurses.org:member">PSNA-77310</m:UniqueID>
+			<m:Name>
+				<n:FormattedName>Renee L. Hebert, RN</n:FormattedName>
+				<n:GivenName>Renee</n:GivenName>
+				<n:FamilyName>Hebert</n:FamilyName>
+				<n:Degree>BSN</n:Degree>
+			</m:Name>
+		</Member>
+		<Activity activityID="PSNA-SEPSIS-2026">
+			<ProviderOrganization>Pelican State Nurses Association</ProviderOrganization>
+			<ActivityName>Early Recognition of Sepsis in Adult Inpatients</ActivityName>
+			<Status>Registered</Status>
+			<LaunchDetails>
+				<LaunchAction>Activity</LaunchAction>
+				<ActivityLocation>https://learn.pelicannurses.org/launch/sepsis-2026?token=7f3c9a</ActivityLocation>
+				<ReturnLocation>https://portfolio.pelicannurses.org/transcript</ReturnLocation>
+			</LaunchDetails>
+			<Module>
+				<ModuleName moduleID="SEPSIS-1">Screening and Early Warning Scores</ModuleName>
+				<Metadata>
+					<lom:lom>
+						<lom:general>
+							<lom:title>
+								<lom:string language="en">Screening and Early Warning Scores</lom:string>
+							</lom:title>
+							<lom:language>en</lom:language>
+						</lom:general>
+						<hx:healthcareMetadata>
+							<hx:healthcareEducation>
+								<hx:creditsAvailable>yes</hx:creditsAvailable>
+								<hx:credits>
+									<hx:accreditingBody>ANCC</hx:accreditingBody>
+									<hx:activityCertification>ANCC Contact Hours</hx:activityCertification>
+									<hx:creditType>CNE</hx:creditType>
+									<hx:creditUnit>Contact Hour</hx:creditUnit>
+									<hx:pacing>learner paced</hx:pacing>
+									<hx:accreditedProvider>Pelican State Nurses Association</hx:accreditedProvider>
+									<hx:numberOfCredits>1.25</hx:numberOfCredits>
+								</hx:credits>
+							</hx:healthcareEducation>
+						</hx:healthcareMetadata>
+					</lom:lom>
+				</Metadata>
+				<Status>Registered</Status>
+				<StartDateTime>2026-09-16T19:30:00-05:00</StartDateTime>
+				<DueDateTime>2026-12-31T23:59:00-06:00</DueDateTime>
+				<RegisteredDateTime>2026-09-16T19:28:00-05:00</RegisteredDateTime>
+				<TimeEngaged>PT35M</TimeEngaged>
+			</Module>
+			<Module>
+				<ModuleName moduleID="SEPSIS-2">The First Hour: Bundles and Escalation</ModuleName>
+				<Status>Registered</Status>
+				<DueDateTime>2026-12-31T23:59:00-06:00</DueDateTime>
+				<RegisteredDateTime>2026-09-16T19:28:00-05:00</RegisteredDateTime>
+			</Module>
+		</Activity>
+	</ActivityReport>
+</ActivityReports>

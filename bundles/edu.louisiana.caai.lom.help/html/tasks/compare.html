@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comparing Documents</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Comparing Documents</h1>
+
+<p class="lead">The Compare view shows the differences between two documents of the same standard field by
+field. Use it to review your unsaved changes or to compare two versions or two different documents. Healthcare
+LOM records are compared semantically, by category; documents of the other standards are compared element by
+element.</p>
+
+<h2>Review unsaved changes</h2>
+<ol class="steps">
+<li>In the editor of the document, choose <span class="ui">File &gt; Compare &gt; Compare With Saved Version</span>
+(also on the main tool bar).</li>
+<li>The Compare view opens below the editor with the saved file on one side and the editor's current state on the
+other. It updates as you keep editing and after you save.</li>
+</ol>
+
+<h2>Compare the active document with a file</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File &gt; Compare &gt; Compare With File…</span>.</li>
+<li>Select the other document. It must be of the same standard as the active document; documents of
+different standards can't be compared.</li>
+</ol>
+
+<h2>Compare two files</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File &gt; Compare &gt; Compare Two Files…</span>.</li>
+<li>Select two documents in the file dialog (or select one, then choose the second in the next dialog).</li>
+</ol>
+
+<h2>Reading the comparison</h2>
+<ul>
+<li>The header names the <span class="ui">LEFT</span> and <span class="ui">RIGHT</span> side and whether each is a
+file, the saved version or the editor.</li>
+<li>The differences are listed in a table with the columns <span class="ui">Field</span>,
+<span class="ui">Left</span> and <span class="ui">Right</span>; added, removed and changed values are
+highlighted.</li>
+<li><strong>Healthcare LOM</strong>: differences are grouped by category (General, Life Cycle, Healthcare
+Education…). The comparison is semantic: repeated elements are matched by meaning (keywords by MeSH ID, credits by
+credit type, texts by language), so merely reordering elements is not reported as a change.</li>
+<li><strong>Other standards</strong>: the documents are compared field by field by element path, and the
+differences are grouped by the parts of the root element (for example the events, expectations and sequence of a
+Curriculum Inventory).</li>
+<li>Double-click a field to show it in the editor (the document must be open).</li>
+<li>Type in <span class="ui">Filter fields and values</span> to narrow the list.</li>
+</ul>
+
+<h2>Compare view tool bar</h2>
+<table>
+<tr><th>Action</th><th>Purpose</th></tr>
+<tr><td><span class="ui">Show Unchanged Fields</span></td><td>Also list fields that are equal, to review the whole
+document.</td></tr>
+<tr><td><span class="ui">Expand All</span> / <span class="ui">Collapse All</span></td><td>Expand or collapse the
+categories.</td></tr>
+<tr><td><span class="ui">Swap Left and Right</span></td><td>Exchange the sides.</td></tr>
+<tr><td><span class="ui">Refresh (Re-read Files)</span></td><td>Read the files again.</td></tr>
+<tr><td><span class="ui">Copy Differences as Text</span></td><td>Copy the differences to the clipboard, for example
+for a review note.</td></tr>
+</table>
+<p>The view menu also offers the three compare commands.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/views.html#compare">The Compare view</a></li>
+<li><a href="../reference/menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+<li><a href="edit-forms.html">Editing with the Form Pages</a></li>
+</ul>
+</div>
+</body>
+</html>

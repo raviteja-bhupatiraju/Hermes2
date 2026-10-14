@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ICD-10-CM FY2026 (NCHS): chapters, blocks, categories and codes, for the offline lookup.
+       A fragment of the model bundle, versioned by the release of the terminology, so that a new release can be
+       installed as an update without a new version of the application. -->
+  <parent>
+    <groupId>edu.louisiana.caai</groupId>
+    <artifactId>edu.louisiana.caai.lom.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>edu.louisiana.caai.terminology.icd10cm</artifactId>
+  <version>2026.0.0-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
+</project>

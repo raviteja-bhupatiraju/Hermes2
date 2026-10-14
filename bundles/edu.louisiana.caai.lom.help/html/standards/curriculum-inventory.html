@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Quotations from the MedBiquitous Curriculum Inventory Specification: Copyright 2013 MedBiquitous Consortium and
+     2021 Association of American Medical Colleges. All Rights Reserved. http://www.medbiq.org. Used under the
+     MedBiquitous Standards Public License and Terms of Use (https://www.medbiq.org/license). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Curriculum Inventory</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Curriculum Inventory</h1>
+
+<p class="lead">The MedBiquitous Curriculum Inventory standard (ANSI/MEDBIQ CI.10.1-2013) describes a health
+professions curriculum for a reporting period: its events, expectations (competencies and objectives), academic
+levels, sequence and integrating themes. Its objective is "to provide a data structure that allows one to represent a
+health professions curriculum in a standard format", so that curriculum data can be exchanged and aggregated, for
+example in the AAMC Curriculum Inventory of North American medical schools.</p>
+
+<h2>Document types and versions</h2>
+<table>
+<tr><th>Type</th><th>Version</th><th>Namespace</th></tr>
+<tr><td class="nowrap"><code>curriculum-inventory-v1</code></td><td>1.0 (approved standard, 2013)</td>
+<td><code>http://ns.medbiq.org/curriculuminventory/v1/</code></td></tr>
+<tr><td class="nowrap"><code>curriculum-inventory-v10</code></td><td>"v10", the AAMC point release for the 2022
+upload season</td><td><code>http://ns.medbiq.org/curriculuminventory/v10/</code></td></tr>
+</table>
+<p>Both have the root element <code>CurriculumInventory</code>. The point release differs from 1.0 in three places:</p>
+<ul>
+<li>A sequence block names its academic levels with <code>SequenceBlockLevels</code>
+(<code>StartingAcademicLevel</code> and <code>EndingAcademicLevel</code>) instead of a single <code>Level</code>,
+so that a block can span several levels (a longitudinal course).</li>
+<li>The <code>Description</code> of the report is optional.</li>
+<li>An instructional method can give the time spent on it (<code>instructionalMethodDuration</code>, such as
+<code>PT1H30M</code>).</li>
+</ul>
+<p>Version 2.0 of the standard is a working draft and is not supported.</p>
+
+<h2>Structure of a report</h2>
+<table>
+<tr><th>Element</th><th>Content</th></tr>
+<tr><td class="nowrap">Report</td><td><code>ReportID</code>, <code>Institution</code> (the InstitutionInfoType of the
+Healthcare Professional Profile), <code>Program</code>, <code>Title</code>, <code>ReportDate</code>, the reporting
+period (<code>ReportingStartDate</code>, <code>ReportingEndDate</code>), <code>Language</code>,
+<code>Description</code> and <code>SupportingLink</code>.</td></tr>
+<tr><td class="nowrap"><code>Events</code></td><td>The education and assessment events (lectures, labs, clinical
+experiences, examinations…), each with an <code>id</code>, a title, a duration, keywords, competency object
+references, resource types and at least one instructional or assessment method.</td></tr>
+<tr><td class="nowrap"><code>Expectations</code></td><td>Competency objects (competencies, learning objectives,
+learning outcomes; MedBiquitous Competency Object) and competency frameworks that organize them. A competency object
+is identified by its Healthcare LOM identifier (<code>lom:lom/lom:general/lom:identifier/lom:entry</code>).</td></tr>
+<tr><td class="nowrap"><code>AcademicLevels</code></td><td><code>LevelsInProgram</code> and one <code>Level</code>
+per level (years, phases), numbered 1 to 10.</td></tr>
+<tr><td class="nowrap"><code>Sequence</code></td><td>Sequence blocks (years, phases, courses, clerkships). A block has
+timing (dates, a duration or both), academic levels, and either events (<code>SequenceBlockEvent</code>) or nested
+blocks (<code>SequenceBlockReference</code>), or both. Attributes model parallel blocks, electives, selectives and
+tracks.</td></tr>
+<tr><td class="nowrap"><code>Integration</code></td><td>Integration blocks: themes that run through the curriculum,
+with the competency objects, events and sequence blocks that belong to them.</td></tr>
+</table>
+<p>Parts of a report refer to each other with XPath expressions, all in one line:</p>
+<ul>
+<li><code>/CurriculumInventory/Events/Event[@id='E1']</code> (events),</li>
+<li><code>/CurriculumInventory/Sequence/SequenceBlock[@id='Y1']</code> (sequence blocks),</li>
+<li><code>/CurriculumInventory/AcademicLevels/Level[@number='1']</code> (academic levels),</li>
+<li><code>/CurriculumInventory/Expectations/CompetencyObject[lom:lom/lom:general/lom:identifier/lom:entry='X']</code>
+(competency objects).</li>
+</ul>
+
+<h2>Editor pages</h2>
+<p>Besides the overview, tree and XML pages, a Curriculum Inventory document has these form pages (the same for both
+versions; the sequence block fields follow the version):</p>
+<table>
+<tr><th>Page</th><th>What it edits</th></tr>
+<tr><td class="nowrap">Report</td><td>Title, report ID and domain, report date, reporting period, language,
+description, supporting link.</td></tr>
+<tr><td class="nowrap">Institution and Program</td><td>Institution name, ID and address; program name, ID,
+educational context, profession and specialty (with vocabulary source and source ID).</td></tr>
+<tr><td class="nowrap">Events</td><td>The list of events. For the selected event: id, title, duration, description,
+keywords, interprofessional, competency object references, and the instructional methods, assessment methods and
+resource types, offered from the standardized vocabulary while typing; their attributes (primary, purpose, source,
+source ID, v10 duration) are edited in the detail lists below them.</td></tr>
+<tr><td class="nowrap">Expectations</td><td>Competency objects (Healthcare LOM identifier, title and description,
+status, categories, references) and competency frameworks (included objects and relations).</td></tr>
+<tr><td class="nowrap">Academic Levels</td><td>LevelsInProgram and the levels (number, label, description).</td></tr>
+<tr><td class="nowrap">Sequence</td><td>The sequence description and the sequence blocks: attributes (required, order,
+minimum, maximum, track), timing, academic levels (<code>Level</code> in 1.0, starting and ending level in v10),
+clerkship model, competency object references, pre- and postconditions, events and nested blocks.</td></tr>
+<tr><td class="nowrap">Integration</td><td>The integration description and the integration blocks with their
+references.</td></tr>
+</table>
+
+<h2>Rules</h2>
+<p>Besides the XML Schemas, Hermes checks these rules of the specification (and of the Implementation Guidelines)
+that the schemas don't express:</p>
+<table>
+<tr><th>Severity</th><th>Rule</th></tr>
+<tr><td><span class="sev-error">Error</span></td><td>Every <code>EventReference</code>,
+<code>SequenceBlockReference</code>, <code>CompetencyObjectReference</code> and academic level reference
+(<code>Level</code>, <code>StartingAcademicLevel</code>, <code>EndingAcademicLevel</code>) resolves to an event,
+sequence block, competency object or level of the report.</td></tr>
+<tr><td><span class="sev-error">Error</span></td><td>Event, sequence block and integration block ids are unique within
+the report; competency object identifiers are unique.</td></tr>
+<tr><td><span class="sev-error">Error</span></td><td><code>LevelsInProgram</code> equals the number of
+<code>Level</code> elements.</td></tr>
+<tr><td><span class="sev-error">Error</span></td><td>An event with instructional methods marks one as primary.</td></tr>
+<tr><td><span class="sev-error">Error</span></td><td>In a sequence block whose order is <code>Ordered</code>, every
+<code>SequenceBlockReference</code> has an <code>order</code>.</td></tr>
+<tr><td><span class="sev-error">Error</span></td><td>Dates are in order: <code>ReportingStartDate</code> &le;
+<code>ReportingEndDate</code>, and the start and end dates of sequence blocks and their events; in v10 the starting
+academic level is not after the ending level.</td></tr>
+<tr><td><span class="sev-error">Error</span></td><td>A sequence block's <code>minimum</code> is not greater than its
+<code>maximum</code> or than the number of its nested blocks; <code>Timing</code> holds at most one
+<code>Duration</code> and one <code>Dates</code>; a sequence block does not contain itself through nested
+blocks.</td></tr>
+<tr><td><span class="sev-warning">Warning</span></td><td>Every event is part of a sequence block (and the report has
+a <code>Sequence</code>); an event is listed once per block.</td></tr>
+<tr><td><span class="sev-warning">Warning</span></td><td>Sequence block and event dates lie within the reporting
+period and within the dates of the enclosing block; in v10 a nested block's levels lie within its parent's.</td></tr>
+<tr><td><span class="sev-warning">Warning</span></td><td>Level numbers are unique and sequential from 1; the report
+date is not before the reporting period.</td></tr>
+<tr><td><span class="sev-warning">Warning</span></td><td>Only one instructional method of an event is primary; in v10
+the instructional method durations of an event don't exceed its <code>EventDuration</code>.</td></tr>
+<tr><td><span class="sev-warning">Warning</span></td><td><code>Required In Track</code> is used inside a track (a block
+with <code>track="true"</code>); <code>maximum</code> does not exceed the number of nested blocks; ordered positions
+are not repeated.</td></tr>
+<tr><td><span class="sev-warning">Warning</span></td><td>A <code>sourceID</code> of the standardized vocabulary (IM…,
+AM…, RE…) matches its term and the kind of element; competency objects have an identifier; the institution has a
+name.</td></tr>
+<tr><td><span class="sev-info">Info</span></td><td>Recommended practice: terms from the Curriculum Inventory
+Standardized Instructional and Assessment Methods and Resource Types, with their codes in <code>source</code> and
+<code>sourceID</code>; a <code>domain</code> on ReportID, ProgramID and InstitutionID; titles of competency objects;
+competency frameworks include competency objects of the report; competency objects are referenced; a block with only
+a duration is nested in a block with dates.</td></tr>
+</table>
+
+<h2>Templates and samples</h2>
+<p>A new Curriculum Inventory document (<span class="ui">New Document…</span>, see <a href="../tasks/create-document.html">Creating Documents</a>) starts from a template: one event, one competency object, one
+academic level and one sequence block that references them, valid against the schemas and the rules. Replace them
+with your own and add more.</p>
+<p>Two fictional samples come with Hermes (in <code>samples/curriculum-inventory</code> of the standards
+bundle):</p>
+<ul>
+<li><code>bayou-state-md-2024-2025-v10.xml</code> (v10): a four-year M.D. curriculum with organ-system courses, a
+longitudinal course over two levels, clerkship rotations, electives, a capstone, a competency framework and two
+integration themes.</li>
+<li><code>pelican-bay-md-2015-2016-v1.xml</code> (1.0): a curriculum with a clerkship year that has a main and a rural
+track, and a block of selectives.</li>
+</ul>
+
+<h2>Specification</h2>
+<ul>
+<li><a href="https://www.medbiq.org/standards/curriculum-data-exchange">Curriculum Inventory</a> at MedBiquitous:
+specifications of 1.0 and v10, Implementation Guidelines, schemas and the standardized vocabularies.</li>
+<li><a href="https://www.aamc.org/data-reports/curriculum-reports">AAMC Curriculum Reports</a>: the AAMC Curriculum
+Inventory.</li>
+</ul>
+</body>
+</html>

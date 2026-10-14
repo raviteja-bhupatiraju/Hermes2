@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the form pages of Competency Framework 1.0, Competency Object 1.0 and Performance
+     Framework 1.0 (ids page_<type id>_<page id>, see edu.louisiana.caai.lom.editor.help.HelpContexts). -->
+<contexts>
+
+   <context id="page_competency_framework_v1_description" title="Competency Framework: Description">
+      <description>The title, description, keywords, identifiers and contributors of the competency framework, with its version, life-cycle status, educational context and rights (Healthcare LOM). The title and an identifier with the catalog URI are required.</description>
+      <topic href="html/standards/competencies.html#cf-description" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_framework_v1_versioning" title="Competency Framework: Dates and Versions">
+      <description>When this version of the framework became effective and when it retired, and the URIs of the frameworks it replaces and of the one that replaces it. A retired framework should name its replacement.</description>
+      <topic href="html/standards/competencies.html#cf-versioning" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_framework_v1_supporting" title="Competency Framework: Supporting Information">
+      <description>Links to, or formatted text with, the rationale and intended use of the framework, its human readable version or the changes of this version.</description>
+      <topic href="html/standards/competencies.html#cf-supporting" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_framework_v1_includes" title="Competency Framework: Included Competencies">
+      <description>The catalog and entry of every competency object or framework included in the framework, including those named in relations. Use the catalog URI for MedBiquitous competency objects.</description>
+      <topic href="html/standards/competencies.html#cf-includes" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_framework_v1_relations" title="Competency Framework: Relations">
+      <description>Broader, narrower and related relations between included competencies (SKOS). Cycles and hierarchical conflicts are forbidden.</description>
+      <topic href="html/standards/competencies.html#cf-relations" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+
+   <context id="page_competency_object_v1_description" title="Competency Object: Description">
+      <description>The statement (title), description, identifiers and contributors of the competency object, with its life-cycle status and rights (Healthcare LOM). The title and an identifier with the catalog URI are required.</description>
+      <topic href="html/standards/competencies.html#co-description" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_object_v1_status" title="Competency Object: Status and Versions">
+      <description>Whether the competency object is Active or Retired, and the URIs of the objects it replaces and of the one that replaces it.</description>
+      <topic href="html/standards/competencies.html#co-status" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_object_v1_categories" title="Competency Object: Categories">
+      <description>Categories of the competency, like Atom categories: a required term, a scheme URI and a display label.</description>
+      <topic href="html/standards/competencies.html#co-categories" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_competency_object_v1_references" title="Competency Object: References and Supporting Information">
+      <description>References to the literature related to the competency, and a link to or formatted text with a longer description.</description>
+      <topic href="html/standards/competencies.html#co-references" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+
+   <context id="page_performance_framework_v1_description" title="Performance Framework: Description">
+      <description>The title, description, keywords, identifiers and contributors of the performance framework, with its version, life-cycle status, educational context and rights (Healthcare LOM).</description>
+      <topic href="html/standards/competencies.html#pf-description" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_performance_framework_v1_versioning" title="Performance Framework: Dates and Versions">
+      <description>When this version of the framework became effective and when it retired, and the URIs of the frameworks it replaces and of the one that replaces it.</description>
+      <topic href="html/standards/competencies.html#pf-versioning" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_performance_framework_v1_supporting" title="Performance Framework: Supporting Information">
+      <description>References (RDF) to, or formatted text with, the rationale and intended use of the framework.</description>
+      <topic href="html/standards/competencies.html#pf-supporting" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_performance_framework_v1_scales" title="Performance Framework: Performance Scales">
+      <description>The numeric scales of the performance levels: an id and the scores of the least and most competent ends.</description>
+      <topic href="html/standards/competencies.html#pf-scales" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_performance_framework_v1_components" title="Performance Framework: Components">
+      <description>The components of the framework: titles, abbreviations, authors, reviewers, nested components, thresholds and additional information.</description>
+      <topic href="html/standards/competencies.html#pf-components" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+   <context id="page_performance_framework_v1_levels" title="Performance Framework: Performance Levels">
+      <description>The performance level set of each component: its scale and the levels with display order, score, labels and indicators.</description>
+      <topic href="html/standards/competencies.html#pf-levels" label="Competencies: Editor Pages"/>
+      <topic href="html/standards/competencies.html#rules" label="Competencies: Rules Hermes Checks"/>
+   </context>
+</contexts>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2: Medical Education Metrics (MEMS) 1.0 report of a one-day live workshop,
+     with a pre-test and a 30-day follow-up test (knowledge assessment with the score of each learner), commercial
+     support and income figures. The provider, the workshop and all numbers are invented. -->
+<MedicalEducationMetrics xmlns="http://ns.medbiq.org/metrics/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+		xmlns:hx="http://ns.medbiq.org/lom/extend/v1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/metrics/v1/ http://ns.medbiq.org/metrics/v1/medicaleducationmetrics.xsd">
+	<ReportDescription>
+		<ReportingStartDate>2025-11-08</ReportingStartDate>
+		<ReportingEndDate>2025-12-15</ReportingEndDate>
+	</ReportDescription>
+	<ActivityDescription>
+		<lom:lom>
+			<lom:general>
+				<lom:identifier>
+					<lom:catalog>URI</lom:catalog>
+					<lom:entry>urn:uuid:5b0f6a52-3c1e-4d0b-9a7e-2f4c8d61e9a3</lom:entry>
+				</lom:identifier>
+				<lom:title>
+					<lom:string language="en">Pediatric Asthma Action Plans: A Hands-on Workshop</lom:string>
+				</lom:title>
+				<lom:language>en</lom:language>
+				<lom:description>
+					<lom:string language="en">A one-day workshop for pediatric clinicians on stepwise asthma therapy, inhaler technique and written asthma action plans, with small-group practice on standardized patients.</lom:string>
+				</lom:description>
+				<lom:keyword>
+					<lom:string language="en">asthma</lom:string>
+				</lom:keyword>
+				<lom:keyword>
+					<lom:string language="en">pediatrics</lom:string>
+				</lom:keyword>
+			</lom:general>
+			<hx:healthcareMetadata>
+				<hx:healthcareEducation>
+					<hx:creditsAvailable>yes</hx:creditsAvailable>
+					<hx:credits>
+						<hx:accreditingBody>ACCME</hx:accreditingBody>
+						<hx:activityCertification>AMA PRA Category 1 Credit</hx:activityCertification>
+						<hx:creditType>CME</hx:creditType>
+						<hx:creditUnit>Credit</hx:creditUnit>
+						<hx:pacing>provider paced</hx:pacing>
+						<hx:numberOfCredits>6</hx:numberOfCredits>
+					</hx:credits>
+					<hx:credits>
+						<hx:accreditingBody>ANCC</hx:accreditingBody>
+						<hx:creditType>CNE</hx:creditType>
+						<hx:creditUnit>Contact Hour</hx:creditUnit>
+						<hx:pacing>provider paced</hx:pacing>
+						<hx:numberOfCredits>6</hx:numberOfCredits>
+					</hx:credits>
+					<hx:startDateTime>2025-11-08T08:00:00-06:00</hx:startDateTime>
+					<hx:endDateTime>2025-11-08T16:30:00-06:00</hx:endDateTime>
+					<hx:activitySponsorship>joint</hx:activitySponsorship>
+					<hx:participationModality>conference/workshop</hx:participationModality>
+					<hx:activityDelivery>live</hx:activityDelivery>
+					<hx:commercialSupport>yes</hx:commercialSupport>
+				</hx:healthcareEducation>
+			</hx:healthcareMetadata>
+		</lom:lom>
+		<CommercialSupportAmount currency="USD" supportSource="Northshore Respiratory Devices, Inc.">7500</CommercialSupportAmount>
+		<AdvertisingAndExhibitIncome currency="USD">2000</AdvertisingAndExhibitIncome>
+		<OtherIncome currency="USD">8400</OtherIncome>
+		<Expenses currency="USD">16850</Expenses>
+		<DesignedToChangeCompetence>true</DesignedToChangeCompetence>
+		<DesignedToChangePerformance>true</DesignedToChangePerformance>
+		<DesignedToChangePatientOutcomes>true</DesignedToChangePatientOutcomes>
+		<ChangesInCompetenceMeasured>true</ChangesInCompetenceMeasured>
+		<ChangesInPerformanceMeasured>true</ChangesInPerformanceMeasured>
+		<ChangesInPatientOutcomesMeasured>false</ChangesInPatientOutcomesMeasured>
+	</ActivityDescription>
+	<ParticipantActivityEvaluation>
+		<SurveyItemData source="medbiq.org" id="10">
+			<SurveyQuestion>The course achieved its educational objectives.</SurveyQuestion>
+			<ResponseData>
+				<ScaleData type="likert" points="5">
+					<One label="Strongly agree" source="medbiq.org" id="20">15</One>
+					<Two label="Agree" source="medbiq.org" id="30">7</Two>
+					<Three label="Neutral" source="medbiq.org" id="40">2</Three>
+					<Four label="Disagree" source="medbiq.org" id="50">0</Four>
+					<Five label="Strongly disagree" source="medbiq.org" id="60">0</Five>
+				</ScaleData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData>
+			<SurveyQuestion>Did the workshop present a balanced view of treatment options, free of commercial bias?</SurveyQuestion>
+			<ResponseData>
+				<YesNoData>
+					<Yes>23</Yes>
+					<No>1</No>
+				</YesNoData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData>
+			<SurveyQuestion>How confident are you in teaching inhaler technique with a spacer?</SurveyQuestion>
+			<ResponseData>
+				<ScaleData type="not confident/very confident" points="4">
+					<One label="Not confident">0</One>
+					<Two label="Somewhat confident">3</Two>
+					<Three label="Confident">12</Three>
+					<Four label="Very confident">9</Four>
+				</ScaleData>
+			</ResponseData>
+		</SurveyItemData>
+		<SurveyItemData>
+			<SurveyQuestion>If there were one thing you would change about the workshop, what would it be?</SurveyQuestion>
+			<ResponseData>
+				<FreeTextData>
+					<TextResponse>More time with the standardized patients.</TextResponse>
+					<AnalysisCategory>Format</AnalysisCategory>
+				</FreeTextData>
+				<FreeTextData>
+					<TextResponse>Provide the action plan templates in Spanish.</TextResponse>
+					<AnalysisCategory>Materials</AnalysisCategory>
+				</FreeTextData>
+			</ResponseData>
+		</SurveyItemData>
+		<ComparisonData>
+			<SurveyItemDataForComparison>
+				<SurveyQuestion>I give every patient with persistent asthma a written asthma action plan.</SurveyQuestion>
+				<ResponseData>
+					<ScaleData type="never/always" points="5">
+						<One label="Never">3</One>
+						<Two label="Rarely">8</Two>
+						<Three label="Sometimes">9</Three>
+						<Four label="Usually">4</Four>
+						<Five label="Always">0</Five>
+					</ScaleData>
+				</ResponseData>
+				<Timing>Before</Timing>
+			</SurveyItemDataForComparison>
+			<SurveyItemDataForComparison>
+				<SurveyQuestion>I give every patient with persistent asthma a written asthma action plan.</SurveyQuestion>
+				<ResponseData>
+					<ScaleData type="never/always" points="5">
+						<One label="Never">0</One>
+						<Two label="Rarely">1</Two>
+						<Three label="Sometimes">4</Three>
+						<Four label="Usually">11</Four>
+						<Five label="Always">5</Five>
+					</ScaleData>
+				</ResponseData>
+				<Timing duration="P30D">After</Timing>
+			</SurveyItemDataForComparison>
+		</ComparisonData>
+	</ParticipantActivityEvaluation>
+	<KnowledgeAssessment>
+		<MultipleChoiceAssessmentItemData id="K3">
+			<Question>A 9-year-old uses albuterol four days a week and wakes at night twice a month. What is the preferred controller therapy?</Question>
+			<AssessmentResponseData>
+				<AssessmentResponseItemData correct="false">
+					<ResponseText>No controller; continue albuterol as needed</ResponseText>
+					<TotalRespondents>1</TotalRespondents>
+				</AssessmentResponseItemData>
+				<AssessmentResponseItemData correct="true">
+					<ResponseText>Daily low-dose inhaled corticosteroid</ResponseText>
+					<TotalRespondents>20</TotalRespondents>
+				</AssessmentResponseItemData>
+				<AssessmentResponseItemData correct="false">
+					<ResponseText>Oral corticosteroid burst</ResponseText>
+					<TotalRespondents>1</TotalRespondents>
+				</AssessmentResponseItemData>
+			</AssessmentResponseData>
+			<Timing duration="P30D">After</Timing>
+		</MultipleChoiceAssessmentItemData>
+		<AssessmentScoreData id="pretest">
+			<AssessmentName>Pediatric Asthma Management Pre-test</AssessmentName>
+			<ScoreMethod>Percent</ScoreMethod>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>50</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>40</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>50</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>50</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>40</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>50</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>60</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<Timing>Before</Timing>
+			<Description>Ten-item multiple choice test taken at registration on the day of the workshop.</Description>
+		</AssessmentScoreData>
+		<AssessmentScoreData id="followup">
+			<AssessmentName>Pediatric Asthma Management Follow-up Test</AssessmentName>
+			<ScoreMethod>Percent</ScoreMethod>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>100</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>100</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>70</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>80</ScoreValue>
+			<ScoreValue>90</ScoreValue>
+			<Timing duration="P30D">After</Timing>
+			<Description>The same ten items, sent by e-mail 30 days after the workshop; 22 of 24 participants responded.</Description>
+		</AssessmentScoreData>
+	</KnowledgeAssessment>
+	<ParticipationMetrics>
+		<TargetedAudience>450</TargetedAudience>
+		<RegisteredParticipants>28</RegisteredParticipants>
+		<NumberOfParticipantsReceivingCredit>24</NumberOfParticipantsReceivingCredit>
+		<CreditsAwarded>
+			<hx:accreditingBody>ACCME</hx:accreditingBody>
+			<hx:creditType>CME</hx:creditType>
+			<hx:creditUnit>Credit</hx:creditUnit>
+			<hx:numberOfCredits>114</hx:numberOfCredits>
+		</CreditsAwarded>
+		<CreditsAwarded>
+			<hx:accreditingBody>ANCC</hx:accreditingBody>
+			<hx:creditType>CNE</hx:creditType>
+			<hx:creditUnit>Contact Hour</hx:creditUnit>
+			<hx:numberOfCredits>30</hx:numberOfCredits>
+		</CreditsAwarded>
+		<NumberOfParticipantsCompletingActivity>24</NumberOfParticipantsCompletingActivity>
+		<ParticipantsByProfession profession="physician">19</ParticipantsByProfession>
+		<ParticipantsByProfession profession="nurse practitioner">3</ParticipantsByProfession>
+		<ParticipantsByProfession profession="registered nurse">2</ParticipantsByProfession>
+		<ParticipantsBySpecialty specialty="pediatrics">17</ParticipantsBySpecialty>
+		<ParticipantsBySpecialty specialty="family medicine">2</ParticipantsBySpecialty>
+		<Comments>Four registrants did not attend. Counts by profession and specialty refer to the 24 attendees, of whom 19 claimed 6 AMA PRA Category 1 Credits each and 5 claimed 6 nursing contact hours each.</Comments>
+	</ParticipationMetrics>
+</MedicalEducationMetrics>

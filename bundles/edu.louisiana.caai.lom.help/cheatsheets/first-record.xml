@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<cheatsheet title="Describe a Course with Healthcare LOM">
+   <intro>
+      <description>
+This cheat sheet walks you through describing a continuing education course with a <b>Healthcare LOM</b> record:
+a project to keep it in, the record itself, coded keywords, and a check against the standard before you share it.
+      </description>
+   </intro>
+   <item title="Create a project" dialog="true" skip="true">
+      <description>
+A project is a folder of documents that Hermes 2 validates in the background. Create one for your courses
+(or skip this step if you already have one).
+      </description>
+      <command serialization="edu.louisiana.caai.lom.editor.projects.newProject" confirm="false"/>
+   </item>
+   <item title="Create the record" dialog="true" skip="false">
+      <description>
+Create a document from the <b>CME course</b> template: it already has the required metadata schemas, a
+healthcare section and a credit to fill in. Choose your project as the location.
+      </description>
+      <command serialization="edu.louisiana.caai.lom.editor.NewHlomDocumentCommand" confirm="false"/>
+   </item>
+   <item title="Describe the course" skip="false">
+      <description>
+On the <b>General</b> page, enter the title, the description and the language. On <b>Healthcare Education</b>,
+fill in the credits (type, number, accrediting body) and the target audience. The <b>Overview</b> page shows
+how complete the record is and what to do next.
+      </description>
+   </item>
+   <item title="Add MeSH keywords" skip="true">
+      <description>
+Coded keywords make the course easy to find. Add Medical Subject Headings from the offline MeSH index; each
+keyword records its descriptor ID.
+      </description>
+      <command serialization="edu.louisiana.caai.lom.editor.mesh.addKeywords" confirm="false"/>
+   </item>
+   <item title="Check the record" skip="false">
+      <description>
+Open the <b>Problems</b> view: it lists what the schemas and the rules of the standard find. Select a problem and
+press <b>Ctrl+1</b> for its quick fixes.
+      </description>
+      <command serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=org.eclipse.ui.views.ProblemView)" confirm="false"/>
+   </item>
+   <item title="Save and share" skip="false">
+      <description>
+Save the record (Ctrl+S). To share it, export a printable catalog card with <b>File &gt; Export &gt; HTML
+Reports</b>.
+      </description>
+      <command serialization="org.eclipse.ui.file.save" confirm="false"/>
+      <onCompletion>Your course is described. Repeat for the other courses of your program, or import many at once with File &gt; Import from CSV.</onCompletion>
+   </item>
+</cheatsheet>

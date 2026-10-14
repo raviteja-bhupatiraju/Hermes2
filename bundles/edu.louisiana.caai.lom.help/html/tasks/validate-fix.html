@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validating and Fixing Problems</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Validating and Fixing Problems</h1>
+
+<p class="lead">Documents of every MedBiquitous standard are validated as you edit. This topic shows how to
+review the problems, jump to the fields concerned and repair them, in Healthcare LOM records also with quick
+fixes, and how to validate documents outside Hermes 2.</p>
+
+<h2>Review the problems of the active document</h2>
+<ol class="steps">
+<li>Open the <span class="ui">Validation</span> view (bottom of the window), or click <span class="ui">Validate</span>
+on the main tool bar, which shows the view and validates the active document.</li>
+<li>Read the list. The view's description summarizes the result (for example “The document is valid.”, or the
+number of problems and how many have quick fixes). Columns:
+<ul>
+<li>a light bulb when a quick fix is available;</li>
+<li><span class="ui">Description</span>: the message;</li>
+<li><span class="ui">Element</span>: the element path;</li>
+<li><span class="ui">Line</span>: the line in the file, where known;</li>
+<li><span class="ui">Check</span>: <span class="ui">XML Schema</span>, <span class="ui">Model</span> or
+<span class="ui">Rules</span> (for documents of the other standards, the rules of their
+standard).</li>
+</ul></li>
+<li>Double-click a problem (or choose <span class="ui">Go to Element</span> in the context menu) to show the field
+concerned.</li>
+</ol>
+
+<h2>Apply a quick fix (Healthcare LOM)</h2>
+<p>Quick fixes and <span class="ui">Fix All</span> are available for Healthcare LOM records. Problems of documents
+of the other standards are corrected on the form pages, in the Document Tree or on the XML page; double-clicking
+the problem shows the place.</p>
+<ol class="steps">
+<li>Select a problem marked with a light bulb.</li>
+<li>Press <kbd>Ctrl</kbd>+<kbd>1</kbd> (or choose <span class="ui">Quick Fix…</span> in the context menu). The
+<span class="ui">Quick Fix</span> popup lists the fixes with a description of the selected one.</li>
+<li>Press <kbd>Enter</kbd> or double-click to apply a fix; <kbd>Esc</kbd> closes the popup. The context menu's
+<span class="ui">Quick Fix</span> submenu offers the same fixes directly.</li>
+</ol>
+<p>Fixes that change the document are listed first. Problems that only you can resolve, such as a missing
+off-label description, offer “Go to” fixes that show the right field. Every fix is undoable with
+<kbd>Ctrl</kbd>+<kbd>Z</kbd>.</p>
+<p>On the XML page, <kbd>Ctrl</kbd>+<kbd>1</kbd> offers the fixes of the problems on the caret's line.</p>
+
+<h2>Fix all automatic problems at once (Healthcare LOM)</h2>
+<ol class="steps">
+<li>Click <span class="ui">Fix All</span> on the Validation view's tool bar (or in its context menu). The tooltip
+tells how many problems can be repaired.</li>
+<li>The <span class="ui">Fix All</span> dialog lists each automatic fix with the problem it repairs. Deselect the
+fixes you don't want (<span class="ui">Select All</span> and <span class="ui">Deselect All</span> help).</li>
+<li>Click <span class="ui">Apply <i>n</i> Fixes</span>.</li>
+</ol>
+<p>The selected fixes are applied as a single change; <span class="ui">Edit &gt; Undo</span> (<kbd>Ctrl</kbd>+<kbd>Z</kbd>)
+reverts all of them. Problems that need your input are not listed; use their “Go to” quick fixes.</p>
+<p>The automatic fixes are: declaring the metadata schemas <code>LOMv1.0</code> and <code>HEALTHCARE_LOMv1</code>,
+adding <code>healthcareMetadata</code>, setting a missing text language to the document language, and swapping
+inverted activity or credit dates. Fixes for inconsistent credit information (mark credits as available or not,
+add a credit entry, remove the credit information) are offered individually because you must choose between them.
+The complete list is in <a href="../reference/validation-rules.html">Validation Rules and Quick Fixes</a>.</p>
+
+<h2>Problems across a project</h2>
+<p>The <span class="ui">Problems</span> view lists the problems of all documents of your projects, of every
+standard (marker type <span class="ui">MedBiquitous Problem</span>), at their positions in the files, and is
+kept up to date in the background, also when files change outside Hermes 2. Double-click a problem to open the document at the field concerned. The Projects view marks documents
+with errors and warnings.</p>
+
+<h2>Other places that show problems</h2>
+<ul>
+<li>The <span class="ui">Overview</span> page's <span class="ui">Validation</span> card shows the counts of errors,
+warnings and infos and the first problems; <span class="ui">Show problems</span> opens the Validation view.</li>
+<li>The navigation sidebar shows a badge with the number of problems on each page.</li>
+<li>Form fields with problems are marked inline.</li>
+</ul>
+
+<h2 id="command-line">Validate outside Hermes 2</h2>
+<p>The <code>hermes</code> command line tool (in the <code>cli</code> folder of the installation, or the separate
+<code>hermes-cli</code> archive for any system with Java) and the language server run the same check as the editor
+and the Problems view, for documents of every standard, and report each problem at its line and column in the
+file as written.</p>
+<table>
+<tr><th>Command</th><th>Purpose</th></tr>
+<tr><td class="nowrap"><code>hermes validate &lt;file|folder&gt;…</code></td><td>Checks documents (XML Schema,
+model constraints and the standard's rules). <code>--format text|json|sarif</code>, <code>--output</code>,
+<code>--min-severity</code>; <code>--fail-on error|warning|never</code> sets when the exit code is 1. SARIF
+output can be uploaded to code scanning services.</td></tr>
+<tr><td class="nowrap"><code>hermes info &lt;file&gt;…</code></td><td>Summarizes documents: the type (standard and
+version), the title, and the numbers of errors, warnings and infos; for Healthcare LOM records also the kind,
+languages, keywords, contributors, credits and audience.</td></tr>
+<tr><td class="nowrap"><code>hermes search &lt;text&gt; &lt;file|folder&gt;…</code></td><td>Finds text in the
+field values of documents of any standard (<code>--in</code> takes the field groups of every standard).</td></tr>
+<tr><td class="nowrap"><code>hermes format &lt;file&gt;…</code></td><td>Rewrites documents in the canonical
+layout (<code>--check</code> only reports).</td></tr>
+<tr><td class="nowrap"><code>hermes convert</code>, <code>hermes fix</code></td><td>Healthcare LOM: convert between
+XML and JSON, apply the automatic quick fixes.</td></tr>
+<tr><td class="nowrap"><code>hermes lsp</code></td><td>The language server: validates MedBiquitous documents while
+they are edited in any editor with Language Server Protocol support.</td></tr>
+</table>
+
+<h2>Validation settings</h2>
+<p>In <span class="ui">Window &gt; Preferences… &gt; Healthcare LOM &gt; Validation</span> you can turn off
+validation after each change, change its delay, and hide informational hints. See
+<a href="preferences.html">Setting Preferences</a>.</p>
+
+<p class="tip">To practice the repair workflow, the Hermes 2 source repository contains a deliberately broken
+record, <code>samples/invalid/opioid-stewardship-draft.xml</code>.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../concepts/validation.html">Validation</a></li>
+<li><a href="../reference/validation-rules.html">Validation Rules and Quick Fixes</a></li>
+<li><a href="../reference/views.html#validation">The Validation view</a></li>
+<li><a href="../reference/views.html#problems">The Problems view</a></li>
+</ul>
+</div>
+</body>
+</html>

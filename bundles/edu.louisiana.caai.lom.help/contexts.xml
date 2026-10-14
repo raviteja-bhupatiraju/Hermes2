@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the views, editor pages and dialogs. The ids are those of
+     edu.louisiana.caai.lom.editor.help.HelpContexts (plugin edu.louisiana.caai.lom.editor). -->
+<contexts>
+
+   <!-- Views -->
+   <context id="projects_view" title="Projects">
+      <description>Your projects: folders of MedBiquitous documents (Healthcare LOM and the other standards), validated in the background. Create and open projects, add, convert, rename and delete documents with the tool bar and the context menu; F2 renames, Delete deletes, F5 refreshes.</description>
+      <topic href="html/tasks/create-project.html" label="Creating and Opening Projects"/>
+      <topic href="html/concepts/projects.html" label="Projects and the Workspace"/>
+      <topic href="html/reference/views.html#projects" label="The Projects view"/>
+      <topic href="html/reference/project-file.html" label="The Project File"/>
+   </context>
+   <context id="validation_view" title="Validation">
+      <description>The problems of the active document from the XML Schema, model and rule checks of its standard. In Healthcare LOM records, a light bulb marks problems with a quick fix (Ctrl+1) and Fix All repairs every automatic problem in one undoable step; double-click shows the element.</description>
+      <topic href="html/tasks/validate-fix.html" label="Validating and Fixing Problems"/>
+      <topic href="html/reference/validation-rules.html" label="Validation Rules and Quick Fixes"/>
+      <topic href="html/concepts/validation.html" label="Validation"/>
+   </context>
+   <context id="library_view" title="Library">
+      <description>All MedBiquitous documents below a folder with their validation status and, for Healthcare LOM records, their kind, credits, audience and completeness (for other documents the Kind column shows the standard). Search, filter by kind and status, sort by any column, and export catalog cards and library reports.</description>
+      <topic href="html/tasks/library-reports.html" label="The Library and HTML Reports"/>
+      <topic href="html/reference/views.html#library" label="The Library view"/>
+      <topic href="html/tasks/preferences.html" label="Setting Preferences"/>
+   </context>
+   <context id="compare_view" title="Compare">
+      <description>A field-by-field comparison of two documents of the same standard. Healthcare LOM records are grouped by category and repeated elements are matched by meaning, so reordering is not reported as a change; documents of the other standards are compared by element path, grouped by the parts of the root element. Double-click a field to show it in the editor.</description>
+      <topic href="html/tasks/compare.html" label="Comparing Documents"/>
+      <topic href="html/reference/views.html#compare" label="The Compare view"/>
+   </context>
+   <context id="guide_view" title="HLOM Guide">
+      <description>The in-application guide to Healthcare LOM: elements, healthcare extensions, vocabularies, conformance, credit acronyms, professions and specialties. Shift+F1 in a field opens its topic here.</description>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html" label="HLOM Guide"/>
+      <topic href="html/reference/views.html#guide" label="The HLOM Guide view"/>
+      <topic href="html/concepts/hlom.html" label="Healthcare LOM in Brief"/>
+   </context>
+   <context id="start_page" title="Start Page">
+      <description>Shown while no document is open: create a document or project, open a file or a sample, start from a template, or reopen a recent document.</description>
+      <topic href="html/getting-started/first-steps.html" label="First Steps"/>
+      <topic href="html/tasks/create-document.html" label="Creating Documents"/>
+      <topic href="html/reference/views.html#start" label="The Start page"/>
+   </context>
+   <context id="search_page" title="Hermes Document Search">
+      <description>Searches the field values of the documents of your projects for text or a regular expression, optionally case sensitive or whole words, and limited to field groups such as titles, keywords or credits. Attribute values such as MeSH IDs are searched too; unsaved documents are searched as edited.</description>
+      <topic href="html/tasks/search.html" label="Searching Documents"/>
+      <topic href="html/reference/views.html#search" label="The Search view"/>
+      <topic href="html/concepts/projects.html" label="Projects and the Workspace"/>
+   </context>
+
+   <!-- Editor and its pages -->
+   <context id="editor" title="MedBiquitous Editor">
+      <description>Edits one MedBiquitous document on the form pages of its standard, as a tree and as XML (Healthcare LOM records also as JSON); all pages share one undo history. Use the navigation sidebar to switch pages; badges count the problems of each page.</description>
+      <topic href="html/getting-started/workbench.html" label="A Tour of the Workbench"/>
+      <topic href="html/reference/editor-pages.html" label="Editor Pages"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+   </context>
+   <context id="page_tree" title="Document Tree">
+      <description>All elements of the document, including custom extensions. Select an element to edit its attributes in the Properties view; add elements with New Child and New Sibling.</description>
+      <topic href="html/reference/editor-pages.html#tree" label="Editor Pages: Document Tree"/>
+      <topic href="html/tasks/source-pages.html" label="Editing XML and JSON"/>
+   </context>
+   <context id="page_xml" title="XML">
+      <description>The XML source of the document, with content assist (Ctrl+Space) from the schemas of its standard, live schema checking, quick fixes (Ctrl+1, Healthcare LOM), formatting (Ctrl+Shift+F) and comment toggling (Ctrl+/). Text changes are applied when you leave the page or save.</description>
+      <topic href="html/tasks/source-pages.html" label="Editing XML and JSON"/>
+      <topic href="html/concepts/documents.html" label="Documents: XML and JSON"/>
+      <topic href="html/reference/menus-shortcuts.html#keys" label="Keyboard shortcuts"/>
+   </context>
+   <context id="page_json" title="JSON">
+      <description>The document in the JSON form of the MedBiquitous Healthcare LOM JSON Schema, with content assist (Ctrl+Space), live syntax checking and formatting (Ctrl+Shift+F). Text changes are applied when you leave the page or save.</description>
+      <topic href="html/reference/json-format.html" label="The JSON Format"/>
+      <topic href="html/tasks/source-pages.html" label="Editing XML and JSON"/>
+      <topic href="html/concepts/documents.html" label="Documents: XML and JSON"/>
+   </context>
+   <context id="page_overview" title="Overview">
+      <description>Summary and validation status of the document. For a Healthcare LOM record also key facts, completeness and next steps that link to the pages where the most valuable information is missing; for the other standards the standard and version and the contents of the document.</description>
+      <topic href="html/reference/editor-pages.html#overview" label="Editor Pages: Overview"/>
+      <topic href="html/tasks/validate-fix.html" label="Validating and Fixing Problems"/>
+      <topic href="html/getting-started/first-steps.html" label="First Steps"/>
+   </context>
+   <context id="page_general" title="General (1)">
+      <description>Identification, title, description, keywords, coverage, languages, structure and aggregation level of the learning object. Use Look Up to add keywords coded with MeSH or ICD-10-CM.</description>
+      <topic href="html/reference/editor-pages.html#general" label="Editor Pages: General"/>
+      <topic href="html/tasks/keywords-terminologies.html" label="Keywords and Terminologies"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-general" label="General in the HLOM Guide"/>
+   </context>
+   <context id="page_lifecycle" title="Life Cycle (2)">
+      <description>Version and status of the learning object and its contributors (authors, publishers, reviewers) with their roles, vCards and dates.</description>
+      <topic href="html/reference/editor-pages.html#lifecycle" label="Editor Pages: Life Cycle"/>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-lifeCycle" label="Life Cycle in the HLOM Guide"/>
+   </context>
+   <context id="page_metametadata" title="Meta-Metadata (3)">
+      <description>The metadata record itself: its identifiers, contributors, language and metadata schemas. Healthcare LOM records must declare LOMv1.0 and HEALTHCARE_LOMv1.</description>
+      <topic href="html/reference/editor-pages.html#metametadata" label="Editor Pages: Meta-Metadata"/>
+      <topic href="html/reference/validation-rules.html" label="Validation Rules and Quick Fixes"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-metaMetadata" label="Meta-Metadata in the HLOM Guide"/>
+   </context>
+   <context id="page_technical" title="Technical (4)">
+      <description>Formats (MIME types), size, locations, duration, requirements and installation remarks of the learning object.</description>
+      <topic href="html/reference/editor-pages.html#technical" label="Editor Pages: Technical"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-technical" label="Technical in the HLOM Guide"/>
+   </context>
+   <context id="page_educational" title="Educational (5)">
+      <description>Educational characteristics, one entry per intended use: interactivity, learning resource types, intended end user roles, contexts, difficulty and typical learning time.</description>
+      <topic href="html/reference/editor-pages.html#educational" label="Editor Pages: Educational"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-educational" label="Educational in the HLOM Guide"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-vocabularies" label="Vocabularies in the HLOM Guide"/>
+   </context>
+   <context id="page_rights" title="Rights (6)">
+      <description>Cost, copyright and other restrictions, and a description of the conditions of use.</description>
+      <topic href="html/reference/editor-pages.html#rights" label="Editor Pages: Rights"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-rights" label="Rights in the HLOM Guide"/>
+   </context>
+   <context id="page_relation" title="Relation (7)">
+      <description>Other resources related to this learning object, the kind of relationship and the identifiers of the target resource.</description>
+      <topic href="html/reference/editor-pages.html#relation" label="Editor Pages: Relation"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-relation" label="Relation in the HLOM Guide"/>
+   </context>
+   <context id="page_annotation" title="Annotation (8)">
+      <description>Comments on the educational use of the learning object, each with its author (vCard), date and description.</description>
+      <topic href="html/reference/editor-pages.html#annotation" label="Editor Pages: Annotation"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-annotation" label="Annotation in the HLOM Guide"/>
+   </context>
+   <context id="page_classification" title="Classification (9)">
+      <description>Classifications by purpose, for example competencies or learning outcomes, with taxon paths that can be filled from MeSH, ICD-10-CM, ACGME, Bloom's taxonomy or the AAMC Curriculum Inventory.</description>
+      <topic href="html/reference/editor-pages.html#classification" label="Editor Pages: Classification"/>
+      <topic href="html/tasks/keywords-terminologies.html" label="Keywords and Terminologies"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#cat-classification" label="Classification in the HLOM Guide"/>
+   </context>
+   <context id="page_healthcare_education" title="Healthcare Education">
+      <description>The MedBiquitous extension for educational offerings: credits (one entry per credit type), target audience, disclosures, schedule and activity location.</description>
+      <topic href="html/reference/editor-pages.html#healthcare-education" label="Editor Pages: Healthcare Education"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#sec-healthcareEducation" label="healthcareEducation in the HLOM Guide"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#page-acronyms" label="Credit acronyms in the HLOM Guide"/>
+      <topic href="html/reference/validation-rules.html" label="Validation Rules and Quick Fixes"/>
+   </context>
+   <context id="page_healthcare_asset" title="Healthcare Asset">
+      <description>The MedBiquitous extension for medical images and other assets: clinical history, specimen type, medical image type, annotation, orientation, magnification and dimensions.</description>
+      <topic href="html/reference/editor-pages.html#healthcare-asset" label="Editor Pages: Healthcare Asset"/>
+      <topic href="PLUGINS_ROOT/edu.louisiana.caai.lom.editor/help/guide.html#sec-healthcareAsset" label="healthcareAsset in the HLOM Guide"/>
+   </context>
+
+   <!-- Wizards and dialogs -->
+   <context id="new_document_wizard" title="New MedBiquitous Document">
+      <description>Creates a document of any MedBiquitous standard. Choose the standard; Healthcare LOM records start from a template (blank record, CME course, medical image asset, patient education resource or live workshop), the other standards from their standard's template. Enter the title and language, choose XML or (Healthcare LOM only) JSON and the file.</description>
+      <topic href="html/tasks/create-document.html" label="Creating Documents"/>
+      <topic href="html/concepts/documents.html" label="Documents: XML and JSON"/>
+      <topic href="html/tasks/preferences.html" label="Setting Preferences"/>
+   </context>
+   <context id="project_dialog" title="Project">
+      <description>The name, location, description and format of new documents of a project. They are stored in the project folder's hermes-project.json.</description>
+      <topic href="html/tasks/create-project.html" label="Creating and Opening Projects"/>
+      <topic href="html/reference/project-file.html" label="The Project File"/>
+      <topic href="html/concepts/projects.html" label="Projects and the Workspace"/>
+   </context>
+   <context id="csv_import_wizard" title="Import from CSV">
+      <description>Creates one Healthcare LOM record per row of a CSV file: choose the file and template, map the columns to HLOM fields, review the validated records and choose where to save them.</description>
+      <topic href="html/tasks/csv-import.html" label="Importing Records from CSV"/>
+      <topic href="html/tasks/library-reports.html" label="The Library and HTML Reports"/>
+   </context>
+   <context id="terminology_lookup" title="Terminology Lookup">
+      <description>Searches the offline terminologies by name, synonym or code, or browses their hierarchy, and shows definitions, synonyms and related concepts. The chosen concepts become coded keywords or a taxon path.</description>
+      <topic href="html/tasks/keywords-terminologies.html" label="Keywords and Terminologies"/>
+      <topic href="html/reference/terminologies.html" label="Offline Terminologies"/>
+   </context>
+   <context id="vcard_dialog" title="Contributor vCard">
+      <description>Composes a vCard 3.0 entry for a contributing person or organization from the full name, organization and email.</description>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+      <topic href="html/reference/editor-pages.html#lifecycle" label="Editor Pages: Life Cycle"/>
+   </context>
+   <context id="translations_dialog" title="Translations">
+      <description>The same text in several languages: one row per language. Add and remove languages and click a cell to edit it.</description>
+      <topic href="html/tasks/edit-forms.html" label="Editing with the Form Pages"/>
+      <topic href="html/concepts/hlom.html" label="Healthcare LOM in Brief"/>
+   </context>
+   <context id="fix_all_dialog" title="Fix All">
+      <description>Lists the automatic fixes with the problems they repair. Deselect fixes you don't want; the selected fixes are applied as one change that Edit &gt; Undo reverts.</description>
+      <topic href="html/tasks/validate-fix.html" label="Validating and Fixing Problems"/>
+      <topic href="html/reference/validation-rules.html" label="Validation Rules and Quick Fixes"/>
+   </context>
+
+   <!-- Preference pages -->
+   <context id="preferences_general" title="Healthcare LOM Preferences">
+      <description>The default language and format of new documents, your identity as author (written as a vCard) and the library folder.</description>
+      <topic href="html/tasks/preferences.html" label="Setting Preferences"/>
+      <topic href="html/tasks/create-document.html" label="Creating Documents"/>
+   </context>
+   <context id="preferences_validation" title="Validation Preferences">
+      <description>Whether the active document is validated after each change, the delay before validating, and whether informational hints are shown.</description>
+      <topic href="html/tasks/preferences.html" label="Setting Preferences"/>
+      <topic href="html/concepts/validation.html" label="Validation"/>
+   </context>
+   <context id="preferences_mesh" title="MeSH Preferences">
+      <description>MeSH lookups use the offline index. Optionally, descriptor IDs it doesn't know are looked up with the NLM MeSH service.</description>
+      <topic href="html/tasks/preferences.html" label="Setting Preferences"/>
+      <topic href="html/tasks/keywords-terminologies.html" label="Keywords and Terminologies"/>
+      <topic href="html/reference/terminologies.html" label="Offline Terminologies"/>
+   </context>
+   <context id="preferences_terminologies" title="Terminologies Preferences">
+      <description>The terminologies included in Hermes 2 with their versions, sources and license notices.</description>
+      <topic href="html/reference/terminologies.html" label="Offline Terminologies"/>
+      <topic href="html/reference/licenses.html" label="Licenses and Acknowledgements"/>
+   </context>
+
+</contexts>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template of new MedBiquitous Virtual Patient Activity Models (activitymodel.xml of a virtual patient package). -->
+<ActivityModel xmlns="http://ns.medbiq.org/activitymodel/v1/"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://ns.medbiq.org/activitymodel/v1/ http://ns.medbiq.org/activitymodel/v1/activitymodel.xsd">
+	<ActivityNodes>
+		<!-- The first activity node is where the activity starts. Content points to a DAMNode of the Data
+		     Availability Model: /DataAvailabilityModel/DAMNode[@id='...']. -->
+		<NodeSection id="s1" label="${title}">
+			<ActivityNode id="n1" label="Start">
+				<Content>/DataAvailabilityModel/DAMNode[@id='d1']</Content>
+			</ActivityNode>
+			<ActivityNode id="n2" label="Next step">
+				<Content>/DataAvailabilityModel/DAMNode[@id='d2']</Content>
+			</ActivityNode>
+		</NodeSection>
+	</ActivityNodes>
+	<Links>
+		<Link label="Continue">
+			<ActivityNodeA>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n1']</ActivityNodeA>
+			<ActivityNodeB>/ActivityModel/ActivityNodes/NodeSection/ActivityNode[@id='n2']</ActivityNodeB>
+		</Link>
+	</Links>
+</ActivityModel>

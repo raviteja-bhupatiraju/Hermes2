@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A Tour of the Workbench</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>A Tour of the Workbench</h1>
+
+<p class="lead">The Hermes 2 window is an Eclipse workbench: an editor area surrounded by views that you can
+move, stack, minimize and close.</p>
+
+<h2>Default layout</h2>
+<table>
+<tr><th>Area</th><th>Contents</th></tr>
+<tr><td>Left</td><td><a href="../reference/views.html#projects">Projects</a> view: your projects, their folders and
+documents with titles and validation state.</td></tr>
+<tr><td>Center</td><td>The editor area. While no document is open, the <a href="../reference/views.html#start">Start
+page</a> is shown in its place.</td></tr>
+<tr><td>Right</td><td><a href="../reference/views.html#outline">Outline</a> (top) and
+<a href="../reference/views.html#properties">Properties</a> (bottom). The
+<a href="../reference/views.html#guide">HLOM Guide</a> opens stacked with the Outline.</td></tr>
+<tr><td>Bottom</td><td><a href="../reference/views.html#validation">Validation</a>,
+<a href="../reference/views.html#problems">Problems</a> and <a href="../reference/views.html#library">Library</a>;
+the <a href="../reference/views.html#search">Search</a> view opens here too. The
+<a href="../reference/views.html#compare">Compare</a> view opens below the editor.</td></tr>
+</table>
+
+<p>The main tool bar holds: <span class="ui">New MedBiquitous Document</span> (which opens the new-document
+wizard for any standard),
+<span class="ui">Open</span>, <span class="ui">Save</span>, <span class="ui">Undo</span>, <span class="ui">Redo</span>,
+<span class="ui">Validate</span> (shows the Validation view and validates the active document),
+<span class="ui">Show the metadata library</span>,
+<span class="ui">Create records from the rows of a CSV file</span>, <span class="ui">Export the active record as an
+HTML catalog card</span> and <span class="ui">Open the HLOM Guide</span>. Further buttons are contributed next to
+it: <span class="ui">Compare With Saved Version</span> and, while a document is active,
+<span class="ui">Add MeSH Keywords</span>.</p>
+
+<p>The status bar shows the memory in use; click its trash-can icon to run the garbage collector.</p>
+
+<h2>The editor</h2>
+<p>Each document opens in one editor with several pages that all edit the same document. Hermes 2 recognizes the
+standard of a document by its root element and namespace, whatever the file name, and shows the pages of that
+standard. A navigation sidebar on the left lists the pages in groups, with a badge counting the problems of each
+page. For a Healthcare LOM record these are:</p>
+<ul>
+<li><strong>Overview</strong>: summary dashboard.</li>
+<li><strong>Description</strong>: General, Life Cycle, Educational, Rights, Classification, Relation,
+Annotation.</li>
+<li><strong>Healthcare</strong>: Healthcare Education, Healthcare Asset (the MedBiquitous extensions, marked
+with a teal accent).</li>
+<li><strong>Record</strong>: Meta-Metadata, Technical.</li>
+<li><strong>Source</strong>: Document Tree, XML, JSON.</li>
+</ul>
+<p>Documents of the <a href="../standards/index.html">other MedBiquitous standards</a> have an
+<strong>Overview</strong> page (title, standard and version, the parts of the document and the validation
+results), the form pages defined for their standard (for example the events, expectations and sequence of a
+Curriculum Inventory), and the <strong>Document Tree</strong> and <strong>XML</strong> pages. They have no JSON
+page.</p>
+<figure>
+<img src="../img/02-general.png" alt="The General page with the navigation sidebar on the left">
+<figcaption>The General page; the navigation sidebar is on the left.</figcaption>
+</figure>
+<p>All pages share one undo/redo history (<kbd>Ctrl</kbd>+<kbd>Z</kbd>, <kbd>Ctrl</kbd>+<kbd>Y</kbd>), and
+merely viewing a document never changes it. Clearing a field removes elements that became empty.</p>
+
+<h2>Workspace and window state</h2>
+<p>Preferences, open projects and the window layout are kept in the workspace folder
+<code>~/.hermes2/workspace</code> (in your home folder), so Hermes 2 also runs from a read-only installation
+folder. The workspace is refreshed automatically when files change outside the application.</p>
+
+<p>Besides the default perspective, Hermes 2 defines a <span class="ui">Library</span> perspective that shows the
+metadata library across the top with the editor and the validation below it.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="../reference/views.html">Views</a></li>
+<li><a href="../reference/editor-pages.html">Editor Pages</a></li>
+<li><a href="../reference/menus-shortcuts.html">Menus and Keyboard Shortcuts</a></li>
+<li><a href="first-steps.html">First Steps</a></li>
+</ul>
+</div>
+</body>
+</html>

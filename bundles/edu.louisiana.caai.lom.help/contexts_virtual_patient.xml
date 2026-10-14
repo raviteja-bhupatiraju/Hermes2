@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the form pages of MedBiquitous Virtual Patient 1.0 documents: Virtual Patient Data,
+     Activity Models and Data Availability Models. Ids: page_<type id>_<page id>, '-' written '_'. -->
+<contexts>
+
+   <!-- Virtual Patient Data (virtual-patient-data-v1) -->
+   <context id="page_virtual_patient_data_v1_patient" title="Patient">
+      <description>The demographics of the virtual patient: name, patient ID, age (a duration such as P58Y), sex, race, and species and breed of an animal patient, followed by further demographic characteristics such as occupation or marital status.</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+      <topic href="html/standards/virtual-patient.html" label="MedBiquitous Virtual Patient"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_texts" title="Narrative">
+      <description>The VPDText elements: chief complaint, history, problems, allergies and narrative. Each has an id and a text type; its formatted text (an XHTML div with paragraphs, lists, images and media references) is edited on the XML page.</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+      <topic href="html/standards/virtual-patient.html#rules" label="Rules Hermes checks"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_history" title="History">
+      <description>Interview items (a question the learner may ask and the patient's response) and the medications the patient takes, with dose, route, frequency and an optional vocabulary code.</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_exam" title="Physical Exam">
+      <description>Physical examinations: the exam, the action of the virtual clinician, the finding, a description and the location on the body.</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_tests" title="Diagnostic Tests">
+      <description>Diagnostic test results: test name, result, unit and normal range. A Data Availability Model can show results only if the learner ordered them (display ifrequested).</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_diagnoses" title="Diagnoses">
+      <description>Differential diagnoses with their likelihood, and the author's final diagnosis (Author diagnosis). Names may carry a vocabulary code (for example ICD-10).</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+      <topic href="html/standards/virtual-patient.html#rules" label="Rules Hermes checks"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_interventions" title="Interventions">
+      <description>Interventions the learner may choose, how appropriate they are (always, ok, never, none), their results and an optional medication given.</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+   </context>
+   <context id="page_virtual_patient_data_v1_organization" title="Organization">
+      <description>A hierarchy of sections and items for authoring systems; each item refers to a data element by its id (idRef).</description>
+      <topic href="html/standards/virtual-patient.html#vpd" label="Virtual Patient Data"/>
+      <topic href="html/standards/virtual-patient.html#rules" label="Rules Hermes checks"/>
+   </context>
+
+   <!-- Activity Model (virtual-patient-activity-model-v1) -->
+   <context id="page_virtual_patient_activity_model_v1_nodes" title="Activity Nodes">
+      <description>Node sections and their activity nodes. The first node of the file starts the activity; each node shows a DAM node (Content) and may have rules: counter actions, a conditional rule, probability and global navigation, and a node timer.</description>
+      <topic href="html/standards/virtual-patient.html#am" label="Activity Model"/>
+      <topic href="html/standards/virtual-patient.html#rules" label="Rules Hermes checks"/>
+   </context>
+   <context id="page_virtual_patient_activity_model_v1_links" title="Links">
+      <description>The links between activity nodes: from ActivityNodeA to ActivityNodeB, with a label, an optional weighting (percent, for nodes with Probability on) and counter actions taken when the learner follows the link.</description>
+      <topic href="html/standards/virtual-patient.html#am" label="Activity Model"/>
+      <topic href="html/standards/virtual-patient.html#rules" label="Rules Hermes checks"/>
+   </context>
+   <context id="page_virtual_patient_activity_model_v1_properties" title="Counters and Timer">
+      <description>The counters of the activity (scores such as patient health or costs) with their initial values and rules, and the timer that runs through the whole activity.</description>
+      <topic href="html/standards/virtual-patient.html#am" label="Activity Model"/>
+   </context>
+
+   <!-- Data Availability Model (virtual-patient-data-availability-model-v1) -->
+   <context id="page_virtual_patient_data_availability_model_v1_nodes" title="DAM Nodes">
+      <description>DAM nodes group the data an activity node shows. Each item points to Virtual Patient Data (/VirtualPatientData/...) or to a media resource of the package (/manifest/resources/resource[@identifier='...']), says when it is displayed and may include other DAM nodes.</description>
+      <topic href="html/standards/virtual-patient.html#dam" label="Data Availability Model"/>
+      <topic href="html/standards/virtual-patient.html#rules" label="Rules Hermes checks"/>
+   </context>
+</contexts>

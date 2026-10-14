@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the form pages of Medical Education Metrics documents (medical-education-metrics-v1 and
+     survey-items-v1): ids page_<type id>_<page id> with - written _ (edu.louisiana.caai.lom.editor.help.HelpContexts.page). -->
+<contexts>
+
+   <!-- Medical Education Metrics 1.0 -->
+   <context id="page_medical_education_metrics_v1_report" title="Report Description">
+      <description>The scope of the report: the first and last day of the reporting period, and a respondent category when the data cover only some participants (for example one profession).</description>
+      <topic href="html/standards/education-metrics.html#structure" label="Medical Education Metrics: Structure"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_medical_education_metrics_v1_activity" title="Activity Description">
+      <description>The educational activity evaluated: its Healthcare LOM description and identifier, the credits it offers, whether it is designed to change competence, performance or patient outcomes and whether changes were measured, and its commercial support, income and expenses.</description>
+      <topic href="html/standards/education-metrics.html#pages" label="Medical Education Metrics: Editor Pages"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+      <topic href="html/concepts/hlom.html" label="Healthcare LOM"/>
+   </context>
+   <context id="page_medical_education_metrics_v1_participation" title="Participation Metrics">
+      <description>How many clinicians were targeted, registered, completed the activity and received credit, the credits awarded per type of credit, web statistics and the participants by category, profession and specialty.</description>
+      <topic href="html/standards/education-metrics.html#pages" label="Medical Education Metrics: Editor Pages"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+   </context>
+   <context id="page_medical_education_metrics_v1_evaluation" title="Participant Activity Evaluation">
+      <description>How participants evaluated the activity: each survey question with the number of respondents per response (yes/no, scale, multiple choice) or the free text responses, and comparison data of related questions asked at different times. Source and id refer to standardized survey items.</description>
+      <topic href="html/standards/education-metrics.html#structure" label="Medical Education Metrics: Structure"/>
+      <topic href="html/standards/education-metrics.html#survey-items" label="MEMS Survey Items"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+   </context>
+   <context id="page_medical_education_metrics_v1_assessment" title="Knowledge Assessment">
+      <description>Multiple choice assessment items with their responses, which are correct and how many learners chose them, and assessment scores (one score per learner, with the score method and the timing).</description>
+      <topic href="html/standards/education-metrics.html#structure" label="Medical Education Metrics: Structure"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+   </context>
+   <context id="page_medical_education_metrics_v1_extensions" title="Extensible Information">
+      <description>XtensibleInfo: elements of other namespaces defined by the organization implementing the standard, edited on the XML page.</description>
+      <topic href="html/standards/education-metrics.html#structure" label="Medical Education Metrics: Structure"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+
+   <!-- MEMS Survey Items 1.0 -->
+   <context id="page_survey_items_v1_items" title="Survey Items">
+      <description>Each survey item: its question, source and id, and its response structure (yes/no, a scale of 3 to 10 labelled points, multiple choice select one or many, or free text) with identified responses.</description>
+      <topic href="html/standards/education-metrics.html#survey-items" label="MEMS Survey Items: Structure"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+   </context>
+   <context id="page_survey_items_v1_comparisons" title="Comparisons">
+      <description>Sets of related survey items, such as expectations before and perceptions after an activity, each with its intended timing (Before, During, After) and duration.</description>
+      <topic href="html/standards/education-metrics.html#survey-items" label="MEMS Survey Items: Structure"/>
+      <topic href="html/standards/education-metrics.html#rules" label="Medical Education Metrics: Rules"/>
+   </context>
+</contexts>

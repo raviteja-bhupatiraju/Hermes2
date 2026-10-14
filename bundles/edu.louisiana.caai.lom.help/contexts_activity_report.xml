@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.contexts"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<!-- Context help (F1) of the form pages of Activity Report documents (activity-report-v1 and activity-report-v2):
+     ids page_<type id>_<page id> with - written _ (edu.louisiana.caai.lom.editor.help.HelpContexts.page). -->
+<contexts>
+
+   <!-- Activity Report 1.0 -->
+   <context id="page_activity_report_v1_report" title="Report">
+      <description>When the set of reports was created.</description>
+      <topic href="html/standards/activity-report.html#structure" label="Activity Report: Structure"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v1_participants" title="Participants">
+      <description>Each activity report with its reporting organization and the person it is about: the Member (Professional Profile: unique IDs with their domains, name, licenses).</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/activity-report.html#rules" label="Activity Report: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v1_activities" title="Activities">
+      <description>The activities of each report (provider organization, activity name and ID) and their modules, with the module's Healthcare LOM description and the credits it offers.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v1_status" title="Status and Results">
+      <description>The individual's status for each module (Registered, Completed, Expired), the registration, start, due, end, completion and expiration dates, the time engaged and the results.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/activity-report.html#rules" label="Activity Report: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v1_credits" title="Credits">
+      <description>The credit certificates of each module: the credit ID (ccid:providerdomain:localidentifier) and the credit received (accrediting body, certification, type, unit, number of credits, credit focus). Repeat the certificate for each type of credit.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/activity-report.html#rules" label="Activity Report: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v1_point_of_care" title="Point-of-Care Learning">
+      <description>Point-of-care learning data of an activity: the clinical question or topic, search parameters, resources used and how the learner applied the learning to practice.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+
+   <!-- Activity Report 2.0 -->
+   <context id="page_activity_report_v2_report" title="Report">
+      <description>When the set of reports was created and the reporting period (first and last day) of the data. The arid attribute identifies the document (arid:domain:localidentifier).</description>
+      <topic href="html/standards/activity-report.html#structure" label="Activity Report: Structure"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v2_participants" title="Participants">
+      <description>Each activity report with its reporting organization and the person it is about: the Member (Professional Profile: unique IDs with their domains, name, licenses), or the Participants: learner demographics (local identifier, state, DEA registration, profession, practice area, time in practice).</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/activity-report.html#rules" label="Activity Report: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v2_activities" title="Activities">
+      <description>The activities of each report (provider organization, activity name and ID, instance ID) and their modules, with the module's Healthcare LOM description and the credits it offers.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v2_status" title="Status and Results">
+      <description>The individual's status for each activity and module (Registered, Completed, Expired), the registration, start, due, end, completion and expiration dates, the time engaged and the results.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/activity-report.html#rules" label="Activity Report: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v2_credits" title="Credits">
+      <description>The credit certificates of each module: the credit ID (ccid:providerdomain:localidentifier) and the credit received (accrediting body, certification, type, unit, number of credits, credit focus). Repeat the certificate for each type of credit.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/activity-report.html#rules" label="Activity Report: Rules"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v2_regulation" title="Regulation and Launch">
+      <description>The commercial supporter, the launch details (launch action, activity and return location) and the regulatory information of each activity: regulations it complies with or relates to, and regulatory classifications such as Opioid REMS blueprint components.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+   <context id="page_activity_report_v2_point_of_care" title="Point-of-Care Learning">
+      <description>Point-of-care learning data of an activity: the clinical question or topic, search parameters, resources used and how the learner applied the learning to practice.</description>
+      <topic href="html/standards/activity-report.html#pages" label="Activity Report: Editor Pages"/>
+      <topic href="html/standards/index.html" label="MedBiquitous Standards"/>
+   </context>
+</contexts>

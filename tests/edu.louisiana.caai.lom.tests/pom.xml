@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>edu.louisiana.caai</groupId>
+    <artifactId>edu.louisiana.caai.lom.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>edu.louisiana.caai.lom.tests</artifactId>
+  <packaging>eclipse-test-plugin</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- The offline terminologies: fragments of the model bundle (not reachable through Require-Bundle). -->
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <dependency-resolution>
+            <extraRequirements>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>edu.louisiana.caai.terminology.mesh</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>edu.louisiana.caai.terminology.icd10cm</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+            </extraRequirements>
+          </dependency-resolution>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <!-- The tests exercise the model and EMF commands only; no workbench is needed. -->
+          <useUIHarness>false</useUIHarness>
+          <useUIThread>false</useUIThread>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

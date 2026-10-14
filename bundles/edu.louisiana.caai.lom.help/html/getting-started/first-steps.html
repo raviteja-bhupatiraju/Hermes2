@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>First Steps</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>First Steps</h1>
+
+<p class="lead">This walk-through creates a continuing-education record in Healthcare LOM, fills in the most
+important fields, checks it and saves it. It takes about ten minutes. Documents of the other MedBiquitous standards
+are created and edited the same way; see <a href="#other-standards">Documents of the other standards</a> at the
+end.</p>
+
+<h2>1. Tell Hermes 2 who you are (optional)</h2>
+<ol class="steps">
+<li>Choose <span class="ui">Window &gt; Preferences…</span> and select <span class="ui">Healthcare LOM</span>.</li>
+<li>Under <span class="ui">Author</span>, enter your full name, organization and email. The vCard preview shows
+what will be recorded.</li>
+<li>Keep <span class="ui">Add me as author and meta-metadata creator of new documents</span> selected and click
+<span class="ui">Apply and Close</span>.</li>
+</ol>
+<p>New documents now list you in Life Cycle (author) and Meta-Metadata (creator).</p>
+
+<h2>2. Create a project (recommended)</h2>
+<p>A project keeps related records together and validates them in the background.</p>
+<ol class="steps">
+<li>Choose <span class="ui">File &gt; New &gt; Project…</span> (or <span class="ui">New project…</span> on the
+start page).</li>
+<li>Enter a name, check the location (by default <code>Documents\Hermes Projects</code>), choose whether new
+documents are XML or JSON, and click <span class="ui">Create</span>.</li>
+</ol>
+<p>The project appears in the <span class="ui">Projects</span> view. See
+<a href="../tasks/create-project.html">Creating and Opening Projects</a>.</p>
+
+<h2>3. Create a record from a template</h2>
+<ol class="steps">
+<li>Select the project in the Projects view and click <span class="ui">New Document…</span> on the view's tool
+bar. (<kbd>Ctrl</kbd>+<kbd>N</kbd> opens the same wizard, but then check that the file is created in the project
+folder.)</li>
+<li>Keep <span class="ui">Healthcare LOM 1.0 (learning object metadata)</span> as the
+<span class="ui">Standard</span> at the top of the
+wizard, and under <span class="ui">Start from</span>, choose <span class="ui">CME course</span>.</li>
+<li>Enter the <span class="ui">Title</span>, check the <span class="ui">Language</span> (for example
+<code>en-US</code>) and the file name, and click <span class="ui">Finish</span>.</li>
+</ol>
+<p>The document opens in the editor. Every template is a complete, schema-valid record with placeholders such
+as “Author Name” for you to replace.</p>
+
+<h2>4. Fill in the record</h2>
+<p>Use the navigation sidebar on the left of the editor to move between pages:</p>
+<ol class="steps">
+<li><span class="ui">General</span>: replace the description and add keywords. Click
+<span class="ui">Look Up…</span> next to the keyword list to add MeSH-coded keywords from the offline index.</li>
+<li><span class="ui">Life Cycle</span>: select a contributor and replace the placeholder entity; use
+<span class="ui">Add vCard…</span> to compose a person or organization.</li>
+<li><span class="ui">Healthcare Education</span>: complete the credit entry (accrediting body, credit type,
+number of credits), the target audience and the disclosures.</li>
+</ol>
+<figure>
+<img src="../img/09-healthcare-education.png" alt="The Healthcare Education page with credits, audience and disclosures">
+<figcaption>The Healthcare Education page holds credits, target audience, disclosures and the activity
+location.</figcaption>
+</figure>
+
+<h2>5. Check and repair</h2>
+<ol class="steps">
+<li>Open the <span class="ui">Overview</span> page. The <span class="ui">Validation</span> card counts errors,
+warnings and infos; <span class="ui">Completeness</span> shows which recommended elements are still missing.</li>
+<li>In the <span class="ui">Validation</span> view at the bottom, a light bulb marks problems with a quick fix.
+Select one and press <kbd>Ctrl</kbd>+<kbd>1</kbd>, or click <span class="ui">Fix All</span> on the view's
+tool bar to repair every automatically fixable problem in one undoable step.</li>
+<li>Double-click any problem to jump to the field concerned.</li>
+</ol>
+
+<h2>6. Save</h2>
+<p>Press <kbd>Ctrl</kbd>+<kbd>S</kbd>. The document is written as XML (or JSON, for a <code>.json</code> file),
+and the project's documents are validated again in the background; their problems appear in the
+<span class="ui">Problems</span> view.</p>
+
+<p class="tip">To experiment without risk, open a sample from the start page (<span class="ui">Open sample…</span>):
+the Healthcare LOM samples are listed first, followed by a submenu of samples for each other standard. Samples are
+copied to <code>Documents\MedBiquitous Samples</code> before they open.</p>
+
+<h2 id="other-standards">Documents of the other standards</h2>
+<p>To create a Curriculum Inventory, a competency framework, an activity report or a document of any other
+<a href="../standards/index.html">MedBiquitous standard</a>, choose it as the <span class="ui">Standard</span> in
+the new-document wizard (or click its card under <span class="ui">Start from a template</span> on the start page).
+The document starts from the standard's template, which is already valid, and is saved as XML. Its editor has an
+<span class="ui">Overview</span> page, form pages that follow the structure of the standard, the
+<span class="ui">Document Tree</span> and the <span class="ui">XML</span> page; it is validated against the
+standard's schemas and rules like a Healthcare LOM record. Steps 1 and 4 of this walk-through (author, MeSH
+keywords, credits) and the quick fixes and completeness of step 5 apply to Healthcare LOM only.</p>
+
+<div class="related">
+<h2>Related topics</h2>
+<ul>
+<li><a href="workbench.html">A Tour of the Workbench</a></li>
+<li><a href="../tasks/create-document.html">Creating Documents</a></li>
+<li><a href="../tasks/edit-forms.html">Editing with the Form Pages</a></li>
+<li><a href="../tasks/validate-fix.html">Validating and Fixing Problems</a></li>
+</ul>
+</div>
+</body>
+</html>

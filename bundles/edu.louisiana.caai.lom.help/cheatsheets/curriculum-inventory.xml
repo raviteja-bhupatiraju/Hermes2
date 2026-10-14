@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<cheatsheet title="Prepare a Curriculum Inventory Report">
+   <intro>
+      <description>
+A <b>Curriculum Inventory</b> report describes a program for one reporting period: its academic levels, its
+events (sessions, assessments), the sequence blocks (courses, clerkships, phases) that organize them, and the
+competency objects they address. This cheat sheet builds a report in that order and checks it before submission.
+      </description>
+   </intro>
+   <item title="Create the report" dialog="true" skip="false">
+      <description>
+Create a document of the type <b>Curriculum Inventory</b> (the 2022 "v10" point release unless your recipient asks
+for 1.0). Enter the report ID and the reporting period on the <b>Report</b> page, and the institution and program on
+<b>Institution and Program</b>.
+      </description>
+      <command serialization="edu.louisiana.caai.lom.editor.NewHlomDocumentCommand" confirm="false"/>
+   </item>
+   <item title="Describe the academic levels" skip="false">
+      <description>
+On the <b>Academic Levels</b> page, add one level per year or phase and set <b>Levels in program</b> to their
+number. Sequence blocks refer to the levels by number.
+      </description>
+   </item>
+   <item title="Add the events" skip="false">
+      <description>
+On the <b>Events</b> page, add each instructional or assessment event with an id, a title, its duration and its
+methods (the standardized vocabulary is offered). Give each event an id: blocks refer to events by it.
+      </description>
+   </item>
+   <item title="Organize the events in sequence blocks" skip="false">
+      <description>
+On the <b>Sequence</b> page, add the blocks (courses, clerkships) with their dates and levels. In <b>Events of the
+block</b>, choose the events from the list instead of typing references. Nested blocks are chosen the same way.
+      </description>
+   </item>
+   <item title="Link the competency objects" skip="true">
+      <description>
+Add the program's competency objects on the <b>Expectations</b> page and choose them in the competency object
+references of events and blocks.
+      </description>
+   </item>
+   <item title="Review the structure" skip="true">
+      <description>
+The <b>Document Graph</b> shows blocks, events, competencies and levels with their references; the
+<b>Curriculum Timeline</b> shows the blocks by date and level; <b>Document Lists</b> shows the events as an editable
+table. Double-click an element to edit it.
+      </description>
+      <command serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=edu.louisiana.caai.lom.editor.views.CurriculumTimelineView)" confirm="false"/>
+   </item>
+   <item title="Check the report" skip="false">
+      <description>
+The <b>Problems</b> view lists what the schemas and the rules of the standard find: references to events or blocks
+that do not exist, dates outside the reporting period, events in no block. Rename an event or block identifier with
+<b>Edit &gt; Rename Identifier</b> (Alt+Shift+R) to update its references too.
+      </description>
+      <command serialization="org.eclipse.ui.views.showView(org.eclipse.ui.views.showView.viewId=org.eclipse.ui.views.ProblemView)" confirm="false"/>
+      <onCompletion>The report is ready to save and submit. Keep it in a project shared with Git to see what changed between reporting periods (Compare With).</onCompletion>
+   </item>
+</cheatsheet>

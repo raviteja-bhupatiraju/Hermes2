@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hermes 2 Command Line and Language Server
+Bundle-SymbolicName: edu.louisiana.caai.lom.cli
+Automatic-Module-Name: edu.louisiana.caai.lom.cli
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: University of Louisiana at Lafayette, Center for Applied Artificial Intelligence (CAAI)
+Bundle-RequiredExecutionEnvironment: JavaSE-25
+Bundle-ClassPath: .
+Export-Package: edu.louisiana.caai.lom.cli,
+ edu.louisiana.caai.lom.cli.lsp
+Require-Bundle: edu.louisiana.caai.lom.model,
+ edu.louisiana.caai.medbiq.model

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Healthcare Professional Profile</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Healthcare Professional Profile</h1>
+
+<p class="lead">The MedBiquitous Healthcare Professional Profile (ANSI/MEDBIQ PP.10.1-2008) is a standard XML format
+for profile data on healthcare professionals: identifiers, name, addresses, education, postgraduate training,
+specialty certification, licensure, disciplinary actions, academic appointments, occupation, personal information and
+memberships in professional societies. Licensing and certifying boards, professional societies, medical schools and
+credentialing services use it to exchange and compile credentials data, for example to verify a clinician's
+licenses and board certifications or to keep membership records up to date.</p>
+
+<p>A profile uses two other MedBiquitous schemas: <strong>Name 1.0</strong> for the person's name and
+<strong>Address 1.0</strong> for postal addresses and countries. The <a href="activity-report.html">Activity
+Report</a> describes the person a report is about with the same <code>Member</code> element.</p>
+
+<h2 id="versions">Document type and version</h2>
+<table>
+<tr><th>Document type</th><th>Namespace</th><th>Notes</th></tr>
+<tr><td>Healthcare Professional Profile 1.0 (<code>professional-profile-v1</code>)</td>
+<td><code>http://ns.medbiq.org/member/v1/</code></td>
+<td>The standard of 2008, with Name 1.0 (<code>http://ns.medbiq.org/name/v1/</code>) and Address 1.0
+(<code>http://ns.medbiq.org/address/v1/</code>). The Professional Profile 2.0 drafts are not supported.</td></tr>
+</table>
+
+<h2 id="structure">Structure of a document</h2>
+<p>The root element <code>Members</code> holds one or more <code>Member</code> elements, each the profile of “a
+single user or healthcare professional within a community”. A member has, in this order:</p>
+<ul>
+<li><code>UniqueID</code>s, each with the <code>domain</code> that issued it (“Use of the domain attribute is
+required”), such as an AAMC id, a National Provider Identifier (NPI), a state license number for nurses or the id of
+your own organization.</li>
+<li>The <code>Name</code> (required by the specification): formatted name, title, given and family names, generation
+identifier, degrees, aliases and former names (prefix <code>n</code>).</li>
+<li><code>Address</code>es (prefix <code>a</code>): organizations, street address lines, city, state or province,
+postal code, region, district and the required <code>Country</code> (name and ISO 3166 code), with a category
+(Residential, Business, Undeliverable).</li>
+<li><code>EducationInfo</code>: degrees and certificates with the institution, distinction, status and the start, end
+and graduation dates; <code>TrainingInfo</code>: residencies and fellowships with the program (name, type, ID,
+accreditation, specialty, institution), status and dates.</li>
+<li><code>CertificationInfo</code>: the certification by a specialty board (organization, board, status) with its
+certificates (name, certificate ID, general certificate or subcertificate) and their issuances (certification ID,
+duration, initial, recertification or maintenance of certification, issue and expiration dates, status).</li>
+<li><code>LicenseInfo</code>: the licenses (licensure entity, number, initial licensure date, status, expiration
+date); <code>DisciplinaryInfo</code>: board orders with the disciplinary entity and either a board notice or a board
+action (description, span or term, appeal).</li>
+<li><code>AcademicAppointmentInfo</code>: faculty appointments (title, rank, tenure, track, effort…), chair
+appointments, division or section appointments and administrative appointments.</li>
+<li><code>OccupationInfo</code>: occupation, institution, title, privileges, practice, dates, specialties and
+status.</li>
+<li><code>PersonalInfo</code>: physical status, birth and deceased dates, languages, citizenship, country of
+residence, gender, race, ethnicity, telephone numbers, email addresses, web pages, tax number, family members and the
+preferred method of contact.</li>
+<li><code>MembershipInfo</code>: memberships in societies (organization, country, member number, level, role,
+status, dates) and in their components (chapters, special interest groups, committees).</li>
+<li><code>ModifiedDate</code>, the date the record was last updated, and <code>XtensibleInfo</code> for elements of
+other namespaces defined by the implementing organization.</li>
+</ul>
+<p>Most parts carry a <code>restrictions</code> attribute: Unrestricted data “may be shared or published”, Restricted
+data “may be shared in some instances, but not published”, Confidential data “may not be shared or published”.
+Dates of education, training and certification have an <code>accuracy</code> (DayMonthYear, MonthYear or Year).</p>
+
+<h2 id="pages">Editor pages</h2>
+<p>Every page starts with the list of members of the document: select a member to edit its details on that page.
+Repeated parts (addresses, degrees, certificates and their issuances, licenses, appointments…) are lists in turn.</p>
+<table>
+<tr><th>Group</th><th>Page</th><th>Shows</th></tr>
+<tr><td rowspan="3">Profile</td><td>Members</td><td>Unique IDs (the values in a list, their domains in the list below
+it), the name with aliases and former names, the record's restrictions and modified date.</td></tr>
+<tr><td>Contact</td><td>Addresses, telephone numbers, email addresses, web pages and the preferred method of
+contact.</td></tr>
+<tr><td>Personal Information</td><td>Physical status, birth and deceased dates, gender, languages, citizenship,
+countries of residence, race, ethnicity, tax number and family members, with their restrictions.</td></tr>
+<tr><td rowspan="3">Qualifications</td><td>Education and Training</td><td>Degrees and certificates; residencies,
+fellowships and other postgraduate programs.</td></tr>
+<tr><td>Certification</td><td>Specialty boards, their certificates and the issuances of each certificate.</td></tr>
+<tr><td>Licensure and Discipline</td><td>Licenses; board orders with the disciplinary entity, the board notice or
+action, its span and appeal.</td></tr>
+<tr><td rowspan="3">Career</td><td>Occupation and Specialties</td><td>Occupations with institution, practice,
+privileges, specialties, dates and status.</td></tr>
+<tr><td>Academic Appointments</td><td>Faculty, chair, division or section and administrative appointments.</td></tr>
+<tr><td>Memberships</td><td>Memberships in societies and their component groups.</td></tr>
+</table>
+<p>Simple values that carry attributes and repeat (unique IDs, ranks, tenure statuses, family members) are edited in
+a list of values, their attributes in the list below it. Extensions (<code>XtensibleInfo</code>) are edited in the
+tree or on the XML page.</p>
+
+<h2 id="rules">Rules</h2>
+<p>Besides the XML schemas, Hermes checks what the Healthcare Professional Profile, Name and Address specifications
+and the Implementation Guidelines state, and what follows from the meaning of the data. Problems are reported on the
+member, entry or element concerned; statuses are compared with the member's <code>ModifiedDate</code> (else
+today).</p>
+<table>
+<tr><th>Check</th><th>Severity</th></tr>
+<tr><td>Each <code>Member</code> has a <code>Name</code> (“Required” in the specification).</td><td>Error</td></tr>
+<tr><td>A name has a <code>FamilyName</code> or a <code>FormattedName</code> (“If an individual has one name only,
+use FamilyName”).</td><td>Warning</td></tr>
+<tr><td>Each member has a <code>UniqueID</code> (Implementation Guidelines 3.1, identity matching 3.5), with a
+non-empty <code>domain</code>; a <code>UniqueID</code> is not repeated in a member (warning) and does not identify two
+members (error).</td><td>Error / Warning</td></tr>
+<tr><td>A National Provider Identifier (domain NPI) has 10 digits and a valid check digit.</td><td>Warning</td></tr>
+<tr><td>Date ranges are in order: start before end, graduation and completion dates of education and training,
+issue before expiration of certificates, initial licensure before license expiration, appointments, occupations,
+memberships and component groups, the span and term of board actions, notice of appeal before judgement. Dates of a
+lower <code>accuracy</code> are compared at that accuracy.</td><td>Error</td></tr>
+<tr><td>Statuses agree with the dates: an Active license or certificate issuance has not expired; a Lifetime
+certificate has no expiration date; a training in “year N” has no completion date; the <code>ModifiedDate</code> is
+not in the future.</td><td>Warning</td></tr>
+<tr><td>Personal data is consistent: no birth date in the future, no deceased date before the birth date or for a
+Living person (errors); a Deceased education or training status or a board notice of death for a Living person,
+education, training, licensure or occupation starting before the birth date (warnings); a Deceased person's
+deceased date (info).</td><td>Error / Warning / Info</td></tr>
+<tr><td>Faculty appointments: an <code>EndowedTitle</code> only for endowed appointments (warning; a missing title
+of an endowed appointment is an info); repeated ranks and tenure statuses list the current one first (“If more than
+one rank is specified, list the current rank first”).</td><td>Warning / Info</td></tr>
+<tr><td>Entries say what they are about: a certification names its board, a membership its organization (warnings),
+an education its degree, certificate or institution (info); no license is listed twice.</td><td>Warning / Info</td></tr>
+<tr><td>Countries (addresses, citizenship, residence, memberships) have a name or an ISO 3166 code; codes are ISO 3166
+alpha codes in capitals. In the United States and Canada, the state or province is a postal abbreviation or name and
+the postal code has the national format.</td><td>Warning</td></tr>
+<tr><td>Telephone numbers: the country calling code has 1 to 3 digits (ITU E.164); the number has digits only (an info
+for formatting characters), at most 14 digits and 15 with the country code, and 10 digits in North America (code
+1).</td><td>Warning / Info</td></tr>
+<tr><td>Email addresses follow RFC 2822 beyond the schema's pattern (no leading, trailing or double dots); web pages
+(<code>URL</code>) are absolute addresses.</td><td>Warning</td></tr>
+<tr><td>A <code>TaxNumber</code> is marked Confidential or Restricted.</td><td>Info</td></tr>
+</table>
+
+<h2 id="samples">Samples and templates</h2>
+<p>A new document has one member with a unique ID of your organization (a generated UUID: replace the domain and the
+id), the name you enter as the formatted name and today's date as the modified date. The samples are:</p>
+<ul>
+<li><code>physician-cardiologist.xml</code>: a fictional academic cardiologist with bachelor's, MD and PhD degrees,
+residency and fellowship, board certification with maintenance of certification, two state licenses, faculty and
+administrative appointments, occupation with privileges, personal information and society memberships.</li>
+<li><code>nurse-practitioner.xml</code>: a fictional family nurse practitioner identified by a state board of nursing
+license number, with a certificate program in progress, a fellowship, certification and recertification, RN and APRN
+licenses, an adjunct faculty appointment, current and former occupations and a membership.</li>
+<li><code>medbiq-toolkit-sample.xml</code>: the sample of the MedBiquitous implementation toolkit, unchanged
+(© MedBiquitous Consortium).</li>
+</ul>
+<p class="note">The model check reports the training status “Completed Specialty Training” of the toolkit sample as
+not matching the pattern <code>year \d</code>, although the XML Schema accepts it: <code>TrainingStatus</code> is a
+union of the program years and a list of statuses, and only the program years are currently recognized by the
+model check.</p>
+
+<h2 id="links">Specification</h2>
+<ul>
+<li><a href="https://www.medbiq.org/standards/professional-profile">Healthcare Professional Profile</a> at
+MedBiquitous: the specification, the Name and Address specifications, the implementation guidelines and the
+implementation toolkit.</li>
+<li>Schemas: <code>http://ns.medbiq.org/member/v1/member.xsd</code>, <code>http://ns.medbiq.org/name/v1/name.xsd</code>
+and <code>http://ns.medbiq.org/address/v1/address.xsd</code>.</li>
+<li><a href="index.html">MedBiquitous Standards</a> and <a href="../concepts/validation.html">Validation</a>.</li>
+</ul>
+<p>Element descriptions in the editor quote or summarize the Healthcare Professional Profile, Name and Address
+specifications, © MedBiquitous Consortium, used under the MedBiquitous Consortium XML Public License and Terms of
+Use.</p>
+</body>
+</html>

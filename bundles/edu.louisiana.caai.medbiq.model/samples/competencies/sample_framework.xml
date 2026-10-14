@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample of the MedBiquitous Competency Framework implementation toolkit (sample_framework.xml), included in Hermes 2
+     with one addition: the life-cycle status (final) of the framework. Copyright (c) 2012 MedBiquitous Consortium. All Rights Reserved.
+     http://www.medbiq.org Users are bound by the terms of the MedBiquitous Consortium XML Public License and Terms
+     of Use (https://www.medbiq.org/standards/medbiquitous-standards-public-license-and-terms-use). -->
+<CompetencyFramework xmlns="http://ns.medbiq.org/competencyframework/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:hx="http://ns.medbiq.org/lom/extend/v1/" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.medbiq.org/competencyframework/v1/ competencyframework.xsd http://ltsc.ieee.org/xsd/LOM http://ns.medbiq.org/lom/healthcarelom.xsd http://ns.medbiq.org/lom/extend/v1/ http://ns.medbiq.org/lom/healthcare/healthcaremetadata.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>http://www.example.org/framework1</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="en">The Competent Physician</lom:string>
+			</lom:title>
+			<lom:description>
+				<lom:string language="en">The Competent Physician describes the knowledge, skills, and abilities a physician should have.</lom:string>
+			</lom:description>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:version>
+				<lom:string>1.0</lom:string>
+			</lom:version>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>final</lom:value>
+			</lom:status>
+			<lom:contribute>
+				<lom:entity>Association of Worldwide Physicians</lom:entity>
+				<lom:role>
+					<lom:source>LOMv1.0</lom:source>
+					<lom:value>publisher</lom:value>
+				</lom:role>
+			</lom:contribute>
+		</lom:lifeCycle>
+		<lom:educational>
+			<lom:context>
+				<lom:source>HEALTHCARE_LOMv1</lom:source>
+				<lom:value>undergraduate professional education</lom:value>
+			</lom:context>
+		</lom:educational>
+		<lom:rights>
+			<lom:copyrightAndOtherRestrictions>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>yes</lom:value>
+			</lom:copyrightAndOtherRestrictions>
+			<lom:description>
+				<lom:string language="en">Creative Commons Attribution 3.0 Unported license, http://creativecommons.org/licenses/by/3.0/</lom:string>
+			</lom:description>
+		</lom:rights>
+		<hx:healthcareMetadata>
+			<hx:healthcareEducation>
+				<hx:targetAudience>
+					<hx:profession>
+						<lom:string language="en">physician</lom:string>
+					</hx:profession>
+				</hx:targetAudience>
+			</hx:healthcareEducation>
+		</hx:healthcareMetadata>
+	</lom:lom>
+	<EffectiveDate>2011-12-09</EffectiveDate>
+	<SupportingInformation>
+		<xhtml:div>
+			<xhtml:p>The Association of Worldwide Physicians has created <xhtml:em>The Competency Physician</xhtml:em> to guide the development of curricula for physicians and to guide the development of regulatory assessments.</xhtml:p>
+		</xhtml:div>
+	</SupportingInformation>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>http://www.example.org/competency1</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>http://www.example.org/competency2</Entry>
+	</Includes>
+	<Includes>
+		<Catalog>URI</Catalog>
+		<Entry>http://www.example.org/competency3</Entry>
+	</Includes>
+	<Relation>
+		<Reference1>
+			<Catalog>URI</Catalog>
+			<Entry>http://www.example.org/competency1</Entry>
+		</Reference1>
+		<Relationship>http://www.w3.org/2004/02/skos/core#narrower</Relationship>
+		<Reference2>
+			<Catalog>URI</Catalog>
+			<Entry>http://www.example.org/competency3</Entry>
+		</Reference2>
+	</Relation>
+	<Relation>
+		<Reference1>
+			<Catalog>URI</Catalog>
+			<Entry>http://www.example.org/competency1</Entry>
+		</Reference1>
+		<Relationship>http://www.w3.org/2004/02/skos/core#narrower</Relationship>
+		<Reference2>
+			<Catalog>URI</Catalog>
+			<Entry>http://www.example.org/competency2</Entry>
+		</Reference2>
+	</Relation>
+</CompetencyFramework>

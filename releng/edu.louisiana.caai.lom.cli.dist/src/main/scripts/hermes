@@ -1,0 +1,13 @@
+#!/bin/sh
+# Copyright (c) 2026 University of Louisiana at Lafayette, CAAI.
+# Runs the Hermes 2 command line tool ("hermes help" lists the commands).
+# Uses the Java runtime of an enclosing Hermes 2 installation, else JAVA_HOME, else java on the PATH (Java 25+).
+dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+if [ -x "$dir/../jre/bin/java" ]; then
+  java="$dir/../jre/bin/java"
+elif [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/bin/java" ]; then
+  java="$JAVA_HOME/bin/java"
+else
+  java=java
+fi
+exec "$java" -XX:+UseSerialGC -XX:TieredStopAtLevel=1 -Xshare:auto -jar "$dir/hermes.jar" "$@"

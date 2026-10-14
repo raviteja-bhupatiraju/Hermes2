@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The MedBiquitous Standards</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>The MedBiquitous Standards</h1>
+
+<p class="lead">MedBiquitous develops XML standards for health professions education (several of them ANSI
+standards). Hermes 2 edits the published versions of all of
+them that have XML schemas. Each document type gets form pages, the document tree, the XML page, validation against
+the published schemas and the standard's rules, search, comparison and help.</p>
+
+<h2>Supported standards and versions</h2>
+<table>
+<tr><th>Standard</th><th>Version</th><th>Root element</th><th>What it describes</th></tr>
+<tr><td><a href="../concepts/hlom.html">Healthcare LOM</a></td><td>1.0</td><td><code>lom</code></td>
+<td>Learning resources: continuing-education courses and activities with credits and accreditation, medical images
+and other assets. Also stored in a JSON form.</td></tr>
+<tr><td><a href="curriculum-inventory.html">Curriculum Inventory</a></td><td>1.0, and "v10" (the AAMC 2022 point
+release)</td><td><code>CurriculumInventory</code></td><td>A program's curriculum: events, expectations
+(competencies), academic levels and the sequence of blocks; exchanged with the AAMC Curriculum Inventory.</td></tr>
+<tr><td><a href="competencies.html">Competency Framework</a></td><td>1.0</td><td><code>CompetencyFramework</code></td>
+<td>A set of competencies and the relations between them.</td></tr>
+<tr><td><a href="competencies.html">Competency Object</a></td><td>1.0</td><td><code>CompetencyObject</code></td>
+<td>A single competency, objective or outcome.</td></tr>
+<tr><td><a href="competencies.html">Performance Framework</a></td><td>1.0</td><td><code>PerformanceFramework</code></td>
+<td>Levels of performance (scales, milestones) for competencies.</td></tr>
+<tr><td><a href="activity-report.html">Activity Report</a></td><td>1.0, 2.0</td><td><code>ActivityReports</code></td>
+<td>Participation in and completion of continuing-education activities, with credits.</td></tr>
+<tr><td><a href="education-metrics.html">Medical Education Metrics (MEMS)</a></td><td>1.0, Survey Items 1.0</td>
+<td><code>MedicalEducationMetrics</code>, <code>SurveyItems</code></td><td>Outcomes of education activities:
+participation, evaluation, knowledge assessment; the standard survey items.</td></tr>
+<tr><td><a href="professional-profile.html">Healthcare Professional Profile</a></td><td>1.0</td>
+<td><code>Members</code></td><td>Healthcare professionals: names, contact information, education, licensure,
+certification and more (with the Name and Address schemas).</td></tr>
+<tr><td><a href="virtual-patient.html">Virtual Patient</a></td><td>1.0</td><td><code>VirtualPatientData</code>,
+<code>ActivityModel</code>, <code>DataAvailabilityModel</code></td><td>Virtual patient cases: the patient data, the
+paths through the case and which data each step shows.</td></tr>
+</table>
+
+<h2>Not included</h2>
+<ul>
+<li><b>Working drafts</b> that MedBiquitous never published as standards: Healthcare LOM 2.0, Curriculum Inventory
+2.0, Professional Profile 2.0, Disclosure of Interests 1.0 and MEMS 2.0.</li>
+<li><b>Disclosure of Interests 2.0</b> and <b>Educational Achievement 1.0</b>: their schemas import schemas that are
+no longer published (MedBiquitous Common 3 and the PESC Core Main 1.12.0 and Academic Record 1.7.0 schemas), so they
+cannot be validated. They will be added when those schemas are available again.</li>
+<li><b>Educational Trajectory</b> (a profile of the LEAP2A Atom format) and <b>xAPI</b>, which have no XML schemas of
+their own, and the web service descriptions (WSDL).</li>
+</ul>
+
+<h2>Working with documents of any standard</h2>
+<ul>
+<li><b>New documents</b>: <i>File &gt; New Document</i> (or the start page) asks for the standard; each starts from
+a template that is already valid.</li>
+<li><b>Opening</b>: the editor recognizes a document by its root element and namespace, whatever its file name.</li>
+<li><b>Editing</b>: the overview shows the title, the standard and version, the parts of the document and the
+validation results; the form pages follow the structure of the standard; the document tree and the XML page (with
+content assist from the schemas) show everything.</li>
+<li><b>Validation</b>: in the editor, in the Problems view for the documents of projects, with <code>hermes
+validate</code> on the command line and in other editors through the language server: the same schemas and rules
+everywhere, offline.</li>
+<li><b>Search and compare</b> work for all standards; the Search dialog offers the field groups of each standard.</li>
+</ul>
+
+<h2>Related topics</h2>
+<ul>
+<li><a href="../concepts/validation.html">Validation</a></li>
+<li><a href="../tasks/create-document.html">Creating Documents</a></li>
+<li><a href="../tasks/search.html">Searching Documents</a></li>
+<li><a href="https://www.medbiq.org/standards">MedBiquitous standards (medbiq.org)</a></li>
+</ul>
+</body>
+</html>

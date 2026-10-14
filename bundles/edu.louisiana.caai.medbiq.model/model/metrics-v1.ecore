@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metricsv1" nsURI="http://ns.medbiq.org/metrics/v1/" nsPrefix="mems">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This file represents a composite schema for validation of the following:&#xA;         1) The use of custom vocabulary source/value pairs and &#xA;            LOMv1.0 base schema (i.e., 1484.12.1-2002) vocabulary source/value pairs&#xA;         2) Uniqueness constraints defined by LOMv1.0 base schema&#xA;         3) The use of XML element/attribute extensions to the LOMv1.0 base schema&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 11/14/2003:  1)Updated comment describing vocab/strict.xsd.  Indicated  **&#xA;        **                that the strict.xsd is used to validate vocabularies     **&#xA;        **                defined in the LOM V1.0 Base Schema.                     **&#xA;        **              2)Moved included schema elementNames.xsd just before       **&#xA;        **                elementTypes.xsd.                                        **&#xA;        **              3)Moved the element declaration for the top-level lom      **&#xA;        **                metadata element to a separate file (rootElement.xsd)    **&#xA;        **                and included this file just after elementTypes.xsd.      **&#xA;        **              4)Moved the XML Schema import statements before the XML    **&#xA;        **                Schema include statements.                               **&#xA;        **              5)Moved the element group declaration named                **&#xA;        **                lom:customElements to a separate file (anyElement.xsd)   **&#xA;        **                and included this new file just before the XML Schema    **&#xA;        **                import statments.                                        **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema definition provides the element group declaration and the&#xA;         attribute group declaration used for extension XML elements and attributes.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         ** &#xA;        ** 09/16/2004:  1)Added a attributeGroup customAttributes to support       **&#xA;        **                attribute extensions                                     **&#xA;        **                                                                         ** &#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **                                                                         ** &#xA;        ** 10/11/2004   1)Removed attributeGroup customAttributes declaration.     **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion defines global schema data type declarations&#xA;         for data types defined in the LOMv1.0 base schema.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 11/14/2003:  1)Updated xs:pattern for the DurationString.  The pattern  **&#xA;        **                did not permit zero values for each of the date and      **&#xA;        **                time components.                                         **&#xA;        **                                                                         **&#xA;        ** 03/15/2004:  1)Changed the restriction type for LanguageIdNone from     **&#xA;        **                xs:string to xs:token                                    **&#xA;        **                                                                         ** &#xA;        ** 08/24/2004:  1) To correct a XML Binding to Marshalling issue, a change **&#xA;        **              is needed to resolve a naming convention for two complex   **&#xA;        **              types:                                                     **       &#xA;        **                1.1) Changed the name of the LangString complexType      **&#xA;        **                to LanguageString                                        **&#xA;        **                1.2) Change the  name of the langString completType to   **&#xA;        **                LangString                                               **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         ** &#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Removed the LanguageIdOrNone and LanguageIdNone type     **&#xA;        **                declarations.  The types were not needed.  The           **&#xA;        **                LanguageId type was updated to support attribute         **&#xA;        **                extensions.  The LanguageId will now vaidate any         **&#xA;        **                language defined by 1484.12.3 and the token &quot;none&quot;.      **&#xA;        **              3)Updated VCard to support attribute extensions.           **&#xA;        **              4)Updated LanguageString to reference the xs:language      **&#xA;        **                data type.                                               **       &#xA;        **              5)Updated DateTimeValue to support attribute extensions.   **&#xA;        **              6)Updated DurationValue to support attribute extensions.   **&#xA;        *****************************************************************************&#xA;&#xA;&#x9;24 May 2007 &#x9;NOTE: The Size and Duration types have been renamed SizeBase &#xA;&#x9;&#x9;&#x9;and DurationBase to prevent errors with web services &#xA;&#x9;&#x9;&#x9;development tools. This change does not affect the resulting &#xA;&#x9;&#x9;&#x9;XML document. The change applies only to MedBiquitous &#xA;&#x9;&#x9;&#x9;Healthcare LOM schema files.&#xA;&#xA;      &#xD;&#xA;&#xA;       This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;       License.  To view a copy of this license, see the file license.txt,&#xA;       visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;       Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;    &#xD;&#xA;&#xA;       This component schema defines the XML Schema content model groups customElements &#xA;       and customAttributes to support validation of extension XML elements and attributes. &#xA;&#xA;       This component XSD should be used if extensions are to be supported in LOM &#xA;       XML instances.&#xA;    &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                           CHANGE HISTORY                                **&#xA;        *****************************************************************************&#xA;        ** 03/15/2004:  1)Updated annoation describing purpose and design of the   **&#xA;        **                XSD.                                                     **&#xA;        **                                                                         **&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Added the customAttributes declaration to support        **&#xA;        **                attribute extensions to all LOM data elements.           **&#xA;        *****************************************************************************&#xA;    &#xD;&#xA;&#xA;       This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;       License.  To view a copy of this license, see the file license.txt,&#xA;       visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;       Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;    &#xD;&#xA;&#xA;       This component schema defines attribute group declarations for LOM data&#xA;       elements defined in the LOMv1.0 base schema to support schema-based &#xA;       validation of the uniqueness constraints with a LOM XML instance by &#xA;       introducing the attribute &quot;uniqueElementName&quot; for each LOM data element&#xA;       that appears with a multiplicity of at most one.&#xA;&#xA;       NOTE: For most applications, enforcing the uniqueness constraints using the &#xA;       unique/strict.xsd component XSD is desirable. Although adding the attribute &#xA;       &quot;uniqueElementName&quot; is undesirable, it is unlikely to cause problems.&#xA;&#xA;       Duplicate declarations are included as comments for completeness.  These &#xA;       declarations should remain commented out or they can be removed completely.&#xA;    &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 03/15/2004:  1)Updated annoation describing purpose and design of the   **&#xA;        **                XSD.                                                     **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion defines global element declarations for &#xA;         each of the data elements defined in the LOMv1.0 base schema.  This component&#xA;         schema definition is used to check for the uniqueness of elements declared&#xA;         to be unique within their parent elements by the presence of the &#xA;         &quot;uniqueElementName&quot; attribute.  The XML Schema constraint &quot;unique&quot; is used &#xA;         to enforce uniqueness constraints.&#xA;&#xA;         Duplicate declarations are included as comments for completeness.  These &#xA;         declarations should remain commented out or they can be removed completely.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1) Updated those complexTypes that referenced exteding the **&#xA;        **              LangString complexType to map to the new name for that     **&#xA;        **              complexType - LanguageString:                              **       &#xA;        **                 1.4 Description                                         **       &#xA;        **                 5.10 Description                                        **       &#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              3)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated &quot;language&quot; elements to remove reference to       **&#xA;        **                types that were removed (e.g, languageIdOrNone).         **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;       This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;       License.  To view a copy of this license, see the file license.txt,&#xA;       visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;       Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;    &#xD;&#xA;&#xA;       This component schema defintion defines global schema data type declarations&#xA;       for data elements defined in the LOMv1.0 base schema.  This component XSD&#xA;       defines the aggregation relationship among the LOM data elements.  These aggregation&#xA;       relationships enforce the LOMv1.0 base schema requirement that elements can only&#xA;       be present in a LOM XML instance as elements of the aggregate element to which they&#xA;       belong.&#xA;&#xA;       Duplicate declarations are included as comments for completeness.  These declarations&#xA;       should remain commented out or they can be removed completely.&#xA;    &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                           CHANGE HISTORY                                **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1) Updated those complexTypes that referenced exteding the **&#xA;        **              LangString complexType to map to the new name for that     **&#xA;        **              complexType - LanguageString:                              **       &#xA;        **                 1.2 Title                                               **       &#xA;        **                 1.4 Description                                         **       &#xA;        **                 1.5 Keyword                                             **       &#xA;        **                 1.6 Coverage                                            **       &#xA;        **                 2.1 Version                                             **       &#xA;        **                 4.5 Installation Remarks                                **       &#xA;        **                 4.6 Other Platform Requirements                         **       &#xA;        **                 5.7 Typical Age Range                                   **       &#xA;        **                 5.10 Description                                        **       &#xA;        **                 6.3 Description                                         **       &#xA;        **                 7.2.2 Description                                       **       &#xA;        **                 8.3 Description                                         **       &#xA;        **                 9.2.1 Source                                            **       &#xA;        **                 9.2.2.2 Entry                                           **       &#xA;        **                 9.3 Description                                         **       &#xA;        **                 9.4 Keyword                                             **       &#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              3)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated all complexTypes (non-Vocabulary data typed)     ** &#xA;        **                elements to reference the customAttribute attributeGroup **&#xA;        **                to support attribute extensions.                         **&#xA;        *****************************************************************************&#xA;&#xA;&#x9;24 May 2007 &#x9;NOTE: The Size and Duration types have been renamed SizeBase &#xA;&#x9;&#x9;&#x9;and DurationBase to prevent errors with web services &#xA;&#x9;&#x9;&#x9;development tools. This change does not affect the resulting &#xA;&#x9;&#x9;&#x9;XML document. The change applies only to MedBiquitous &#xA;&#x9;&#x9;&#x9;Healthcare LOM schema files.&#xA;&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion provides the element name declaration for the&#xA;         root element for all LOM XML instances.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema definition provides global type declarations for the standard&#xA;         LOMv1.0 vocabulary tokens for those LOM data elements whose values are taken from&#xA;         a Vocabulary data type.&#xA;&#xA;         This component schema defintion defines the stanard vocabulary value &#xA;         declarations as defined in the LOMv1.0 base schema.  These vocabulary&#xA;         value declarations are used in conjunction with both vocab/custom.xsd and&#xA;         vocab/strict.xsd.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 09/22/2003:  1)Updated comment describing this file to state that this  **&#xA;        **                file is the LOM V1.0 Base Schema vocabulary source and   **&#xA;        **                value declarations.                                      ** &#xA;        **                                                                         **&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              2)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema defintion provides global type declarations for those&#xA;         LOM data elements whose values are taken from a Vocabulary data type.&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 08/24/2004:  1)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        **              2)Updated annotation describing file to include language   **&#xA;        **                updates found in Draft 2 Working Draft 2                 **&#xA;        **                                                                         **&#xA;        ** 09/16/2004   1)Added a attributeGroup reference to all vocabulary types **&#xA;        **                to support attribute extensions                          **  &#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA;This component XSD requires schema components from other &#xA;       schemas that are defined in other namespaces.  These statements import the &#xA;       appropriate components. The xsi:schemaLocation attribute is used to specify &#xA;       the location of the file that contains the schema that defines the namespace.  &#xA;       The xsi:schemaLocation attribute is optional and is ommitted.  By definition of &#xA;       the composite schemas the appropriate namespaces and related files where those&#xA;       namespaces are defined are brought into scope.  Some XML parsers may require &#xA;       these import statements to contain the optional xsi:schemaLocation attribute.&#xD;&#xA;&#xA;         This work is licensed under the Creative Commons Attribution-ShareAlike&#xA;         License.  To view a copy of this license, see the file license.txt,&#xA;         visit http://creativecommons.org/licenses/by-sa/2.0 or send a letter to&#xA;         Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.&#xA;      &#xD;&#xA;&#xA;         This component schema definition provides simple type declarations for LOM&#xA;         data elements that are defined as Vocabulary data types.&#xA;&#xA;         This component schema definition enforces that vocabulary values are only &#xA;         those specified in 1484.12.3 or in a custom vocabulary.  This component &#xA;         schema definition enforces adherence to the combined use of 1484.12.3&#xA;         defined vocabulary values and custom vocabulary values by checking that both&#xA;         sources and values are taken from either the token set defined in 1484.12.3 or&#xA;         from a custom vocabulary.&#xA;&#xA;         Organizations are free to define their own namespace for the custom vocabulary&#xA;         extensions.  For completeness this XSD is set up to use a namespace defined&#xA;         as xmlns:lx=&quot;http://ltsc.ieee.org/xsd/LOM/custom&quot;&#xA;      &#xD;&#xA;&#xA;        *****************************************************************************&#xA;        **                                                                         ** &#xA;        ** NOTE THIS CHANGE HISTORY IS USED TO DOCUMENT CHANGES TO THE XML SCHEMA  **&#xA;        ** DEFINITION DURING THE BALLOTING PROCESS.  THIS CHANGE HISTORY WILL BE   **&#xA;        ** REMOVED ONCE THE FINAL VERSION OF THE STANDARD IS PUBLISHED.  A NEW     **&#xA;        ** CHANGE HISTORY WILL BE INCLUDED TO INDICATE THE INITIAL RELEASE THAT    **&#xA;        ** MAPS TO THE FINAL STANDARD.                                             **&#xA;        **                                                                         **&#xA;        *****************************************************************************&#xA;        **                            CHANGE HISTORY                               **&#xA;        *****************************************************************************&#xA;        ** 03/15/2004:  1)Updated annoation describing purpose and design of the   **&#xA;        **                XSD.                                                     **&#xA;        **                                                                         **&#xA;        ** 09/27/2004   1)Updated file documentation to correspond with working    **&#xA;        **                draft 3.                                                 **&#xA;        **              2)Updated the Creative Commons Licensing agreement to      **&#xA;        **                reference the Attribution-ShareAlike 2.0                 **&#xA;        *****************************************************************************&#xA;      &#xD;&#xA; This is a MedBiquitous defined set of LOM custom vocabularies for healthcare."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityDescriptionType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ActivityDescriptionType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lom" lowerBound="1" eType="ecore:EClass http://ltsc.ieee.org/xsd/LOM#//Lom"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="lom"/>
+        <details key="namespace" value="http://ltsc.ieee.org/xsd/LOM"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commercialSupportAmount" upperBound="-1" eType="#//CommercialSupportAmountType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CommercialSupportAmount"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="advertisingAndExhibitIncome" eType="#//CurrencyAmount" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AdvertisingAndExhibitIncome"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="otherIncome" eType="#//CurrencyAmount" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="OtherIncome"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expenses" eType="#//CurrencyAmount" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Expenses"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="designedToChangeCompetence" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DesignedToChangeCompetence"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="designedToChangePerformance" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DesignedToChangePerformance"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="designedToChangePatientOutcomes" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DesignedToChangePatientOutcomes"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changesInCompetenceMeasured" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ChangesInCompetenceMeasured"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changesInPerformanceMeasured" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ChangesInPerformanceMeasured"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changesInPatientOutcomesMeasured" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ChangesInPatientOutcomesMeasured"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssessmentResponseDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AssessmentResponseDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assessmentResponseItemData" lowerBound="1" upperBound="-1" eType="#//AssessmentResponseItemDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AssessmentResponseItemData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssessmentResponseItemDataType" eSuperTypes="#//ResponseItemDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AssessmentResponseItemData_._type"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="correct" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="correct"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssessmentScoreDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AssessmentScoreDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessmentName" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AssessmentName"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scoreMethod" lowerBound="1" eType="#//ScoreMethodType" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ScoreMethod"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scoreValue" unique="false" lowerBound="1" upperBound="-1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ScoreValue"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" lowerBound="1" eType="#//TimingType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Timing"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classification" upperBound="-1" eType="ecore:EClass http://ltsc.ieee.org/xsd/LOM#//Classification"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Classification"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Description"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BeforeDuringAfterType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="BeforeDuringAfterType"/>
+    </eAnnotations>
+    <eLiterals name="Before"/>
+    <eLiterals name="During" value="1"/>
+    <eLiterals name="After" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="BeforeDuringAfterTypeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="BeforeDuringAfterType:Object"/>
+      <details key="baseType" value="BeforeDuringAfterType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommercialSupportAmountType" eSuperTypes="#//CurrencyAmount">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CommercialSupportAmountType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportSource" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="supportSource"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparisonDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ComparisonDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="surveyItemDataForComparison" lowerBound="1" upperBound="-1" eType="#//SurveyItemDataForComparisonType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SurveyItemDataForComparison"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrencyAmount">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CurrencyAmount"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currency" eType="#//CurrencyType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="currency"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="CurrencyType" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CurrencyType"/>
+      <details key="baseType" value="NonNullString"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="medicalEducationMetrics" upperBound="-2" eType="#//MedicalEducationMetricsType"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MedicalEducationMetrics"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FreeTextDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="FreeTextDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textResponse" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="TextResponse"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysisCategory" lowerBound="1" eType="#//VocabularyTerm" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AnalysisCategory"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericResponseDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="GenericResponseDataType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KnowledgeAssessmentType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="KnowledgeAssessmentType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multipleChoiceAssessmentItemData" upperBound="-1" eType="#//MultipleChoiceAssessmentItemDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MultipleChoiceAssessmentItemData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assessmentScoreData" upperBound="-1" eType="#//AssessmentScoreDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AssessmentScoreData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MedicalEducationMetricsType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MedicalEducationMetricsType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reportDescription" lowerBound="1" eType="#//ReportDescriptionType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ReportDescription"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityDescription" lowerBound="1" eType="#//ActivityDescriptionType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ActivityDescription"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantActivityEvaluation" eType="#//ParticipantActivityEvaluationType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ParticipantActivityEvaluation"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeAssessment" eType="#//KnowledgeAssessmentType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="KnowledgeAssessment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participationMetrics" lowerBound="1" eType="#//ParticipationMetricsType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ParticipationMetrics"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xtensibleInfo" eType="#//XtensibleInfoType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="XtensibleInfo"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleChoiceAssessmentItemDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MultipleChoiceAssessmentItemDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="question" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Question"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assessmentResponseData" lowerBound="1" eType="#//AssessmentResponseDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="AssessmentResponseData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" lowerBound="1" eType="#//TimingType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Timing"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classification" upperBound="-1" eType="ecore:EClass http://ltsc.ieee.org/xsd/LOM#//Classification"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Classification"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleChoiceDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MultipleChoiceDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responseItemData" lowerBound="1" upperBound="-1" eType="#//ResponseItemDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResponseItemData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NonNullString" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NonNullString"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      <details key="minLength" value="1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantActivityEvaluationType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ParticipantActivityEvaluationType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="surveyItemData" upperBound="-1" eType="#//SurveyItemDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SurveyItemData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comparisonData" upperBound="-1" eType="#//ComparisonDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ComparisonData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantsByCategoryType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ParticipantsByCategoryType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="category"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantsByProfessionType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ParticipantsByProfessionType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profession" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="profession"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantsBySpecialtyType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ParticipantsBySpecialtyType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specialty" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="specialty"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipationMetricsType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ParticipationMetricsType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetedAudience" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="TargetedAudience"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registeredParticipants" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="RegisteredParticipants"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfParticipantsReceivingCredit" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NumberOfParticipantsReceivingCredit"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creditsAwarded" upperBound="-1" eType="ecore:EClass activityreport-v1.ecore#//CreditReceivedType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CreditsAwarded"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfDistinctHostsOrVisitors" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NumberOfDistinctHostsOrVisitors"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfSuccessfulPageRequests" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NumberOfSuccessfulPageRequests"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfParticipantsCompletingActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NumberOfParticipantsCompletingActivity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantsByCategory" upperBound="-1" eType="#//ParticipantsByCategoryType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ParticipantsByCategory"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantsByProfession" upperBound="-1" eType="#//ParticipantsByProfessionType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ParticipantsByProfession"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantsBySpecialty" upperBound="-1" eType="#//ParticipantsBySpecialtyType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ParticipantsBySpecialty"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Comments"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PointsType" instanceClassName="java.math.BigDecimal">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PointsType"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#decimal"/>
+      <details key="maxInclusive" value="10"/>
+      <details key="minInclusive" value="3"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReportDescriptionType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ReportDescriptionType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="respondentCategory" eType="#//VocabularyTerm" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="RespondentCategory"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reportingStartDate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ReportingStartDate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reportingEndDate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ReportingEndDate"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RespondentsByCategoryType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RespondentsByCategoryType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="respondentCategory" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="respondentCategory"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResponseDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResponseDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="yesNoData" eType="#//YesNoDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="YesNoData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scaleData" eType="#//ScaleDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ScaleData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multipleChoiceSelectOneData" eType="#//MultipleChoiceDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MultipleChoiceSelectOneData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multipleChoiceSelectManyData" eType="#//MultipleChoiceDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MultipleChoiceSelectManyData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="freeTextData" upperBound="-1" eType="#//FreeTextDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FreeTextData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResponseItemDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResponseItemDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="responseText" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResponseText"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalRespondents" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="TotalRespondents"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="freeTextData" upperBound="-1" eType="#//FreeTextDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FreeTextData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScaleDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ScaleDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="one" lowerBound="1" eType="#//ScaleResponseDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="One"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="two" lowerBound="1" eType="#//ScaleResponseDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Two"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="three" lowerBound="1" eType="#//ScaleResponseDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Three"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="four" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Four"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="five" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Five"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="six" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Six"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="seven" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Seven"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eight" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Eight"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nine" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Nine"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ten" eType="#//ScaleResponseDataType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Ten"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="points" lowerBound="1" eType="#//PointsType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="points"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="type"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScaleResponseDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ScaleResponseDataType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="label"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScoreMethodType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="ScoreMethodType leverages the TestScoreMethodType definition from the Postsecondary Electronic Standards Council's (PESC)&#xA;Core Main specification version 1.5.0, which defines an XML schema for test score reporting, among other things. The following documentation and score method values defined all come from the PESC. For more information, visit http://www.pesc.org.&#xA;Codes identifying the method used to measure and report the test scores.&#xA;Scaled - Scaled Score &#xA;Graded - Grade Equivalent or Grade Level Indicator&#xA;Standard -  Standard Score &#xA;Raw  -  Raw Score&#xA;Percent -  Percent of Items Correct&#xA;Mastery -  Mastery Score&#xA;Adjective - Adjective Classification or Locally Defined Score &#xA;Stanine&#xA;Percentile&#xA;NormalCurve - Normal Curve Equivalent&#xA;Equated - Equated Score (pre-test and post-test were different)&#xA;Local -  Locally Defined&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ScoreMethodType"/>
+    </eAnnotations>
+    <eLiterals name="Scaled"/>
+    <eLiterals name="Graded" value="1"/>
+    <eLiterals name="Standard" value="2"/>
+    <eLiterals name="Raw" value="3"/>
+    <eLiterals name="Percent" value="4"/>
+    <eLiterals name="Mastery" value="5"/>
+    <eLiterals name="Adjective" value="6"/>
+    <eLiterals name="Stanine" value="7"/>
+    <eLiterals name="Percentile" value="8"/>
+    <eLiterals name="NormalCurve" value="9"/>
+    <eLiterals name="Equated" value="10"/>
+    <eLiterals name="Local" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ScoreMethodTypeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ScoreMethodType:Object"/>
+      <details key="baseType" value="ScoreMethodType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SurveyItemDataForComparisonType" eSuperTypes="#//SurveyItemDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SurveyItemDataForComparisonType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" lowerBound="1" eType="#//TimingType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Timing"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SurveyItemDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SurveyItemDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="surveyQuestion" lowerBound="1" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SurveyQuestion"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responseData" lowerBound="1" eType="#//ResponseDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ResponseData"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimingType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TimingType"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//BeforeDuringAfterType" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="duration"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopicsToLearnMoreAboutType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="TopicsToLearnMoreAboutType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="response" lowerBound="1" upperBound="-1" eType="#//FreeTextDataType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Response"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VocabularyTerm">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="VocabularyTerm"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//NonNullString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XtensibleInfoType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="XtensibleInfoType contains sub-elements defined by the organization &#xA;implementing the schema. &#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="XtensibleInfoType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="wildcards" value="##other"/>
+        <details key="name" value=":0"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="YesNoDataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="YesNoDataType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="yes" lowerBound="1" eType="#//GenericResponseDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Yes"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="no" lowerBound="1" eType="#//GenericResponseDataType" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="No"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

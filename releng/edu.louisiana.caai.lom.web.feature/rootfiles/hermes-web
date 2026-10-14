@@ -1,0 +1,8 @@
+#!/bin/sh
+# Starts Hermes 2 Web at http://localhost:8080/hermes (another port: HERMES_WEB_PORT=9090 ./hermes-web).
+# Needs Java 25 or later on the PATH (or JAVA_HOME).
+cd "$(dirname "$0")" || exit 1
+PORT="${HERMES_WEB_PORT:-8080}"
+JAVA="${JAVA_HOME:+$JAVA_HOME/bin/}java"
+LAUNCHER=$(ls plugins/org.eclipse.equinox.launcher_*.jar | head -1)
+exec "$JAVA" -Dorg.osgi.service.http.port="$PORT" -Dorg.eclipse.rap.http.jetty.http.port="$PORT" -jar "$LAUNCHER" -consoleLog "$@"

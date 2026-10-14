@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="healthcarevocab" nsURI="http://ns.medbiq.org/lom/vocab/v1/"
+    nsPrefix="hv">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value=" This is a MedBiquitous defined set of LOM custom vocabularies for healthcare."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContextValues">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="contextValues"/>
+    </eAnnotations>
+    <eLiterals name="patientEducation" literal="patient education"/>
+    <eLiterals name="caregiverEducation" value="1" literal="caregiver education"/>
+    <eLiterals name="primaryEducation" value="2" literal="primary education"/>
+    <eLiterals name="secondaryEducation" value="3" literal="secondary education"/>
+    <eLiterals name="vocationalTraining" value="4" literal="vocational training"/>
+    <eLiterals name="undergraduateEducation" value="5" literal="undergraduate education"/>
+    <eLiterals name="undergraduateProfessionalEducation" value="6" literal="undergraduate professional education"/>
+    <eLiterals name="graduateProfessionalEducation" value="7" literal="graduate professional education"/>
+    <eLiterals name="continuingProfessionalDevelopment" value="8" literal="continuing professional development"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ContextValuesObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="contextValues:Object"/>
+      <details key="baseType" value="contextValues"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LearningResourceTypeValues">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="learningResourceTypeValues"/>
+    </eAnnotations>
+    <eLiterals name="animation"/>
+    <eLiterals name="audio" value="1"/>
+    <eLiterals name="caseStudy" value="2" literal="case study"/>
+    <eLiterals name="collaborativeForum" value="3" literal="collaborative forum"/>
+    <eLiterals name="game" value="4"/>
+    <eLiterals name="image" value="5"/>
+    <eLiterals name="reference" value="6"/>
+    <eLiterals name="tutorial" value="7"/>
+    <eLiterals name="video" value="8"/>
+    <eLiterals name="virtualPatient" value="9" literal="virtual patient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LearningResourceTypeValuesObject"
+      instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="learningResourceTypeValues:Object"/>
+      <details key="baseType" value="learningResourceTypeValues"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PurposeValues">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="purposeValues"/>
+    </eAnnotations>
+    <eLiterals name="learningOutcome" literal="learning outcome"/>
+    <eLiterals name="clinicalGuideline" value="1" literal="clinical guideline"/>
+    <eLiterals name="drugList" value="2" literal="drug list"/>
+    <eLiterals name="levelOfEvidence" value="3" literal="level of evidence"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PurposeValuesObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="purposeValues:Object"/>
+      <details key="baseType" value="purposeValues"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleValues">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="roleValues"/>
+    </eAnnotations>
+    <eLiterals name="other"/>
+    <eLiterals name="reviewer" value="1"/>
+    <eLiterals name="programmer" value="2"/>
+    <eLiterals name="producer" value="3"/>
+    <eLiterals name="director" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RoleValuesObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="roleValues:Object"/>
+      <details key="baseType" value="roleValues"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SourceValues">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="sourceValues"/>
+    </eAnnotations>
+    <eLiterals name="HEALTHCARELOMv1" literal="HEALTHCARE_LOMv1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="SourceValuesObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="sourceValues:Object"/>
+      <details key="baseType" value="sourceValues"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

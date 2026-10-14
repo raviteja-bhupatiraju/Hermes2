@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional sample created for Hermes 2 (Competency Object 1.0): the patient care domain of the core competencies
+     in core-competencies-framework.xml, with categories, a literature reference and formatted supporting
+     information. The organization and URIs are fictional. -->
+<CompetencyObject xmlns="http://ns.medbiq.org/competencyobject/v1/" xmlns:lom="http://ltsc.ieee.org/xsd/LOM"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.medbiq.org/competencyobject/v1/ http://ns.medbiq.org/competencyobject/v1/competencyobject.xsd">
+	<lom:lom>
+		<lom:general>
+			<lom:identifier>
+				<lom:catalog>URI</lom:catalog>
+				<lom:entry>https://gme.lakeside.example.org/competencies/patient-care</lom:entry>
+			</lom:identifier>
+			<lom:identifier>
+				<lom:catalog>Lakeside GME competency codes</lom:catalog>
+				<lom:entry>PC</lom:entry>
+			</lom:identifier>
+			<lom:title>
+				<lom:string language="en">Patient Care</lom:string>
+			</lom:title>
+			<lom:language>en</lom:language>
+			<lom:description>
+				<lom:string language="en">Residents provide patient care that is compassionate, appropriate and effective for the treatment of health problems and the promotion of health.</lom:string>
+			</lom:description>
+		</lom:general>
+		<lom:lifeCycle>
+			<lom:status>
+				<lom:source>LOMv1.0</lom:source>
+				<lom:value>final</lom:value>
+			</lom:status>
+			<lom:contribute>
+				<lom:role>
+					<lom:source>LOMv1.0</lom:source>
+					<lom:value>publisher</lom:value>
+				</lom:role>
+				<lom:entity>BEGIN:VCARD&#13;&#10;VERSION:3.0&#13;&#10;FN:Lakeside Graduate Medical Education Consortium&#13;&#10;END:VCARD</lom:entity>
+			</lom:contribute>
+		</lom:lifeCycle>
+	</lom:lom>
+	<Status>Active</Status>
+	<Category term="competency domain" scheme="https://gme.lakeside.example.org/categories/levels" label="Competency domain"/>
+	<Category term="clinical" scheme="https://gme.lakeside.example.org/categories/areas" label="Clinical competency"/>
+	<References>
+		<Reference>Accreditation Council for Graduate Medical Education. ACGME Common Program Requirements (Residency), section IV.B.1.b), Patient Care and Procedural Skills. https://www.acgme.org/</Reference>
+	</References>
+	<SupportingInformation>
+		<xhtml:div>
+			<xhtml:p>Patient care includes gathering essential information about the patient, making informed decisions about interventions, developing and carrying out management plans, and counseling patients and their families.</xhtml:p>
+			<xhtml:ul>
+				<xhtml:li>PC1: Gathers essential and accurate information about the patient</xhtml:li>
+				<xhtml:li>PC2: Develops and achieves a comprehensive management plan</xhtml:li>
+			</xhtml:ul>
+		</xhtml:div>
+	</SupportingInformation>
+</CompetencyObject>

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2026 University of Louisiana at Lafayette, CAAI. Generated from the MedBiquitous Healthcare LOM v1 schemas.
+-->
+
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="%product.name"
+            application="edu.louisiana.caai.lom.editor.HlomEditorAdvisorApplication">
+         <property name="appName" value="Hermes 2: MedBiquitous Editor"/>
+         <property name="aboutText" value="%aboutText"/>
+         <property name="aboutImage" value="icons/app/hlom128.png"/>
+         <property name="windowImages"
+               value="icons/app/hlom16.png,icons/app/hlom32.png,icons/app/hlom48.png,icons/app/hlom64.png,icons/app/hlom128.png,icons/app/hlom256.png"/>
+         <property name="cssTheme" value="edu.louisiana.caai.lom.theme"/>
+         <property name="applicationCSSResources" value="platform:/plugin/edu.louisiana.caai.lom.editor/icons/"/>
+         <property name="startupForegroundColor" value="475569"/>
+         <property name="startupMessageRect" value="40,250,440,16"/>
+         <property name="startupProgressRect" value="40,272,440,4"/>
+         <property name="preferenceCustomization" value="plugin_customization.ini"/>
+      </product>
+   </extension>
+
+   <!-- A splash handler that shows a sharp splash screen on high resolution displays. -->
+   <extension point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            id="edu.louisiana.caai.lom.editor.splashHandler"
+            class="edu.louisiana.caai.lom.editor.HlomSplashHandler"/>
+      <splashHandlerProductBinding
+            splashId="edu.louisiana.caai.lom.editor.splashHandler"
+            productId="edu.louisiana.caai.lom.editor.product"/>
+   </extension>
+
+   <extension point="org.eclipse.e4.ui.css.swt.theme">
+      <theme
+            id="edu.louisiana.caai.lom.theme"
+            label="%theme.name"
+            basestylesheeturi="css/hlom.css"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="HlomEditorAdvisorApplication">
+      <!-- @generated hlom -->
+      <application>
+         <run class="edu.louisiana.caai.lom.editor.HlomEditorAdvisor$Application"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <!-- @generated hlom -->
+      <perspective
+            name="%_UI_Perspective_label"
+            class="edu.louisiana.caai.lom.editor.HlomEditorAdvisor$Perspective"
+            id="edu.louisiana.caai.lom.editor.HlomEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- @generated hlom -->
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenURICommand"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$OpenUri"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenCommand"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$Open"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- @generated hlom -->
+      <key
+            commandId="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+
+
+
+   <!-- The commands of the menus and the tool bar (see WindowHandlers). -->
+   <extension point="org.eclipse.ui.commands">
+      <command id="edu.louisiana.caai.lom.editor.projects.newProject" name="%command.newProject.name"
+            description="%command.newProject.description" categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$NewProject"/>
+      <command id="edu.louisiana.caai.lom.editor.projects.openProject" name="%command.openProject.name"
+            description="%command.openProject.description" categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$OpenProject"/>
+      <command id="edu.louisiana.caai.lom.editor.compare.withSaved" name="%command.withSaved.name"
+            description="%command.withSaved.description" categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$CompareWithSaved"/>
+      <command id="edu.louisiana.caai.lom.editor.compare.withFile" name="%command.withFile.name"
+            description="%command.withFile.description"
+            categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$CompareWithFile"/>
+      <command id="edu.louisiana.caai.lom.editor.compare.files" name="%command.files.name"
+            description="%command.files.description" categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$CompareFiles"/>
+      <command id="edu.louisiana.caai.lom.editor.library.exportHtml" name="%command.exportHtml.name"
+            description="%command.exportHtml.description"
+            categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$ExportHtml"/>
+      <command id="edu.louisiana.caai.lom.editor.importer.importCsv" name="%command.importCsv.name"
+            description="%command.importCsv.description"
+            categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$ImportCsv"/>
+   </extension>
+
+   <!-- Search > Search Documents (Ctrl+H): the search dialog of the Search plug-in, on the page of the documents. -->
+   <extension point="org.eclipse.ui.handlers">
+      <handler commandId="org.eclipse.search.ui.openSearchDialog"
+            class="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$OpenSearch"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:new?after=additions">
+         <command commandId="edu.louisiana.caai.lom.editor.NewHlomDocumentCommand" label="%command.NewHlomDocumentCommand.label"
+               icon="icons/toolbar/new.png"/>
+         <command commandId="edu.louisiana.caai.lom.editor.projects.newProject" label="%command.newProject.label"
+               icon="icons/projects/new-project.png"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:file?after=additions">
+         <command commandId="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenCommand" label="%command.HlomEditorAdvisorOpenCommand.label"
+               icon="icons/toolbar/open.png"/>
+         <command commandId="edu.louisiana.caai.lom.editor.HlomEditorAdvisorOpenURICommand" label="%command.HlomEditorAdvisorOpenURICommand.label"/>
+         <menu id="edu.louisiana.caai.lom.editor.start.openRecent" label="%menu.openRecent.label">
+            <dynamic id="edu.louisiana.caai.lom.editor.start.openRecentItems"
+                  class="edu.louisiana.caai.lom.editor.start.OpenRecentMenu"/>
+         </menu>
+         <command commandId="edu.louisiana.caai.lom.editor.projects.openProject" label="%command.openProject.label"
+               icon="icons/library/folder.png"/>
+         <separator name="edu.louisiana.caai.lom.editor.file.documents" visible="true"/>
+         <menu id="edu.louisiana.caai.lom.editor.compare.menu" label="%menu.compare.label">
+            <command commandId="edu.louisiana.caai.lom.editor.compare.withSaved" label="%command.withSaved.label"
+                  icon="icons/compare/compare-saved.png"/>
+            <command commandId="edu.louisiana.caai.lom.editor.compare.withFile" label="%command.withFile.label"
+                  icon="icons/compare/compare.png"/>
+            <command commandId="edu.louisiana.caai.lom.editor.compare.files" label="%command.files.label"
+                  icon="icons/compare/compare-files.png"/>
+         </menu>
+         <command commandId="edu.louisiana.caai.lom.editor.library.exportHtml" label="%command.exportHtml.label"
+               icon="icons/library/html.png"/>
+         <command commandId="edu.louisiana.caai.lom.editor.importer.importCsv" label="%command.importCsv.label"
+               icon="icons/importer/import-csv.png"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:window?after=additions">
+         <command commandId="org.eclipse.ui.views.showView" label="%command.showProjects.label"
+               icon="icons/projects/project.png">
+            <parameter name="org.eclipse.ui.views.showView.viewId"
+                  value="edu.louisiana.caai.lom.editor.projects.ProjectsView"/>
+         </command>
+         <command commandId="org.eclipse.ui.views.showView" label="%command.showLibrary.label"
+               icon="icons/library/library.png">
+            <parameter name="org.eclipse.ui.views.showView.viewId"
+                  value="edu.louisiana.caai.lom.editor.library.LibraryView"/>
+         </command>
+      </menuContribution>
+      <menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu id="org.eclipse.search.menu" label="%menu.search.label">
+            <separator name="internalDialogGroup" visible="false"/>
+            <separator name="dialogGroup" visible="false"/>
+            <command commandId="org.eclipse.search.ui.openSearchDialog" label="%command.openSearchDialog.label"
+                  icon="icons/actions/lookup.png"/>
+            <separator name="fileSearchContextMenuActionsGroup" visible="true"/>
+            <separator name="contextMenuActionsGroup" visible="true"/>
+            <separator name="occurencesActionsGroup" visible="true"/>
+            <separator name="extraSearchGroup" visible="true"/>
+         </menu>
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar id="edu.louisiana.caai.lom.editor.compare.toolbar" label="%toolbar.compare.label">
+            <command commandId="edu.louisiana.caai.lom.editor.compare.withSaved"
+                  icon="icons/compare/compare-saved.png" tooltip="%command.withSaved.tooltip"/>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.contexts">
+      <context
+            name="%_UI_Context_label"
+            description="%_UI_Context_description"
+            parentId="org.eclipse.ui.contexts.window"
+            id="edu.louisiana.caai.lom.editor.context"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command
+            name="%_UI_NewHlomDocumentCommand_label"
+            description="%_UI_NewHlomDocumentCommand_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="edu.louisiana.caai.lom.editor.NewHlomDocumentCommand"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.WindowHandlers$NewDocument"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- In the application context so that it overrides the workbench's M1+N (org.eclipse.ui.newWizard). -->
+      <key
+            commandId="edu.louisiana.caai.lom.editor.NewHlomDocumentCommand"
+            sequence="M1+N"
+            contextId="edu.louisiana.caai.lom.editor.context"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated NOT: the generated LomEditor is replaced by the multi-page HlomMetadataEditor -->
+      <editor
+            id="edu.louisiana.caai.lom.editor.HlomMetadataEditor"
+            name="%_UI_LomEditor_label"
+            icon="icons/app/hlom16.png"
+            class="edu.louisiana.caai.lom.editor.HlomMetadataEditor"
+            contributorClass="edu.louisiana.caai.lom.editor.HlomActionBarContributor"
+            matchingStrategy="edu.louisiana.caai.lom.editor.workspace.DocumentMatchingStrategy"
+            default="true">
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.lom.hlom"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.lom.hlom.json"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.curriculuminventory.v1"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.curriculuminventory.v10"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.competencyframework"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.competencyobject"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.performanceframework"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.activityreport.v1"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.activityreport.v2"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.metrics"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.surveyitems"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.member"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.virtualpatientdata"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.activitymodel"/>
+         <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.dataavailabilitymodel"/>
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views">
+      <view
+            id="edu.louisiana.caai.lom.editor.library.LibraryView"
+            name="%view.LibraryView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.library.LibraryView"
+            icon="icons/library/library.png"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+            id="edu.louisiana.caai.lom.editor.library.LibraryPerspective"
+            name="%perspective.LibraryPerspective.name"
+            class="edu.louisiana.caai.lom.editor.library.LibraryPerspective"
+            icon="icons/library/library.png"/>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.views">
+      <category
+            id="edu.louisiana.caai.lom.editor.views"
+            name="%category.views.name"/>
+      <view
+            id="edu.louisiana.caai.lom.editor.projects.ProjectsView"
+            name="%view.ProjectsView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.projects.ProjectsView"
+            icon="icons/projects/project.png"/>
+      <view
+            id="edu.louisiana.caai.lom.editor.validation.ValidationView"
+            name="%view.ValidationView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.validation.ValidationView"
+            icon="icons/toolbar/validate.png"/>
+      <view
+            id="edu.louisiana.caai.lom.editor.start.StartView"
+            name="%view.StartView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.start.StartView"
+            icon="icons/app/hlom16.png"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command
+            id="edu.louisiana.caai.lom.editor.start.showStartPage"
+            name="%command.showStartPage.name"
+            description="%command.showStartPage.description"
+            categoryId="org.eclipse.ui.category.window"
+            defaultHandler="edu.louisiana.caai.lom.editor.start.ShowStartPageHandler"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:help?after=additions">
+         <command
+               commandId="edu.louisiana.caai.lom.editor.start.showStartPage"
+               label="%command.showStartPage.label"
+               icon="icons/app/hlom16.png"/>
+      </menuContribution>
+   </extension>
+
+   <!-- The Projects view is a Common Navigator: its content (projects, folders, documents), labels, sorting,
+        filter, actions, drag and drop and editor linking are these extensions; other plug-ins add to its context
+        menu (the Team menu of Git) and decorate its labels. -->
+   <extension point="org.eclipse.ui.navigator.viewer">
+      <viewer viewerId="edu.louisiana.caai.lom.editor.projects.ProjectsView">
+         <popupMenu allowsPlatformContributions="true" id="edu.louisiana.caai.lom.editor.projects.ProjectsView#PopupMenu">
+            <insertionPoint name="group.new" separator="true"/>
+            <insertionPoint name="group.goto"/>
+            <insertionPoint name="group.open" separator="true"/>
+            <insertionPoint name="group.openWith"/>
+            <insertionPoint name="group.edit" separator="true"/>
+            <insertionPoint name="group.reorganize"/>
+            <insertionPoint name="group.port" separator="true"/>
+            <insertionPoint name="group.build" separator="true"/>
+            <insertionPoint name="group.generate" separator="true"/>
+            <insertionPoint name="group.search" separator="true"/>
+            <insertionPoint name="additions" separator="true"/>
+            <insertionPoint name="group.properties" separator="true"/>
+         </popupMenu>
+      </viewer>
+      <viewerContentBinding viewerId="edu.louisiana.caai.lom.editor.projects.ProjectsView">
+         <includes>
+            <contentExtension pattern="edu.louisiana.caai.lom.editor.projects.content"/>
+            <contentExtension pattern="edu.louisiana.caai.lom.editor.projects.filters.*"/>
+            <contentExtension pattern="edu.louisiana.caai.lom.editor.projects.linkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="edu.louisiana.caai.lom.editor.projects.ProjectsView">
+         <includes>
+            <actionExtension pattern="edu.louisiana.caai.lom.editor.projects.actions"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent id="edu.louisiana.caai.lom.editor.projects.content" name="%navigatorContent.content.name"
+            contentProvider="edu.louisiana.caai.lom.editor.projects.ProjectsContent"
+            labelProvider="edu.louisiana.caai.lom.editor.projects.ProjectsLabels"
+            icon="icons/projects/project.png" activeByDefault="true" priority="normal">
+         <triggerPoints>
+            <or>
+               <instanceof value="org.eclipse.core.resources.IWorkspaceRoot"/>
+               <instanceof value="org.eclipse.core.resources.IContainer"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="org.eclipse.core.resources.IResource"/>
+         </possibleChildren>
+         <commonSorter class="edu.louisiana.caai.lom.editor.projects.ProjectsSorter"
+               id="edu.louisiana.caai.lom.editor.projects.sorter"/>
+         <dropAssistant class="edu.louisiana.caai.lom.editor.projects.ProjectsDropAssistant"
+               id="edu.louisiana.caai.lom.editor.projects.dropAssistant">
+            <possibleDropTargets>
+               <or>
+                  <instanceof value="org.eclipse.core.resources.IResource"/>
+                  <instanceof value="org.eclipse.core.resources.IWorkspaceRoot"/>
+               </or>
+            </possibleDropTargets>
+         </dropAssistant>
+      </navigatorContent>
+      <!-- Also for an empty selection (the tool bar, New Project in the context menu). -->
+      <actionProvider class="edu.louisiana.caai.lom.editor.projects.ProjectsActionProvider"
+            id="edu.louisiana.caai.lom.editor.projects.actions">
+         <enablement>
+            <or>
+               <instanceof value="org.eclipse.core.resources.IResource"/>
+               <instanceof value="org.eclipse.core.resources.IWorkspaceRoot"/>
+               <instanceof value="java.util.Collection"/>
+            </or>
+         </enablement>
+      </actionProvider>
+      <commonFilter id="edu.louisiana.caai.lom.editor.projects.filters.emptyFolders"
+            name="%commonFilter.emptyFolders.name"
+            description="%commonFilter.emptyFolders.description"
+            class="edu.louisiana.caai.lom.editor.projects.EmptyFoldersFilter" activeByDefault="false"/>
+   </extension>
+
+   <!-- The records of the Library view are their workspace files when they belong to a project (Team menu, Show In). -->
+   <extension point="org.eclipse.core.runtime.adapters">
+      <factory adaptableType="edu.louisiana.caai.lom.model.support.report.LibraryEntry"
+            class="edu.louisiana.caai.lom.editor.workspace.LibraryEntryAdapterFactory">
+         <adapter type="org.eclipse.core.resources.IFile"/>
+         <adapter type="org.eclipse.core.resources.IResource"/>
+      </factory>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.linkHelper">
+      <linkHelper id="edu.louisiana.caai.lom.editor.projects.linkHelper"
+            class="edu.louisiana.caai.lom.editor.projects.ProjectsLinkHelper">
+         <editorInputEnablement>
+            <instanceof value="org.eclipse.ui.IEditorInput"/>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="org.eclipse.core.resources.IFile"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="edu.louisiana.caai.lom.editor.preferences.HlomPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <page id="edu.louisiana.caai.lom.editor.preferences.general" name="%page.general.name"
+            class="edu.louisiana.caai.lom.editor.preferences.GeneralPreferencePage"/>
+      <page id="edu.louisiana.caai.lom.editor.preferences.validation" name="%page.validation.name"
+            category="edu.louisiana.caai.lom.editor.preferences.general"
+            class="edu.louisiana.caai.lom.editor.preferences.ValidationPreferencePage"/>
+      <page id="edu.louisiana.caai.lom.editor.preferences.mesh" name="%page.mesh.name"
+            category="edu.louisiana.caai.lom.editor.preferences.general"
+            class="edu.louisiana.caai.lom.editor.preferences.MeshPreferencePage"/>
+      <page id="edu.louisiana.caai.lom.editor.preferences.terminologies" name="%page.terminologies.name"
+            category="edu.louisiana.caai.lom.editor.preferences.general"
+            class="edu.louisiana.caai.lom.editor.preferences.TerminologiesPreferencePage"/>
+      <page id="org.eclipse.ui.preferencePages.Keys" name="%page.keys.name"
+            class="org.eclipse.ui.ExtensionFactory:newKeysPreferencePage"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.views">
+      <view id="edu.louisiana.caai.lom.editor.help.GuideView" name="%view.GuideView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.help.GuideView" icon="help/img/hlom16.png"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="edu.louisiana.caai.lom.editor.HlomEditorAdvisorPerspective">
+         <view id="edu.louisiana.caai.lom.editor.help.GuideView" relative="org.eclipse.ui.views.ContentOutline"
+               relationship="stack" visible="false"/>
+      </perspectiveExtension>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <category id="edu.louisiana.caai.lom.editor.help.category" name="%category.help.name"/>
+      <command id="edu.louisiana.caai.lom.editor.help.guide" name="%command.guide.name"
+            description="%command.guide.description"
+            categoryId="edu.louisiana.caai.lom.editor.help.category"
+            defaultHandler="edu.louisiana.caai.lom.editor.help.HelpHandlers$ShowGuide">
+         <commandParameter id="edu.louisiana.caai.lom.editor.help.topic" name="%commandParameter.topic.name" optional="true"/>
+      </command>
+      <command id="edu.louisiana.caai.lom.editor.help.contextHelp" name="%command.contextHelp.name"
+            description="%command.contextHelp.description"
+            categoryId="edu.louisiana.caai.lom.editor.help.category"
+            defaultHandler="edu.louisiana.caai.lom.editor.help.HelpHandlers$ContextHelp"/>
+      <command id="edu.louisiana.caai.lom.editor.help.specification" name="%command.specification.name"
+            description="%command.specification.description"
+            categoryId="edu.louisiana.caai.lom.editor.help.category"
+            defaultHandler="edu.louisiana.caai.lom.editor.help.HelpHandlers$OpenSpecification"/>
+      <command id="edu.louisiana.caai.lom.editor.help.website" name="%command.website.name"
+            description="%command.website.description"
+            categoryId="edu.louisiana.caai.lom.editor.help.category"
+            defaultHandler="edu.louisiana.caai.lom.editor.help.HelpHandlers$OpenWebsite"/>
+      <command id="edu.louisiana.caai.lom.editor.help.about" name="%command.about.name"
+            categoryId="edu.louisiana.caai.lom.editor.help.category"
+            defaultHandler="edu.louisiana.caai.lom.editor.help.HelpHandlers$About"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- F1 is the workbench's context help (Help view); Shift+F1 shows the focused field in the HLOM Guide. -->
+      <key commandId="edu.louisiana.caai.lom.editor.help.contextHelp" sequence="M2+F1"
+            contextId="edu.louisiana.caai.lom.editor.context" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:help?after=helpStart">
+         <command commandId="edu.louisiana.caai.lom.editor.help.guide" label="%command.guide.label" icon="help/img/hlom16.png"/>
+         <command commandId="edu.louisiana.caai.lom.editor.help.contextHelp" label="%command.contextHelp.label"/>
+         <command commandId="edu.louisiana.caai.lom.editor.help.specification" label="%command.specification.label"
+               icon="help/img/pdf16.png"/>
+         <command commandId="org.eclipse.ui.cheatsheets.openCheatSheet" label="%command.cheatSheets.label"/>
+         <separator name="edu.louisiana.caai.lom.editor.help.web" visible="true"/>
+         <command commandId="edu.louisiana.caai.lom.editor.help.website" label="%command.website.label"
+               icon="help/img/web16.png"/>
+      </menuContribution>
+      <menuContribution locationURI="menu:help?after=additions">
+         <separator name="edu.louisiana.caai.lom.editor.help.about" visible="true"/>
+         <command commandId="edu.louisiana.caai.lom.editor.help.about" label="%command.about.label"
+               icon="icons/app/hlom16.png"/>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- Definition of AddMeshKeywordsAction (action definition id) and its handler. -->
+      <command id="edu.louisiana.caai.lom.editor.mesh.addKeywords" name="%command.addKeywords.name"
+            description="%command.addKeywords.description" categoryId="org.eclipse.ui.category.edit"
+            defaultHandler="edu.louisiana.caai.lom.editor.mesh.AddMeshKeywordsHandler"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command id="edu.louisiana.caai.lom.editor.xml.format" name="%command.format.name"
+            description="%command.format.description" categoryId="org.eclipse.ui.category.textEditor"/>
+      <command id="edu.louisiana.caai.lom.editor.xml.toggleComment" name="%command.toggleComment.name"
+            description="%command.toggleComment.description"
+            categoryId="org.eclipse.ui.category.textEditor"/>
+   </extension>
+
+   <!-- Quick Fix (Ctrl+1) of the XML page and the Validation view: the text editors' command, which the IDE would
+        define (the editors and views activate their handlers). -->
+   <extension point="org.eclipse.ui.commands">
+      <command id="org.eclipse.jface.text.quickAssist" name="%command.quickFix.name"
+            description="%command.quickFix.description" categoryId="org.eclipse.ui.category.edit"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <key commandId="org.eclipse.jface.text.quickAssist" contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+1" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key commandId="edu.louisiana.caai.lom.editor.xml.format" contextId="org.eclipse.ui.textEditorScope"
+            sequence="M1+M2+F" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key commandId="edu.louisiana.caai.lom.editor.xml.toggleComment" contextId="org.eclipse.ui.textEditorScope"
+            sequence="M1+/" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.views">
+      <view
+            id="edu.louisiana.caai.lom.editor.compare.CompareView"
+            name="%view.CompareView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.compare.CompareView"
+            icon="icons/compare/compare.png"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="edu.louisiana.caai.lom.editor.HlomEditorAdvisorPerspective">
+         <view id="edu.louisiana.caai.lom.editor.compare.CompareView" relative="org.eclipse.ui.editorss"
+               relationship="bottom" ratio="0.45" visible="false"/>
+      </perspectiveExtension>
+   </extension>
+
+
+
+   <extension point="org.eclipse.ui.importWizards">
+      <category id="edu.louisiana.caai.lom.editor.importWizards" name="%category.importWizards.name"/>
+      <wizard id="edu.louisiana.caai.lom.editor.importer.CsvImportWizard" name="%wizard.CsvImportWizard.name"
+            category="edu.louisiana.caai.lom.editor.importWizards"
+            class="edu.louisiana.caai.lom.editor.importer.CsvImportWizard"
+            icon="icons/importer/import-csv.png">
+         <description>%wizard.CsvImportWizard.description</description>
+      </wizard>
+   </extension>
+
+   <!-- The workspace: Hermes projects are workspace projects with this nature; its builder validates their
+        documents in the background and reports the problems as markers (Problems view). -->
+   <extension point="org.eclipse.core.resources.natures" id="hermesNature" name="%extension.hermesNature.name">
+      <runtime>
+         <run class="edu.louisiana.caai.lom.editor.workspace.HermesNature"/>
+      </runtime>
+      <builder id="edu.louisiana.caai.lom.editor.hermesBuilder"/>
+   </extension>
+
+   <extension point="org.eclipse.core.resources.builders" id="hermesBuilder" name="%extension.hermesBuilder.name">
+      <builder hasNature="true">
+         <run class="edu.louisiana.caai.lom.editor.workspace.HermesBuilder"/>
+      </builder>
+   </extension>
+
+   <extension point="org.eclipse.core.resources.markers" id="problem" name="%extension.problem.name">
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.core.resources.textmarker"/>
+      <persistent value="true"/>
+      <attribute name="elementPath"/>
+      <attribute name="origin"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.ide.markerSupport">
+      <markerTypeCategory name="%markerTypeCategory.name">
+         <markerTypeReference id="edu.louisiana.caai.lom.editor.problem"/>
+      </markerTypeCategory>
+   </extension>
+
+   <!-- Search: the documents of Hermes projects by their field values (Search > Search..., Ctrl+H). -->
+   <extension point="org.eclipse.search.searchPages">
+      <page
+            id="edu.louisiana.caai.lom.editor.search.page"
+            label="%searchPage.label"
+            icon="icons/actions/lookup.png"
+            class="edu.louisiana.caai.lom.editor.search.HermesSearchPage"
+            extensions="xml:90, json:90"
+            showScopeSection="true"
+            canSearchEnclosingProjects="true"
+            enabled="true"
+            sizeHint="250,160"
+            tabPosition="1"/>
+   </extension>
+
+
+   <extension point="org.eclipse.search.searchResultViewPages">
+      <viewPage
+            id="edu.louisiana.caai.lom.editor.search.resultPage"
+            searchResultClass="edu.louisiana.caai.lom.editor.search.HermesSearchResult"
+            class="edu.louisiana.caai.lom.editor.search.HermesSearchResultPage"/>
+   </extension>
+
+   <!-- Quick fixes of the problems in the Problems view (Ctrl+1, Quick Fix), also for several problems at once. -->
+   <extension point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            markerType="edu.louisiana.caai.lom.editor.problem"
+            class="edu.louisiana.caai.lom.editor.quickfix.ProblemResolutions"/>
+   </extension>
+
+   <!-- File > New > Other... (the workbench's new wizards). -->
+   <extension point="org.eclipse.ui.newWizards">
+      <category id="edu.louisiana.caai.lom.editor.newWizards" name="%category.newWizards.name"/>
+      <wizard id="edu.louisiana.caai.lom.editor.wizards.NewDocumentWizard" name="%wizard.NewDocument.name"
+            category="edu.louisiana.caai.lom.editor.newWizards"
+            class="edu.louisiana.caai.lom.editor.wizards.NewHlomDocumentWizard"
+            icon="icons/toolbar/new.png">
+         <description>%wizard.NewDocument.description</description>
+      </wizard>
+      <wizard id="edu.louisiana.caai.lom.editor.projects.NewProjectWizard" name="%wizard.NewProject.name"
+            category="edu.louisiana.caai.lom.editor.newWizards"
+            class="edu.louisiana.caai.lom.editor.projects.NewProjectWizard"
+            icon="icons/projects/new-project.png" project="true">
+         <description>%wizard.NewProject.description</description>
+      </wizard>
+   </extension>
+
+   <!-- File > Export... -->
+   <extension point="org.eclipse.ui.exportWizards">
+      <category id="edu.louisiana.caai.lom.editor.exportWizards" name="%category.exportWizards.name"/>
+      <wizard id="edu.louisiana.caai.lom.editor.exporter.HtmlReportsExportWizard" name="%wizard.HtmlReports.name"
+            category="edu.louisiana.caai.lom.editor.exportWizards"
+            class="edu.louisiana.caai.lom.editor.exporter.HtmlReportsExportWizard"
+            icon="icons/library/html.png">
+         <description>%wizard.HtmlReports.description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+      <wizard id="edu.louisiana.caai.lom.editor.exporter.CrosswalkExportWizard" name="%wizard.Crosswalks.name"
+            category="edu.louisiana.caai.lom.editor.exportWizards"
+            class="edu.louisiana.caai.lom.editor.exporter.CrosswalkExportWizard"
+            icon="icons/library/html.png">
+         <description>%wizard.Crosswalks.description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+      <wizard id="edu.louisiana.caai.lom.editor.exporter.DocumentsExportWizard" name="%wizard.Documents.name"
+            category="edu.louisiana.caai.lom.editor.exportWizards"
+            class="edu.louisiana.caai.lom.editor.exporter.DocumentsExportWizard"
+            icon="icons/pages/json.png">
+         <description>%wizard.Documents.description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <!-- Properties (Alt+Enter) of Hermes projects. -->
+   <extension point="org.eclipse.ui.propertyPages">
+      <page id="edu.louisiana.caai.lom.editor.projects.propertyPage" name="%propertyPage.project.name"
+            class="edu.louisiana.caai.lom.editor.projects.ProjectPropertyPage">
+         <enabledWhen>
+            <adapt type="org.eclipse.core.resources.IProject">
+               <test property="org.eclipse.core.resources.projectNature"
+                     value="edu.louisiana.caai.lom.editor.hermesNature"/>
+            </adapt>
+         </enabledWhen>
+      </page>
+   </extension>
+
+   <!-- The problem state of documents, folders and projects (Preferences > General > Appearance > Label Decorations). -->
+   <extension point="org.eclipse.ui.decorators">
+      <decorator id="edu.louisiana.caai.lom.editor.problemDecorator" label="%decorator.problems.label"
+            class="edu.louisiana.caai.lom.editor.workspace.ProblemDecorator"
+            lightweight="true" state="true" location="BOTTOM_LEFT">
+         <description>%decorator.problems.description</description>
+         <enablement>
+            <objectClass name="org.eclipse.core.resources.IResource"/>
+         </enablement>
+      </decorator>
+   </extension>
+
+   <!-- The semantic comparison in the compare framework: Compare With > Each Other / Local History, EGit's history
+        and Synchronize view (Switch Compare Viewer still offers the text comparison). -->
+   <extension point="org.eclipse.compare.contentMergeViewers">
+      <viewer id="edu.louisiana.caai.lom.editor.compare.semanticViewer" label="%viewer.semantic.label"
+            class="edu.louisiana.caai.lom.editor.compare.SemanticCompareViewer$Creator"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.lom.hlom" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.lom.hlom.json" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.curriculuminventory.v1" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.curriculuminventory.v10" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.competencyframework" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.competencyobject" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.performanceframework" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.activityreport.v1" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.activityreport.v2" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.metrics" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.surveyitems" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.member" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.virtualpatientdata" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.activitymodel" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+      <contentTypeBinding contentTypeId="edu.louisiana.caai.medbiq.dataavailabilitymodel" contentMergeViewerId="edu.louisiana.caai.lom.editor.compare.semanticViewer"/>
+   </extension>
+
+   <!-- References within documents: Search > References (Ctrl+Shift+G), Edit > Rename Identifier (Alt+Shift+R). -->
+   <extension point="org.eclipse.ui.commands">
+      <command id="edu.louisiana.caai.lom.editor.references.find" name="%command.findReferences.name"
+            description="%command.findReferences.description" categoryId="org.eclipse.search.ui.category.search"
+            defaultHandler="edu.louisiana.caai.lom.editor.references.ReferenceHandlers$FindReferences"/>
+      <command id="edu.louisiana.caai.lom.editor.references.referrers" name="%command.referringDocuments.name"
+            description="%command.referringDocuments.description" categoryId="org.eclipse.search.ui.category.search"
+            defaultHandler="edu.louisiana.caai.lom.editor.references.ReferenceHandlers$ReferringDocuments"/>
+      <command id="edu.louisiana.caai.lom.editor.references.rename" name="%command.renameIdentifier.name"
+            description="%command.renameIdentifier.description" categoryId="org.eclipse.ui.category.edit"
+            defaultHandler="edu.louisiana.caai.lom.editor.references.ReferenceHandlers$RenameIdentifier"/>
+   </extension>
+   <extension point="org.eclipse.ui.bindings">
+      <key commandId="edu.louisiana.caai.lom.editor.references.find" sequence="M1+M2+G"
+            contextId="edu.louisiana.caai.lom.editor.context" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key commandId="edu.louisiana.caai.lom.editor.references.rename" sequence="M2+M3+R"
+            contextId="edu.louisiana.caai.lom.editor.context" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:org.eclipse.search.menu?after=contextMenuActionsGroup">
+         <command commandId="edu.louisiana.caai.lom.editor.references.find" label="%command.findReferences.label">
+            <visibleWhen checkEnabled="false">
+               <with variable="activeEditorId">
+                  <equals value="edu.louisiana.caai.lom.editor.HlomMetadataEditor"/>
+               </with>
+            </visibleWhen>
+         </command>
+         <command commandId="edu.louisiana.caai.lom.editor.references.referrers" label="%command.referringDocuments.label">
+            <visibleWhen checkEnabled="false">
+               <with variable="activeEditorId">
+                  <equals value="edu.louisiana.caai.lom.editor.HlomMetadataEditor"/>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution locationURI="menu:edit?after=additions">
+         <command commandId="edu.louisiana.caai.lom.editor.references.rename" label="%command.renameIdentifier.label">
+            <visibleWhen checkEnabled="false">
+               <with variable="activeEditorId">
+                  <equals value="edu.louisiana.caai.lom.editor.HlomMetadataEditor"/>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <!-- Views of the active document: its references as a graph (Zest), a Curriculum Inventory on a timeline (Nebula
+        Gantt chart) and its lists as tables (NatTable). -->
+   <extension point="org.eclipse.ui.views">
+      <view id="edu.louisiana.caai.lom.editor.views.DocumentGraphView" name="%view.DocumentGraphView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.views.DocumentGraphView" icon="icons/pages/relation.png"/>
+      <view id="edu.louisiana.caai.lom.editor.views.CurriculumTimelineView" name="%view.CurriculumTimelineView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.views.CurriculumTimelineView" icon="icons/pages/lifecycle.png"/>
+      <view id="edu.louisiana.caai.lom.editor.views.DocumentListsView" name="%view.DocumentListsView.name"
+            category="edu.louisiana.caai.lom.editor.views"
+            class="edu.louisiana.caai.lom.editor.views.DocumentListsView" icon="icons/pages/tree.png"/>
+   </extension>
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="edu.louisiana.caai.lom.editor.HlomEditorAdvisorPerspective">
+         <view id="edu.louisiana.caai.lom.editor.views.DocumentGraphView" relative="edu.louisiana.caai.lom.editor.compare.CompareView"
+               relationship="stack" visible="false"/>
+         <view id="edu.louisiana.caai.lom.editor.views.CurriculumTimelineView" relative="edu.louisiana.caai.lom.editor.compare.CompareView"
+               relationship="stack" visible="false"/>
+         <view id="edu.louisiana.caai.lom.editor.views.DocumentListsView" relative="edu.louisiana.caai.lom.editor.compare.CompareView"
+               relationship="stack" visible="false"/>
+         <viewShortcut id="edu.louisiana.caai.lom.editor.views.DocumentGraphView"/>
+         <viewShortcut id="edu.louisiana.caai.lom.editor.views.CurriculumTimelineView"/>
+         <viewShortcut id="edu.louisiana.caai.lom.editor.views.DocumentListsView"/>
+      </perspectiveExtension>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:window?after=additions">
+         <command commandId="org.eclipse.ui.views.showView" label="%command.showGraph.label" icon="icons/pages/relation.png">
+            <parameter name="org.eclipse.ui.views.showView.viewId" value="edu.louisiana.caai.lom.editor.views.DocumentGraphView"/>
+         </command>
+         <command commandId="org.eclipse.ui.views.showView" label="%command.showTimeline.label" icon="icons/pages/lifecycle.png">
+            <parameter name="org.eclipse.ui.views.showView.viewId" value="edu.louisiana.caai.lom.editor.views.CurriculumTimelineView"/>
+         </command>
+         <command commandId="org.eclipse.ui.views.showView" label="%command.showLists.label" icon="icons/pages/tree.png">
+            <parameter name="org.eclipse.ui.views.showView.viewId" value="edu.louisiana.caai.lom.editor.views.DocumentListsView"/>
+         </command>
+         <separator name="edu.louisiana.caai.lom.editor.window.support" visible="true"/>
+         <command commandId="org.eclipse.ui.views.showView" label="%command.showErrorLog.label">
+            <parameter name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.pde.runtime.LogView"/>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <!-- File > Convert to Newer Version (Curriculum Inventory 1.0 to v10, Activity Report 1.0 to 2.0). -->
+   <extension point="org.eclipse.ui.commands">
+      <command id="edu.louisiana.caai.lom.editor.migrate" name="%command.migrate.name"
+            description="%command.migrate.description" categoryId="org.eclipse.ui.category.file"
+            defaultHandler="edu.louisiana.caai.lom.editor.handlers.MigrateHandler"/>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:file?after=edu.louisiana.caai.lom.editor.file.documents">
+         <command commandId="edu.louisiana.caai.lom.editor.migrate" label="%command.migrate.label">
+            <visibleWhen checkEnabled="false">
+               <with variable="activeEditorId">
+                  <equals value="edu.louisiana.caai.lom.editor.HlomMetadataEditor"/>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
